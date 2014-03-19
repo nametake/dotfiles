@@ -1,0 +1,3 @@
+class <+FILENAME+> {
+    <+CURSOR+>
+}

@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{jsarticle}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{wrapfig}
+\usepackage{ascmac}
+\usepackage{slashbox}
+\usepackage{listings, jlisting}
+%
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{40\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.2in}
+\setlength{\topmargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+%
+\newcommand{\divergence}{\mathrm{div}\,}  %ダイバージェンス
+\newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
+\newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
+%
+% source code setting
+\lstset{%
+  numbers=left,
+  basicstyle=\ttfamily,
+  columns=[l]{fullflexible},
+  frame=single,
+  framesep=5pt,
+  breaklines=true
+}
+% command 
+% source code   \lstinputlisting[caption=, label=]{}
+%
+\title{<+CURSOR+>}
+\author{<`1:%author`>}
+\date{<`2:%date`>}
+\begin{document}
+<`3:%body`>
+\maketitle
+
+\setcounter{section}{0}
+\input{<`4:%otherfile`>}
+
+
+\end{document}

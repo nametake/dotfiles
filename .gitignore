@@ -1,0 +1,16 @@
+# all file ignore
+/*
+/.*
+
+!/.gitignore
+
+# whitelist
+!/.profile
+!/.bashrc
+!/.gitconfig
+!/.vimrc
+!/.tmux.conf
+!/.zshrc
+!/.zshenv
+!/.vim/
+
