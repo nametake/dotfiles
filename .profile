@@ -22,19 +22,27 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # PATH setting
-# Mac
-export PATH="/opt/local/bin/:/opt/local/sbin/:$PATH"
-# Java
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-export CLASSPATH=$CLASSPATH:.:/usr/share/tomcat7/lib/servlet-api.jar:/usr/share/tomcat7/lib/servlet-api.jar
-# Tomcat
-export CATALINA_HOME=/usr/share/tomcat7
-export CATALINA_BASE=/var/lib/tomcat7
-# Android
-export PATH=$PATH:/usr/local/adt/sdk/tools
-export PATH=$PATH:/usr/local/python-for-android/dist/default
-# kivy
-export ANDROIDSDK=/usr/local/adt/sdk
-export ANDROIDNDK=/usr/local/adt/ndk-r9b
-export ANDROIDNDKVER=r9
-export ANDROIDAPI=19
+if [ "$(uname)" == "Darwin" ]; then
+#Mac
+  export PATH="/opt/local/bin/:/opt/local/sbin/:$PATH"
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+#Linux
+  # Java
+  export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+  export CLASSPATH=$CLASSPATH:.:/usr/share/tomcat7/lib/servlet-api.jar:/usr/share/tomcat7/lib/servlet-api.jar
+  # Tomcat
+  export CATALINA_HOME=/usr/share/tomcat7
+  export CATALINA_BASE=/var/lib/tomcat7
+  # Android
+  export PATH=$PATH:/usr/local/adt/sdk/tools
+  export PATH=$PATH:/usr/local/python-for-android/dist/default
+  # kivy
+  export ANDROIDSDK=/usr/local/adt/sdk
+  export ANDROIDNDK=/usr/local/adt/ndk-r9b
+  export ANDROIDNDKVER=r9
+  export ANDROIDAPI=19
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+#Windows
+
+fi
+

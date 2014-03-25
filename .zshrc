@@ -1,9 +1,6 @@
 
 ########################################
-# Color
-autoload -U colors; colors
-
-########################################
+# Color autoload -U colors; colors ########################################
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -63,23 +60,23 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # OS毎の設定
 case ${OSTYPE} in
-    darwin*)
-        # mac
-        alias ls='ls -G'
-        ;;
-    linux*)
-        # linux
-        alias ls='ls --color=auto'
-        alias pbcopy='xsel --clipboard --input'
-        alias pbpaste='xsel --clipboard --output'
-        ;;
+  darwin*)
+    # mac
+    alias ls='ls -G'
+    ;;
+  linux*)
+    # linux
+    alias ls='ls --color=auto'
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+    ;;
 esac
 if [ "$(uname)" '==' "Darwin" ]; then
-    # Do something under Mac OS X platform
+  # Do something under Mac OS X platform
 elif [ "$(expr substr $(uname -s) 1 5)" '==' "Linux" ]; then
-    # Do something under Linux platform
+  # Do something under Linux platform
 elif [ "$(expr substr $(uname -s) 1 10)" '==' "MINGW32_NT" ]; then
-    # Do something under Windows NT platform
+  # Do something under Windows NT platform
 fi
 
 # ls
@@ -115,8 +112,8 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 # ctrl-x, ctrl-pでクリップボードにコピー
 pbcopy-buffer(){ 
-    print -rn $BUFFER | pbcopy
-    zle -M "pbcopy: ${BUFFER}" 
+  print -rn $BUFFER | pbcopy
+  zle -M "pbcopy: ${BUFFER}" 
 }
 zle -N pbcopy-buffer
 bindkey '^x^p' pbcopy-buffer
@@ -185,14 +182,15 @@ autoload -U compinit
 compinit
 
 ########################################
-# tmux (auto start)
+# tmux
 
-#Start tmux on every shell login
-#https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
+# session restart
 if which tmux 2>&1 >/dev/null; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
+  #if not inside a tmux session, and if no session is started, start a new session
+  test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
 fi
+
+# auto start
 is_screen_running() {
   [ ! -z "$WINDOW" ]
 }
@@ -206,7 +204,7 @@ shell_has_started_interactively() {
   [ ! -z "$PS1" ]
 }
 resolve_alias() {
-  cmd="$1"
+  cmd="$1 -2"
   while
     whence "$cmd" >/dev/null 2>/dev/null && [ "$(whence "$cmd")" != "$cmd" ]
   do
@@ -217,8 +215,9 @@ resolve_alias() {
 if ! is_screen_or_tmux_running && shell_has_started_interactively; then
   for cmd in tmux tscreen screen; do
     if whence $cmd >/dev/null 2>/dev/null; then
-      $(resolve_alias "$cmd -2")
+      $(resolve_alias "$cmd")
       break
     fi
   done
 fi
+
