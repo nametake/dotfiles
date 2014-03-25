@@ -18,16 +18,7 @@
 "       General
 "       Language
 "
-" section template
-"
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-"---------------------------------------
-"---------------------------------------
-"************************
-"************************
-"
-"
 " Variable setting every OS
 " Mac -> darwin\n, Linux -> linux\n
 let OSTYPE = system('uname')
@@ -105,6 +96,9 @@ NeoBundle 'vim-scripts/fcitx.vim'
 " sudo.vim
 NeoBundle 'sudo.vim'
 
+" syntastic
+NeoBundle 'scrooloose/syntastic.git'
+
 " vim-scouter
 NeoBundle 'thinca/vim-scouter'
 "************************
@@ -161,6 +155,8 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'mattn/emmet-vim'
 " closetag
 NeoBundle 'vim-scripts/closetag.vim'
+" simple-javascript-indenter
+NeoBundle 'jiangmiao/simple-javascript-indenter'
 
 
 " CoffeeScript
@@ -179,8 +175,7 @@ NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Wombat'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'vim-scripts/rdark'
+NeoBundle 'tomasr/molokai' NeoBundle 'vim-scripts/rdark'
 
 
 
@@ -878,3 +873,10 @@ let g:PyFlakeRangeCommand = 'Q'
 "************************
 let g:closetag_html_style=1
 autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+
+"************************
+" syntastic
+"************************
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+
