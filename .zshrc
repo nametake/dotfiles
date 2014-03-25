@@ -60,8 +60,21 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
  
 ########################################
 # alias
+
+# OS毎の設定
+if [ "$(uname)" '==' "Darwin" ]; then
+    # Do something under Mac OS X platform
+    alias ls='ls -G'
+elif [ "$(expr substr $(uname -s) 1 5)" '==' "Linux" ]; then
+    # Do something under Linux platform
+    ls='ls --color=auto'
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+elif [ "$(expr substr $(uname -s) 1 10)" '==' "MINGW32_NT" ]; then
+    # Do something under Windows NT platform
+fi
+
 # ls
-alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
 
@@ -86,16 +99,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# OS毎の設定
-if [ "$(uname)" '==' "Darwin" ]; then
-    # Do something under Mac OS X platform
-elif [ "$(expr substr $(uname -s) 1 5)" '==' "Linux" ]; then
-    # Do something under Linux platform
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
-elif [ "$(expr substr $(uname -s) 1 10)" '==' "MINGW32_NT" ]; then
-    # Do something under Windows NT platform
-fi
 
 ########################################
 # key bind 

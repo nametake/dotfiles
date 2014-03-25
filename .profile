@@ -22,6 +22,8 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # PATH setting
+# Mac
+export PATH="/opt/local/bin/:/opt/local/sbin/:$PATH"
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 export CLASSPATH=$CLASSPATH:.:/usr/share/tomcat7/lib/servlet-api.jar:/usr/share/tomcat7/lib/servlet-api.jar
