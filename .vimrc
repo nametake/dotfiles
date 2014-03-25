@@ -28,6 +28,9 @@
 "************************
 "
 "
+" Variable setting every OS
+" Mac -> darwin\n, Linux -> linux\n
+let OSTYPE = system('uname')
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " NeoBundle setting
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -76,7 +79,10 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-scripts/Align'
 
 " YankRing
-NeoBundle 'vim-scripts/YankRing.vim'
+"NeoBundle 'vim-scripts/YankRing.vim'
+
+" yankround
+NeoBundle 'LeafCage/yankround.vim'
 
 " Indent Guides
 NeoBundle "nathanaelkane/vim-indent-guides"
@@ -225,7 +231,12 @@ set nobackup
 set mouse=a
 
 " OSのクリップボードを使用
-set clipboard=unnamedplus,autoselect
+if OSTYPE == "Darwin\n"
+   ""Mac
+elseif OSTYPE == "Linux\n"
+   ""Linux
+    set clipboard=unnamedplus,autoselect
+endif
 
 " 行の折り返し
 set wrap
@@ -596,6 +607,23 @@ endif
 " Yankring
 "************************
 let g:yankring_history_dir = '$HOME/.vim'
+
+"************************
+" yankround
+"************************
+" yankring key bind
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+
+" 保存する履歴数
+let g:yankround_max_history = 35
+
+" 保存ファイルの場所
+let g:yankround_dir = '~/.cache/yankround'
 
 
 "************************

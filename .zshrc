@@ -62,14 +62,22 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # alias
 
 # OS毎の設定
+case ${OSTYPE} in
+    darwin*)
+        # mac
+        alias ls='ls -G'
+        ;;
+    linux*)
+        # linux
+        alias ls='ls --color=auto'
+        alias pbcopy='xsel --clipboard --input'
+        alias pbpaste='xsel --clipboard --output'
+        ;;
+esac
 if [ "$(uname)" '==' "Darwin" ]; then
     # Do something under Mac OS X platform
-    alias ls='ls -G'
 elif [ "$(expr substr $(uname -s) 1 5)" '==' "Linux" ]; then
     # Do something under Linux platform
-    ls='ls --color=auto'
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
 elif [ "$(expr substr $(uname -s) 1 10)" '==' "MINGW32_NT" ]; then
     # Do something under Windows NT platform
 fi
