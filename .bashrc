@@ -91,10 +91,6 @@ alias lla='ls -al'
 alias lal='ls -al'
 alias l='ls -CF'
 
-# global aliases
-alias -g L='| less'
-alias -g G='| grep'
- 
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
