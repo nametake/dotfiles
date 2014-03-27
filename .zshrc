@@ -8,7 +8,7 @@ SAVEHIST=1000000
 
 ########################################
 # PROMPT
-PROMPT="%B%F{green}[${USER}@${HOST%%.*}]%f:%F{blue}%2~%f%b%(!.#.$) "
+PROMPT="%B%F{green}[${USER}@${HOST}]%f:%F{blue}%2~%f%b%(!.#.$) "
 PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
 SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 
