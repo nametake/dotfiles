@@ -88,6 +88,9 @@ NeoBundle 'itchyny/lightline.vim'
 " unite
 NeoBundle 'Shougo/unite.vim'
 
+" unite-outline
+NeoBundle 'h1mesuke/unite-outline'
+
 " vimfiler
 NeoBundle 'Shougo/vimfiler'
 
@@ -765,7 +768,7 @@ endfunction
 "************************
 " unite-outline
 "************************
-
+nnoremap <silent> <Space>uo : <C-u>Unite -vertical -winwidth=30 outline<CR>
 
 "************************
 " vimfiler
