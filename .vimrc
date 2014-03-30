@@ -14,6 +14,7 @@
 "       Auto Complete setting
 "       Search setting
 "       Key setting
+"       Setting of each language
 "   Plugin setting
 "       General
 "       Language
@@ -138,6 +139,9 @@ NeoBundleLazy "hynek/vim-python-pep8-indent'", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
+" Simpylfold  Pythonの折りたたみ
+NeoBundle 'tmhedberg/SimpylFold'
+
 " vim-pandoc
 NeoBundleLazy "vim-pandoc/vim-pandoc", {
         \ "autoload": {
@@ -145,19 +149,19 @@ NeoBundleLazy "vim-pandoc/vim-pandoc", {
         \ }}
 
 
-
-" HTML/CSS/JavaScript/Sass
+" HTML/CSS/Sass
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
-" javascript 404"
-"NeoBundle 'taichouchou2/vim-javascript'
 " Emmet
 NeoBundle 'mattn/emmet-vim'
 " closetag
 NeoBundle 'vim-scripts/closetag.vim'
+
+" Javascript
 " simple-javascript-indenter
 NeoBundle 'jiangmiao/simple-javascript-indenter'
-
+" vim-javascript-syntax
+NeoBundle 'jelera/vim-javascript-syntax'
 
 " CoffeeScript
 " syntax + 自動compile
@@ -277,6 +281,25 @@ inoremap <silent> <C-[> <C-[>:set iminsert=0<CR>
 set t_vb=
 set novisualbell
 
+" markdonwの折りたたみ設定
+"" 折りたたみを有効
+set foldenable
+
+" シンタックスに従い折りたたみ
+set foldmethod=syntax
+
+" カーソルが移動した時に自動で折りたたみを開く
+set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
+
+" 折りたたみの具合
+set foldlevel=0
+
+" 最大折りたたみ深度
+set foldnestmax=2
+
+" 左側に折りたたみガイド表示
+set foldcolumn=2
+
 "---------------------------------------
 " Color Scheme and Font setting
 "---------------------------------------
@@ -339,44 +362,7 @@ set shiftround
 
 
 
-" 言語ごとのインデントの設定
-" Python 
-" インデントを半角スペース4個
-autocmd MyAutoCmd FileType python set expandtab
-autocmd MyAutoCmd FileType python set tabstop=4
-autocmd MyAutoCmd FileType python set shiftwidth=4
-autocmd MyAutoCmd FileType python set softtabstop=4
-autocmd MyAutoCmd FileType python set autoindent
-autocmd MyAutoCmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd MyAutoCmd FileType python set colorcolumn=80
 
-
-" tex
-" ファイルはインデントしない"
-autocmd MyAutoCmd FileType tex set noautoindent
-autocmd MyAutoCmd FileType tex set tabstop=2
-autocmd MyAutoCmd FileType tex set shiftwidth=2
-autocmd MyAutoCmd FileType tex set softtabstop=2
-" html
-autocmd MyAutoCmd FileType html set noautoindent
-autocmd MyAutoCmd FileType html set nosmartindent
-autocmd MyAutoCmd FileType html set expandtab
-autocmd MyAutoCmd FileType html set tabstop=4
-autocmd MyAutoCmd FileType html set shiftwidth=4
-autocmd MyAutoCmd FileType html set softtabstop=4
-
-" kivy
-autocmd MyAutoCmd BufRead,BufNewFile *.kv set filetype=kv
-
-autocmd MyAutoCmd FileType kv set softtabstop=4
-autocmd MyAutoCmd FileType kv set textwidth=79
-autocmd MyAutoCmd FileType kv set shiftwidth=4
-autocmd MyAutoCmd FileType kv set expandtab
-autocmd MyAutoCmd FileType kv set tabstop=8
-autocmd MyAutoCmd FileType kv set list
-autocmd MyAutoCmd FileType kv set foldmethod=indent
-autocmd MyAutoCmd FileType kv set foldlevelstart=99
-autocmd MyAutoCmd FileType kv set foldlevel=99
 "---------------------------------------
 " Auto Complete setting
 "---------------------------------------
@@ -391,6 +377,7 @@ set wildmode=list:full
 
 " 補完時に大文字小文字を区別しない
 set infercase
+
 
 "---------------------------------------
 " Search setting
@@ -441,6 +428,54 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+
+"---------------------------------------
+" Setting of each language
+"---------------------------------------
+" Python 
+" インデントを半角スペース4個
+autocmd MyAutoCmd FileType python set expandtab
+autocmd MyAutoCmd FileType python set tabstop=4
+autocmd MyAutoCmd FileType python set shiftwidth=4
+autocmd MyAutoCmd FileType python set softtabstop=4
+autocmd MyAutoCmd FileType python set autoindent
+autocmd MyAutoCmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd MyAutoCmd FileType python set colorcolumn=80
+
+" tex
+" ファイルはインデントしない"
+autocmd MyAutoCmd FileType tex set noautoindent
+autocmd MyAutoCmd FileType tex set tabstop=2
+autocmd MyAutoCmd FileType tex set shiftwidth=2
+autocmd MyAutoCmd FileType tex set softtabstop=2
+
+" html
+autocmd MyAutoCmd FileType html set noautoindent
+autocmd MyAutoCmd FileType html set nosmartindent
+autocmd MyAutoCmd FileType html set expandtab
+autocmd MyAutoCmd FileType html set tabstop=4
+autocmd MyAutoCmd FileType html set shiftwidth=4
+autocmd MyAutoCmd FileType html set softtabstop=4
+
+" kivy
+autocmd MyAutoCmd BufRead,BufNewFile *.kv set filetype=kv
+autocmd MyAutoCmd FileType kv set softtabstop=4
+autocmd MyAutoCmd FileType kv set textwidth=79
+autocmd MyAutoCmd FileType kv set shiftwidth=4
+autocmd MyAutoCmd FileType kv set expandtab
+autocmd MyAutoCmd FileType kv set tabstop=8
+autocmd MyAutoCmd FileType kv set list
+autocmd MyAutoCmd FileType kv set foldmethod=indent
+autocmd MyAutoCmd FileType kv set foldlevelstart=99
+autocmd MyAutoCmd FileType kv set foldlevel=99
+
+" md as markdown, instead of modula2
+autocmd MyAutoCmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+autocmd MyAutoCmd FileType markdown set foldlevel=1
+autocmd MyAutoCmd FileType markdown set foldnestmax=3
+
+
 
 
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -530,7 +565,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
@@ -812,7 +847,8 @@ let g:Tex_ViewRule_pdf = 'evince'
 "let g:Tex_ViewRule_pdf = 'gv --watch'
 "let g:Tex_ViewRule_pdf = 'acroread'
 "let g:Tex_ViewRule_pdf = 'pdfopen -viewer ar9-tab'
-let g:Tex_AutoFolding=0
+" 自動折りたたみしない場合
+"let g:Tex_AutoFolding=0
 
 
 "************************
@@ -881,3 +917,8 @@ autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 
+"************************
+" simple-javascript-indenter
+"************************
+let g:SimpleJsIndenter_BriefMode = 1
+let g:SimpleJsIndenter_CaseIndentLevel = -1
