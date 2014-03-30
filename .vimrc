@@ -273,7 +273,7 @@ set modified
 " ファイルの書き込みを有効にする
 set write
 
-"set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}]\[LOW=%l/%L]
+"set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}A-)(]\[LOW=%l/%L]
 
 " IMEの設定
 ""inoremap <C-[> <C-[><C-[> 
@@ -445,6 +445,10 @@ autocmd MyAutoCmd FileType python set softtabstop=4
 autocmd MyAutoCmd FileType python set autoindent
 autocmd MyAutoCmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd MyAutoCmd FileType python set colorcolumn=80
+
+"javascript
+autocmd MyAutoCmd FileType javascript set foldlevel=1
+autocmd MyAutoCmd FileType javascript set foldnestmax=99
 
 " tex
 " ファイルはインデントしない"
@@ -925,3 +929,8 @@ let g:syntastic_auto_loc_list=2
 "************************
 let g:SimpleJsIndenter_BriefMode = 1
 let g:SimpleJsIndenter_CaseIndentLevel = -1
+
+"************************
+" vim-javascript-syntax
+"************************
+autocmd MyAutoCmd FileType javascript call JavaScriptFold()
