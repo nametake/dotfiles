@@ -295,13 +295,14 @@ set foldmethod=syntax
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
 
 " 折りたたみの具合
-set foldlevel=0
+set foldlevel=1
 
 " 最大折りたたみ深度
 set foldnestmax=2
 
 " 左側に折りたたみガイド表示
 set foldcolumn=2
+
 
 "---------------------------------------
 " Color Scheme and Font setting
