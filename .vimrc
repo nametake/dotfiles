@@ -105,6 +105,9 @@ NeoBundle 'scrooloose/syntastic.git'
 
 " vim-scouter
 NeoBundle 'thinca/vim-scouter'
+
+" vim-quickrun
+NeoBundle 'thinca/vim-quickrun'
 "************************
 " Language
 "************************
@@ -433,7 +436,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
 "---------------------------------------
 " Setting of each language
 "---------------------------------------
@@ -935,3 +942,15 @@ let g:SimpleJsIndenter_CaseIndentLevel = -1
 " vim-javascript-syntax
 "************************
 autocmd MyAutoCmd FileType javascript call JavaScriptFold()
+
+"************************
+" vim-quickrun
+"************************
+let g:quickrun_config={
+            \    '_' : {
+            \        'split': 'botright 8sp',
+            \        'outputter/buffer/into': 1
+            \    },
+            \}
+nnoremap <Space>r :QuickRun<Cr>
+
