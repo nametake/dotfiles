@@ -108,6 +108,10 @@ NeoBundle 'thinca/vim-scouter'
 
 " vim-quickrun
 NeoBundle 'thinca/vim-quickrun'
+
+" open-browser
+NeoBundle 'tyru/open-browser.vim'
+
 "************************
 " Language
 "************************
@@ -946,11 +950,11 @@ autocmd MyAutoCmd FileType javascript call JavaScriptFold()
 "************************
 " vim-quickrun
 "************************
-let g:quickrun_config={
-            \    '_' : {
-            \        'split': 'botright 8sp',
-            \        'outputter/buffer/into': 1
-            \    },
-            \}
 nnoremap <Space>r :QuickRun<Cr>
+let g:quickrun_config={
+            \   '_':{
+            \       'split': 'botright 8sp',
+            \       'outputter/buffer/into': 1
+            \   },
+            \}
 
