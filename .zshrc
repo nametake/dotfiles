@@ -167,6 +167,9 @@ setopt auto_menu
 # 高機能なワイルドカード展開を使用する
 setopt extended_glob
 
+# コマンドが見つからない時のエラー表示をしない
+setopt nonomatch
+
 ########################################
 # each OS
 case ${OSTYPE} in
