@@ -188,41 +188,41 @@ compinit
 
 ########################################
 # tmux
-
-# session restart
-if which tmux 2>&1 >/dev/null; then
-  #if not inside a tmux session, and if no session is started, start a new session
-  test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
+if [ -x "`whence tmux`" ]; then
+  # session restart
+  if which tmux 2>&1 >/dev/null; then
+    #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
+  fi
+  
+  # auto start
+  is_screen_running() {
+    [ ! -z "$WINDOW" ]
+  }
+  is_tmux_running() {
+    [ ! -z "$TMUX" ]
+  }
+  is_screen_or_tmux_running() {
+    is_screen_running || is_tmux_running
+  }
+  shell_has_started_interactively() {
+    [ ! -z "$PS1" ]
+  }
+  resolve_alias() {
+    cmd="$1 -2"
+    while
+      whence "$cmd" >/dev/null 2>/dev/null && [ "$(whence "$cmd")" != "$cmd" ]
+    do
+      cmd=$(whence "$cmd")
+    done
+    echo "$cmd"
+  }
+  if ! is_screen_or_tmux_running && shell_has_started_interactively; then
+    for cmd in tmux tscreen screen; do
+      if whence $cmd >/dev/null 2>/dev/null; then
+        $(resolve_alias "$cmd")
+        break
+      fi
+    done
+  fi
 fi
-
-# auto start
-is_screen_running() {
-  [ ! -z "$WINDOW" ]
-}
-is_tmux_running() {
-  [ ! -z "$TMUX" ]
-}
-is_screen_or_tmux_running() {
-  is_screen_running || is_tmux_running
-}
-shell_has_started_interactively() {
-  [ ! -z "$PS1" ]
-}
-resolve_alias() {
-  cmd="$1 -2"
-  while
-    whence "$cmd" >/dev/null 2>/dev/null && [ "$(whence "$cmd")" != "$cmd" ]
-  do
-    cmd=$(whence "$cmd")
-  done
-  echo "$cmd"
-}
-if ! is_screen_or_tmux_running && shell_has_started_interactively; then
-  for cmd in tmux tscreen screen; do
-    if whence $cmd >/dev/null 2>/dev/null; then
-      $(resolve_alias "$cmd")
-      break
-    fi
-  done
-fi
-
