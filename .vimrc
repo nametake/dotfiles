@@ -956,5 +956,9 @@ let g:quickrun_config={
             \       'split': 'botright 8sp',
             \       'outputter/buffer/into': 1
             \   },
+            \   'html':{
+            \       'command': 'google-chrome',
+            \       'outputter/buffer/close_on_empty': 1
+            \   }
             \}
 
