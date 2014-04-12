@@ -12,6 +12,10 @@ PROMPT="%B%F{green}[${USER}@${HOST}]%f:%F{blue}%2~%f%b%(!.#.$) "
 PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
 SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 
+if [[ $HOSTNAME == "nametake.info" ]] {
+  PROMPT="%B%F{magenta}[${USER}@${HOST}]%f:%F{blue}%2~%f%b%(!.#.$) "
+}
+
 # vcs_info
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
