@@ -21,14 +21,16 @@
 \newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
 %
 % source code setting
-\lstset{%
-  numbers=left,
-  basicstyle=\ttfamily,
-  columns=[l]{fullflexible},
-  frame=single,
-  framesep=5pt,
-  breaklines=true
-}
+%\lstset{%
+%  numbers=left,
+%  basicstyle=\ttfamily,
+%  columns=[l]{fullflexible},
+%  frame=single,
+%  framesep=5pt,
+%  breaklines=true
+%  xleftmargin=10pt,
+%  xrightmargin=10pt,
+%}
 % command 
 % source code   \lstinputlisting[caption=, label=]{}
 %
@@ -36,9 +38,10 @@
 \author{<`1:%author`>}
 \date{<`2:%date`>}
 \begin{document}
-<`3:%body`>
+
 \maketitle
 
+<`3:%body`>
 \setcounter{section}{0}
 \input{<`4:%otherfile`>}
 
