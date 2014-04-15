@@ -84,6 +84,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+case $(uname -s) in
+    Darwin)
+        alias ls='ls -hFG'
+    ;;
+    Linux)
+        alias ls='ls --color=auto'
+esac
+
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -a'
