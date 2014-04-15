@@ -86,7 +86,7 @@ fi
 
 case $(uname -s) in
     Darwin)
-        alias ls='ls -hFG'
+        alias ls='ls -hG'
     ;;
     Linux)
         alias ls='ls --color=auto'

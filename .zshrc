@@ -63,7 +63,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # alias
 
 # OS毎の設定
-case ${OSTYPE} in
+case "${OSTYPE}" in
   darwin*)
     # mac
     alias ls='ls -G'
@@ -75,13 +75,7 @@ case ${OSTYPE} in
     alias pbpaste='xsel --clipboard --output'
     ;;
 esac
-if [ "$(uname)" '==' "Darwin" ]; then
-  # Do something under Mac OS X platform
-elif [ "$(expr substr $(uname -s) 1 5)" '==' "Linux" ]; then
-  # Do something under Linux platform
-elif [ "$(expr substr $(uname -s) 1 10)" '==' "MINGW32_NT" ]; then
-  # Do something under Windows NT platform
-fi
+
 
 # ls
 alias la='ls -a'
