@@ -296,13 +296,13 @@ set novisualbell
 set foldenable
 
 " シンタックスに従い折りたたみ
-set foldmethod=syntax
+set foldmethod=marker
 
 " カーソルが移動した時に自動で折りたたみを開く
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
 
 " 折りたたみの具合
-set foldlevel=1
+set foldlevel=0
 
 " 最大折りたたみ深度
 set foldnestmax=2
