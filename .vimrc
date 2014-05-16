@@ -151,7 +151,8 @@ NeoBundleLazy "hynek/vim-python-pep8-indent'", {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
 " Simpylfold  Pythonの折りたたみ
-NeoBundle 'tmhedberg/SimpylFold'
+"NeoBundle 'tmhedberg/SimpylFold'
+NeoBundle 'hattya/python_fold.vim'
 
 " vim-pandoc
 NeoBundleLazy "vim-pandoc/vim-pandoc", {
@@ -985,7 +986,7 @@ let g:jedi#auto_initialization = 1
 
 let g:jedi#auto_vim_configuration = 0
 " The reason to deactivate jedi#auto_vim_configuration
-autocmd MyAutoCmd FileType python setlocal completeopt-=preview 
+"autocmd FileType python setlocal completeopt-=preview 
 
 let g:jedi#use_splits_not_buffers = "left"
 
@@ -998,6 +999,12 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
+autocmd FileType python setlocal omnifunc=jedi#completions
+"let g:jedi#popup_select_first=0
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 "************************
 " flake8-vim
