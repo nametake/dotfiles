@@ -1,6 +1,5 @@
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-" Vim SETTING
-"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+" Vim SETTING "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 "    ---INDEX---
 "    NeoBundle setting
 "       General
@@ -174,6 +173,8 @@ NeoBundle 'vim-scripts/closetag.vim'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
 " vim-javascript-syntax
 NeoBundle 'jelera/vim-javascript-syntax'
+" vim-nodejs-complete
+NeoBundle 'myhere/vim-nodejs-complete'
 
 " CoffeeScript
 " syntax + 自動compile
@@ -1059,3 +1060,9 @@ let g:quickrun_config={
             \   }
             \}
 
+"************************
+" vim-nodejs-complete
+"************************
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+
+let g:node_usejscomplete = 1
