@@ -176,6 +176,8 @@ NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'jelera/vim-javascript-syntax'
 " vim-nodejs-complete
 NeoBundle 'myhere/vim-nodejs-complete'
+" vim-jade
+NeoBundle 'digitaltoad/vim-jade'
 
 " CoffeeScript
 " syntax + 自動compile
