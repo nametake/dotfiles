@@ -467,6 +467,10 @@ autocmd MyAutoCmd FileType python set colorcolumn=80
 "javascript
 autocmd MyAutoCmd FileType javascript set foldlevel=1
 autocmd MyAutoCmd FileType javascript set foldnestmax=99
+" jade
+autocmd MyAutoCmd FileType jade set tabstop=2
+autocmd MyAutoCmd FileType jade set shiftwidth=2
+autocmd MyAutoCmd FileType jade set softtabstop=2
 
 " tex
 " ファイルはインデントしない"
