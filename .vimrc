@@ -113,6 +113,9 @@ NeoBundle 'thinca/vim-quickrun'
 " open-browser
 NeoBundle 'tyru/open-browser.vim'
 
+" auto-pairs
+NeoBundle 'jiangmiao/auto-pairs'
+
 "************************
 " Language
 "************************
@@ -480,6 +483,7 @@ autocmd MyAutoCmd FileType tex set shiftwidth=2
 autocmd MyAutoCmd FileType tex set softtabstop=2
 
 " html
+au BufNewFile,BufRead *.html set filetype=htmldjango
 autocmd MyAutoCmd FileType html set noautoindent
 autocmd MyAutoCmd FileType html set nosmartindent
 autocmd MyAutoCmd FileType html set expandtab
@@ -1073,3 +1077,9 @@ let g:quickrun_config={
 autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
 
 let g:node_usejscomplete = 1
+
+"************************
+" auto-pairs
+"************************
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<M-b>'
