@@ -188,6 +188,14 @@ NeoBundle 'kchmck/vim-coffee-script'
 " js BDDツール
 NeoBundle 'claco/jasmine.vim'
 
+
+" Markdown
+" vim-markdown
+NeoBundle 'plasticboy/vim-markdown'
+" previm
+NeoBundle 'kannokanno/previm'
+
+
 "************************
 " Colorscheme
 "************************
@@ -300,7 +308,7 @@ inoremap <silent> <C-[> <C-[>:set iminsert=0<CR>
 set t_vb=
 set novisualbell
 
-" markdonwの折りたたみ設定
+" markdownの折りたたみ設定
 "" 折りたたみを有効
 set foldenable
 
@@ -483,7 +491,7 @@ autocmd MyAutoCmd FileType tex set shiftwidth=2
 autocmd MyAutoCmd FileType tex set softtabstop=2
 
 " html
-au BufNewFile,BufRead *.html set filetype=htmldjango
+autocmd MyAutoCmd BufNewFile,BufRead *.html set filetype=htmldjango
 autocmd MyAutoCmd FileType html set noautoindent
 autocmd MyAutoCmd FileType html set nosmartindent
 autocmd MyAutoCmd FileType html set expandtab
@@ -507,7 +515,6 @@ autocmd MyAutoCmd FileType kv set foldlevel=99
 autocmd MyAutoCmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd MyAutoCmd FileType markdown set foldlevel=1
 autocmd MyAutoCmd FileType markdown set foldnestmax=3
-
 
 
 
@@ -719,7 +726,7 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 imap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
 smap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
-xmap <expr><CR> pumvisible() ? "\<Plug>(nneosnippet_expand_target)" : "\<CR>"
+xmap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_target)" : "\<CR>"
 
 
 " SuperTab like snippets behavior.
@@ -1065,7 +1072,7 @@ let g:quickrun_config={
             \       'split': 'botright 8sp',
             \       'outputter/buffer/into': 1
             \   },
-            \   'html':{
+            \   'htmldjango':{
             \       'command': 'google-chrome',
             \       'outputter/buffer/close_on_empty': 1
             \   }
@@ -1079,7 +1086,6 @@ autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
 let g:node_usejscomplete = 1
 
 "************************
-" auto-pairs
+" previm
 "************************
-let g:AutoPairsFlyMode = 1
-let g:AutoPairsShortcutBackInsert = '<M-b>'
+let g:previm_open_cmd = 'google-chrome'
