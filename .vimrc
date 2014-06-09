@@ -711,37 +711,37 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "************************
 " neosnippet
 "************************
-" <TAB>: completion.
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
-" Plugin key-mappings.
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-"xmap <C-k> <Plug>(neosnippet_expand_target)
-
-"imap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<CR>"
-"smap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<CR>"
-"xmap <expr><CR> pumvisible() ? "\<Plug>(nneosnippet_expand_target)" : "\<CR>"
-
-imap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
-smap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
-xmap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_target)" : "\<CR>"
-
-
-" SuperTab like snippets behavior.
-" imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-" imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" ---change--- 
-imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#jumpable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<TAB>"
-smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-
-" For snippet_complete marker.
-
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
+""" <TAB>: completion.
+""" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+""inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+""
+""" Plugin key-mappings.
+""imap <C-k> <Plug>(neosnippet_expand_or_jump)
+""smap <C-k> <Plug>(neosnippet_expand_or_jump)
+"""xmap <C-k> <Plug>(neosnippet_expand_target)
+""
+"""imap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<CR>"
+"""smap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<CR>"
+"""xmap <expr><CR> pumvisible() ? "\<Plug>(nneosnippet_expand_target)" : "\<CR>"
+""
+""imap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
+""smap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
+""xmap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_target)" : "\<CR>"
+""
+""
+""" SuperTab like snippets behavior.
+""" imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+""" imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+""" ---change--- 
+""imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#jumpable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<TAB>"
+""smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+""
+""
+""" For snippet_complete marker.
+""
+""if has('conceal')
+""  set conceallevel=2 concealcursor=i
+""endif
 
 
 "************************
