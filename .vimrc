@@ -155,7 +155,10 @@ NeoBundleLazy "hynek/vim-python-pep8-indent'", {
         \ }}
 " Simpylfold  Pythonの折りたたみ
 "NeoBundle 'tmhedberg/SimpylFold'
-NeoBundle 'hattya/python_fold.vim'
+NeoBundleLazy "hattya/python_fold.vim'", {
+        \ "autoload": {
+        \   "filetypes": ["python", "python3", "djangohtml"]
+        \ }}
 
 " vim-pandoc
 NeoBundleLazy "vim-pandoc/vim-pandoc", {
@@ -181,12 +184,6 @@ NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'myhere/vim-nodejs-complete'
 " vim-jade
 NeoBundle 'digitaltoad/vim-jade'
-
-" CoffeeScript
-" syntax + 自動compile
-NeoBundle 'kchmck/vim-coffee-script'
-" js BDDツール
-NeoBundle 'claco/jasmine.vim'
 
 
 " Markdown
@@ -723,79 +720,17 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 imap <expr><TAB> pumvisible() ?
             \"\<C-n>"
-            \: neosnippet#jumpable() ? "\<Plug>(neosnippet_jump_or_expand)"
+            \: neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
             \: "\<TAB>"
 smap <expr><TAB> neosnippet#jumpable()?
-            \"\<Plug>(neosnippet_expand_or_jump)"
+            \"\<Plug>(neosnippet_expand)"
             \: "\<TAB>"
-
-
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"\ "\<Plug>(neosnippet_expand_or_jump)"
-"\: pumvisible() ? "\<C-n>" : "\<TAB>"
-"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"\ "\<Plug>(neosnippet_expand_or_jump)"
-"\: "\<TAB>"
 
 " For snippet_complete marker.
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
-
-""" <TAB>: completion.
-""" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-""inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
-""
-""" Plugin key-mappings.
-""imap <C-k> <Plug>(neosnippet_expand_or_jump)
-""smap <C-k> <Plug>(neosnippet_expand_or_jump)
-"""xmap <C-k> <Plug>(neosnippet_expand_target)
-""
-"""imap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<CR>"
-"""smap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<CR>"
-"""xmap <expr><CR> pumvisible() ? "\<Plug>(nneosnippet_expand_target)" : "\<CR>"
-""
-""imap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
-""smap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
-""xmap <expr><CR> pumvisible() ? "\<Plug>(neosnippet_expand_target)" : "\<CR>"
-""
-""
-""" SuperTab like snippets behavior.
-""" imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-""" imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-""" ---change--- 
-""imap <expr><TAB> pumvisible() ? "\<C-n>" : neosnippet#jumpable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<TAB>"
-""smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-""
-""
-""" For snippet_complete marker.
-""
-""if has('conceal')
-""  set conceallevel=2 concealcursor=i
-""endif
-
-
-"************************
-" vim-snippets
-"************************
-
-"************************
-" vimshell
-"************************
-
-
-"************************
-" vim-surround
-"************************
-"
-
-"************************
-" Align
-"************************
-"
 
 "************************
 " Yankring
