@@ -168,29 +168,55 @@ NeoBundleLazy "vim-pandoc/vim-pandoc", {
 
 
 " HTML/CSS/Sass
-NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundleLazy "taichouchou2/html5.vim", {
+        \ "autoload": {
+        \   "filetypes": ["html", "djangohtml", "css"],
+        \ }}
+NeoBundleLazy "hail2u/vim-css3-syntax", {
+        \ "autoload": {
+        \   "filetypes": ["html", "djangohtml", "css"],
+        \ }}
 " Emmet
-NeoBundle 'mattn/emmet-vim'
+NeoBundleLazy "mattn/emmet-vim", {
+        \ "autoload": {
+        \   "filetypes": ["html", "djangohtml", "css"],
+        \ }}
 " closetag
 NeoBundle 'vim-scripts/closetag.vim'
 
 " Javascript
 " simple-javascript-indenter
-NeoBundle 'jiangmiao/simple-javascript-indenter'
+NeoBundleLazy "jiangmiao/simple-javascript-indenter", {
+        \ "autoload": {
+        \   "filetypes": ["javascript"],
+        \ }}
 " vim-javascript-syntax
-NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundleLazy "jelera/vim-javascript-syntax", {
+        \ "autoload": {
+        \   "filetypes": ["javascript"],
+        \ }}
 " vim-nodejs-complete
-NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundleLazy "myhere/vim-nodejs-complete", {
+        \ "autoload": {
+        \   "filetypes": ["javascript"],
+        \ }}
 " vim-jade
-NeoBundle 'digitaltoad/vim-jade'
-
+NeoBundleLazy "digitaltoad/vim-jade", {
+        \ "autoload": {
+        \   "filetypes": ["jade"],
+        \ }}
 
 " Markdown
 " vim-markdown
-NeoBundle 'plasticboy/vim-markdown'
+NeoBundleLazy "plasticboy/vim-markdown", {
+        \ "autoload": {
+        \   "filetypes": ["markdown"],
+        \ }}
 " previm
-NeoBundle 'kannokanno/previm'
+NeoBundleLazy "kannokanno/previm", {
+        \ "autoload": {
+        \   "filetypes": ["markdown"],
+        \ }}
 
 
 "************************
@@ -717,6 +743,9 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+inoremap <expr><CR>  pumvisible() ?
+            \"neocomplete#close_popup()" : "\<CR>"
 
 imap <expr><TAB> pumvisible() ?
             \"\<C-n>"
