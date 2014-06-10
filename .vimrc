@@ -745,7 +745,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 inoremap <expr><CR>  pumvisible() ?
-            \"neocomplete#close_popup()" : "\<CR>"
+            \ neocomplete#close_popup() : "\<CR>"
 
 imap <expr><TAB> pumvisible() ?
             \"\<C-n>"
@@ -754,6 +754,7 @@ imap <expr><TAB> pumvisible() ?
 smap <expr><TAB> neosnippet#jumpable()?
             \"\<Plug>(neosnippet_expand)"
             \: "\<TAB>"
+
 
 " For snippet_complete marker.
 if has('conceal')
