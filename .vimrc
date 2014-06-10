@@ -54,6 +54,20 @@ NeoBundle 'Shougo/vimproc', {
 "************************
 " General
 "************************
+" unite
+"NeoBundle 'Shougo/unite.vim'
+NeoBundleLazy 'Shougo/unite.vim', {
+            \ 'autoload' : {
+            \   'command' : ['Unite']
+            \}}
+
+" unite-outline
+"NeoBundle 'h1mesuke/unite-outline'
+NeoBundleLazy 'h1mesuke/unite-outline', {
+            \ 'autoload' : {
+            \   'command' : ['Unite']
+            \ }}
+
 " 補完
 "NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete'
@@ -86,11 +100,6 @@ NeoBundle "thinca/vim-template"
 " lightline
 NeoBundle 'itchyny/lightline.vim'
 
-" unite
-NeoBundle 'Shougo/unite.vim'
-
-" unite-outline
-NeoBundle 'h1mesuke/unite-outline'
 
 " vimfiler
 NeoBundle 'Shougo/vimfiler'
@@ -125,97 +134,97 @@ NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
 " python
 " Djangoを正しくVimで読み込めるようにする
-NeoBundleLazy "lambdalisue/vim-django-support", {
-        \ "autoload": {
-        \   "filetypes": ["python", "python3", "djangohtml"]
+NeoBundleLazy 'lambdalisue/vim-django-support', {
+        \ 'autoload': {
+        \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
 " Vimで正しくvirtualenvを処理できるようにする
-NeoBundleLazy "jmcantrell/vim-virtualenv", {
-        \ "autoload": {
-        \   "filetypes": ["python", "python3", "djangohtml"]
+NeoBundleLazy 'jmcantrell/vim-virtualenv', {
+        \ 'autoload': {
+        \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
 " jedi vim
-NeoBundleLazy "davidhalter/jedi-vim", {
-        \ "autoload": {
-        \   "filetypes": ["python", "python3", "djangohtml"],
+NeoBundleLazy 'davidhalter/jedi-vim', {
+        \ 'autoload': {
+        \   'filetypes': ["python", "python3", "djangohtml"],
         \ },
-        \ "build": {
-        \   "mac": "pip install jedi",
-        \   "unix": "pip install jedi",
+        \ 'build': {
+        \   'mac': 'pip install jedi',
+        \   'unix': 'pip install jedi',
         \ }}
 " flake8
-NeoBundleLazy "andviro/flake8-vim", {
-        \ "autoload": {
-        \   "filetypes": ["python", "python3", "djangohtml"]
+NeoBundleLazy 'andviro/flake8-vim', {
+        \ 'autoload': {
+        \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
 " pep8 indent 引数などの改行をpep8準拠にする
-NeoBundleLazy "hynek/vim-python-pep8-indent'", {
-        \ "autoload": {
-        \   "filetypes": ["python", "python3", "djangohtml"]
+NeoBundleLazy 'hynek/vim-python-pep8-indent', {
+        \ 'autoload': {
+        \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
 " Simpylfold  Pythonの折りたたみ
 "NeoBundle 'tmhedberg/SimpylFold'
-NeoBundleLazy "hattya/python_fold.vim'", {
-        \ "autoload": {
-        \   "filetypes": ["python", "python3", "djangohtml"]
+NeoBundleLazy 'hattya/python_fold.vim', {
+        \ 'autoload': {
+        \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
 
 " vim-pandoc
-NeoBundleLazy "vim-pandoc/vim-pandoc", {
-        \ "autoload": {
-        \   "filetypes": ["text", "pandoc", "markdown", "rst", "textile"],
+NeoBundleLazy 'vim-pandoc/vim-pandoc', {
+        \ 'autoload': {
+        \   'filetypes': ["text", "pandoc", "markdown", "rst", "textile"],
         \ }}
 
 
 " HTML/CSS/Sass
-NeoBundleLazy "taichouchou2/html5.vim", {
-        \ "autoload": {
-        \   "filetypes": ["html", "djangohtml", "css"],
+NeoBundleLazy 'taichouchou2/html5.vim', {
+        \ 'autoload': {
+        \   'filetypes': ["html", "djangohtml", "css"],
         \ }}
-NeoBundleLazy "hail2u/vim-css3-syntax", {
-        \ "autoload": {
-        \   "filetypes": ["html", "djangohtml", "css"],
+NeoBundleLazy 'hail2u/vim-css3-syntax', {
+        \ 'autoload': {
+        \   'filetypes': ["html", "djangohtml", "css"],
         \ }}
 " Emmet
-NeoBundleLazy "mattn/emmet-vim", {
-        \ "autoload": {
-        \   "filetypes": ["html", "djangohtml", "css"],
+NeoBundleLazy 'mattn/emmet-vim', {
+        \ 'autoload': {
+        \   'filetypes': ["html", "djangohtml", "css"],
         \ }}
 " closetag
 NeoBundle 'vim-scripts/closetag.vim'
 
 " Javascript
 " simple-javascript-indenter
-NeoBundleLazy "jiangmiao/simple-javascript-indenter", {
-        \ "autoload": {
-        \   "filetypes": ["javascript"],
+NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
+        \ 'autoload': {
+        \   'filetypes': ["javascript"],
         \ }}
 " vim-javascript-syntax
-NeoBundleLazy "jelera/vim-javascript-syntax", {
-        \ "autoload": {
-        \   "filetypes": ["javascript"],
+NeoBundleLazy 'jelera/vim-javascript-syntax', {
+        \ 'autoload': {
+        \   'filetypes': ["javascript"],
         \ }}
 " vim-nodejs-complete
-NeoBundleLazy "myhere/vim-nodejs-complete", {
-        \ "autoload": {
-        \   "filetypes": ["javascript"],
+NeoBundleLazy 'myhere/vim-nodejs-complete', {
+        \ 'autoload': {
+        \   'filetypes': ["javascript"],
         \ }}
 " vim-jade
-NeoBundleLazy "digitaltoad/vim-jade", {
-        \ "autoload": {
-        \   "filetypes": ["jade"],
+NeoBundleLazy 'digitaltoad/vim-jade', {
+        \ 'autoload': {
+        \   'filetypes': ["jade"],
         \ }}
 
 " Markdown
 " vim-markdown
-NeoBundleLazy "plasticboy/vim-markdown", {
-        \ "autoload": {
-        \   "filetypes": ["markdown"],
+NeoBundleLazy 'plasticboy/vim-markdown', {
+        \ 'autoload': {
+        \   'filetypes': ["markdown"],
         \ }}
 " previm
-NeoBundleLazy "kannokanno/previm", {
-        \ "autoload": {
-        \   "filetypes": ["markdown"],
+NeoBundleLazy 'kannokanno/previm', {
+        \ 'autoload': {
+        \   'filetypes': ["markdown"],
         \ }}
 
 
