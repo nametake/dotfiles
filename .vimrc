@@ -711,6 +711,40 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "************************
 " neosnippet
 "************************
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand)
+smap <C-k>     <Plug>(neosnippet_expand)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+imap <expr><TAB> pumvisible() ?
+            \"\<C-n>"
+            \: neosnippet#jumpable() ? "\<Plug>(neosnippet_jump_or_expand)"
+            \: "\<TAB>"
+smap <expr><TAB> neosnippet#jumpable()?
+            \"\<Plug>(neosnippet_expand_or_jump)"
+            \: "\<TAB>"
+
+
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"\ "\<Plug>(neosnippet_expand_or_jump)"
+"\: pumvisible() ? "\<C-n>" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"\ "\<Plug>(neosnippet_expand_or_jump)"
+"\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+
 """ <TAB>: completion.
 """ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 ""inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
