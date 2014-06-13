@@ -26,7 +26,7 @@ let OSTYPE = system('uname')
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " NeoBundle setting
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
+"{{{
 filetype off
 
 if has('vim_starting')
@@ -51,15 +51,17 @@ NeoBundle 'Shougo/vimproc', {
 "---------------------------------------
 " Bundle
 "---------------------------------------
+"{{{
 "************************
 " General
 "************************
+"{{{
 " unite
 "NeoBundle 'Shougo/unite.vim'
 NeoBundleLazy 'Shougo/unite.vim', {
             \ 'autoload' : {
             \   'command' : ['Unite']
-            \}}
+            \ }}
 
 " unite-outline
 "NeoBundle 'h1mesuke/unite-outline'
@@ -124,10 +126,12 @@ NeoBundle 'tyru/open-browser.vim'
 
 " auto-pairs
 NeoBundle 'jiangmiao/auto-pairs'
+"}}}
 
 "************************
 " Language
 "************************
+"{{{
 " Latex
 "NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
@@ -217,20 +221,22 @@ NeoBundleLazy 'digitaltoad/vim-jade', {
 
 " Markdown
 " vim-markdown
-NeoBundleLazy 'plasticboy/vim-markdown', {
-        \ 'autoload': {
-        \   'filetypes': ["markdown"],
-        \ }}
+NeoBundle 'plasticboy/vim-markdown'
+"NeoBundleLazy 'plasticboy/vim-markdown', {
+"        \ 'autoload': {
+"        \   'filetypes': ["markdown"],
+"        \ }}
 " previm
 NeoBundleLazy 'kannokanno/previm', {
         \ 'autoload': {
         \   'filetypes': ["markdown"],
         \ }}
-
+"}}}
 
 "************************
 " Colorscheme
 "************************
+"{{{
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/twilight'
@@ -240,17 +246,18 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Wombat'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/rdark'
-
-
+"}}}
 
 " Neo Bundle Required
 filetype plugin indent on
+"}}}
 
+"}}}
 
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " Setting
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-"
+"{{{
 " Plugin Path
 set runtimepath+=~/.vim/plugin
 
@@ -263,6 +270,7 @@ augroup END
 "---------------------------------------
 " Basic setting
 "---------------------------------------
+"{{{
 " Vimの設定をデフォルトに
 set nocompatible
 
@@ -345,7 +353,7 @@ set novisualbell
 set foldenable
 
 " シンタックスに従い折りたたみ
-set foldmethod=marker
+set foldmethod=syntax
 
 " カーソルが移動した時に自動で折りたたみを開く
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
@@ -358,11 +366,12 @@ set foldnestmax=2
 
 " 左側に折りたたみガイド表示
 set foldcolumn=2
-
+"}}}
 
 "---------------------------------------
 " Color Scheme and Font setting
 "---------------------------------------
+"{{{
 " Vimを256色対応にする
 set t_Co=256
 
@@ -376,11 +385,12 @@ colorscheme molokai
 " Font
 set guifont=Ricty\ 12
 set guifontwide=Ricty\ 12
-
+"}}}
 
 "---------------------------------------
 " Apperance setting
 "---------------------------------------
+"{{{
 " 行番号を表示
 set number
 
@@ -401,11 +411,12 @@ set showmatch
 set matchtime=3
 " 対応括弧に<と>のペアを追加
 set matchpairs& matchpairs+=<:>
-
+"}}}
 
 "---------------------------------------
 " Indent setting
 "---------------------------------------
+"{{{
 " タブ幅
 set tabstop=4
 
@@ -419,13 +430,12 @@ set expandtab
 
 " インデントをshiftwidthの倍数を丸める
 set shiftround
-
-
-
+"}}}
 
 "---------------------------------------
 " Auto Complete setting
 "---------------------------------------
+"{{{
 " コマンドラインモード補完
 set wildmenu
 
@@ -437,11 +447,12 @@ set wildmode=list:full
 
 " 補完時に大文字小文字を区別しない
 set infercase
-
+"}}}
 
 "---------------------------------------
 " Search setting
 "---------------------------------------
+"{{{
 "最後まで検索したら先頭へ戻る
 set wrapscan
 
@@ -456,10 +467,12 @@ set incsearch
 
 " 検索文字をハイライト
 set hlsearch 
-"
+"}}}
+
 "---------------------------------------
 " Key setting
 "---------------------------------------
+"{{{
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
 nnoremap N Nzz
@@ -488,15 +501,14 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+"}}}
 
-""inoremap { {}<LEFT>
-""inoremap [ []<LEFT>
-""inoremap ( ()<LEFT>
-""inoremap " ""<LEFT>
-""inoremap ' ''<LEFT>
 "---------------------------------------
 " Setting of each language
 "---------------------------------------
+"{{{
+" vimrcの時はマーカーで閉じる
+autocmd MyAutoCmd Filetype vim set foldmethod=marker
 " Python 
 " インデントを半角スペース4個
 autocmd MyAutoCmd FileType python set expandtab
@@ -511,6 +523,7 @@ autocmd MyAutoCmd FileType python set colorcolumn=80
 autocmd MyAutoCmd FileType javascript set foldlevel=1
 autocmd MyAutoCmd FileType javascript set foldnestmax=99
 " jade
+autocmd MyAutoCmd BufNewFile,BufRead *.jade set filetype=jade
 autocmd MyAutoCmd FileType jade set tabstop=2
 autocmd MyAutoCmd FileType jade set shiftwidth=2
 autocmd MyAutoCmd FileType jade set softtabstop=2
@@ -547,18 +560,20 @@ autocmd MyAutoCmd FileType kv set foldlevel=99
 autocmd MyAutoCmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd MyAutoCmd FileType markdown set foldlevel=1
 autocmd MyAutoCmd FileType markdown set foldnestmax=3
+autocmd MyAutoCmd FileType markdown set noexpandtab
 
-
+"}}}
+"}}}
 
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " Plugin setting
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-"
-"
+
+
 "---------------------------------------
 " General
 "---------------------------------------
-"
+
 "************************
 " neocomplcache
 "************************
@@ -635,7 +650,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -1097,3 +1112,4 @@ let g:node_usejscomplete = 1
 " previm
 "************************
 let g:previm_open_cmd = 'google-chrome'
+
