@@ -26,7 +26,7 @@ let OSTYPE = system('uname')
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " NeoBundle setting
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-"{{{
+
 filetype off
 
 if has('vim_starting')
@@ -51,11 +51,11 @@ NeoBundle 'Shougo/vimproc', {
 "---------------------------------------
 " Bundle
 "---------------------------------------
-"{{{
+
 "************************
 " General
 "************************
-"{{{
+
 " unite
 "NeoBundle 'Shougo/unite.vim'
 NeoBundleLazy 'Shougo/unite.vim', {
@@ -71,7 +71,6 @@ NeoBundleLazy 'h1mesuke/unite-outline', {
             \ }}
 
 " 補完
-"NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete'
 
 " スニペット
@@ -126,12 +125,12 @@ NeoBundle 'tyru/open-browser.vim'
 
 " auto-pairs
 NeoBundle 'jiangmiao/auto-pairs'
-"}}}
+
 
 "************************
 " Language
 "************************
-"{{{
+
 " Latex
 "NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
@@ -231,12 +230,12 @@ NeoBundleLazy 'kannokanno/previm', {
         \ 'autoload': {
         \   'filetypes': ["markdown"],
         \ }}
-"}}}
+
 
 "************************
 " Colorscheme
 "************************
-"{{{
+
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/twilight'
@@ -246,18 +245,18 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/Wombat'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/rdark'
-"}}}
+
 
 " Neo Bundle Required
 filetype plugin indent on
-"}}}
 
-"}}}
+
+
 
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " Setting
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-"{{{
+
 " Plugin Path
 set runtimepath+=~/.vim/plugin
 
@@ -270,7 +269,7 @@ augroup END
 "---------------------------------------
 " Basic setting
 "---------------------------------------
-"{{{
+
 " Vimの設定をデフォルトに
 set nocompatible
 
@@ -366,12 +365,12 @@ set foldnestmax=2
 
 " 左側に折りたたみガイド表示
 set foldcolumn=2
-"}}}
+
 
 "---------------------------------------
 " Color Scheme and Font setting
 "---------------------------------------
-"{{{
+
 " Vimを256色対応にする
 set t_Co=256
 
@@ -385,12 +384,12 @@ colorscheme molokai
 " Font
 set guifont=Ricty\ 12
 set guifontwide=Ricty\ 12
-"}}}
+
 
 "---------------------------------------
 " Apperance setting
 "---------------------------------------
-"{{{
+
 " 行番号を表示
 set number
 
@@ -411,12 +410,12 @@ set showmatch
 set matchtime=3
 " 対応括弧に<と>のペアを追加
 set matchpairs& matchpairs+=<:>
-"}}}
+
 
 "---------------------------------------
 " Indent setting
 "---------------------------------------
-"{{{
+
 " タブ幅
 set tabstop=4
 
@@ -430,12 +429,12 @@ set expandtab
 
 " インデントをshiftwidthの倍数を丸める
 set shiftround
-"}}}
+
 
 "---------------------------------------
 " Auto Complete setting
 "---------------------------------------
-"{{{
+
 " コマンドラインモード補完
 set wildmenu
 
@@ -447,12 +446,12 @@ set wildmode=list:full
 
 " 補完時に大文字小文字を区別しない
 set infercase
-"}}}
+
 
 "---------------------------------------
 " Search setting
 "---------------------------------------
-"{{{
+
 "最後まで検索したら先頭へ戻る
 set wrapscan
 
@@ -467,12 +466,12 @@ set incsearch
 
 " 検索文字をハイライト
 set hlsearch 
-"}}}
+
 
 "---------------------------------------
 " Key setting
 "---------------------------------------
-"{{{
+
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
 nnoremap N Nzz
@@ -501,69 +500,92 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-"}}}
+
 
 "---------------------------------------
 " Setting of each language
 "---------------------------------------
-"{{{
-" vimrcの時はマーカーで閉じる
-autocmd MyAutoCmd Filetype vim set foldmethod=marker
+
+" vim
+autocmd MyAutoCmd FileType vim call s:setVimOnly()
+function! s:setVimOnly()
+    set foldmethod=marker
+endfunction
+
 " Python 
-" インデントを半角スペース4個
-autocmd MyAutoCmd FileType python set expandtab
-autocmd MyAutoCmd FileType python set tabstop=4
-autocmd MyAutoCmd FileType python set shiftwidth=4
-autocmd MyAutoCmd FileType python set softtabstop=4
-autocmd MyAutoCmd FileType python set autoindent
-autocmd MyAutoCmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd MyAutoCmd FileType python set colorcolumn=80
+autocmd MyAutoCmd FileType python call s:setPythonOnly()
+function! s:setPythonOnly()
+    set expandtab
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=4
+    set autoindent
+    set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+    set colorcolumn=80
+endfunction
 
 "javascript
-autocmd MyAutoCmd FileType javascript set foldlevel=1
-autocmd MyAutoCmd FileType javascript set foldnestmax=99
+autocmd MyAutoCmd FileType javascript call s:setJavascriptOnly()
+function! s:setJavascriptOnly()
+    set foldlevel=1
+    set foldnestmax=99
+endfunction
 " jade
 autocmd MyAutoCmd BufNewFile,BufRead *.jade set filetype=jade
-autocmd MyAutoCmd FileType jade set tabstop=2
-autocmd MyAutoCmd FileType jade set shiftwidth=2
-autocmd MyAutoCmd FileType jade set softtabstop=2
+autocmd MyAutoCmd FileType jade call s:setJadeOnly()
+function! s:setJadeOnly()
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
+endfunction
 
 " tex
-" ファイルはインデントしない"
-autocmd MyAutoCmd FileType tex set noautoindent
-autocmd MyAutoCmd FileType tex set tabstop=2
-autocmd MyAutoCmd FileType tex set shiftwidth=2
-autocmd MyAutoCmd FileType tex set softtabstop=2
+autocmd MyAutoCmd FileType tex call s:setTexOnly()
+function! s:setTexOnly()
+    set noautoindent
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
+endfunction
 
 " html
 autocmd MyAutoCmd BufNewFile,BufRead *.html set filetype=htmldjango
-autocmd MyAutoCmd FileType html set noautoindent
-autocmd MyAutoCmd FileType html set nosmartindent
-autocmd MyAutoCmd FileType html set expandtab
-autocmd MyAutoCmd FileType html set tabstop=4
-autocmd MyAutoCmd FileType html set shiftwidth=4
-autocmd MyAutoCmd FileType html set softtabstop=4
+autocmd MyAutoCmd FileType htmldjango call s:setHtmlOnly()
+function! s:setHtmlOnly()
+    set noautoindent
+    set nosmartindent
+    set expandtab
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=4
+endfunction
 
 " kivy
 autocmd MyAutoCmd BufRead,BufNewFile *.kv set filetype=kv
-autocmd MyAutoCmd FileType kv set softtabstop=4
-autocmd MyAutoCmd FileType kv set textwidth=79
-autocmd MyAutoCmd FileType kv set shiftwidth=4
-autocmd MyAutoCmd FileType kv set expandtab
-autocmd MyAutoCmd FileType kv set tabstop=8
-autocmd MyAutoCmd FileType kv set list
-autocmd MyAutoCmd FileType kv set foldmethod=indent
-autocmd MyAutoCmd FileType kv set foldlevelstart=99
-autocmd MyAutoCmd FileType kv set foldlevel=99
+autocmd MyAutoCmd FileType kv call s:setKivyOnly()
+function! s:setKivyOnly()
+    set softtabstop=4
+    set textwidth=79
+    set shiftwidth=4
+    set expandtab
+    set tabstop=8
+    set list
+    set foldmethod=indent
+    set foldlevelstart=99
+    set foldlevel=99
+endfunction
 
-" md as markdown, instead of modula2
+" markdown
 autocmd MyAutoCmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-autocmd MyAutoCmd FileType markdown set foldlevel=1
-autocmd MyAutoCmd FileType markdown set foldnestmax=3
-autocmd MyAutoCmd FileType markdown set noexpandtab
+autocmd MyAutoCmd FileType markdown call s:setMarkdownOnly()
+function! s:setMarkdownOnly()
+    set foldlevel=1
+    set foldnestmax=3
+    set noexpandtab
+endfunction
 
-"}}}
-"}}}
+
+
 
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " Plugin setting
@@ -573,100 +595,6 @@ autocmd MyAutoCmd FileType markdown set noexpandtab
 "---------------------------------------
 " General
 "---------------------------------------
-
-"************************
-" neocomplcache
-"************************
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Enable heavy features.
-" Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-"let g:neocomplcache_enable_underbar_completion = 1
-
-" Define dictionary.
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-" Define keyword.
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
-
-" For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-"inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-"inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
-" Or set this.
-"let g:neocomplcache_enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplcache_enable_insert_char_pre = 1
-
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 0
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
 
 "************************
 " neocomplete
@@ -737,11 +665,11 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd MyAutoCmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd MyAutoCmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd MyAutoCmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmdMyAutoCmd  FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd MyAutoCmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
