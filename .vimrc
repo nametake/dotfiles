@@ -71,14 +71,37 @@ NeoBundleLazy 'h1mesuke/unite-outline', {
             \ }}
 
 " 補完
-NeoBundle 'Shougo/neocomplete'
+"NeoBundle 'Shougo/neocomplete'
+NeoBundleLazy 'Shougo/neocomplete', {
+            \ 'autoload' : {
+            \   'insert': 1
+            \ }}
 
 " スニペット
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundleLazy 'Shougo/neosnippet', {
+            \ 'autoload' : {
+            \   'insert': 1
+            \ }}
+NeoBundleLazy 'Shougo/neosnippet-snippets', {
+            \ 'autoload' : {
+            \   'insert': 1
+            \ }}
+"NeoBundle 'Shougo/neosnippet'
+"NeoBundle 'Shougo/neosnippet-snippets'
+
+" vimfiler
+"NeoBundle 'Shougo/vimfiler'
+NeoBundleLazy 'Shougo/vimfiler', {
+            \   'autoload' : { 'commands' : [ 'VimFilerBufferDir' ] },
+            \   'depends': [ 'Shougo/unite.vim' ],
+            \ }
 
 " vimshell
-NeoBundle 'Shougo/vimshell'
+"NeoBundle 'Shougo/vimshell'
+NeoBundleLazy 'Shougo/vimshell', {
+            \   'autoload' : { 'commands' : [ 'VimShellBufferDir' ] },
+            \   'depends': [ 'Shougo/vimproc' ],
+            \ }
 
 " Surround
 NeoBundle 'tpope/vim-surround'
@@ -102,8 +125,6 @@ NeoBundle "thinca/vim-template"
 NeoBundle 'itchyny/lightline.vim'
 
 
-" vimfiler
-NeoBundle 'Shougo/vimfiler'
 
 " Fcitx setting
 NeoBundle 'vim-scripts/fcitx.vim'
@@ -599,119 +620,128 @@ endfunction
 "************************
 " neocomplete
 "************************
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let s:hooks = neobundle#get_hooks("neocomplete")
 
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+function! s:hooks.on_source(bundle)
 
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+    "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+    " Disable AutoComplPop.
+    let g:acp_enableAtStartup = 0
+    " Use neocomplete.
+    let g:neocomplete#enable_at_startup = 1
+    " Use smartcase.
+    let g:neocomplete#enable_smart_case = 1
+    " Set minimum syntax keyword length.
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+    " Define dictionary.
+    let g:neocomplete#sources#dictionary#dictionaries = {
+        \ 'default' : '',
+        \ 'vimshell' : $HOME.'/.vimshell_hist',
+        \ 'scheme' : $HOME.'/.gosh_completions'
+            \ }
 
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    " Define keyword.
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+    " Plugin key-mappings.
+    inoremap <expr><C-g>     neocomplete#undo_completion()
+    inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+    " Recommended key-mappings.
+    " <CR>: close popup and save indent.
+    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    function! s:my_cr_function()
+      return neocomplete#close_popup() . "\<CR>"
+      " For no inserting <CR> key.
+      "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    endfunction
+    " <TAB>: completion.
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    " <C-h>, <BS>: close popup and delete backword char.
+    " inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><C-y>  neocomplete#close_popup()
+    inoremap <expr><C-e>  neocomplete#cancel_popup()
+    " Close popup by <Space>.
+    "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+
+    " For cursor moving in insert mode(Not recommended)
+    "inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
+    "inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
+    "inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
+    "inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
+    " Or set this.
+    "let g:neocomplete#enable_cursor_hold_i = 1
+    " Or set this.
+    "let g:neocomplete#enable_insert_char_pre = 1
+
+    " AutoComplPop like behavior.
+    "let g:neocomplete#enable_auto_select = 1
+
+    " Shell like behavior(not recommended).
+    "set completeopt+=longest
+    "let g:neocomplete#enable_auto_select = 1
+    "let g:neocomplete#disable_auto_complete = 1
+    "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+    " Enable omni completion.
+    autocmd MyAutoCmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd MyAutoCmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd MyAutoCmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    "autocmd MyAutoCmd  FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd MyAutoCmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+    " Enable heavy omni completion.
+    if !exists('g:neocomplete#sources#omni#input_patterns')
+      let g:neocomplete#sources#omni#input_patterns = {}
+    endif
+    "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+    "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+    "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+    " For perlomni.vim setting.
+    " https://github.com/c9s/perlomni.vim
+    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
 endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
-
-" For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
-"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
-"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
-" Or set this.
-"let g:neocomplete#enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplete#enable_insert_char_pre = 1
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
-" Enable omni completion.
-autocmd MyAutoCmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd MyAutoCmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd MyAutoCmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmdMyAutoCmd  FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd MyAutoCmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "************************
 " neosnippet
 "************************
 
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand)
-smap <C-k>     <Plug>(neosnippet_expand)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+let s:hooks = neobundle#get_hooks("neosnippet")
 
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+function! s:hooks.on_source(bundle)
+    " Plugin key-mappings.
+    imap <C-k>     <Plug>(neosnippet_expand)
+    smap <C-k>     <Plug>(neosnippet_expand)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-inoremap <expr><CR>  pumvisible() ?
-            \ neocomplete#close_popup() : "\<CR>"
+    " <TAB>: completion.
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
-imap <expr><TAB> pumvisible() ?
-            \"\<C-n>"
-            \: neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
-            \: "\<TAB>"
-smap <expr><TAB> neosnippet#jumpable()?
-            \"\<Plug>(neosnippet_expand)"
-            \: "\<TAB>"
+    inoremap <expr><CR>  pumvisible() ?
+                \ neocomplete#close_popup() : "\<CR>"
 
+    imap <expr><TAB> pumvisible() ?
+                \"\<C-n>"
+                \: neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
+                \: "\<TAB>"
+    smap <expr><TAB> neosnippet#jumpable()?
+                \"\<Plug>(neosnippet_expand)"
+                \: "\<TAB>"
 
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
+    " For snippet_complete marker.
+    if has('conceal')
+      set conceallevel=2 concealcursor=i
+    endif
+endfunction
 
 
 "************************
@@ -747,9 +777,9 @@ let g:indent_guides_start_level=2
 " 自動カラーを無効にする
 let g:indent_guides_auto_colors=0
 " 奇数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=235
+autocmd MyAutoCmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=235
 " 偶数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3a3a3a ctermbg=237
+autocmd MyAutoCmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3a3a3a ctermbg=237
 " ハイライト色の変化の幅
 let g:indent_guides_color_change_percent = 30
 " ガイドの幅
@@ -850,37 +880,41 @@ nnoremap <silent> <Space>uo : <C-u>Unite -vertical -winwidth=30 outline<CR>
 "************************
 " vimfiler
 "************************
-let g:vimfiler_as_default_explorer = 1
 
-"nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
 nnoremap <Space>f :VimFiler -buffer-name=explorer -toggle<Cr>
-autocmd! FileType vimfiler call g:my_vimfiler_settings()
-function! g:my_vimfiler_settings()
-    nmap <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
-    nnoremap <buffer>s :call vimfiler#mappings#do_action('my_split')<Cr>
-    nnoremap <buffer>v :call vimfiler#mappings#do_action('my_vsplit')<Cr>
-    " use R to refresh
-    nmap <buffer> R <Plug>(vimfiler_redraw_screen)
-    " overwrite C-l
-    nmap <buffer> <C-l> <C-w>l
+let s:bundle = neobundle#get('vimfiler')
+
+function! s:bundle.hooks.on_source(bundle)
+    let g:vimfiler_as_default_explorer = 1
+
+    "nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+    nnoremap <Space>f :VimFiler -buffer-name=explorer -toggle<Cr>
+    autocmd! FileType vimfiler call g:my_vimfiler_settings()
+    function! g:my_vimfiler_settings()
+        nmap <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
+        nnoremap <buffer>s :call vimfiler#mappings#do_action('my_split')<Cr>
+        nnoremap <buffer>v :call vimfiler#mappings#do_action('my_vsplit')<Cr>
+        " use R to refresh
+        nmap <buffer> R <Plug>(vimfiler_redraw_screen)
+        " overwrite C-l
+        nmap <buffer> <C-l> <C-w>l
+    endfunction
+
+    let s:my_action = { 'is_selectable' : 1 }
+    function! s:my_action.func(candidates)
+        wincmd p
+        exec 'split '. a:candidates[0].action__path
+    endfunction
+    call unite#custom_action('file', 'my_split', s:my_action)
+
+    let s:my_action = { 'is_selectable' : 1 }
+    function! s:my_action.func(candidates)
+        wincmd p
+        exec 'vsplit '. a:candidates[0].action__path
+    endfunction
+    call unite#custom_action('file', 'my_vsplit', s:my_action)
 endfunction
 
-let s:my_action = { 'is_selectable' : 1 }
-function! s:my_action.func(candidates)
-    wincmd p
-    exec 'split '. a:candidates[0].action__path
-endfunction
-call unite#custom_action('file', 'my_split', s:my_action)
-
-let s:my_action = { 'is_selectable' : 1 }
-function! s:my_action.func(candidates)
-    wincmd p
-    exec 'vsplit '. a:candidates[0].action__path
-endfunction
-call unite#custom_action('file', 'my_vsplit', s:my_action)
-
-"---------------------------------------
-" Language
 "---------------------------------------
 "
 "************************
@@ -934,47 +968,34 @@ let g:Tex_ViewRule_pdf = 'evince'
 "************************
 " jedi-vim
 "************************
-"let s:hooks = neobundle#get_hooks("jedi-vim")
-"function! s:hooks.on_source(bundle)
-"  " jediにvimの設定を任せると'completeopt+=preview'するので
-"  " 自動設定機能をOFFにし手動で設定を行う
-"  let g:jedi#auto_vim_configuration = 0
-"  " 補完の最初の項目が選択された状態だと使いにくいためオフにする
-"  let g:jedi#popup_select_first = 0
-"  " quickrunと被るため大文字に変更
-"  "let g:jedi#rename_command = '<Leader>R'
-"  " gundoと被るため大文字に変更 (2013-06-24 10:00 追記）
-"  "let g:jedi#goto_command = '<Leader>G'
-"endfunction
-"
-"let g:jedi#auto_initialization = 1
-"let g:jedi#popup_on_dot = 0
-"autocmd  FileType python let b:did_ftplugin = 1
-autocmd FileType python setlocal omnifunc=jedi#completions
+let s:hooks = neobundle#get_hooks("jedi-vim")
 
-let g:jedi#auto_initialization = 1
+function! s:hooks.on_source(bundle)
+    autocmd MyAutoCmd FileType python setlocal omnifunc=jedi#completions
 
-let g:jedi#auto_vim_configuration = 0
-" The reason to deactivate jedi#auto_vim_configuration
-"autocmd FileType python setlocal completeopt-=preview 
+    let g:jedi#auto_initialization = 1
 
-let g:jedi#use_splits_not_buffers = "left"
+    let g:jedi#auto_vim_configuration = 0
+    " The reason to deactivate jedi#auto_vim_configuration
+    "autocmd FileType python setlocal completeopt-=preview 
 
-if !exists('g:neocomplete#force_omni_input_patterns')
-        let g:neocomplete#force_omni_input_patterns = {}
-endif
+    let g:jedi#use_splits_not_buffers = "left"
 
-" 最初の項目を選択しない
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
+    if !exists('g:neocomplete#force_omni_input_patterns')
+            let g:neocomplete#force_omni_input_patterns = {}
+    endif
 
-let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+    " 最初の項目を選択しない
+    let g:jedi#popup_on_dot = 0
+    let g:jedi#popup_select_first = 0
 
-autocmd FileType python setlocal omnifunc=jedi#completions
-"let g:jedi#popup_select_first=0
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+    let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
+    "let g:jedi#popup_select_first=0
+    let g:jedi#completions_enabled = 0
+    let g:jedi#auto_vim_configuration = 0
+    let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+endfunction
 
 "************************
 " flake8-vim
@@ -995,7 +1016,7 @@ let g:PyFlakeRangeCommand = 'Q'
 " closetag
 "************************
 let g:closetag_html_style=1
-autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+autocmd MyAutoCmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 "************************
 " syntastic
@@ -1032,7 +1053,7 @@ let g:quickrun_config={
 "************************
 " vim-nodejs-complete
 "************************
-autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+autocmd MyAutoCmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
 
 let g:node_usejscomplete = 1
 
