@@ -57,18 +57,18 @@ NeoBundle 'Shougo/vimproc', {
 "************************
 
 " unite
-"NeoBundle 'Shougo/unite.vim'
-NeoBundleLazy 'Shougo/unite.vim', {
-            \ 'autoload' : {
-            \   'command' : ['Unite']
-            \ }}
+NeoBundle 'Shougo/unite.vim'
+"NeoBundleLazy 'Shougo/unite.vim', {
+"            \ 'autoload' : {
+"            \   'command' : ['Unite']
+"            \ }}
 
 " unite-outline
-"NeoBundle 'h1mesuke/unite-outline'
-NeoBundleLazy 'h1mesuke/unite-outline', {
-            \ 'autoload' : {
-            \   'command' : ['Unite']
-            \ }}
+NeoBundle 'h1mesuke/unite-outline'
+"NeoBundleLazy 'h1mesuke/unite-outline', {
+"            \ 'autoload' : {
+"            \   'command' : ['Unite']
+"            \ }}
 
 " 補完
 NeoBundle 'Shougo/neocomplete'
@@ -710,8 +710,8 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " neosnippet
 "************************
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand)
-smap <C-k>     <Plug>(neosnippet_expand)
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " <TAB>: completion.

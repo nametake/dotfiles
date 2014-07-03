@@ -38,3 +38,5 @@ export ANDROIDNDK=/usr/local/adt/ndk-r9b
 export ANDROIDNDKVER=r9
 export ANDROIDAPI=19
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
