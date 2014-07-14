@@ -361,8 +361,8 @@ set write
 
 " IMEの設定
 ""inoremap <C-[> <C-[><C-[> 
-inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
-inoremap <silent> <C-[> <C-[>:set iminsert=0<CR>
+"inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+"inoremap <silent> <C-[> <C-[>:set iminsert=0<CR>
 " <ESC>押下後のIM切替開始までの反応が遅い場合はttimeoutlenを短く設定してみてください。
 " 前時代的スクリーンベルを無効化
 set t_vb=
@@ -963,8 +963,9 @@ let g:Tex_ViewRule_pdf = 'evince'
 "************************
 let s:hooks = neobundle#get_hooks("jedi-vim")
 
+autocmd MyAutoCmd FileType python setlocal omnifunc=jedi#completions
+
 function! s:hooks.on_source(bundle)
-    autocmd MyAutoCmd FileType python setlocal omnifunc=jedi#completions
 
     let g:jedi#auto_initialization = 1
 
