@@ -731,6 +731,10 @@ smap <expr><TAB> neosnippet#jumpable()?
             \: "\<TAB>"
 
 
+" 自分用 snippet ファイルの場所
+let s:my_snippet = '~/.vim/snippet/'
+let g:neosnippet#snippets_directory = s:my_snippet
+
 " For snippet_complete marker.
 if has('conceal')
   set conceallevel=2 concealcursor=i
@@ -967,7 +971,7 @@ autocmd MyAutoCmd FileType python setlocal omnifunc=jedi#completions
 
 function! s:hooks.on_source(bundle)
 
-    let g:jedi#auto_initialization = 1
+    let g:jedi#auto_initialization = 0
 
     let g:jedi#auto_vim_configuration = 0
     " The reason to deactivate jedi#auto_vim_configuration
