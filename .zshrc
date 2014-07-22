@@ -105,6 +105,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 
+alias tmux='tmux -2'
+
 ########################################
 # key bind 
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
