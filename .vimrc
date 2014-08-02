@@ -175,6 +175,7 @@ NeoBundle 'jiangmiao/auto-pairs'
 " vim-fugitive
 NeoBundle 'tpope/vim-fugitive'
 
+NeoBundle 'koron/nyancat-vim'
 
 "************************
 " Language
@@ -1016,7 +1017,7 @@ nnoremap <Space>r :QuickRun<Cr>
 let g:quickrun_config={
             \   '_':{
             \       'split': 'botright 8sp',
-            \       'outputter/buffer/into': 1
+            \       'outputter/buffer/into': 1,
             \   },
             \   'htmldjango':{
             \       'command': 'google-chrome',
@@ -1025,7 +1026,7 @@ let g:quickrun_config={
             \   'tex': {
             \       'command': 'latexmk',
             \       'outputter' : 'error',
-            \       'outputter/error/error' : 'quickfix',
+            \       'outputter/error/error' : 'buffer',
             \       'exec': ['%c -gg -pdfdvi %s', 'xdg-open %s:r.pdf']
             \   },
             \}
