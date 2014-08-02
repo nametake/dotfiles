@@ -1024,6 +1024,8 @@ let g:quickrun_config={
             \   },
             \   'tex': {
             \       'command': 'latexmk',
+            \       'outputter' : 'error',
+            \       'outputter/error/error' : 'quickfix',
             \       'exec': ['%c -gg -pdfdvi %s', 'xdg-open %s:r.pdf']
             \   },
             \}
