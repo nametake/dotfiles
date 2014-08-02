@@ -127,7 +127,32 @@ NeoBundle 'itchyny/lightline.vim'
 
 
 " Fcitx setting
-NeoBundle 'vim-scripts/fcitx.vim'
+"NeoBundle 'vim-scripts/fcitx.vim'
+
+"##### auto fcitx  ###########
+let g:input_toggle = 1
+function! Fcitx2en()
+   let s:input_status = system("fcitx-remote")
+   if s:input_status == 2
+      let g:input_toggle = 1
+      let l:a = system("fcitx-remote -c")
+   endif
+endfunction
+
+function! Fcitx2zh()
+   let s:input_status = system("fcitx-remote")
+   if s:input_status != 2 && g:input_toggle == 1
+      let l:a = system("fcitx-remote -o")
+      let g:input_toggle = 0
+   endif
+endfunction
+
+set ttimeoutlen=150
+"退出插入模式
+autocmd InsertLeave * call Fcitx2en()
+"进入插入模式
+autocmd InsertEnter * call Fcitx2zh()
+"##### auto fcitx end ######
 
 " sudo.vim
 NeoBundle 'sudo.vim'
@@ -147,14 +172,13 @@ NeoBundle 'tyru/open-browser.vim'
 " auto-pairs
 NeoBundle 'jiangmiao/auto-pairs'
 
+" vim-fugitive
+NeoBundle 'tpope/vim-fugitive'
+
 
 "************************
 " Language
 "************************
-
-" Latex
-"NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
 " python
 " Djangoを正しくVimで読み込めるようにする
@@ -912,55 +936,6 @@ function! s:bundle.hooks.on_source(bundle)
     call unite#custom_action('file', 'my_vsplit', s:my_action)
 endfunction
 
-"---------------------------------------
-"
-"************************
-" vim-latex
-"************************
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-let g:Imap_UsePlaceHolders = 1
-let g:Imap_DeleteEmptyPlaceHolders = 1
-let g:Imap_StickyPlaceHolders = 0
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_FormatDependency_ps = 'dvi,ps'
-let g:Tex_FormatDependency_pdf = 'dvi,pdf'
-"let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
-"let g:Tex_FormatDependency_pdf = 'pdf'
-let g:Tex_CompileRule_dvi = 'platex -synctex=1 -interaction=nonstopmode $*'
-"let g:Tex_CompileRule_dvi = 'uplatex -synctex=1 -interaction=nonstopmode $*'
-let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
-let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
-"let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
-"let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
-"let g:Tex_CompileRule_pdf = 'lualatex -synctex=1 -interaction=nonstopmode $*'
-"let g:Tex_CompileRule_pdf = 'luajitlatex -synctex=1 -interaction=nonstopmode $*'
-"let g:Tex_CompileRule_pdf = 'xelatex -synctex=1 -interaction=nonstopmode $*'
-let g:Tex_BibtexFlavor = 'pbibtex'
-"let g:Tex_BibtexFlavor = 'upbibtex'
-let g:Tex_MakeIndexFlavor = 'mendex $*.idx'
-let g:Tex_UseEditorSettingInDVIViewer = 1
-let g:Tex_ViewRule_dvi = 'pxdvi -watchfile 1'
-"let g:Tex_ViewRule_dvi = 'advi -watch-file 1'
-"let g:Tex_ViewRule_dvi = 'evince'
-"let g:Tex_ViewRule_dvi = 'okular --unique'
-"let g:Tex_ViewRule_dvi = 'wine ~/.wine/drive_c/w32tex/dviout/dviout.exe -1'
-let g:Tex_ViewRule_ps = 'gv --watch'
-"let g:Tex_ViewRule_ps = 'evince'
-"let g:Tex_ViewRule_ps = 'okular --unique'
-"let g:Tex_ViewRule_ps = 'zathura'
-"let g:Tex_ViewRule_pdf = 'texworks'
-let g:Tex_ViewRule_pdf = 'evince'
-"let g:Tex_ViewRule_pdf = 'okular --unique'
-"let g:Tex_ViewRule_pdf = 'zathura -s -x "vim --servername synctex -n --remote-silent +\%{line} \%{input}"'
-"let g:Tex_ViewRule_pdf = 'qpdfview --unique'
-"let g:Tex_ViewRule_pdf = 'pdfviewer'
-"let g:Tex_ViewRule_pdf = 'gv --watch'
-"let g:Tex_ViewRule_pdf = 'acroread'
-"let g:Tex_ViewRule_pdf = 'pdfopen -viewer ar9-tab'
-" 自動折りたたみしない場合
-"let g:Tex_AutoFolding=0
-
 
 "************************
 " jedi-vim
@@ -1046,7 +1021,11 @@ let g:quickrun_config={
             \   'htmldjango':{
             \       'command': 'google-chrome',
             \       'outputter/buffer/close_on_empty': 1
-            \   }
+            \   },
+            \   'tex': {
+            \       'command': 'latexmk',
+            \       'exec': ['%c -gg -pdfdvi %s', 'xdg-open %s:r.pdf']
+            \   },
             \}
 
 "************************
