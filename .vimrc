@@ -130,7 +130,7 @@ NeoBundle 'itchyny/lightline.vim'
 "NeoBundle 'vim-scripts/fcitx.vim'
 
 "##### auto fcitx  ###########
-let g:input_toggle = 1
+let g:input_toggle = 0
 function! Fcitx2en()
    let s:input_status = system("fcitx-remote")
    if s:input_status == 2
@@ -151,7 +151,7 @@ set ttimeoutlen=150
 " インサートモードを離れた時
 autocmd InsertLeave * call Fcitx2en()
 " インサートモードになった時
-"autocmd InsertEnter * call Fcitx2zh()
+autocmd InsertEnter * call Fcitx2zh()
 "##### auto fcitx end ######
 
 " sudo.vim
