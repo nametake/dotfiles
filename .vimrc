@@ -148,10 +148,10 @@ function! Fcitx2zh()
 endfunction
 
 set ttimeoutlen=150
-"退出插入模式
+" インサートモードを離れた時
 autocmd InsertLeave * call Fcitx2en()
-"进入插入模式
-autocmd InsertEnter * call Fcitx2zh()
+" インサートモードになった時
+"autocmd InsertEnter * call Fcitx2zh()
 "##### auto fcitx end ######
 
 " sudo.vim
