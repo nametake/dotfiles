@@ -1,0 +1,30 @@
+snippet     mytable
+abbr        my table snippet
+options     head
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{${3:row}}\hline
+            ${4:body}
+        \end{tabular}
+        \caption{${1:caption}}
+        \label{tab:${2:label}}
+    \end{table}
+
+
+snippet     myfigure
+abbr        my figure snippet
+options     head
+    \begin{figure}[htpb]
+        \centering
+        \fbox{
+            \includegraphics[width=${3:n-cm}]{${4:path}}
+        }
+        \caption{${1:caption}}
+        \label{fig:${2:label}}
+    \end{figure}
+
+
+snippet     mysource
+abbr        source code
+options     head
+    \lstinputlisting[caption=, label=]{${1:path}}
