@@ -27,4 +27,21 @@ options     head
 snippet     mysource
 abbr        source code
 options     head
-    \lstinputlisting[caption=, label=]{${1:path}}
+    \lstinputlisting[caption=${2:caption}, label=src:${3:label}]{${1:path}}
+
+
+snippet     tabref
+abbr        table ref
+options     head
+    \tabref{tab:${1:label}}
+
+snippet     figref
+abbr        figure ref
+options     head
+    \figref{fig:${1:label}}
+
+snippet     srcref
+abbr        source ref
+options     head
+    \srcref{src:${1:label}}
+
