@@ -345,6 +345,7 @@ set mouse=a
 " OSのクリップボードを使用
 if OSTYPE == "Darwin\n"
    ""Mac
+    set clipboard=unnamed,autoselect
 elseif OSTYPE == "Linux\n"
    ""Linux
     set clipboard=unnamedplus,autoselect

@@ -59,6 +59,7 @@ zstyle ':zle:*' word-style unspecified
 # ls コマンドの色
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
+
 # 補完の設定
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
