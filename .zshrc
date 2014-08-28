@@ -1,6 +1,8 @@
 
 ########################################
-# Color autoload -U colors; colors ########################################
+# Color autoload -U colors; colors
+########################################
+#
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
