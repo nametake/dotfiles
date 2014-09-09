@@ -23,6 +23,8 @@
 " Variable setting every OS
 " Mac -> darwin\n, Linux -> linux\n
 let OSTYPE = system('uname')
+
+let $PYTHON_DLL = "/usr/local/Cellar/python/2.7.8_1/Frameworks/Python.framework/Versions/2.7"
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 " NeoBundle setting
 "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

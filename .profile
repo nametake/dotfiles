@@ -24,19 +24,19 @@ fi
 # PATH setting
 #Linux
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-export CLASSPATH=$CLASSPATH:.:/usr/share/tomcat7/lib/servlet-api.jar:/usr/share/tomcat7/lib/servlet-api.jar
+#export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+#export CLASSPATH=$CLASSPATH:.:/usr/share/tomcat7/lib/servlet-api.jar:/usr/share/tomcat7/lib/servlet-api.jar
 # Tomcat
-export CATALINA_HOME=/usr/share/tomcat7
-export CATALINA_BASE=/var/lib/tomcat7
+#export CATALINA_HOME=/usr/share/tomcat7
+#export CATALINA_BASE=/var/lib/tomcat7
 # Android
-export PATH=$PATH:/usr/local/adt/sdk/tools
-export PATH=$PATH:/usr/local/python-for-android/dist/default
+#export PATH=$PATH:/usr/local/adt/sdk/tools
+#export PATH=$PATH:/usr/local/python-for-android/dist/default
 # kivy
-export ANDROIDSDK=/usr/local/adt/sdk
-export ANDROIDNDK=/usr/local/adt/ndk-r9b
-export ANDROIDNDKVER=r9
-export ANDROIDAPI=19
-
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export ANDROIDSDK=/usr/local/adt/sdk
+#export ANDROIDNDK=/usr/local/adt/ndk-r9b
+#export ANDROIDNDKVER=r9
+#export ANDROIDAPI=19
+#
+#
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
