@@ -919,9 +919,8 @@ function! s:bundle.hooks.on_source(bundle)
     let g:vimfiler_as_default_explorer = 1
 
     "nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
-    nnoremap <Space>f :VimFiler -buffer-name=explorer -toggle<Cr>
-    autocmd! FileType vimfiler call g:my_vimfiler_settings()
-    function! g:my_vimfiler_settings()
+    autocmd! FileType vimfiler call s:my_vimfiler_settings()
+    function! s:my_vimfiler_settings()
         nmap <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
         nnoremap <buffer>s :call vimfiler#mappings#do_action('my_split')<Cr>
         nnoremap <buffer>v :call vimfiler#mappings#do_action('my_vsplit')<Cr>
