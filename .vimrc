@@ -264,6 +264,10 @@ NeoBundleLazy 'digitaltoad/vim-jade', {
         \ 'autoload': {
         \   'filetypes': ["jade"],
         \ }}
+NeoBundleLazy 'pangloss/vim-javascript', {
+        \ 'autoload': {
+        \   'filetypes': ["javascript"],
+        \ }}
 
 " Markdown
 " vim-markdown
@@ -1013,7 +1017,7 @@ let g:SimpleJsIndenter_CaseIndentLevel = -1
 "************************
 " vim-javascript-syntax
 "************************
-autocmd MyAutoCmd FileType javascript call JavaScriptFold()
+"autocmd MyAutoCmd FileType javascript call JavaScriptFold()
 
 "************************
 " vim-quickrun

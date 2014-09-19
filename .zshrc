@@ -75,8 +75,11 @@ case "${OSTYPE}" in
   darwin*)
     # mac
     alias ls='ls -G'
-    alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
     alias brew-cask-upgrade='for c in `brew cask list`; do ! brew cask info $c | grep -qF "Not installed" || brew cask install $c; done'
+    if [ -e /Applications/MacVim.app ]; then
+        alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+        alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+    fi
     ;;
   linux*)
     # linux
