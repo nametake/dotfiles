@@ -1,7 +1,6 @@
 "--------------------
 " vimrc
 "--------------------
-
 let OSTYPE = system('uname')
 
 " release autogroup in MyAutoCmd

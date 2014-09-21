@@ -23,9 +23,11 @@ NeoBundle 'Shougo/vimproc', {
             \   },
             \ }
 
-"************************
-" General
-"************************
+" vim-pandoc
+NeoBundleLazy 'vim-pandoc/vim-pandoc', {
+        \ 'autoload': {
+        \   'filetypes': ["text", "pandoc", "markdown", "rst", "textile"],
+        \ }}
 
 " unite
 NeoBundle 'Shougo/unite.vim'
@@ -80,9 +82,6 @@ NeoBundle 'tpope/vim-surround'
 " Align
 NeoBundle 'vim-scripts/Align'
 
-" YankRing
-"NeoBundle 'vim-scripts/YankRing.vim'
-
 " yankround
 NeoBundle 'LeafCage/yankround.vim'
 
@@ -94,8 +93,6 @@ NeoBundle "thinca/vim-template"
 
 " lightline
 NeoBundle 'itchyny/lightline.vim'
-
-
 
 " Fcitx setting
 "NeoBundle 'vim-scripts/fcitx.vim'
@@ -146,13 +143,13 @@ NeoBundle 'jiangmiao/auto-pairs'
 " vim-fugitive
 NeoBundle 'tpope/vim-fugitive'
 
+" 
 NeoBundle 'koron/nyancat-vim'
 
-"************************
-" Language
-"************************
 
+"--------------------
 " python
+"--------------------
 " Djangoを正しくVimで読み込めるようにする
 NeoBundleLazy 'lambdalisue/vim-django-support', {
         \ 'autoload': {
@@ -189,14 +186,11 @@ NeoBundleLazy 'hattya/python_fold.vim', {
         \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
 
-" vim-pandoc
-NeoBundleLazy 'vim-pandoc/vim-pandoc', {
-        \ 'autoload': {
-        \   'filetypes': ["text", "pandoc", "markdown", "rst", "textile"],
-        \ }}
 
 
+"--------------------
 " HTML/CSS/Sass
+"--------------------
 NeoBundleLazy 'taichouchou2/html5.vim', {
         \ 'autoload': {
         \   'filetypes': ["html", "djangohtml", "css"],
@@ -213,7 +207,9 @@ NeoBundleLazy 'mattn/emmet-vim', {
 " closetag
 NeoBundle 'vim-scripts/closetag.vim'
 
+"--------------------
 " Javascript
+"--------------------
 " simple-javascript-indenter
 NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
         \ 'autoload': {
@@ -239,7 +235,9 @@ NeoBundleLazy 'pangloss/vim-javascript', {
         \   'filetypes': ["javascript"],
         \ }}
 
+"--------------------
 " Markdown
+"--------------------
 " vim-markdown
 NeoBundle 'plasticboy/vim-markdown'
 "NeoBundleLazy 'plasticboy/vim-markdown', {
@@ -252,7 +250,13 @@ NeoBundleLazy 'kannokanno/previm', {
         \   'filetypes': ["markdown"],
         \ }}
 
+"--------------------
+" Go
+"--------------------
+
+"--------------------
 " Colorscheme
+"--------------------
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/twilight'
