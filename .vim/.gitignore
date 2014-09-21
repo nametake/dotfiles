@@ -13,3 +13,6 @@
 
 !/snippet/
 !*.vim
+
+!/userautoload/
+!*.vim

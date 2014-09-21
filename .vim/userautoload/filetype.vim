@@ -1,0 +1,80 @@
+"--------------------
+" filetype
+"--------------------
+" vim
+autocmd MyAutoCmd FileType vim call s:setVimOnly()
+function! s:setVimOnly()
+    set foldmethod=marker
+endfunction
+
+" Python 
+autocmd MyAutoCmd FileType python call s:setPythonOnly()
+function! s:setPythonOnly()
+    set expandtab
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=4
+    set autoindent
+    set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+    set colorcolumn=80
+endfunction
+
+"javascript
+autocmd MyAutoCmd FileType javascript call s:setJavascriptOnly()
+function! s:setJavascriptOnly()
+    set foldlevel=1
+    set foldnestmax=99
+endfunction
+" jade
+autocmd MyAutoCmd BufNewFile,BufRead *.jade set filetype=jade
+autocmd MyAutoCmd FileType jade call s:setJadeOnly()
+function! s:setJadeOnly()
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
+endfunction
+
+" tex
+autocmd MyAutoCmd FileType tex call s:setTexOnly()
+function! s:setTexOnly()
+    set noautoindent
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
+endfunction
+
+" html
+autocmd MyAutoCmd BufNewFile,BufRead *.html set filetype=htmldjango
+autocmd MyAutoCmd FileType htmldjango call s:setHtmlOnly()
+function! s:setHtmlOnly()
+    set noautoindent
+    set nosmartindent
+    set expandtab
+    set tabstop=4
+    set shiftwidth=4
+    set softtabstop=4
+endfunction
+
+" kivy
+autocmd MyAutoCmd BufRead,BufNewFile *.kv set filetype=kv
+autocmd MyAutoCmd FileType kv call s:setKivyOnly()
+function! s:setKivyOnly()
+    set softtabstop=4
+    set textwidth=79
+    set shiftwidth=4
+    set expandtab
+    set tabstop=8
+    set list
+    set foldmethod=indent
+    set foldlevelstart=99
+    set foldlevel=99
+endfunction
+
+" markdown
+autocmd MyAutoCmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+autocmd MyAutoCmd FileType markdown call s:setMarkdownOnly()
+function! s:setMarkdownOnly()
+    set foldlevel=1
+    set foldnestmax=3
+    set noexpandtab
+endfunction
