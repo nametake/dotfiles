@@ -14,14 +14,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc', {
-            \   'build' : {
-            \       'windows' : 'make -f make_mingw32.mak',
-            \       'cygwin' : 'make -f make_cygwin.mak',
-            \       'mac' : 'make -f make_mac.mak',
-            \       'unix' : 'make -f make_unix.mak',
-            \   },
-            \ }
+"NeoBundle 'Shougo/vimproc', {
+"            \   'build' : {
+"            \       'windows' : 'make -f make_mingw32.mak',
+"            \       'cygwin' : 'make -f make_cygwin.mak',
+"            \       'mac' : 'make -f make_mac.mak',
+"            \       'unix' : 'make -f make_unix.mak',
+"            \   },
+"            \ }
 
 " vim-pandoc
 NeoBundleLazy 'vim-pandoc/vim-pandoc', {
@@ -150,6 +150,8 @@ NeoBundle 'koron/nyancat-vim'
 "--------------------
 " python
 "--------------------
+let $PATH = "~/.pyenv/shims:".$PATH
+
 " Djangoを正しくVimで読み込めるようにする
 NeoBundleLazy 'lambdalisue/vim-django-support', {
         \ 'autoload': {
@@ -185,7 +187,13 @@ NeoBundleLazy 'hattya/python_fold.vim', {
         \ 'autoload': {
         \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
-
+" pyenv 処理用に vim-pyenv を追加
+" Note: depends が指定されているため jedi-vim より後にロードされる（ことを期待）
+NeoBundleLazy "lambdalisue/vim-pyenv", {
+        \ "depends": ['davidhalter/jedi-vim'],
+        \ 'autoload': {
+        \   'filetypes': ["python", "python3", "djangohtml"]
+        \ }}
 
 
 "--------------------
