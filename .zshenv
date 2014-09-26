@@ -2,7 +2,7 @@
 case ${OSTYPE} in
   darwin*)
     # Mac
-    export PATH=/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:
+    export PATH=/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:$PATH
     ;;
   linux*)
     #Linux
