@@ -173,10 +173,10 @@ NeoBundle 'davidhalter/jedi-vim'
 "        \   'unix': 'pip install jedi',
 "        \ }}
 " flake8
-NeoBundleLazy 'andviro/flake8-vim', {
-        \ 'autoload': {
-        \   'filetypes': ["python", "python3", "djangohtml"]
-        \ }}
+"NeoBundleLazy 'andviro/flake8-vim', {
+"        \ 'autoload': {
+"        \   'filetypes': ["python", "python3", "djangohtml"]
+"        \ }}
 " pep8 indent 引数などの改行をpep8準拠にする
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
         \ 'autoload': {
