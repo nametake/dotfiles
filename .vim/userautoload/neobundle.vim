@@ -163,14 +163,15 @@ NeoBundleLazy 'jmcantrell/vim-virtualenv', {
         \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
 " jedi vim
-NeoBundleLazy 'davidhalter/jedi-vim', {
-        \ 'autoload': {
-        \   'filetypes': ["python", "python3", "djangohtml"],
-        \ },
-        \ 'build': {
-        \   'mac': 'pip install jedi',
-        \   'unix': 'pip install jedi',
-        \ }}
+NeoBundle 'davidhalter/jedi-vim'
+"NeoBundleLazy 'davidhalter/jedi-vim', {
+"        \ 'autoload': {
+"        \   'filetypes': ["python", "python3", "djangohtml"],
+"        \ },
+"        \ 'build': {
+"        \   'mac': 'pip install jedi',
+"        \   'unix': 'pip install jedi',
+"        \ }}
 " flake8
 NeoBundleLazy 'andviro/flake8-vim', {
         \ 'autoload': {
