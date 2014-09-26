@@ -190,7 +190,7 @@ NeoBundleLazy 'hattya/python_fold.vim', {
 " pyenv 処理用に vim-pyenv を追加
 " Note: depends が指定されているため jedi-vim より後にロードされる（ことを期待）
 NeoBundleLazy "lambdalisue/vim-pyenv", {
-        \ "depends": ['davidhalter/jedi-vim'],
+        \ 'depends': ['davidhalter/jedi-vim'],
         \ 'autoload': {
         \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
