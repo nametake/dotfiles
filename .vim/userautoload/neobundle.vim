@@ -71,10 +71,10 @@ NeoBundleLazy 'Shougo/vimfiler', {
 
 " vimshell
 "NeoBundle 'Shougo/vimshell'
-NeoBundleLazy 'Shougo/vimshell', {
-            \   'autoload' : { 'commands' : [ 'VimShell' ] },
-            \   'depends': [ 'Shougo/vimproc' ],
-            \ }
+"NeoBundleLazy 'Shougo/vimshell', {
+"            \   'autoload' : { 'commands' : [ 'VimShell' ] },
+"            \   'depends': [ 'Shougo/vimproc' ],
+"            \ }
 
 " Surround
 NeoBundle 'tpope/vim-surround'
@@ -98,29 +98,29 @@ NeoBundle 'itchyny/lightline.vim'
 "NeoBundle 'vim-scripts/fcitx.vim'
 
 "##### auto fcitx  ###########
-let g:input_toggle = 0
-function! Fcitx2en()
-   let s:input_status = system("fcitx-remote")
-   if s:input_status == 2
-      let g:input_toggle = 1
-      let l:a = system("fcitx-remote -c")
-   endif
-endfunction
-
-function! Fcitx2zh()
-   let s:input_status = system("fcitx-remote")
-   if s:input_status != 2 && g:input_toggle == 1
-      let l:a = system("fcitx-remote -o")
-      let g:input_toggle = 0
-   endif
-endfunction
-
-set ttimeoutlen=150
-" インサートモードを離れた時
-autocmd InsertLeave * call Fcitx2en()
-" インサートモードになった時
-autocmd InsertEnter * call Fcitx2zh()
-"##### auto fcitx end ######
+"let g:input_toggle = 0
+"function! Fcitx2en()
+"   let s:input_status = system("fcitx-remote")
+"   if s:input_status == 2
+"      let g:input_toggle = 1
+"      let l:a = system("fcitx-remote -c")
+"   endif
+"endfunction
+"
+"function! Fcitx2zh()
+"   let s:input_status = system("fcitx-remote")
+"   if s:input_status != 2 && g:input_toggle == 1
+"      let l:a = system("fcitx-remote -o")
+"      let g:input_toggle = 0
+"   endif
+"endfunction
+"
+"set ttimeoutlen=150
+"" インサートモードを離れた時
+"autocmd InsertLeave * call Fcitx2en()
+"" インサートモードになった時
+"autocmd InsertEnter * call Fcitx2zh()
+""##### auto fcitx end ######
 
 " sudo.vim
 NeoBundle 'sudo.vim'
