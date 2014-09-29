@@ -5,7 +5,7 @@ let s:hooks = neobundle#get_hooks("jedi-vim")
 
 autocmd MyAutoCmd FileType python setlocal omnifunc=jedi#completions
 
-autocmd FileType python setlocal completeopt-=preview 
+autocmd MyAutoCmd FileType python setlocal completeopt-=preview 
 
 function! s:hooks.on_source(bundle)
     let g:jedi#auto_initialization = 0
@@ -22,12 +22,13 @@ function! s:hooks.on_source(bundle)
     let g:jedi#use_splits_not_buffers = "left"
 
     if !exists('g:neocomplete#force_omni_input_patterns')
-            let g:neocomplete#force_omni_input_patterns = {}
+        let g:neocomplete#force_omni_input_patterns = {}
     endif
 
     let g:jedi#completions_enabled = 0
-    "let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-    let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
+    let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+    "let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
     let g:jedi#show_function_definition = 0
 endfunction
