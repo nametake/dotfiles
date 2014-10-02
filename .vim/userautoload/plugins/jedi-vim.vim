@@ -31,4 +31,6 @@ function! s:hooks.on_source(bundle)
     "let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
     let g:jedi#show_function_definition = 0
+
+    let g:jedi#squelch_py_warning = 0
 endfunction

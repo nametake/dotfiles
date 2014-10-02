@@ -23,6 +23,7 @@ let g:lightline = {
       \   'filetype': 'MyFiletype',
       \   'fileencoding': 'MyFileencoding',
       \   'mode': 'MyMode',
+      \   'pyenv': 'pyenv#statusline#component',
       \ },
       \ }
 

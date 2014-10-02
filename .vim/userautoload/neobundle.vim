@@ -14,14 +14,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-"NeoBundle 'Shougo/vimproc', {
-"            \   'build' : {
-"            \       'windows' : 'make -f make_mingw32.mak',
-"            \       'cygwin' : 'make -f make_cygwin.mak',
-"            \       'mac' : 'make -f make_mac.mak',
-"            \       'unix' : 'make -f make_unix.mak',
-"            \   },
-"            \ }
+NeoBundle 'Shougo/vimproc', {
+            \   'build' : {
+            \       'windows' : 'make -f make_mingw32.mak',
+            \       'cygwin' : 'make -f make_cygwin.mak',
+            \       'mac' : 'make -f make_mac.mak',
+            \       'unix' : 'make -f make_unix.mak',
+            \   },
+            \ }
 
 " vim-pandoc
 NeoBundleLazy 'vim-pandoc/vim-pandoc', {
@@ -97,30 +97,6 @@ NeoBundle 'itchyny/lightline.vim'
 " Fcitx setting
 "NeoBundle 'vim-scripts/fcitx.vim'
 
-"##### auto fcitx  ###########
-"let g:input_toggle = 0
-"function! Fcitx2en()
-"   let s:input_status = system("fcitx-remote")
-"   if s:input_status == 2
-"      let g:input_toggle = 1
-"      let l:a = system("fcitx-remote -c")
-"   endif
-"endfunction
-"
-"function! Fcitx2zh()
-"   let s:input_status = system("fcitx-remote")
-"   if s:input_status != 2 && g:input_toggle == 1
-"      let l:a = system("fcitx-remote -o")
-"      let g:input_toggle = 0
-"   endif
-"endfunction
-"
-"set ttimeoutlen=150
-"" インサートモードを離れた時
-"autocmd InsertLeave * call Fcitx2en()
-"" インサートモードになった時
-"autocmd InsertEnter * call Fcitx2zh()
-""##### auto fcitx end ######
 
 " sudo.vim
 NeoBundle 'sudo.vim'
@@ -172,19 +148,8 @@ NeoBundle 'davidhalter/jedi-vim'
 "        \   'mac': 'pip install jedi',
 "        \   'unix': 'pip install jedi',
 "        \ }}
-" flake8
-"NeoBundleLazy 'andviro/flake8-vim', {
-"        \ 'autoload': {
-"        \   'filetypes': ["python", "python3", "djangohtml"]
-"        \ }}
 " pep8 indent 引数などの改行をpep8準拠にする
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
-        \ 'autoload': {
-        \   'filetypes': ["python", "python3", "djangohtml"]
-        \ }}
-" Simpylfold  Pythonの折りたたみ
-"NeoBundle 'tmhedberg/SimpylFold'
-NeoBundleLazy 'hattya/python_fold.vim', {
         \ 'autoload': {
         \   'filetypes': ["python", "python3", "djangohtml"]
         \ }}
@@ -214,7 +179,7 @@ NeoBundleLazy 'mattn/emmet-vim', {
         \   'filetypes': ["html", "djangohtml", "css"],
         \ }}
 " closetag
-NeoBundle 'vim-scripts/closetag.vim'
+"NeoBundle 'vim-scripts/closetag.vim'
 
 "--------------------
 " Javascript
@@ -266,15 +231,7 @@ NeoBundleLazy 'kannokanno/previm', {
 "--------------------
 " Colorscheme
 "--------------------
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'vim-scripts/twilight'
-NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'jpo/vim-railscasts-theme'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-scripts/Wombat'
 NeoBundle 'tomasr/molokai'
-NeoBundle 'vim-scripts/rdark'
 
 colorscheme molokai
 
