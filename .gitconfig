@@ -1,14 +1,14 @@
 [user]
-    name = nametake
-    email = nametake.kyarabuki@gmail.com
+  name = nametake
+  email = nametake.kyarabuki@gmail.com
 
 [push]
-    default = simple
-    path = ~/.gitconfig.local
+  default = simple
+  path = ~/.gitconfig.local
 
 [alias]
     ;tree = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
     ;tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
+  tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
 [core]
-	editor = vim
+  editor = vim

@@ -25,9 +25,9 @@ NeoBundle 'Shougo/vimproc', {
 
 " vim-pandoc
 NeoBundleLazy 'vim-pandoc/vim-pandoc', {
-        \ 'autoload': {
-        \   'filetypes': ["text", "pandoc", "markdown", "rst", "textile"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["text", "pandoc", "markdown", "rst", "textile"],
+            \ }}
 
 " unite
 NeoBundle 'Shougo/unite.vim'
@@ -94,10 +94,6 @@ NeoBundle "thinca/vim-template"
 " lightline
 NeoBundle 'itchyny/lightline.vim'
 
-" Fcitx setting
-"NeoBundle 'vim-scripts/fcitx.vim'
-
-
 " sudo.vim
 NeoBundle 'sudo.vim'
 
@@ -130,14 +126,14 @@ let $PATH = "~/.pyenv/shims:".$PATH
 
 " Djangoを正しくVimで読み込めるようにする
 NeoBundleLazy 'lambdalisue/vim-django-support', {
-        \ 'autoload': {
-        \   'filetypes': ["python", "python3", "djangohtml"]
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["python", "python3", "djangohtml"]
+            \ }}
 " Vimで正しくvirtualenvを処理できるようにする
 NeoBundleLazy 'jmcantrell/vim-virtualenv', {
-        \ 'autoload': {
-        \   'filetypes': ["python", "python3", "djangohtml"]
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["python", "python3", "djangohtml"]
+            \ }}
 " jedi vim
 NeoBundle 'davidhalter/jedi-vim'
 "NeoBundleLazy 'davidhalter/jedi-vim', {
@@ -150,34 +146,34 @@ NeoBundle 'davidhalter/jedi-vim'
 "        \ }}
 " pep8 indent 引数などの改行をpep8準拠にする
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
-        \ 'autoload': {
-        \   'filetypes': ["python", "python3", "djangohtml"]
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["python", "python3", "djangohtml"]
+            \ }}
 " pyenv 処理用に vim-pyenv を追加
 " Note: depends が指定されているため jedi-vim より後にロードされる（ことを期待）
 NeoBundleLazy "lambdalisue/vim-pyenv", {
-        \ 'depends': ['davidhalter/jedi-vim'],
-        \ 'autoload': {
-        \   'filetypes': ["python", "python3", "djangohtml"]
-        \ }}
+            \ 'depends': ['davidhalter/jedi-vim'],
+            \ 'autoload': {
+            \   'filetypes': ["python", "python3", "djangohtml"]
+            \ }}
 
 
 "--------------------
 " HTML/CSS/Sass
 "--------------------
 NeoBundleLazy 'taichouchou2/html5.vim', {
-        \ 'autoload': {
-        \   'filetypes': ["html", "djangohtml", "css"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["html", "djangohtml", "css"],
+            \ }}
 NeoBundleLazy 'hail2u/vim-css3-syntax', {
-        \ 'autoload': {
-        \   'filetypes': ["html", "djangohtml", "css"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["html", "djangohtml", "css"],
+            \ }}
 " Emmet
 NeoBundleLazy 'mattn/emmet-vim', {
-        \ 'autoload': {
-        \   'filetypes': ["html", "djangohtml", "css"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["html", "djangohtml", "css"],
+            \ }}
 " closetag
 "NeoBundle 'vim-scripts/closetag.vim'
 
@@ -186,28 +182,28 @@ NeoBundleLazy 'mattn/emmet-vim', {
 "--------------------
 " simple-javascript-indenter
 NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
-        \ 'autoload': {
-        \   'filetypes': ["javascript"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["javascript"],
+            \ }}
 " vim-javascript-syntax
 NeoBundleLazy 'jelera/vim-javascript-syntax', {
-        \ 'autoload': {
-        \   'filetypes': ["javascript"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["javascript"],
+            \ }}
 " vim-nodejs-complete
 NeoBundleLazy 'myhere/vim-nodejs-complete', {
-        \ 'autoload': {
-        \   'filetypes': ["javascript"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["javascript"],
+            \ }}
 " vim-jade
 NeoBundleLazy 'digitaltoad/vim-jade', {
-        \ 'autoload': {
-        \   'filetypes': ["jade"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["jade"],
+            \ }}
 NeoBundleLazy 'pangloss/vim-javascript', {
-        \ 'autoload': {
-        \   'filetypes': ["javascript"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["javascript"],
+            \ }}
 
 "--------------------
 " Markdown
@@ -220,9 +216,9 @@ NeoBundle 'plasticboy/vim-markdown'
 "        \ }}
 " previm
 NeoBundleLazy 'kannokanno/previm', {
-        \ 'autoload': {
-        \   'filetypes': ["markdown"],
-        \ }}
+            \ 'autoload': {
+            \   'filetypes': ["markdown"],
+            \ }}
 
 "--------------------
 " Go

@@ -78,3 +78,12 @@ function! s:setMarkdownOnly()
     set foldnestmax=3
     set noexpandtab
 endfunction
+
+" shell script
+autocmd MyAutoCmd FileType sh call s:setShellScriptOnly()
+autocmd MyAutoCmd FileType zsh call s:setShellScriptOnly()
+function! s:setShellScriptOnly()
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
+endfunction

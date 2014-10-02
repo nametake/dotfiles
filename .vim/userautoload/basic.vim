@@ -32,9 +32,9 @@ set mouse=a
 
 " OSのクリップボードを使用
 if OSTYPE == "Darwin\n"
-   ""Mac
+    ""Mac
 elseif OSTYPE == "Linux\n"
-   ""Linux
+    ""Linux
     set clipboard=unnamedplus,autoselect
 endif
 if has('mac')
@@ -181,7 +181,7 @@ set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
 
- " インクリメンタルサーチ
+" インクリメンタルサーチ
 set incsearch
 
 " 検索文字をハイライト
@@ -192,23 +192,23 @@ if OSTYPE == "Linux\n"
     "##### auto fcitx  ###########
     let g:input_toggle = 0
     function! Fcitx2en()
-       let s:input_status = system("fcitx-remote")
-       if s:input_status == 2
-          let g:input_toggle = 1
-          let l:a = system("fcitx-remote -c")
-       endif
+        let s:input_status = system("fcitx-remote")
+        if s:input_status == 2
+            let g:input_toggle = 1
+            let l:a = system("fcitx-remote -c")
+        endif
     endfunction
     function! Fcitx2zh()
-       let s:input_status = system("fcitx-remote")
-       if s:input_status != 2 && g:input_toggle == 1
-          let l:a = system("fcitx-remote -o")
-          let g:input_toggle = 0
-       endif
+        let s:input_status = system("fcitx-remote")
+        if s:input_status != 2 && g:input_toggle == 1
+            let l:a = system("fcitx-remote -o")
+            let g:input_toggle = 0
+        endif
     endfunction
     set ttimeoutlen=150
     " インサートモードを離れた時
     autocmd InsertLeave * call Fcitx2en()
     " インサートモードになった時
     autocmd InsertEnter * call Fcitx2zh()
-""##### auto fcitx end ######
+    ""##### auto fcitx end ######
 endif

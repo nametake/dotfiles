@@ -9,6 +9,6 @@ function! s:template_keywords()
 endfunction
 " テンプレート中に含まれる'<+CURSOR+>'にカーソルを移動
 autocmd MyAutoCmd User plugin-template-loaded
-    \   if search('<+CURSOR+>')
-    \ |   silent! execute 'normal! "_da>'
-    \ | endif
+            \   if search('<+CURSOR+>')
+            \ |   silent! execute 'normal! "_da>'
+            \ | endif
