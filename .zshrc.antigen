@@ -3,4 +3,6 @@ source $HOME/.antigen/antigen.zsh
 antigen-bundle git
 antigen-bundle vagrant
 antigen-bundle pip
-antigen-bundle heroku
+antigen-bundle brew-cask
+antigen-bundle django
+antigen-bundle docker
