@@ -208,5 +208,10 @@ if [ -x "`whence tmux`" ]; then
   fi
 fi
 
+########################################
+# antigen
+if [ -e $HOME/.antigen ]; then
+  source $HOME/.zshrc.antigen
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

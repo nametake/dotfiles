@@ -12,5 +12,6 @@
 !/.tmux.conf
 !/.zshrc
 !/.zshenv
+!/.zshrc.antigen
 !/.vim/
 
