@@ -15,7 +15,7 @@ let g:quickrun_config={
             \       'command': 'latexmk',
             \       'outputter' : 'error',
             \       'outputter/error/error' : 'buffer',
-            \       'exec': ['%c -gg -pdfdvi %s', 'xdg-open %s:r.pdf']
+            \       'exec': ['%c -gg -pdfdvi %s', 'open %s:r.pdf']
             \   },
             \}
 
