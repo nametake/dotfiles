@@ -9,13 +9,14 @@ let g:quickrun_config={
             \   },
             \   'htmldjango':{
             \       'command': 'google-chrome',
-            \       'outputter/buffer/close_on_empty': 1
+            \       'outputter/buffer/close_on_empty': 1,
             \   },
             \   'tex': {
             \       'command': 'latexmk',
-            \       'outputter' : 'error',
-            \       'outputter/error/error' : 'buffer',
-            \       'exec': ['%c -gg -pdfdvi %s', 'open %s:r.pdf']
+            \       'outputter': 'error',
+            \       'outputter/error/error': 'buffer',
+            \       'cmdopt': '-pdfdvi',
+            \       'exec': ['%c %o %s', 'open %s:r.pdf', 'open /Applications/Utilities/Terminal.app'],
             \   },
             \}
 

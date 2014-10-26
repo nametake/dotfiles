@@ -207,6 +207,10 @@ NeoBundleLazy 'pangloss/vim-javascript', {
             \   'filetypes': ["javascript"],
             \ }}
 
+NeoBundleLazy 'moll/vim-node', {
+            \ 'autoload': {
+            \   'filetype': ["javascript"],
+            \ }}
 "--------------------
 " Markdown
 "--------------------
