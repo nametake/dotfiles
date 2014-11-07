@@ -38,6 +38,7 @@ endfunction
 autocmd MyAutoCmd FileType tex call s:setTexOnly()
 function! s:setTexOnly()
     set noautoindent
+    set noexpandtab
     set tabstop=2
     set shiftwidth=2
     set softtabstop=2
