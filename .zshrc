@@ -60,6 +60,8 @@ zstyle ':zle:*' word-style unspecified
 # ls コマンドの色
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
+# 選択補完
+zstyle ':completion:*:default' menu select=1
 
 # 補完の設定
 if [ -e /usr/local/share/zsh-completions ]; then
