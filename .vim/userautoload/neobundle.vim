@@ -1,18 +1,25 @@
-"--------------------
-" neobundle
-"--------------------
-filetype off
+
+
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
 
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 " Let NeoBundle manage NeoBundle
+" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
@@ -33,50 +40,19 @@ NeoBundleLazy 'vim-pandoc/vim-pandoc', {
 
 " unite
 NeoBundle 'Shougo/unite.vim'
-"NeoBundleLazy 'Shougo/unite.vim', {
-"            \ 'autoload' : {
-"            \   'command' : ['Unite']
-"            \ }}
-
-" unite-outline
-NeoBundle 'h1mesuke/unite-outline'
-"NeoBundleLazy 'h1mesuke/unite-outline', {
-"            \ 'autoload' : {
-"            \   'command' : ['Unite']
-"            \ }}
-
-" 補完
-NeoBundle 'Shougo/neocomplete'
-"NeoBundleLazy 'Shougo/neocomplete', {
-"            \ 'autoload' : {
-"            \   'insert': 1
-"            \ }}
-
-" スニペット
-"NeoBundleLazy 'Shougo/neosnippet', {
-"            \ 'autoload' : {
-"            \   'insert': 1
-"            \ }}
-"NeoBundleLazy 'Shougo/neosnippet-snippets', {
-"            \ 'autoload' : {
-"            \   'insert': 1
-"            \ }}
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
 
 " vimfiler
-"NeoBundle 'Shougo/vimfiler'
 NeoBundleLazy 'Shougo/vimfiler', {
             \   'autoload' : { 'commands' : [ 'VimFiler' ] },
             \   'depends': [ 'Shougo/unite.vim' ],
             \ }
 
-" vimshell
-"NeoBundle 'Shougo/vimshell'
-"NeoBundleLazy 'Shougo/vimshell', {
-"            \   'autoload' : { 'commands' : [ 'VimShell' ] },
-"            \   'depends': [ 'Shougo/vimproc' ],
-"            \ }
+" neocomplete
+NeoBundle 'Shougo/neocomplete'
+
+" neosnippet
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 
 " Surround
 NeoBundle 'tpope/vim-surround'
@@ -87,7 +63,7 @@ NeoBundle 'vim-scripts/Align'
 " yankround
 NeoBundle 'LeafCage/yankround.vim'
 
-" Indent Guides
+" vim-indent-guides
 NeoBundle "nathanaelkane/vim-indent-guides"
 
 " template
@@ -99,27 +75,22 @@ NeoBundle 'itchyny/lightline.vim'
 " sudo.vim
 NeoBundle 'sudo.vim'
 
-" syntastic
+" syntastic : syntax plugin
 NeoBundle 'scrooloose/syntastic.git'
-
-" vim-scouter
-NeoBundle 'thinca/vim-scouter'
 
 " vim-quickrun
 NeoBundle 'thinca/vim-quickrun'
 
-" open-browser
-NeoBundle 'tyru/open-browser.vim'
-
 " auto-pairs
 NeoBundle 'jiangmiao/auto-pairs'
 
-" vim-fugitive
+" vim-fugitive : git plugin
 NeoBundle 'tpope/vim-fugitive'
 
-" 
-NeoBundle 'koron/nyancat-vim'
 
+" *** hobby ***
+NeoBundle 'koron/nyancat-vim'
+NeoBundle 'thinca/vim-scouter'
 
 "--------------------
 " python
@@ -153,11 +124,11 @@ NeoBundleLazy 'hynek/vim-python-pep8-indent', {
             \ }}
 " pyenv 処理用に vim-pyenv を追加
 " Note: depends が指定されているため jedi-vim より後にロードされる（ことを期待）
-NeoBundleLazy "lambdalisue/vim-pyenv", {
-            \ 'depends': ['davidhalter/jedi-vim'],
-            \ 'autoload': {
-            \   'filetypes': ["python", "python3", "djangohtml"]
-            \ }}
+"NeoBundleLazy "lambdalisue/vim-pyenv", {
+"            \ 'depends': ['davidhalter/jedi-vim'],
+"            \ 'autoload': {
+"            \   'filetypes': ["python", "python3", "djangohtml"]
+"            \ }}
 
 
 "--------------------
@@ -226,17 +197,18 @@ NeoBundleLazy 'kannokanno/previm', {
             \   'filetypes': ["markdown"],
             \ }}
 
-"--------------------
-" Go
-"--------------------
-
-"--------------------
-" Colorscheme
-"--------------------
+" colorscheme
 NeoBundle 'tomasr/molokai'
 
-colorscheme molokai
+call neobundle#end()
 
+" Required:
 filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+colorscheme molokai
 
 runtime! userautoload/plugins/*.vim
