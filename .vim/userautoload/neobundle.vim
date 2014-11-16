@@ -177,11 +177,22 @@ NeoBundleLazy 'pangloss/vim-javascript', {
             \ 'autoload': {
             \   'filetypes': ["javascript"],
             \ }}
-
+" vim-node
 NeoBundleLazy 'moll/vim-node', {
             \ 'autoload': {
             \   'filetype': ["javascript"],
             \ }}
+" tern_for_vim
+NeoBundle 'marijnh/tern_for_vim'
+"NeoBundleLazy 'marijnh/tern_for_vim', {
+"            \ 'build': {
+"            \   'others': 'npm install -g',
+"            \ },
+"            \ 'autoload': {
+"            \   'filetype': ["javascript"],
+"            \ }}
+NeoBundle 'kchmck/vim-coffee-script'
+
 "--------------------
 " Markdown
 "--------------------
