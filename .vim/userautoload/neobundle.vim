@@ -95,7 +95,6 @@ NeoBundle 'thinca/vim-scouter'
 "--------------------
 " python
 "--------------------
-let $PATH = "~/.pyenv/shims:".$PATH
 
 " Djangoを正しくVimで読み込めるようにする
 NeoBundleLazy 'lambdalisue/vim-django-support', {

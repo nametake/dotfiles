@@ -7,7 +7,7 @@ autocmd MyAutoCmd FileType python setlocal omnifunc=jedi#completions
 
 autocmd MyAutoCmd FileType python setlocal completeopt-=preview 
 
-function! s:hooks.on_source(bundle)
+"function! s:hooks.on_source(bundle)
     let g:jedi#auto_initialization = 0
 
     let g:jedi#auto_vim_configuration = 0
@@ -15,7 +15,7 @@ function! s:hooks.on_source(bundle)
 
     " 最初の項目を選択しない
     let g:jedi#popup_on_dot = 0
-    let g:jedi#popup_select_first = 0
+"    let g:jedi#popup_select_first = 0
 
     let g:jedi#show_call_signatures = 0
 
@@ -33,4 +33,4 @@ function! s:hooks.on_source(bundle)
     let g:jedi#show_function_definition = 0
 
     let g:jedi#squelch_py_warning = 0
-endfunction
+"endfunction
