@@ -19,7 +19,7 @@ function! s:setPythonOnly()
     set colorcolumn=80
 endfunction
 
-"javascript
+" javascript
 autocmd MyAutoCmd FileType javascript call s:setJavascriptOnly()
 function! s:setJavascriptOnly()
     set foldlevel=1
@@ -32,6 +32,14 @@ function! s:setJadeOnly()
     set tabstop=2
     set shiftwidth=2
     set softtabstop=2
+endfunction
+" coffee
+autocmd MyAutoCmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd MyAutoCmd FileType coffee call s:setCoffeeOnly()
+function! s:setCoffeeOnly()
+    set shiftwidth=2
+    set softtabstop=2
+    set tabstop=2
 endfunction
 
 " tex
