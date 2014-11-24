@@ -209,6 +209,14 @@ NeoBundleLazy 'kannokanno/previm', {
 " colorscheme
 NeoBundle 'tomasr/molokai'
 
+"--------------------
+" Latex
+"--------------------
+NeoBundleLazy 'Eckankar/vim-latex-folding', {
+            \ 'autoload': {
+            \   'filetypes': ["tex"],
+            \ }}
+
 call neobundle#end()
 
 " Required:
