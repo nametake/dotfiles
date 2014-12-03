@@ -10,6 +10,7 @@ let g:lightline = {
             \ 'active': {
             \     'left': [
             \         [ 'mode', 'paste' ],
+            \         ['pyenv'],
             \         [ 'fugitive', 'filename' ]
             \     ]
             \ },

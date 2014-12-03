@@ -97,6 +97,26 @@ NeoBundle 'thinca/vim-scouter'
 "--------------------
 " python
 "--------------------
+" PATHの自動更新関数
+" | 指定された path が $PATH に存在せず、ディレクトリとして存在している場合
+" | のみ $PATH に加える
+function! IncludePath(path)
+  " define delimiter depends on platform
+  if has('win16') || has('win32') || has('win64')
+    let delimiter = ";"
+  else
+    let delimiter = ":"
+  endif
+  let pathlist = split($PATH, delimiter)
+  if isdirectory(a:path) && index(pathlist, a:path) == -1
+    let $PATH=a:path.delimiter.$PATH
+  endif
+endfunction
+
+" ~/.pyenv/shims を $PATH に追加する
+" これを行わないとpythonが正しく検索されない
+call IncludePath(expand("~/.pyenv/shims"))
+
 
 " Djangoを正しくVimで読み込めるようにする
 NeoBundleLazy 'lambdalisue/vim-django-support', {
@@ -125,11 +145,11 @@ NeoBundleLazy 'hynek/vim-python-pep8-indent', {
             \ }}
 " pyenv 処理用に vim-pyenv を追加
 " Note: depends が指定されているため jedi-vim より後にロードされる（ことを期待）
-"NeoBundleLazy "lambdalisue/vim-pyenv", {
-"            \ 'depends': ['davidhalter/jedi-vim'],
-"            \ 'autoload': {
-"            \   'filetypes': ["python", "python3", "djangohtml"]
-"            \ }}
+NeoBundleLazy "lambdalisue/vim-pyenv", {
+            \ 'depends': ['davidhalter/jedi-vim'],
+            \ 'autoload': {
+            \   'filetypes': ["python", "python3", "djangohtml"]
+            \ }}
 
 
 "--------------------
