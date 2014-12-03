@@ -115,7 +115,7 @@ endfunction
 
 " ~/.pyenv/shims を $PATH に追加する
 " これを行わないとpythonが正しく検索されない
-call IncludePath(expand("~/.pyenv/shims"))
+autocmd MyAutoCmd FileType python call IncludePath(expand("~/.pyenv/shims"))
 
 
 " Djangoを正しくVimで読み込めるようにする
@@ -129,15 +129,15 @@ NeoBundleLazy 'jmcantrell/vim-virtualenv', {
             \   'filetypes': ["python", "python3", "djangohtml"]
             \ }}
 " jedi vim
-NeoBundle 'davidhalter/jedi-vim'
-"NeoBundleLazy 'davidhalter/jedi-vim', {
-"        \ 'autoload': {
-"        \   'filetypes': ["python", "python3", "djangohtml"],
-"        \ },
-"        \ 'build': {
-"        \   'mac': 'pip install jedi',
-"        \   'unix': 'pip install jedi',
-"        \ }}
+"NeoBundle 'davidhalter/jedi-vim'
+NeoBundleLazy 'davidhalter/jedi-vim', {
+        \ 'autoload': {
+        \   'filetypes': ["python", "python3", "djangohtml"],
+        \ },
+        \ 'build': {
+        \   'mac': 'pip install jedi',
+        \   'unix': 'pip install jedi',
+        \ }}
 " pep8 indent 引数などの改行をpep8準拠にする
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
             \ 'autoload': {
