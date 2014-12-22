@@ -6,6 +6,7 @@
 
 # whitelist
 !/.profile
+!/.cider
 !/.bashrc
 !/.gitconfig
 !/.vimrc
@@ -14,4 +15,5 @@
 !/.zshenv
 !/.zshrc.antigen
 !/.vim/
+
 
