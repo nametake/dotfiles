@@ -89,6 +89,9 @@ NeoBundle 'jiangmiao/auto-pairs'
 " vim-fugitive : git plugin
 NeoBundle 'tpope/vim-fugitive'
 
+" open-browser
+NeoBundle 'tyru/open-browser.vim'
+
 
 " *** hobby ***
 NeoBundle 'koron/nyancat-vim'

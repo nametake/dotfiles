@@ -18,5 +18,9 @@ let g:quickrun_config={
             \       'cmdopt': '-pdfdvi',
             \       'exec': ['%c %o %s', 'open %s:r.pdf', 'open /Applications/Utilities/Terminal.app'],
             \   },
+            \   'markdown':{
+            \       'command': 'google-chrome',
+            \       'outputter/buffer/close_on_empty': 1,
+            \   },
             \}
 
