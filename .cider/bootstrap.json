@@ -13,6 +13,7 @@
         "google-chrome",
         "google-japanese-ime",
         "gpgtools",
+        "intellij-idea",
         "iterm2",
         "java",
         "java6",
@@ -25,8 +26,10 @@
         "macvim-kaoriya",
         "ntfs-free",
         "onyx",
+        "osxfuse",
         "owncloud",
         "qlmarkdown",
+        "scroll-reverser",
         "skype",
         "slack",
         "sublime-text",
@@ -78,6 +81,7 @@
         "nginx",
         "nkf",
         "node",
+        "ntfs-3g",
         "openssl",
         "pcre",
         "pkg-config",
@@ -93,9 +97,15 @@
         "sqlite",
         "tig",
         "tmux",
+        "vim",
         "wget",
         "xz",
         "zsh",
         "zsh-completions"
+    ],
+    "taps": [
+        "caskroom/cask",
+        "caskroom/versions",
+        "kazuakim/splhack"
     ]
 }
