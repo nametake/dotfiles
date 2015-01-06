@@ -97,5 +97,12 @@ function! s:setShellScriptOnly()
     set softtabstop=2
 endfunction
 
-
+" golang
+autocmd MyAutoCmd FileType go call s:setGotOnly()
+function! s:setGotOnly()
+    set noexpandtab
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+endfunction
 set runtimepath+=$GOROOT/misc/vim
