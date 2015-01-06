@@ -167,7 +167,8 @@ set wildmode=list:full
 " 補完時に大文字小文字を区別しない
 set infercase
 
-
+" 補完メニューの設定
+set completeopt=menu,preview
 "---------------------------------------
 " Search setting
 "---------------------------------------
