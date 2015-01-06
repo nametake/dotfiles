@@ -5,3 +5,5 @@ antigen bundle vagrant
 antigen bundle pip
 antigen bundle django
 antigen bundle docker
+antigen bundle gitignore
+antigen bundle brew-cask
