@@ -96,3 +96,6 @@ function! s:setShellScriptOnly()
     set shiftwidth=2
     set softtabstop=2
 endfunction
+
+
+set runtimepath+=$GOROOT/misc/vim

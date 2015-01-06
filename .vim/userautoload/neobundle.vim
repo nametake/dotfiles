@@ -240,6 +240,12 @@ NeoBundleLazy 'Eckankar/vim-latex-folding', {
             \   'filetypes': ["tex"],
             \ }}
 
+"--------------------
+" HTML/CSS/Sass
+"--------------------
+NeoBundle 'fatih/vim-go'
+
+
 call neobundle#end()
 
 " Required:
