@@ -218,7 +218,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 " Markdown
 "--------------------
 " vim-markdown
-NeoBundle 'rcmdnk/vim-markdown'
+"NeoBundle 'rcmdnk/vim-markdown'
 " previm
 NeoBundleLazy 'kannokanno/previm', {
             \ 'autoload': {
