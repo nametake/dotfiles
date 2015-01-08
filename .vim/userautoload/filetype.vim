@@ -80,7 +80,8 @@ function! s:setKivyOnly()
 endfunction
 
 " markdown
-autocmd MyAutoCmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+autocmd BufNewFile,BufRead *.md :set filetype=markdown
+"autocmd MyAutoCmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd MyAutoCmd FileType markdown call s:setMarkdownOnly()
 function! s:setMarkdownOnly()
     set foldlevel=1
