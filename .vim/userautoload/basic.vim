@@ -31,16 +31,16 @@ set noundofile
 set mouse=a
 
 " OSのクリップボードを使用
-if OSTYPE == "Darwin\n"
-    ""Mac
-elseif OSTYPE == "Linux\n"
-    ""Linux
-    set clipboard=unnamedplus,autoselect
-endif
+"if OSTYPE == "Darwin\n"
+"    ""Mac
+"elseif OSTYPE == "Linux\n"
+"    ""Linux
+"    set clipboard=unnamedplus,autoselect
+"endif
 if has('mac')
     set clipboard=unnamed,autoselect
 elseif has('unix')
-    set clipboard=unnamed,autoselect
+    set clipboard=unnamedplus,autoselect
 endif
 
 " 行の折り返し
