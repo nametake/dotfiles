@@ -216,4 +216,10 @@ if [ -e $HOME/.antigen ]; then
   source $HOME/.zshrc.antigen
 fi
 
+########################################
+# local
+if [ -e $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
+fi
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
