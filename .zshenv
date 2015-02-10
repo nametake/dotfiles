@@ -33,8 +33,8 @@ fi
 
 if [ -n ${PYENV_ROOT} ]; then
   path=(${PYENV_ROOT}/bin ${PYENV_ROOT}/shims ${path})
+  eval "$(pyenv init -)"
 fi
-eval "$(pyenv init -)"
 
 # Latex
 if [ -d /usr/texbin ]; then
