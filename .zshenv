@@ -29,9 +29,6 @@ export LS_COLORS='di=00;34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg
 #. /usr/local/bin/virtualenvwrapper.sh
 if [ -e ${HOME}/.pyenv ]; then
   export PYENV_ROOT="${HOME}/.pyenv"
-fi
-
-if [ -n ${PYENV_ROOT} ]; then
   path=(${PYENV_ROOT}/bin ${PYENV_ROOT}/shims ${path})
   eval "$(pyenv init -)"
 fi
