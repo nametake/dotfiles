@@ -2,6 +2,11 @@
 " vim-quickrun
 "--------------------
 nnoremap <Space>r :QuickRun<Cr>
+if has('mac')
+    let tex_exec_command = "'open %s:r.pdf', 'open /Applications/Utilities/Terminal.app'"
+elseif has('unix')
+    let tex_exec_command = ""
+endif
 let g:quickrun_config={
             \   '_':{
             \       'split': 'botright 8sp',
@@ -16,7 +21,7 @@ let g:quickrun_config={
             \       'outputter': 'error',
             \       'outputter/error/error': 'buffer',
             \       'cmdopt': '-pdfdvi',
-            \       'exec': ['%c %o %s', 'open %s:r.pdf', 'open /Applications/Utilities/Terminal.app'],
+            \       'exec': ['%c %o %s', tex_exec_command],
             \   },
             \   'markdown':{
             \       'command': 'google-chrome',
