@@ -37,3 +37,7 @@ fi
 if [ -d /usr/texbin ]; then
   export PATH=/usr/texbin:$PATH
 fi
+
+if [ -d /usr/local/lib/activator-1.2.2 ]; then
+  export PATH=/usr/local/lib/activator-1.2.2:$PATH
+fi
