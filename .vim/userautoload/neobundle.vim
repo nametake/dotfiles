@@ -1,7 +1,6 @@
 "--------------------
 " neobundle
 "--------------------
-
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
@@ -28,15 +27,16 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " colorsheme
 NeoBundle 'tomasr/molokai'
 
-NeoBundle 'Shougo/neocomplete.vim', {
+NeoBundleLazy 'Shougo/neocomplete.vim', {
             \   "autoload" : {"insert": 1}
             \}
 
-NeoBundle 'Shougo/neosnippet.vim', {
+NeoBundleLazy 'Shougo/neosnippet.vim', {
             \   "autoload" : {"insert": 1}
             \}
-NeoBundle 'Shougo/neosnippet-snippets', {
-            \   "depends" : ["neosnippet.vim"]
+NeoBundleLazy 'Shougo/neosnippet-snippets', {
+            \   'depends' : ["Shougo/neosnippet.vim"],
+            \   "autoload" : {"insert": 1}
             \}
 
 call neobundle#end()
@@ -49,3 +49,5 @@ filetype plugin indent on
 NeoBundleCheck
 
 colorscheme molokai
+
+runtime! userautoload/plugins/*.vim

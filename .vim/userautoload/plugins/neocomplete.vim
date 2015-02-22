@@ -4,7 +4,7 @@
 "
 let s:hooks = neobundle#get_hooks("neocomplete.vim")
 
-"function! s:hooks.on_source(bundle)
+function! s:hooks.on_source(bundle)
     "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
     " Disable AutoComplPop.
     let g:acp_enableAtStartup = 0
@@ -29,7 +29,7 @@ let s:hooks = neobundle#get_hooks("neocomplete.vim")
     endif
     let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-"endfunction
+endfunction
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
