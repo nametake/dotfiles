@@ -27,16 +27,19 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " colorsheme
 NeoBundle 'tomasr/molokai'
 
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundleLazy 'Shougo/neocomplete.vim', {
             \   "autoload" : {"insert": 1}
             \}
 
+"NeoBundle 'Shougo/neosnippet.vim'
 NeoBundleLazy 'Shougo/neosnippet.vim', {
             \   "autoload" : {"insert": 1}
             \}
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundleLazy 'Shougo/neosnippet-snippets', {
-            \   'depends' : ["Shougo/neosnippet.vim"],
             \   "autoload" : {"insert": 1}
+            \   'depends' : ["Shougo/neosnippet.vim"],
             \}
 
 call neobundle#end()
