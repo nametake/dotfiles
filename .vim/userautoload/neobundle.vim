@@ -5,12 +5,12 @@
 if !1 | finish | endif
 
 if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
+    if &compatible
+        set nocompatible               " Be iMproved
+    endif
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
@@ -37,16 +37,30 @@ NeoBundle 'Shougo/vimproc', {
             \ }
 
 NeoBundleLazy 'Shougo/neocomplete.vim', {
-            \   "autoload" : {"insert": 1}
+            \   'autoload' : {'insert': 1}
             \}
 
 NeoBundleLazy 'Shougo/neosnippet.vim', {
-            \   "autoload" : {"insert": 1}
+            \   'autoload' : {'insert': 1}
             \}
 NeoBundleLazy 'Shougo/neosnippet-snippets', {
-            \   "autoload" : {"insert": 1},
-            \   'depends' : ["Shougo/neosnippet.vim"],
+            \   'depends' : ['Shougo/neosnippet.vim'],
+            \   'autoload' : {'insert': 1}
             \}
+
+NeoBundleLazy 'Shougo/unite.vim', {
+            \ 'autoload': {
+            \   'commands': ['Unite', 'UniteWithBufferDir']
+            \ }}
+NeoBundleLazy 'Shougo/vimfiler', {
+            \   'depends': [ 'Shougo/unite.vim' ],
+            \   'autoload' : { 'commands' : [ 'VimFiler' ] },
+            \ }
+
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-scripts/Align'
+NeoBundle 'LeafCage/yankround.vim'
+NeoBundle "nathanaelkane/vim-indent-guides"
 
 call neobundle#end()
 
