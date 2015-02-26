@@ -57,10 +57,16 @@ NeoBundleLazy 'Shougo/vimfiler', {
             \   'autoload' : { 'commands' : [ 'VimFiler' ] },
             \ }
 
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle "nathanaelkane/vim-indent-guides"
+NeoBundle "thinca/vim-template"
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'sudo.vim'
 
 call neobundle#end()
 
