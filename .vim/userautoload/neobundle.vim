@@ -5,12 +5,12 @@
 if !1 | finish | endif
 
 if has('vim_starting')
-    if &compatible
-        set nocompatible               " Be iMproved
-    endif
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
 
-    " Required:
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
@@ -28,45 +28,47 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 
 NeoBundle 'Shougo/vimproc', {
-            \   'build' : {
-            \       'windows' : 'make -f make_mingw32.mak',
-            \       'cygwin' : 'make -f make_cygwin.mak',
-            \       'mac' : 'make -f make_mac.mak',
-            \       'unix' : 'make -f make_unix.mak',
-            \   },
-            \ }
+      \   'build' : {
+      \       'windows' : 'make -f make_mingw32.mak',
+      \       'cygwin' : 'make -f make_cygwin.mak',
+      \       'mac' : 'make -f make_mac.mak',
+      \       'unix' : 'make -f make_unix.mak',
+      \   },
+      \ }
 
 NeoBundleLazy 'Shougo/neocomplete.vim', {
-            \   'autoload' : {'insert': 1}
-            \}
+      \   'autoload' : {'insert': 1}
+      \}
 
 NeoBundleLazy 'Shougo/neosnippet.vim', {
-            \   'autoload' : {'insert': 1}
-            \}
+      \   'autoload' : {'insert': 1}
+      \}
 NeoBundleLazy 'Shougo/neosnippet-snippets', {
-            \   'depends' : ['Shougo/neosnippet.vim'],
-            \   'autoload' : {'insert': 1}
-            \}
+      \   'depends' : ['Shougo/neosnippet.vim'],
+      \   'autoload' : {'insert': 1}
+      \}
 
 NeoBundleLazy 'Shougo/unite.vim', {
-            \ 'autoload': {
-            \   'commands': ['Unite', 'UniteWithBufferDir']
-            \ }}
+      \ 'autoload': {
+      \   'commands': ['Unite', 'UniteWithBufferDir']
+      \ }}
 NeoBundleLazy 'Shougo/vimfiler', {
-            \   'depends': [ 'Shougo/unite.vim' ],
-            \   'autoload' : { 'commands' : [ 'VimFiler' ] },
-            \ }
+      \   'depends': [ 'Shougo/unite.vim' ],
+      \   'autoload' : { 'commands' : [ 'VimFiler' ] },
+      \ }
+
+NeoBundleLazy 'scrooloose/syntastic', {
+      \   'autoload' : {'insert': 1}
+      \}
 
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle "nathanaelkane/vim-indent-guides"
 NeoBundle "thinca/vim-template"
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'sudo.vim'
 
 call neobundle#end()
 

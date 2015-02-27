@@ -108,4 +108,4 @@ function! s:setGotOnly()
   set softtabstop=4
   set shiftwidth=4
 endfunction
-set runtimepath+=$GOROOT/misc/vim
+"set runtimepath+=$GOROOT/misc/vim
