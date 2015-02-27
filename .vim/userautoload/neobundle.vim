@@ -69,6 +69,14 @@ NeoBundle 'LeafCage/yankround.vim'
 NeoBundle "nathanaelkane/vim-indent-guides"
 NeoBundle "thinca/vim-template"
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-fugitive'  "git plugin
+NeoBundle 'tyru/open-browser.vim'
+" *** hobby ***
+NeoBundle 'koron/nyancat-vim'
+NeoBundle 'thinca/vim-scouter'
+
+
+
 
 call neobundle#end()
 
