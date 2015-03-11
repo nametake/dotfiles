@@ -75,7 +75,11 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
 
-
+" previm
+NeoBundleLazy 'kannokanno/previm', {
+      \ 'autoload': {
+      \   'filetypes': ['markdown'],
+      \ }}
 
 
 call neobundle#end()

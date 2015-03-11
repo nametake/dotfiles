@@ -11,3 +11,4 @@ antigen bundle docker
 antigen bundle gitignore
 antigen bundle brew-cask
 antigen bundle tmux
+antigen bundle npm
