@@ -75,10 +75,19 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
 
+
+" Python
+
+
 " previm
 NeoBundleLazy 'kannokanno/previm', {
       \ 'autoload': {
       \   'filetypes': ['markdown'],
+      \ }}
+NeoBundleLazy 'lambdalisue/vim-pyenv', {
+      \ 'depends': ['davidhalter/jedi-vim'],
+      \ 'autoload': {
+      \   'filetypes': ['python', 'python3'],
       \ }}
 
 
