@@ -28,38 +28,37 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 
 NeoBundle 'Shougo/vimproc', {
-      \   'build' : {
-      \       'windows' : 'make -f make_mingw32.mak',
-      \       'cygwin' : 'make -f make_cygwin.mak',
-      \       'mac' : 'make -f make_mac.mak',
-      \       'unix' : 'make -f make_unix.mak',
+      \   'build': {
+      \     'windows': 'make -f make_mingw32.mak',
+      \     'cygwin': 'make -f make_cygwin.mak',
+      \     'mac': 'make -f make_mac.mak',
+      \     'unix': 'make -f make_unix.mak',
       \   },
       \ }
 
 NeoBundleLazy 'Shougo/neocomplete.vim', {
-      \   'autoload' : {'insert': 1}
-      \}
+      \   'autoload': {'insert': 1}
+      \ }
 
 NeoBundleLazy 'Shougo/neosnippet.vim', {
-      \   'autoload' : {'insert': 1}
-      \}
+      \   'autoload': {'insert': 1}
+      \ }
 NeoBundleLazy 'Shougo/neosnippet-snippets', {
-      \   'depends' : ['Shougo/neosnippet.vim'],
-      \   'autoload' : {'insert': 1}
-      \}
+      \   'depends': ['Shougo/neosnippet.vim'],
+      \   'autoload': {'insert': 1}
+      \ }
 
 NeoBundleLazy 'Shougo/unite.vim', {
-      \ 'autoload': {
-      \   'commands': ['Unite', 'UniteWithBufferDir']
-      \ }}
+      \   'autoload': {'commands': ['Unite', 'UniteWithBufferDir']},
+      \ }
 NeoBundleLazy 'Shougo/vimfiler', {
-      \   'depends': [ 'Shougo/unite.vim' ],
-      \   'autoload' : { 'commands' : [ 'VimFiler' ] },
+      \   'depends': ['Shougo/unite.vim'],
+      \   'autoload': {'commands': ['VimFiler']},
       \ }
 
 NeoBundleLazy 'scrooloose/syntastic', {
-      \   'autoload' : {'insert': 1}
-      \}
+      \   'autoload': {'insert': 1}
+      \ }
 
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
@@ -77,18 +76,27 @@ NeoBundle 'thinca/vim-scouter'
 
 
 " Python
-
+NeoBundleLazy 'davidhalter/jedi-vim', {
+      \   'autoload': {
+      \     'filetypes': ['python', 'python3', 'djangohtml'],
+      \   },
+      \   'build': {
+      \     'mac': 'pip install jedi',
+      \     'unix': 'pip install jedi',
+      \   }
+      \ }
+NeoBundleLazy 'lambdalisue/vim-pyenv', {
+      \   'depends': ['davidhalter/jedi-vim'],
+      \   'autoload': {'filetypes': ['python', 'python3']}
+      \ }
+NeoBundleLazy 'hynek/vim-python-pep8-indent', {
+      \   'autoload': {'filetypes': ["python", "python3", "djangohtml"]}
+      \ }
 
 " previm
 NeoBundleLazy 'kannokanno/previm', {
-      \ 'autoload': {
-      \   'filetypes': ['markdown'],
-      \ }}
-NeoBundleLazy 'lambdalisue/vim-pyenv', {
-      \ 'depends': ['davidhalter/jedi-vim'],
-      \ 'autoload': {
-      \   'filetypes': ['python', 'python3'],
-      \ }}
+      \   'autoload': {'filetypes': ['markdown']}
+      \ }
 
 
 call neobundle#end()
