@@ -11,8 +11,7 @@ if has('vim_starting')
 
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
+endif 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -65,15 +64,14 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'LeafCage/yankround.vim'
-NeoBundle "nathanaelkane/vim-indent-guides"
-NeoBundle "thinca/vim-template"
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'thinca/vim-template'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'  "git plugin
 NeoBundle 'tyru/open-browser.vim'
 " *** hobby ***
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
-
 
 " Python
 NeoBundleLazy 'davidhalter/jedi-vim', {
@@ -93,11 +91,21 @@ NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \   'autoload': {'filetypes': ["python", "python3", "djangohtml"]}
       \ }
 
-" previm
+" HTML/CSS
+NeoBundleLazy 'mattn/emmet-vim', {
+      \   'autoload': {'filetypes': ["html", "css"]}
+      \ }
+
+
+" Markdown
 NeoBundleLazy 'kannokanno/previm', {
       \   'autoload': {'filetypes': ['markdown']}
       \ }
 
+" Latex
+NeoBundleLazy 'Eckankar/vim-latex-folding', {
+      \   'autoload': {'filetypes': ["tex"]}
+      \ }
 
 call neobundle#end()
 
@@ -106,7 +114,7 @@ filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
-NeoBundleCheck
+"NeoBundleCheck
 
 colorscheme molokai
 
