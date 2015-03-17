@@ -88,14 +88,19 @@ NeoBundleLazy 'lambdalisue/vim-pyenv', {
       \   'autoload': {'filetypes': ['python', 'python3']}
       \ }
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
-      \   'autoload': {'filetypes': ["python", "python3", "djangohtml"]}
+      \   'autoload': {'filetypes': ['python', 'python3', 'djangohtml']}
       \ }
 
 " HTML/CSS
 NeoBundleLazy 'mattn/emmet-vim', {
-      \   'autoload': {'filetypes': ["html", "css"]}
+      \   'autoload': {'filetypes': ['html', 'css']}
       \ }
-
+NeoBundleLazy 'taichouchou2/html5.vim', {
+      \   'autoload': {'filetypes': ['html', 'css']}
+      \ }
+NeoBundleLazy 'hail2u/vim-css3-syntax', {
+      \   'autoload': {'filetypes': ['html', 'css']}
+      \ }
 
 " Markdown
 NeoBundleLazy 'kannokanno/previm', {
