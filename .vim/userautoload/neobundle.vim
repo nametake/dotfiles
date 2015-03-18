@@ -76,7 +76,7 @@ NeoBundle 'thinca/vim-scouter'
 " Python
 NeoBundleLazy 'davidhalter/jedi-vim', {
       \   'autoload': {
-      \     'filetypes': ['python', 'python3', 'djangohtml'],
+      \     'filetypes': ['python', 'python3'],
       \   },
       \   'build': {
       \     'mac': 'pip install jedi',
@@ -88,7 +88,7 @@ NeoBundleLazy 'lambdalisue/vim-pyenv', {
       \   'autoload': {'filetypes': ['python', 'python3']}
       \ }
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
-      \   'autoload': {'filetypes': ['python', 'python3', 'djangohtml']}
+      \   'autoload': {'filetypes': ['python', 'python3']}
       \ }
 
 " HTML/CSS

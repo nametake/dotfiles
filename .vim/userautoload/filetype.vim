@@ -56,8 +56,8 @@ function! s:setTexOnly()
 endfunction
 
 " html
-autocmd MyAutoCmd BufNewFile,BufRead *.html set filetype=htmldjango
-autocmd MyAutoCmd FileType htmldjango call s:setHtmlOnly()
+"autocmd MyAutoCmd BufNewFile,BufRead *.html set filetype=htmldjango
+autocmd MyAutoCmd FileType html call s:setHtmlOnly()
 function! s:setHtmlOnly()
   set noautoindent
   set nosmartindent
