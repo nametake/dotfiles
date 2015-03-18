@@ -108,7 +108,7 @@ NeoBundleLazy 'kannokanno/previm', {
       \ }
 
 " Latex
-NeoBundleLazy 'Eckankar/vim-latex-folding', {
+NeoBundleLazy 'rcmdnk/vim-latex-folding', {
       \   'autoload': {'filetypes': ["tex"]}
       \ }
 

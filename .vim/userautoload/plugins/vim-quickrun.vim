@@ -25,10 +25,6 @@ let g:quickrun_config={
       \       'cmdopt': '-pdfdvi',
       \       'exec': ['%c %o %s', tex_exec_command],
       \   },
-      \   'markdown':{
-      \       'command': 'google-chrome',
-      \       'outputter/buffer/close_on_empty': 1,
-      \   },
       \}
 
 nnoremap <Space>r :QuickRun<Cr>
