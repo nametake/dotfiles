@@ -106,6 +106,9 @@ NeoBundleLazy 'hail2u/vim-css3-syntax', {
 NeoBundleLazy 'kannokanno/previm', {
       \   'autoload': {'filetypes': ['markdown']}
       \ }
+NeoBundleLazy 'nelstrom/vim-markdown-folding', {
+      \   'autoload': {'filetypes': ['markdown']}
+      \ }
 
 " Latex
 NeoBundleLazy 'rcmdnk/vim-latex-folding', {
