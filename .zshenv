@@ -4,6 +4,7 @@ case ${OSTYPE} in
     # Mac
     #export PATH=/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:$PATH
     export PATH=/opt/local/sbin:/opt/local/bin:/opt/sbin:/opt/bin:/usr/local/opt:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    export PATH=$HOME/.local/bin:$PATH
 
     # golang
     export GOPATH=$HOME/.go
