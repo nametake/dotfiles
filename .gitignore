@@ -10,6 +10,7 @@
 !/.bashrc
 !/.gitconfig
 !/.vimrc
+!/.gvimrc
 !/.tmux.conf
 !/.zshrc
 !/.zshenv
