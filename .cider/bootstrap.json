@@ -1,4 +1,10 @@
 {
+    "taps": [
+        "caskroom/cask",
+        "caskroom/versions",
+        "kazuakim/splhack",
+        "supermomonga/splhack"
+    ],
     "casks": [
         "adobe-air",
         "adobe-reader",
@@ -68,6 +74,7 @@
         "gradle",
         "heroku-toolbelt",
         "highlight",
+        "icu4c",
         "jq",
         "libev",
         "libevent",
@@ -103,10 +110,5 @@
         "xz",
         "zsh",
         "zsh-completions"
-    ],
-    "taps": [
-        "caskroom/cask",
-        "caskroom/versions",
-        "kazuakim/splhack"
     ]
 }
