@@ -91,6 +91,17 @@ NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \   'autoload': {'filetypes': ['python', 'python3']}
       \ }
 
+
+" Javascript
+NeoBundleLazy 'pangloss/vim-javascript', {
+      \   'autoload': {'filetypes': ['javascript']}
+      \ }
+NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
+      \   'autoload': {'filetypes': ['javascript']}
+      \ }
+
+
+
 " HTML/CSS
 NeoBundleLazy 'mattn/emmet-vim', {
       \   'autoload': {'filetypes': ['html', 'css']}
