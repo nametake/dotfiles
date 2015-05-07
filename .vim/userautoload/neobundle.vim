@@ -126,6 +126,12 @@ NeoBundleLazy 'rcmdnk/vim-latex-folding', {
       \   'autoload': {'filetypes': ["tex"]}
       \ }
 
+" ino(Arduino)
+NeoBundleLazy 'sudar/vim-arduino-syntax', {
+      \   'autoload': {'filetypes': ["ino"]}
+      \ }
+
+
 call neobundle#end()
 
 " Required:

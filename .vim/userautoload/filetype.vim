@@ -114,3 +114,8 @@ function! s:setGotOnly()
   set shiftwidth=4
 endfunction
 "set runtimepath+=$GOROOT/misc/vim
+
+autocmd MyAutoCmd BufRead,BufNewFile *.{ino} set filetype=ino
+autocmd MyAutoCmd FileType go call s:setArduinotOnly()
+function! s:setArduinotOnly()
+endfunction
