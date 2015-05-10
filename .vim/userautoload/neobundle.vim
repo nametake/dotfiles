@@ -100,7 +100,15 @@ NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
       \   'autoload': {'filetypes': ['javascript']}
       \ }
 
-
+" C sharp
+NeoBundleLazy 'nosami/Omnisharp', {
+      \   'autoload': {'filetypes': ['cs']},
+      \   'build': {
+      \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+      \     'mac': 'xbuild server/OmniSharp.sln',
+      \     'unix': 'xbuild server/OmniSharp.sln',
+      \   }
+      \ }
 
 " HTML/CSS
 NeoBundleLazy 'mattn/emmet-vim', {
