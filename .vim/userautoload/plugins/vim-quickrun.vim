@@ -25,6 +25,10 @@ let g:quickrun_config={
       \       'cmdopt': '-pdfdvi',
       \       'exec': ['%c %o %s', tex_exec_command],
       \   },
+      \   'arduino': {
+      \       'command': 'ino',
+      \       'exec': ['%c build', '%c upload'],
+      \   },
       \}
 
 nnoremap <Space>r :QuickRun<Cr>
