@@ -101,13 +101,16 @@ NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
       \ }
 
 " C sharp
-NeoBundleLazy 'nosami/Omnisharp', {
-      \   'autoload': {'filetypes': ['cs']},
+NeoBundleLazy 'OmniSharp/omnisharp-vim', {
+      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
       \   'build': {
-      \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+      \     'windows' : 'msbuild server/OmniSharp.sln',
       \     'mac': 'xbuild server/OmniSharp.sln',
       \     'unix': 'xbuild server/OmniSharp.sln',
-      \   }
+      \   },
+      \ }
+NeoBundleLazy 'OrangeT/vim-csharp', {
+      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] }
       \ }
 
 " HTML/CSS
