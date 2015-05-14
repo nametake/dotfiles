@@ -56,8 +56,8 @@ function! s:setTexOnly()
 endfunction
 
 " html
-autocmd MyAutoCmd BufNewFile,BufRead *.html set filetype=htmldjango
-autocmd MyAutoCmd FileType htmldjango call s:setHtmlOnly()
+"autocmd MyAutoCmd BufNewFile,BufRead *.html set filetype=htmldjango
+autocmd MyAutoCmd FileType html call s:setHtmlOnly()
 function! s:setHtmlOnly()
   set noautoindent
   set nosmartindent
@@ -88,7 +88,12 @@ autocmd MyAutoCmd FileType markdown call s:setMarkdownOnly()
 function! s:setMarkdownOnly()
   set foldlevel=1
   set foldnestmax=3
+  set tabstop=2
+  set shiftwidth=2
+  set softtabstop=2
   set noexpandtab
+  set noautoindent
+  set formatoptions+=or
 endfunction
 
 " shell script
@@ -109,3 +114,8 @@ function! s:setGotOnly()
   set shiftwidth=4
 endfunction
 "set runtimepath+=$GOROOT/misc/vim
+
+autocmd MyAutoCmd BufRead,BufNewFile *.{ino} set filetype=ino
+autocmd MyAutoCmd FileType go call s:setArduinotOnly()
+function! s:setArduinotOnly()
+endfunction

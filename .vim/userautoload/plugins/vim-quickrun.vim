@@ -3,8 +3,10 @@
 "--------------------
 if has('mac')
   let tex_exec_command = "'open %s:r.pdf', 'open /Applications/Utilities/Terminal.app'"
+  let open_command = "open"
 elseif has('unix')
   let tex_exec_command = ""
+  let open_command = "xdg-open"
 endif
 
 let g:quickrun_config={
@@ -12,8 +14,8 @@ let g:quickrun_config={
       \       'split': 'botright 8sp',
       \       'outputter/buffer/into': 1,
       \   },
-      \   'htmldjango':{
-      \       'command': 'google-chrome',
+      \   'html':{
+      \       'command': open_command,
       \       'outputter/buffer/close_on_empty': 1,
       \   },
       \   'tex': {
@@ -23,9 +25,9 @@ let g:quickrun_config={
       \       'cmdopt': '-pdfdvi',
       \       'exec': ['%c %o %s', tex_exec_command],
       \   },
-      \   'markdown':{
-      \       'command': 'google-chrome',
-      \       'outputter/buffer/close_on_empty': 1,
+      \   'arduino': {
+      \       'command': 'ino',
+      \       'exec': ['%c build', '%c upload'],
       \   },
       \}
 

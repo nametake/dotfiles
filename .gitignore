@@ -10,11 +10,13 @@
 !/.bashrc
 !/.gitconfig
 !/.vimrc
+!/.gvimrc
 !/.tmux.conf
 !/.zshrc
 !/.zshenv
 !/.zshrc.antigen
 !/.latexmkrc
 !/.vim/
+!/.scripts/
 
 

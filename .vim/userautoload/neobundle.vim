@@ -11,8 +11,7 @@ if has('vim_starting')
 
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
+endif 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -28,46 +27,45 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 
 NeoBundle 'Shougo/vimproc', {
-      \   'build' : {
-      \       'windows' : 'make -f make_mingw32.mak',
-      \       'cygwin' : 'make -f make_cygwin.mak',
-      \       'mac' : 'make -f make_mac.mak',
-      \       'unix' : 'make -f make_unix.mak',
+      \   'build': {
+      \     'windows': 'make -f make_mingw32.mak',
+      \     'cygwin': 'make -f make_cygwin.mak',
+      \     'mac': 'make -f make_mac.mak',
+      \     'unix': 'make -f make_unix.mak',
       \   },
       \ }
 
 NeoBundleLazy 'Shougo/neocomplete.vim', {
-      \   'autoload' : {'insert': 1}
-      \}
+      \   'autoload': {'insert': 1}
+      \ }
 
 NeoBundleLazy 'Shougo/neosnippet.vim', {
-      \   'autoload' : {'insert': 1}
-      \}
+      \   'autoload': {'insert': 1}
+      \ }
 NeoBundleLazy 'Shougo/neosnippet-snippets', {
-      \   'depends' : ['Shougo/neosnippet.vim'],
-      \   'autoload' : {'insert': 1}
-      \}
+      \   'depends': ['Shougo/neosnippet.vim'],
+      \   'autoload': {'insert': 1}
+      \ }
 
 NeoBundleLazy 'Shougo/unite.vim', {
-      \ 'autoload': {
-      \   'commands': ['Unite', 'UniteWithBufferDir']
-      \ }}
+      \   'autoload': {'commands': ['Unite', 'UniteWithBufferDir']},
+      \ }
 NeoBundleLazy 'Shougo/vimfiler', {
-      \   'depends': [ 'Shougo/unite.vim' ],
-      \   'autoload' : { 'commands' : [ 'VimFiler' ] },
+      \   'depends': ['Shougo/unite.vim'],
+      \   'autoload': {'commands': ['VimFiler']},
       \ }
 
 NeoBundleLazy 'scrooloose/syntastic', {
-      \   'autoload' : {'insert': 1}
-      \}
+      \   'autoload': {'insert': 1}
+      \ }
 
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'LeafCage/yankround.vim'
-NeoBundle "nathanaelkane/vim-indent-guides"
-NeoBundle "thinca/vim-template"
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'thinca/vim-template'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'  "git plugin
 NeoBundle 'tyru/open-browser.vim'
@@ -75,11 +73,74 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
 
-" previm
+" Python
+NeoBundleLazy 'davidhalter/jedi-vim', {
+      \   'autoload': {
+      \     'filetypes': ['python', 'python3'],
+      \   },
+      \   'build': {
+      \     'mac': 'pip install jedi',
+      \     'unix': 'pip install jedi',
+      \   }
+      \ }
+NeoBundleLazy 'lambdalisue/vim-pyenv', {
+      \   'depends': ['davidhalter/jedi-vim'],
+      \   'autoload': {'filetypes': ['python', 'python3']}
+      \ }
+NeoBundleLazy 'hynek/vim-python-pep8-indent', {
+      \   'autoload': {'filetypes': ['python', 'python3']}
+      \ }
+
+
+" Javascript
+NeoBundleLazy 'pangloss/vim-javascript', {
+      \   'autoload': {'filetypes': ['javascript']}
+      \ }
+NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
+      \   'autoload': {'filetypes': ['javascript']}
+      \ }
+
+" C sharp
+NeoBundleLazy 'OmniSharp/omnisharp-vim', {
+      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+      \   'build': {
+      \     'windows' : 'msbuild server/OmniSharp.sln',
+      \     'mac': 'xbuild server/OmniSharp.sln',
+      \     'unix': 'xbuild server/OmniSharp.sln',
+      \   },
+      \ }
+NeoBundleLazy 'OrangeT/vim-csharp', {
+      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] }
+      \ }
+
+" HTML/CSS
+NeoBundleLazy 'mattn/emmet-vim', {
+      \   'autoload': {'filetypes': ['html', 'css']}
+      \ }
+NeoBundleLazy 'taichouchou2/html5.vim', {
+      \   'autoload': {'filetypes': ['html', 'css']}
+      \ }
+NeoBundleLazy 'hail2u/vim-css3-syntax', {
+      \   'autoload': {'filetypes': ['html', 'css']}
+      \ }
+
+" Markdown
 NeoBundleLazy 'kannokanno/previm', {
-      \ 'autoload': {
-      \   'filetypes': ['markdown'],
-      \ }}
+      \   'autoload': {'filetypes': ['markdown']}
+      \ }
+NeoBundleLazy 'nelstrom/vim-markdown-folding', {
+      \   'autoload': {'filetypes': ['markdown']}
+      \ }
+
+" Latex
+NeoBundleLazy 'rcmdnk/vim-latex-folding', {
+      \   'autoload': {'filetypes': ["tex"]}
+      \ }
+
+" ino(Arduino)
+NeoBundleLazy 'sudar/vim-arduino-syntax', {
+      \   'autoload': {'filetypes': ["ino"]}
+      \ }
 
 
 call neobundle#end()
@@ -89,7 +150,7 @@ filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
-NeoBundleCheck
+"NeoBundleCheck
 
 colorscheme molokai
 

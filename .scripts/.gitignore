@@ -1,0 +1,8 @@
+# all file ignore
+/*
+/.*
+
+!/.gitignore
+
+# target not ignore
+!*.sh
