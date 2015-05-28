@@ -1,10 +1,4 @@
 {
-    "taps": [
-        "caskroom/cask",
-        "caskroom/versions",
-        "kazuakim/splhack",
-        "supermomonga/splhack"
-    ],
     "casks": [
         "adobe-air",
         "adobe-reader",
@@ -67,6 +61,7 @@
         "gettext",
         "gettext-mk",
         "ghc",
+        "gibo",
         "git",
         "gmp",
         "go",
@@ -85,6 +80,7 @@
         "macvim",
         "mercurial",
         "mongodb",
+        "mono",
         "mysql",
         "nginx",
         "nkf",
@@ -92,6 +88,7 @@
         "ntfs-3g",
         "openssl",
         "pcre",
+        "picocom",
         "pkg-config",
         "pyenv",
         "pyenv-pip-rehash",
@@ -105,10 +102,17 @@
         "sqlite",
         "tig",
         "tmux",
+        "tree",
         "vim",
         "wget",
         "xz",
         "zsh",
         "zsh-completions"
+    ],
+    "taps": [
+        "caskroom/cask",
+        "caskroom/versions",
+        "kazuakim/splhack",
+        "supermomonga/splhack"
     ]
 }
