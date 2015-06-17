@@ -2,7 +2,7 @@
 " vim-quickrun
 "--------------------
 if has('mac')
-  let tex_exec_command = "'open %s:r.pdf', 'open /Applications/Utilities/Terminal.app'"
+  let tex_exec_command = "open %s:r.pdf; open /Applications/Utilities/Terminal.app"
   let open_command = "open"
 elseif has('unix')
   let tex_exec_command = ""
