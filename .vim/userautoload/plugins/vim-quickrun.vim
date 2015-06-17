@@ -23,6 +23,7 @@ let g:quickrun_config={
       \       'outputter': 'error',
       \       'outputter/error/error': 'buffer',
       \       'cmdopt': '-pdfdvi',
+      \       'runner': "vimproc",
       \       'exec': ['%c %o %s', tex_exec_command],
       \   },
       \   'arduino': {
