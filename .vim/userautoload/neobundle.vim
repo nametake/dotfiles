@@ -133,7 +133,7 @@ NeoBundleLazy 'nelstrom/vim-markdown-folding', {
       \ }
 
 " Latex
-NeoBundleLazy 'rcmdnk/vim-latex-folding', {
+NeoBundleLazy 'matze/vim-tex-fold', {
       \   'autoload': {'filetypes': ["tex"]}
       \ }
 
