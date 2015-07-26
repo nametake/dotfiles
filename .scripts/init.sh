@@ -12,3 +12,5 @@ npm install -g grunt-init
 git clone https://github.com/gruntjs/grunt-init-jquery.git ~/.grunt-init/jquery
 git clone https://github.com/nosami/grunt-init-csharpsolution.git ~/.grunt-init/csharpsolution
 
+# Golang
+go get github.com/nsf/gocode

@@ -142,6 +142,11 @@ NeoBundleLazy 'sudar/vim-arduino-syntax', {
       \   'autoload': {'filetypes': ["ino"]}
       \ }
 
+" Golang
+NeoBundleLazy 'fatih/vim-go', {
+      \   'autoload': {'filetypes': ["go"]}
+      \ }
+
 
 call neobundle#end()
 
