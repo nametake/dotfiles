@@ -59,6 +59,10 @@ NeoBundleLazy 'scrooloose/syntastic', {
       \   'autoload': {'insert': 1}
       \ }
 
+NeoBundleLazy 'mattn/benchvimrc-vim', {
+      \ 'autoload': {'commands': ['BenchVimrc']},
+      \ }
+
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'jiangmiao/auto-pairs'
