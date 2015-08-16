@@ -79,9 +79,7 @@ NeoBundle 'thinca/vim-scouter'
 
 " Python
 NeoBundleLazy 'davidhalter/jedi-vim', {
-      \   'autoload': {
-      \     'filetypes': ['python', 'python3'],
-      \   },
+      \   'autoload': {'filetypes': ['python', 'python3']},
       \   'build': {
       \     'mac': 'pip install jedi',
       \     'unix': 'pip install jedi',
@@ -106,7 +104,7 @@ NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
 
 " C sharp
 NeoBundleLazy 'OmniSharp/omnisharp-vim', {
-      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ]},
       \   'build': {
       \     'windows' : 'msbuild server/OmniSharp.sln',
       \     'mac': 'xbuild server/OmniSharp.sln',
@@ -114,7 +112,7 @@ NeoBundleLazy 'OmniSharp/omnisharp-vim', {
       \   },
       \ }
 NeoBundleLazy 'OrangeT/vim-csharp', {
-      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] }
+      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ]}
       \ }
 
 " HTML/CSS
