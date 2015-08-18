@@ -8,7 +8,6 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-set runtimepath+=~/.vim/
 runtime! userautoload/*.vim
 
 "set runtimepath+=$GOROOT/misc/vim
