@@ -115,6 +115,11 @@ NeoBundleLazy 'OrangeT/vim-csharp', {
       \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ]}
       \ }
 
+" JSON
+NeoBundleLazy 'elzr/vim-json', {
+      \   'autoload': {'filetypes': ['json']}
+      \ }
+
 " HTML/CSS
 NeoBundleLazy 'mattn/emmet-vim', {
       \   'autoload': {'filetypes': ['html', 'css']}
