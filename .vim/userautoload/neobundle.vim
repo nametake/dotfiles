@@ -85,10 +85,10 @@ NeoBundleLazy 'davidhalter/jedi-vim', {
       \     'unix': 'pip install jedi',
       \   }
       \ }
-NeoBundleLazy 'lambdalisue/vim-pyenv', {
-      \   'depends': ['davidhalter/jedi-vim'],
-      \   'autoload': {'filetypes': ['python', 'python3']}
-      \ }
+"NeoBundleLazy 'lambdalisue/vim-pyenv', {
+"      \   'depends': ['davidhalter/jedi-vim'],
+"      \   'autoload': {'filetypes': ['python', 'python3']}
+"      \ }
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \   'autoload': {'filetypes': ['python', 'python3']}
       \ }
