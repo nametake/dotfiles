@@ -78,6 +78,7 @@ NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
 
 " Python
+
 NeoBundleLazy 'davidhalter/jedi-vim', {
       \   'autoload': {'filetypes': ['python', 'python3']},
       \   'build': {
@@ -85,11 +86,26 @@ NeoBundleLazy 'davidhalter/jedi-vim', {
       \     'unix': 'pip install jedi',
       \   }
       \ }
-"NeoBundleLazy 'lambdalisue/vim-pyenv', {
-"      \   'depends': ['davidhalter/jedi-vim'],
-"      \   'autoload': {'filetypes': ['python', 'python3']}
-"      \ }
 NeoBundleLazy 'hynek/vim-python-pep8-indent', {
+      \   'autoload': {'filetypes': ['python', 'python3']}
+      \ }
+" pyenv
+function! IncludePath(path)
+  " define delimiter depends on platform
+  if has('win16') || has('win32') || has('win64')
+    let delimiter = ";"
+  else
+    let delimiter = ":"
+  endif
+  let pathlist = split($PATH, delimiter)
+  if isdirectory(a:path) && index(pathlist, a:path) == -1
+    let $PATH=a:path.delimiter.$PATH
+  endif
+endfunction
+
+call IncludePath(expand("~/.pyenv/shims"))
+NeoBundleLazy 'lambdalisue/vim-pyenv', {
+      \   'depends': ['davidhalter/jedi-vim'],
       \   'autoload': {'filetypes': ['python', 'python3']}
       \ }
 
