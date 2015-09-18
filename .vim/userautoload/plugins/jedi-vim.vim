@@ -33,3 +33,5 @@ endfunction
 
 autocmd MyAutoCmd FileType python setlocal omnifunc=jedi#completions
 autocmd MyAutoCmd FileType python setlocal completeopt-=preview
+autocmd MyAutoCmd FileType python*
+        \ NeoBundleSource jedi-vim | let b:did_ftplugin = 1
