@@ -6,6 +6,7 @@ git clone https://github.com/zsh-users/antigen.git $HOME/.antigen
 # pyenv
 git clone https://github.com/yyuu/pyenv.git $HOME/.pyenv
 git clone https://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+git clone git://github.com/yyuu/pyenv-update.git ~/.pyenv/plugins/pyenv-update
 
 # grunt
 npm install -g grunt-init
