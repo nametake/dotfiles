@@ -27,6 +27,9 @@ set nobackup
 " undoファイルを作成しない
 set noundofile
 
+" ファイルを自動読み込み
+set autoread
+
 " マウスモード有効
 set mouse=a
 
