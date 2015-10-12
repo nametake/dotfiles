@@ -116,6 +116,14 @@ function! s:setGotOnly()
 endfunction
 "set runtimepath+=$GOROOT/misc/vim
 
+autocmd MyAutoCmd FileType cs call s:setCsharpOnly()
+function! s:setCsharpOnly()
+  set noexpandtab
+  set tabstop=4
+  set softtabstop=4
+  set shiftwidth=4
+endfunction
+
 autocmd MyAutoCmd BufRead,BufNewFile *.{ino} set filetype=ino
 autocmd MyAutoCmd FileType go call s:setArduinotOnly()
 function! s:setArduinotOnly()
