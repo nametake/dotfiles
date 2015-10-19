@@ -5,14 +5,11 @@ case ${OSTYPE} in
     #export PATH=/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:$PATH
     export PATH=/opt/local/sbin:/opt/local/bin:/opt/sbin:/opt/bin:/usr/local/opt:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     export PATH=$HOME/.local/bin:$PATH
-
-    # golang
-    export GOPATH=$HOME/.go
-    export GOROOT=/usr/local/opt/go/libexec
-    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+    _osx_only
     ;;
   linux*)
     #Linux
+    _linux_only
     ;;
 esac
 
@@ -42,3 +39,21 @@ fi
 if [ -d /usr/local/lib/activator-1.2.2 ]; then
   export PATH=/usr/local/lib/activator-1.2.2:$PATH
 fi
+
+_osx_only() {
+  if [ -e ${HOME}/.go ]; then
+    # golang
+    export GOPATH=$HOME/.go
+    export GOROOT=/usr/local/opt/go/libexec
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+  fi
+}
+
+_linux_only() {
+  if [ -x `which go` ]; then
+    # golang
+    export GOPATH=$HOME/.go
+    export GOROOT=/usr/lib/go
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+  fi
+}
