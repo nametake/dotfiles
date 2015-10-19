@@ -1,3 +1,7 @@
+####################
+# zshenv
+####################
+
 function _osx_only() {
   if [ -e ${HOME}/.go ]; then
     # golang
