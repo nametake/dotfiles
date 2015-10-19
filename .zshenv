@@ -1,3 +1,20 @@
+function _osx_only() {
+  if [ -e ${HOME}/.go ]; then
+    # golang
+    export GOPATH=$HOME/.go
+    export GOROOT=/usr/local/opt/go/libexec
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+  fi
+}
+
+function _linux_only() {
+  if [ -x `which go` ]; then
+    # golang
+    export GOPATH=$HOME/.go
+    export GOROOT=/usr/lib/go
+    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+  fi
+}
 
 case ${OSTYPE} in
   darwin*)
@@ -40,20 +57,3 @@ if [ -d /usr/local/lib/activator-1.2.2 ]; then
   export PATH=/usr/local/lib/activator-1.2.2:$PATH
 fi
 
-_osx_only() {
-  if [ -e ${HOME}/.go ]; then
-    # golang
-    export GOPATH=$HOME/.go
-    export GOROOT=/usr/local/opt/go/libexec
-    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-  fi
-}
-
-_linux_only() {
-  if [ -x `which go` ]; then
-    # golang
-    export GOPATH=$HOME/.go
-    export GOROOT=/usr/lib/go
-    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-  fi
-}
