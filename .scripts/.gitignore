@@ -6,3 +6,4 @@
 
 # target not ignore
 !*.sh
+!/lib
