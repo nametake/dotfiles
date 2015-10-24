@@ -129,4 +129,10 @@ autocmd MyAutoCmd FileType go call s:setArduinotOnly()
 function! s:setArduinotOnly()
 endfunction
 
-
+autocmd MyAutoCmd FileType json call s:setJsonOnly()
+function! s:setJsonOnly()
+  set noexpandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+endfunction
