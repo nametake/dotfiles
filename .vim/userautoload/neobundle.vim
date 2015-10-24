@@ -174,8 +174,13 @@ NeoBundleLazy 'fatih/vim-go', {
       \   'autoload': {'filetypes': ["go"]}
       \ }
 
+" Scala
+NeoBundleLazy 'derekwyatt/vim-scala', {
+      \   'autoload': {'filetypes': ["scala"]}
+      \ }
 
 call neobundle#end()
+
 
 " Required:
 filetype plugin indent on
