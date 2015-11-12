@@ -10,6 +10,8 @@ SAVEHIST=1000000
 # コマンドが存在するかどうかを判定
 whichs() { whence -p ${1+"$1"} >/dev/null; }
 
+export EDITOR=vim
+
 ########################################
 # PROMPT
 PROMPT="%B%F{green}[${USER}@${HOST}]%f:%F{blue}%2~%f%b%(!.#.%%) "
