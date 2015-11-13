@@ -11,6 +11,7 @@ SAVEHIST=1000000
 whichs() { whence -p ${1+"$1"} >/dev/null; }
 
 export EDITOR=vim
+bindkey -e
 
 ########################################
 # PROMPT
