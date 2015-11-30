@@ -73,6 +73,7 @@ NeoBundle 'thinca/vim-template'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'  "git plugin
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'glidenote/memolist.vim'
 " *** hobby ***
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
