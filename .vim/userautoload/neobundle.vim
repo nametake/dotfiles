@@ -158,6 +158,9 @@ NeoBundleLazy 'kannokanno/previm', {
 NeoBundleLazy 'nelstrom/vim-markdown-folding', {
       \   'autoload': {'filetypes': ['markdown']}
       \ }
+NeoBundleLazy 'dhruvasagar/vim-table-mode', {
+      \   'autoload': {'filetypes': ['markdown']}
+      \ }
 
 " Latex
 NeoBundleLazy 'matze/vim-tex-fold', {
