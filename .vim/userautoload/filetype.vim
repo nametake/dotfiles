@@ -46,6 +46,7 @@ function! s:setCoffeeOnly()
 endfunction
 
 " tex
+autocmd MyAutoCmd BufNewFile,BufRead *.tex set filetype=tex
 autocmd MyAutoCmd FileType tex call s:setTexOnly()
 function! s:setTexOnly()
   set noautoindent
