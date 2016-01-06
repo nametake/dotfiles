@@ -1,6 +1,6 @@
 snippet     mytable
 abbr        my table snippet
-options     indent
+options     indent head
     \begin{table}[htbp]
         \centering
         \begin{tabular}{${3:row}}\hline
@@ -13,7 +13,7 @@ options     indent
 
 snippet     myfigure
 abbr        my figure snippet
-options     indent
+options     indent head
     \begin{figure}[tb]
         \centering
         \fbox{
@@ -26,25 +26,28 @@ options     indent
 
 snippet     mysource
 abbr        source code
-options     indent
+options     indent head
     \lstinputlisting[caption=${2:caption}, label=src:${3:label}]{${1:path}}
 
 
 snippet     tabref
 abbr        table ref
+options     word
     \tabref{tab:${1:label}}${2:}
 
 snippet     figref
 abbr        figure ref
+options     word
     \figref{fig:${1:label}}${2:}
 
 snippet     srcref
 abbr        source ref
+options     word
     \srcref{src:${1:label}}${2:}
 
 snippet     mysourcedirect
 abbr        source ref direct
-options     indent
+options     indent head
     \begin{lstlisting}[caption=${1:caption},label=src:${2:label}]
         ${4:body}
     \end{lstlisting}
