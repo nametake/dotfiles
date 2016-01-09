@@ -63,6 +63,7 @@ NeoBundleLazy 'mattn/benchvimrc-vim', {
       \ 'autoload': {'commands': ['BenchVimrc']},
       \ }
 
+NeoBundle 'haya14busa/vim-migemo'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'jiangmiao/auto-pairs'
