@@ -11,6 +11,7 @@ let g:memolist_prompt_categories = 1
 let g:memolist_qfixgrep = 1
 let g:memolist_vimfiler = 1
 let g:memolist_vimfiler_option = "-toggle"
+let g:memolist_template_dir_path = "~/.vim/template/memolist"
 
 map <Space>mn  :MemoNew<CR>
 map <Space>ml  :MemoList<CR>

@@ -60,7 +60,7 @@ NeoBundleLazy 'scrooloose/syntastic', {
       \ }
 
 NeoBundleLazy 'mattn/benchvimrc-vim', {
-      \ 'autoload': {'commands': ['BenchVimrc']},
+      \   'autoload': {'commands': ['BenchVimrc']},
       \ }
 
 NeoBundle 'haya14busa/vim-migemo'
