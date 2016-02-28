@@ -3,12 +3,18 @@
 cd `dirname $0` || exit 1
 . lib.sh
 
-# angigen
-if ! [ -e ${HOME}/.antigen ]; then
-  echo "angigen is already installed."
+# # angigen
+# if ! [ -e ${HOME}/.antigen ]; then
+#   echo "angigen is already installed."
+# else
+#   git clone https://github.com/zsh-users/antigen.git $HOME/.antigen
+#   antigen bundle
+# fi
+# qplug
+if ! [ -e ${HOME}/.zplug ]; then
+  echo "zplug is already installed."
 else
-  git clone https://github.com/zsh-users/antigen.git $HOME/.antigen
-  antigen bundle
+  curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
 fi
 
 # pyenv
