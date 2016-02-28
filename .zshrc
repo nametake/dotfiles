@@ -239,8 +239,14 @@ fi
 
 ########################################
 # antigen
-if [ -e $HOME/.antigen ]; then
-  source $HOME/.zshrc.antigen
+# if [ -e $HOME/.antigen ]; then
+#   source $HOME/.zshrc.antigen
+# fi
+
+########################################
+# zplug
+if [ -e $HOME/.zplug ]; then
+  source $HOME/.zshrc.zplug
 fi
 
 ########################################
