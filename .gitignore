@@ -14,7 +14,7 @@
 !/.tmux.conf
 !/.zshrc
 !/.zshenv
-!/.zshrc.antigen
+!/.zshrc.zplug
 !/.latexmkrc
 !/.vim/
 !/.scripts/
