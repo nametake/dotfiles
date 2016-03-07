@@ -124,7 +124,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-
 alias tmux='tmux -2'
 
 ########################################
@@ -236,12 +235,6 @@ if [ -x "`whence peco`" ]; then
   zle -N peco-select-history
   bindkey '^r' peco-select-history
 fi
-
-########################################
-# antigen
-# if [ -e $HOME/.antigen ]; then
-#   source $HOME/.zshrc.antigen
-# fi
 
 ########################################
 # zplug
