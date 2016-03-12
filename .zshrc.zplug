@@ -1,5 +1,7 @@
 source ~/.zplug/zplug
 
+zplug "zsh-users/zsh-completions"
+
 zplug "plugins/git"       , from:oh-my-zsh
 zplug "plugins/tmux"      , from:oh-my-zsh
 zplug "plugins/vagrant"   , from:oh-my-zsh
@@ -7,8 +9,8 @@ zplug "plugins/pip"       , from:oh-my-zsh
 zplug "plugins/django"    , from:oh-my-zsh
 zplug "plugins/docker"    , from:oh-my-zsh
 zplug "plugins/gitignore" , from:oh-my-zsh
+zplug "plugins/brew"      , from:oh-my-zsh
 zplug "plugins/brew-cask" , from:oh-my-zsh
 zplug "plugins/npm"       , from:oh-my-zsh
 
-zplug "zsh-users/zsh-completions"
-zplug "chrissicool/zsh-256color"
+zplug load --verbose
