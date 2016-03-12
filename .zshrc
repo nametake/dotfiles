@@ -18,6 +18,7 @@ bindkey -e
 if [ -e $HOME/.zplug ]; then
   source $HOME/.zshrc.zplug
 fi
+
 ########################################
 # PROMPT
 PROMPT="%B%F{green}[${USER}@${HOST}]%f:%F{blue}%2~%f%b%(!.#.%%) "
@@ -294,7 +295,6 @@ if [ -x "`whence peco`" ]; then
   zle -N peco-select-history
   bindkey '^r' peco-select-history
 fi
-
 
 ########################################
 # local
