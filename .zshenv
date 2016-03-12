@@ -12,7 +12,7 @@ function _osx_only() {
 }
 
 function _linux_only() {
-  if [ -x `which go` ]; then
+  if [ -x "`which go`" ]; then
     # golang
     export GOPATH=$HOME/.go
     export GOROOT=/usr/lib/go

@@ -12,6 +12,7 @@ bindkey -e
 
 ########################################
 # tmux
+########################################
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
 function is_osx() { [[ $OSTYPE == darwin* ]]; }
 function is_screen_running() { [ ! -z "$STY" ]; }
@@ -74,15 +75,16 @@ function tmux_automatically_attach_session()
 }
 tmux_automatically_attach_session
 
-
 ########################################
 # zplug
+########################################
 if [ -e $HOME/.zplug ]; then
   source $HOME/.zshrc.zplug
 fi
 
 ########################################
 # MY THEME
+########################################
 PROMPT="%B%F{green}[${USER}@${HOST}]%f:%F{blue}%2~%f%b%(!.#.%%) "
 PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
 SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
@@ -105,6 +107,7 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 
 ########################################
 # Complete
+########################################
 # 補完機能を有効にする
 autoload -Uz compinit
 compinit
@@ -137,14 +140,9 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # 選択補完
 zstyle ':completion:*:default' menu select=1
 
-# 補完の設定
-if [ -e /usr/local/share/zsh-completions ]; then
-  fpath=(/usr/local/share/zsh-completions $fpath)
-fi
-
 ########################################
 # alias
-
+########################################
 # OS毎の設定
 case "${OSTYPE}" in
   darwin*)
@@ -196,6 +194,7 @@ alias tmux='tmux -2'
 
 ########################################
 # key bind 
+########################################
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
 bindkey '^R' history-incremental-pattern-search-backward
 
@@ -209,6 +208,7 @@ bindkey '^x^p' pbcopy-buffer
 
 ########################################
 # Option
+########################################
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
 
@@ -259,6 +259,7 @@ setopt nonomatch
 
 ########################################
 # each OS
+########################################
 case ${OSTYPE} in
   darwin*)
     #Mac用の設定
@@ -275,6 +276,7 @@ compinit
 
 ########################################
 # peco
+########################################
 if [ -x "`whence peco`" ]; then
   function peco-select-history()
   {
@@ -296,6 +298,7 @@ fi
 
 ########################################
 # local
+########################################
 if [ -e $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
