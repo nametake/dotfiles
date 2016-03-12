@@ -41,7 +41,7 @@ export LANG=ja_JP.UTF-8
 # Mac
 export LSCOLORS=exfxcxdxbxegedabagacad
 # Linux
-export LS_COLORS='di=01;34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export LS_COLORS='di=01;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=30;42:ow=30;43:st=01;36:'
 
 export TERM=xterm-256color
 
