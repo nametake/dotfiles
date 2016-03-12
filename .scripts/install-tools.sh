@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function error()
 {
@@ -23,7 +23,7 @@ function exists_command()
 }
 
 # zplug
-if ! [ -e ${HOME}/.zplug ]; then
+if [ -e ${HOME}/.zplug ]; then
   echo "zplug is already installed."
 else
   curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
@@ -44,19 +44,31 @@ fi
 
 # npm tools
 if [ `exists_command npm` -eq 0 ]; then
-  npm install -g grunt-init
-  git clone https://github.com/gruntjs/grunt-init-jquery.git\
-    ~/.grunt-init/jquery
-  git clone https://github.com/nosami/grunt-init-csharpsolution.git\
-    ~/.grunt-init/csharpsolution
+  # Installe grunt-init
+  if [ `exists_command grunt-init` -eq 1 ]; then
+    npm install -g grunt-init
+  fi
+  # Install grunt-init tools
+  if [ -e ${HOME}/.grunt-init ]; then
+    echo "grunt tools is already installed."
+  else
+    git clone https://github.com/gruntjs/grunt-init-jquery.git\
+      ~/.grunt-init/jquery
+    git clone https://github.com/nosami/grunt-init-csharpsolution.git\
+      ~/.grunt-init/csharpsolution
+  fi
 else
   echo "npm not found."
 fi
 
 # golang
 if [ `exists_command go` -eq 0 ]; then
-  go get github.com/nsf/gocode
-  go get github.com/peco/peco/cmd/peco
+  if [ `exists_command gocode` -eq 1 ]; then
+    go get github.com/nsf/gocode
+  fi
+  if [ `exists_command peco` -eq 1 ]; then
+    go get github.com/peco/peco/cmd/peco
+  fi
 else
   echo "go not found."
 fi
