@@ -1,16 +1,28 @@
 #!/bin/sh
 
-cd `dirname $0` || exit 1
-. lib.sh
+function error()
+{
+   echo "ERROR: $@" 1>&2
+}
 
-# # angigen
-# if ! [ -e ${HOME}/.antigen ]; then
-#   echo "angigen is already installed."
-# else
-#   git clone https://github.com/zsh-users/antigen.git $HOME/.antigen
-#   antigen bundle
-# fi
-# qplug
+function abort()
+{
+   echo "ABORT: $@" 1>&2
+   exit 1
+}
+
+function exists_command()
+{
+  test $# -eq 1 || abort "exists_command argument isn't 1."
+
+  if type $1 > /dev/null 2>&1;then
+    echo 0
+  else
+    echo 1
+  fi
+}
+
+# zplug
 if ! [ -e ${HOME}/.zplug ]; then
   echo "zplug is already installed."
 else
