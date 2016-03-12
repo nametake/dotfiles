@@ -7,3 +7,5 @@ if [ -e ${HOME}/dotfiles ]; then
   ln -s ${HOME}/dotfiles/.vimrc ${HOME}/.vimrc
   ln -s ${HOME}/dotfiles/.vim ${HOME}/.vim
 else
+  echo "Not found ${HOME}/dotfiles"
+fi
