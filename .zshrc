@@ -14,6 +14,11 @@ export EDITOR=vim
 bindkey -e
 
 ########################################
+# zplug
+if [ -e $HOME/.zplug ]; then
+  source $HOME/.zshrc.zplug
+fi
+########################################
 # PROMPT
 PROMPT="%B%F{green}[${USER}@${HOST}]%f:%F{blue}%2~%f%b%(!.#.%%) "
 PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
@@ -290,11 +295,6 @@ if [ -x "`whence peco`" ]; then
   bindkey '^r' peco-select-history
 fi
 
-########################################
-# zplug
-if [ -e $HOME/.zplug ]; then
-  source $HOME/.zshrc.zplug
-fi
 
 ########################################
 # local
