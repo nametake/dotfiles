@@ -19,3 +19,9 @@ else
   git clone https://github.com/yyuu/pyenv-pip-rehash.git\
     ~/.pyenv/plugins/pyenv-pip-rehash
 fi
+
+if [ -e ${HOME}/.tmux/plugins/tpm ]; then
+  echo "tpm(tmux plugin manager) is already installed."
+else
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
