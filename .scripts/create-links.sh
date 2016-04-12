@@ -8,6 +8,7 @@ dotfiles=(
           ".vimrc"
           ".vim"
           ".tmux.conf"
+          ".gitconfig"
           )
 
 # Arg parse
