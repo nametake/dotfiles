@@ -1,7 +1,7 @@
 "--------------------
 " memolist.vim
 "--------------------1
-let g:memolist_path = "~/Dropbox/Memo/"
+let g:memolist_path = "~/Documents/Memo"
 let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 let g:memolist_memo_date = "epoch"
