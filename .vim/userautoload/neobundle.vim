@@ -83,7 +83,6 @@ NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
 
 " Python
-
 NeoBundleLazy 'davidhalter/jedi-vim', {
       \   'autoload': {'filetypes': ['python', 'python3']},
       \   'build': {
@@ -127,18 +126,18 @@ NeoBundleLazy 'kchmck/vim-coffee-script', {
       \   'autoload': {'filetypes': ['coffee']}
       \ }
 
-" C sharp
-NeoBundleLazy 'OmniSharp/omnisharp-vim', {
-      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ]},
-      \   'build': {
-      \     'windows' : 'msbuild server/OmniSharp.sln',
-      \     'mac': 'xbuild server/OmniSharp.sln',
-      \     'unix': 'xbuild server/OmniSharp.sln',
-      \   },
-      \ }
-NeoBundleLazy 'OrangeT/vim-csharp', {
-      \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ]}
-      \ }
+" " C sharp
+" NeoBundleLazy 'OmniSharp/omnisharp-vim', {
+"       \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ]},
+"       \   'build': {
+"       \     'windows' : 'msbuild server/OmniSharp.sln',
+"       \     'mac': 'xbuild server/OmniSharp.sln',
+"       \     'unix': 'xbuild server/OmniSharp.sln',
+"       \   },
+"       \ }
+" NeoBundleLazy 'OrangeT/vim-csharp', {
+"       \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ]}
+"       \ }
 
 " JSON
 NeoBundleLazy 'elzr/vim-json', {
@@ -167,15 +166,15 @@ NeoBundleLazy 'dhruvasagar/vim-table-mode', {
       \   'autoload': {'filetypes': ['markdown']}
       \ }
 
-" Latex
-NeoBundleLazy 'matze/vim-tex-fold', {
-      \   'autoload': {'filetypes': ["tex"]}
-      \ }
+" " Latex
+" NeoBundleLazy 'matze/vim-tex-fold', {
+"       \   'autoload': {'filetypes': ["tex"]}
+"       \ }
 
-" ino(Arduino)
-NeoBundleLazy 'sudar/vim-arduino-syntax', {
-      \   'autoload': {'filetypes': ["ino"]}
-      \ }
+" " ino(Arduino)
+" NeoBundleLazy 'sudar/vim-arduino-syntax', {
+"       \   'autoload': {'filetypes': ["ino"]}
+"       \ }
 
 " Golang
 NeoBundleLazy 'fatih/vim-go', {
