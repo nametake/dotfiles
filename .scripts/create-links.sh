@@ -28,7 +28,7 @@ done
 if [ "$FLG_LINK" = "TRUE" ]; then
   echo 'Create Link'
   for file in ${dotfiles[@]}; do
-    echo ${dotfiles_root}/${file} ${HOME}/${file}
+    ln -s ${dotfiles_root}/${file} ${HOME}/${file}
   done
 fi
 
