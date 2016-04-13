@@ -47,6 +47,8 @@ NeoBundleLazy 'Shougo/neosnippet-snippets', {
       \   'autoload': {'insert': 1}
       \ }
 
+NeoBundle 'Konfekt/FastFold'
+
 NeoBundleLazy 'Shougo/unite.vim', {
       \   'autoload': {'commands': ['Unite', 'UniteWithBufferDir']},
       \ }
