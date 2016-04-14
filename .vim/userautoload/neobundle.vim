@@ -150,9 +150,9 @@ NeoBundleLazy 'elzr/vim-json', {
 NeoBundleLazy 'mattn/emmet-vim', {
       \   'autoload': {'filetypes': ['html', 'css']}
       \ }
-NeoBundleLazy 'taichouchou2/html5.vim', {
-      \   'autoload': {'filetypes': ['html', 'css']}
-      \ }
+" NeoBundleLazy 'taichouchou2/html5.vim', {
+"       \   'autoload': {'filetypes': ['html', 'css']}
+"       \ }
 NeoBundleLazy 'hail2u/vim-css3-syntax', {
       \   'autoload': {'filetypes': ['html', 'css']}
       \ }
