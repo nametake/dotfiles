@@ -188,6 +188,17 @@ NeoBundleLazy 'derekwyatt/vim-scala', {
       \   'autoload': {'filetypes': ["scala"]}
       \ }
 
+" Haskell
+NeoBundleLazy 'kana/vim-filetype-haskell', {
+      \   'autoload': {'filetype': ["haskell"]}
+      \ }
+NeoBundleLazy 'eagletmt/ghcmod-vim', {
+      \   'autoload': {'filetype': ['haskell']}
+      \ }
+NeoBundleLazy 'ujihisa/neco-ghc', {
+      \   'autoload': {'filetype': ['haskell']}
+      \ }
+
 call neobundle#end()
 
 
