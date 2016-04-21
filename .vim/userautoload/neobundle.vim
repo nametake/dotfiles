@@ -123,6 +123,12 @@ NeoBundleLazy 'pangloss/vim-javascript', {
 NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
       \   'autoload': {'filetypes': ['javascript']}
       \ }
+NeoBundleLazy 'mxw/vim-jsx', {
+      \   'autoload': {'filetypes': ['javascript']}
+      \ }
+NeoBundleLazy 'justinj/vim-react-snippets', {
+      \   'autoload': {'filetypes': ['javascript']}
+      \ }
 " coffee
 NeoBundleLazy 'kchmck/vim-coffee-script', {
       \   'autoload': {'filetypes': ['coffee']}

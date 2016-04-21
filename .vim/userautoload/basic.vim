@@ -153,7 +153,6 @@ set expandtab
 " インデントをshiftwidthの倍数を丸める
 set shiftround
 
-
 "---------------------------------------
 " Auto Complete setting
 "---------------------------------------

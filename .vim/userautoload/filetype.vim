@@ -1,6 +1,8 @@
 "--------------------
 " filetype
 "--------------------
+
+autocmd FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
 " vim
 autocmd MyAutoCmd FileType vim call s:setVimOnly()
 function! s:setVimOnly()
@@ -61,8 +63,7 @@ endfunction
 "autocmd MyAutoCmd BufNewFile,BufRead *.html set filetype=htmldjango
 autocmd MyAutoCmd FileType html call s:setHtmlOnly()
 function! s:setHtmlOnly()
-  set noautoindent
-  set nosmartindent
+  set indentexpr=
   set expandtab
   set tabstop=2
   set shiftwidth=2
