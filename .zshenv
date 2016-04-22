@@ -54,6 +54,12 @@ if [ -e ${HOME}/.pyenv ]; then
   eval "$(pyenv init -)"
 fi
 
+# ruby
+if [ -e ${HOME}/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
+fi
+
 # Latex
 if [ -d /usr/texbin ]; then
   export PATH=/usr/texbin:$PATH
