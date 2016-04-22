@@ -153,6 +153,9 @@ NeoBundleLazy 'elzr/vim-json', {
       \ }
 
 " HTML/CSS
+ NeoBundleLazy 'vim-scripts/html-improved-indentation', {
+      \   'autoload': {'filetypes': ['html', 'css']}
+      \ }
 NeoBundleLazy 'mattn/emmet-vim', {
       \   'autoload': {'filetypes': ['html', 'css']}
       \ }
