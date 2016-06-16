@@ -1,0 +1,18 @@
+# all file ignore
+/*
+/.*
+
+!/.gitignore
+
+# target not ignore
+!/template/
+!template.*
+
+!/syntax/
+!*.vim
+
+!/snippet/
+!*.vim
+
+!/userautoload/
+!*.vim
