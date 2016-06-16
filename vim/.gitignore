@@ -1,18 +1,5 @@
-# all file ignore
-/*
-/.*
+########################################
+# .vim
+########################################
 
-!/.gitignore
-
-# target not ignore
-!/template/
-!template.*
-
-!/syntax/
-!*.vim
-
-!/snippet/
-!*.vim
-
-!/userautoload/
-!*.vim
+bundle/
