@@ -28,7 +28,7 @@ done
 if [ "$FLG_LINK" = "TRUE" ]; then
   echo 'Create Link'
   for file in ${dotfiles[@]}; do
-    ln -s ${dotfiles_root}/${file} ${HOME}/.${file}
+    ln -si ${dotfiles_root}/${file} ${HOME}/.${file}
   done
 fi
 
@@ -36,7 +36,7 @@ fi
 if [ "$FLG_DELETE" = "TRUE" ]; then
   echo 'Delete Link'
   for file in ${dotfiles[@]}; do
-    rm ${HOME}/.${file}
+    rm -i ${HOME}/.${file}
   done
 fi
 
