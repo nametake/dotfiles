@@ -1,0 +1,250 @@
+"----------------------------------------------------------------
+" nametake's .vimrc
+"----------------------------------------------------------------
+
+" Reference: https://github.com/Shougo/shougo-s-github/blob/master/vim/vimrc
+
+"----------------------------------------------------------------
+" Initialize 
+"
+
+if &compatible
+  set nocompatible
+endif
+
+function! s:source_rc(path, ...) abort "{{{
+  let use_global = get(a:000, 0, !has('vim_starting'))
+  let abspath = resolve(expand('~/.vim/rc/' . a:path))
+  if !use_global
+    execute 'source' fnameescape(abspath)
+    return
+  endif
+
+  " substitute all 'set' to 'setglobal'
+  let content = map(readfile(abspath),
+        \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
+  " create tempfile and source the tempfile
+  let tempfile = tempname()
+  try
+    call writefile(content, tempfile)
+    execute printf('source %s', fnameescape(tempfile))
+  finally
+    if filereadable(tempfile)
+      call delete(tempfile)
+    endif
+  endtry
+endfunction"}}}
+
+" Set augroup.
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
+
+if has('vim_starting')
+  call s:source_rc('init.rc.vim')
+endif
+
+if has('vim_starting')
+  call s:source_rc('neobundle.rc.vim')
+  for f in split(glob('~/.vim/rc/plugins/*.vim'), '\n')
+    exe 'source' f
+  endfor
+endif
+
+
+set title
+
+
+"----------------------------------------------------------------
+" File
+"
+"{{{
+
+" encode
+set encoding=utf-8
+set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp
+set fileformats=unix,dos,mac
+
+set hidden
+set autoread
+set write
+set nobackup
+set noswapfile
+set nowritebackup
+set noundofile
+set modified
+
+"}}}
+
+"----------------------------------------------------------------
+" View
+"
+"{{{
+
+set number
+set ruler
+set cursorline
+set laststatus=2
+set cmdheight=1
+set showmatch
+set list
+set listchars=tab:»-,trail:･,extends:»,precedes:«,nbsp:%,eol:↲
+set matchtime=3
+set matchpairs& matchpairs+=<:>
+set wrap
+
+"}}}
+"
+"----------------------------------------------------------------
+" Cursor
+"
+"{{{
+
+set backspace=indent,eol,start
+set whichwrap=b,s,h,l,<,>,[,]
+set startofline
+set textwidth=0
+
+"}}}
+
+"----------------------------------------------------------------
+" Search/Replace
+"
+"{{{
+
+set incsearch
+set hlsearch 
+set wrapscan
+set ignorecase
+set smartcase
+
+"}}}
+
+"----------------------------------------------------------------
+" Auto complete
+"
+"{{{
+
+set infercase
+set completeopt=menu,preview
+
+"}}}
+
+"----------------------------------------------------------------
+" Tab/Indent
+"
+"{{{
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set shiftround
+set autoindent
+set smartindent
+
+"}}}
+
+"----------------------------------------------------------------
+" Fold
+"
+"{{{
+
+set foldenable
+set foldmethod=syntax
+set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
+set foldlevel=0
+set foldnestmax=2
+set foldcolumn=2
+
+
+"}}}
+
+"----------------------------------------------------------------
+" OS
+"
+"{{{
+
+set mouse=a
+set iminsert=2
+" clipboard setting
+if IsMac()
+  set clipboard=unnamed,autoselect
+elseif IsWindows()
+else
+  set clipboard=unnamedplus,autoselect
+endif
+
+"}}}
+
+"----------------------------------------------------------------
+" Command line
+"
+"{{{
+
+set showmode
+set showcmd
+set wildmenu
+set wildchar=<tab>
+set wildmode=list:full
+set history=10000
+
+"}}}
+
+"----------------------------------------------------------------
+" Beep
+"
+"{{{
+
+set t_vb=
+set novisualbell
+
+"}}}
+
+"----------------------------------------------------------------
+" KeyMap
+"
+"{{{
+
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+nnoremap j gj
+nnoremap k gk
+
+nnoremap OA gi<Up>
+nnoremap OB gi<Down>
+nnoremap OC gi<Right>
+nnoremap OD gi<Left>
+nnoremap OF gi<End>
+nnoremap OH gi<Home>
+nnoremap [3~ gi<Del>
+nnoremap [5~ gi<PageUp>
+nnoremap [6~ gi<PageDown>]
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+noremap  O o<ESC>
+
+"}}}
+
+"----------------------------------------------------------------
+" Color
+"
+"{{{
+
+set t_Co=256
+set term=screen-256color
+
+syntax on
+
+"}}}
+
