@@ -1,14 +1,5 @@
-"--------------------
-" vimrc
-"--------------------
-let OSTYPE = system('uname')
-
-" release autogroup in MyAutoCmd
-augroup MyAutoCmd
-  autocmd!
-augroup END
-
-runtime! userautoload/*.vim
-
-"set runtimepath+=$GOROOT/misc/vim
-"let $PYTHON3_DLL="/usr/local/Cellar/python3/3.4.1_1/Frameworks/Python.framework/Versions/3.4/Python"
+" Note: Skip initialization for vim-tiny or vim-small.
+" Reference: https://github.com/Shougo/shougo-s-github/blob/master/vim/vimrc
+if 1
+  execute 'source' fnamemodify(expand('<sfile>'), ':h').'/.vim/rc/vimrc'
+endif

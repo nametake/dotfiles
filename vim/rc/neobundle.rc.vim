@@ -223,4 +223,3 @@ filetype plugin indent on
 
 colorscheme molokai
 
-runtime! userautoload/plugins/*.vim
