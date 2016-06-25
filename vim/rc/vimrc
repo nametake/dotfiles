@@ -167,7 +167,6 @@ set foldcolumn=2
 "{{{
 
 set mouse=a
-set iminsert=2
 " clipboard setting
 if IsMac()
   set clipboard=unnamed,autoselect
