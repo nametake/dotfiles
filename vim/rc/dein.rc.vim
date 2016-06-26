@@ -21,7 +21,7 @@ call dein#begin(s:path, [expand('<sfile>')]
       \ + split(glob('~/.vim/rc/*.toml'), '\n'))
 
 " load toml and cache
-call dein#load_toml('~/.vim/rc/dein.toml',      {'lazy': 0})
+call dein#load_toml('~/.vim/rc/dein.toml', {'lazy': 0})
 call dein#load_toml('~/.vim/rc/dein_lazy.toml', {'lazy': 1})
 
 " disable other plugins
@@ -36,7 +36,7 @@ call dein#save_state()
 
 
 " Installation check.
-if has('vim_starting') && dein#check_install()
+if dein#check_install()
   call dein#install()
 endif
 
