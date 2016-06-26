@@ -8,15 +8,13 @@ repo = 'Shougo/context_filetype.vim'
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
-hook_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}
 on_if = "isdirectory(bufname('%'))"
-hook_add = 'nnoremap <silent>   [Space]f   :<C-u>VimFiler -invisible<CR>'
-hook_source = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
+hook_add = 'nnoremap <silent> [Space]f :<C-u>VimFiler -invisible<CR>'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'

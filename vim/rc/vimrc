@@ -47,7 +47,7 @@ endif
 
 if has('vim_starting')
   call s:source_rc('neobundle.rc.vim')
-  for f in split(glob('~/.vim/rc/plugins/*.vim'), '\n')
+  for f in split(glob('~/.vim/rc/neobundle-plugins/*.vim'), '\n')
     exe 'source' f
   endfor
 endif
