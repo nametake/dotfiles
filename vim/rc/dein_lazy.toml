@@ -6,6 +6,11 @@ on_if = 1
 repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['Shougo/context_filetype.vim']
+
+
+[[plugins]]
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
 
@@ -41,3 +46,4 @@ hook_post_source = 'FastFoldUpdate'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 on_i = 1
+

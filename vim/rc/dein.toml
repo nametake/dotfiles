@@ -9,10 +9,6 @@ build = 'make'
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['Shougo/context_filetype.vim']
-
-[[plugins]]
 repo = 'haya14busa/vim-migemo'
 
 [[plugins]]
