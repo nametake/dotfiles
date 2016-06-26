@@ -1,0 +1,45 @@
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_if = 1
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+hook_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.vim'
+on_map = {n = '<Plug>'}
+on_if = "isdirectory(bufname('%'))"
+hook_add = 'nnoremap <silent>   [Space]f   :<C-u>VimFiler -invisible<CR>'
+hook_source = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+depends = 'context_filetype.vim'
+if = "has('lua')"
+on_event = 'InsertEnter'
+hook_source = '''
+  let g:neocomplete#enable_at_startup = 1
+  source ~/.vim/rc/plugins/neocomplete.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_event = 'InsertCharPre'
+on_ft = 'snippet'
+hook_source = 'source ~/.vim/rc/plugins/neosnippet.rc.vim'
+
+[[plugins]]
+repo = 'Konfekt/FastFold'
+on_event = 'BufEnter'
+hook_post_source = 'FastFoldUpdate'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_i = 1

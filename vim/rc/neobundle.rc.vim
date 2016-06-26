@@ -79,6 +79,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'cespare/vim-toml'
 " *** hobby ***
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
