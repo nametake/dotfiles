@@ -1,7 +1,4 @@
-"----------------------------------------------------------------
 " Initialize
-"----------------------------------------------------------------
-
 
 let s:is_windows = has('win32') || has('win64')
 
@@ -14,5 +11,4 @@ function! IsMac() abort
         \ && (has('mac') || has('macunix') || has('gui_macvim')
         \     || (!executable('xdg-open') && system('uname') =~? '^darwin'))
 endfunction
-
 
