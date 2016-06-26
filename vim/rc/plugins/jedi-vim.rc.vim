@@ -21,3 +21,4 @@ let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*f
 let g:jedi#squelch_py_warning = 0
 
 setlocal omnifunc=jedi#completions
+setlocal completeopt-=preview
