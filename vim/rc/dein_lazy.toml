@@ -14,7 +14,7 @@ repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}
 on_if = "isdirectory(bufname('%'))"
-hook_add = 'nnoremap <silent> [Space]f :<C-u>VimFiler -invisible<CR>'
+hook_add = 'nnoremap <silent> <Space>f :<C-u>VimFiler -invisible<CR>'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'

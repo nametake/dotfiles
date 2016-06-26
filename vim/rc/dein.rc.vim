@@ -5,7 +5,7 @@ let s:repo = s:path . '/repos/github.com/Shougo/dein.vim'
 
 " install dein
 if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
+  if !isdirectory(s:repo)
     execute '!git clone https://github.com/Shougo/dein.vim' s:repo
   endif
   execute 'set runtimepath^=' . fnamemodify(s:repo, ':p')
@@ -36,7 +36,7 @@ call dein#save_state()
 
 
 " Installation check.
-if !has('vim_starting') && dein#check_install()
+if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
