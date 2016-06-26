@@ -242,6 +242,7 @@ noremap  O o<ESC>
 
 set t_Co=256
 set term=screen-256color
+colorscheme molokai
 
 syntax on
 
