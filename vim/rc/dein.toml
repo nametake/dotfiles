@@ -9,8 +9,10 @@ build = 'make'
 [[plugins]]
 repo = 'thinca/vim-unite-history'
 on_source = 'unite.vim'
+
 [[plugins]]
 repo = 'osyo-manga/unite-filetype'
+
 [[plugins]]
 repo = 'Shougo/unite-help'
 on_source = 'unite.vim'
@@ -46,16 +48,16 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'thinca/vim-template'
 hook_add = '''
-autocmd MyAutoCmd User plugin-template-loaded call s:template_keywords()
-function! s:template_keywords()
-  silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
-  silent! %s/<+FILENAME+>/\=expand('%:r')/g
-endfunction
+  autocmd MyAutoCmd User plugin-template-loaded call s:template_keywords()
+  function! s:template_keywords()
+    silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
+    silent! %s/<+FILENAME+>/\=expand('%:r')/g
+  endfunction
 
-autocmd MyAutoCmd User plugin-template-loaded
-      \   if search('<+CURSOR+>')
-      \ |   silent! execute 'normal! "_da>'
-      \ | endif
+  autocmd MyAutoCmd User plugin-template-loaded
+        \   if search('<+CURSOR+>')
+        \ |   silent! execute 'normal! "_da>'
+        \ | endif
 '''
 
 [[plugins]]

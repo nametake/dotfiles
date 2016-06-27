@@ -2,9 +2,11 @@
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
+
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 on_event = ['BufEnter']
+
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
@@ -19,13 +21,18 @@ depends = 'context_filetype.vim'
 if = "has('lua')"
 on_event = 'InsertEnter'
 hook_add = 'let g:neocomplete#enable_at_startup = 1'
-hook_source = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
+hook_source = '''
+  source ~/.vim/rc/plugins/neocomplete.rc.vim
+'''
+
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
 on_event = 'InsertCharPre'
 on_ft = 'snippet'
-hook_source = 'source ~/.vim/rc/plugins/neosnippet.rc.vim'
+hook_source = '''
+  source ~/.vim/rc/plugins/neosnippet.rc.vim
+'''
 
 [[plugins]]
 repo = 'Konfekt/FastFold'
@@ -59,7 +66,9 @@ hook_source = '''
 repo = 'davidhalter/jedi-vim'
 if = '!has("neovim")'
 on_ft = ['python']
-hook_source = '~/.vim/rc/plugins/jedi-vim.vim'
+hook_source = '''
+  source ~/.vim/rc/plugins/jedi-vim.vim
+'''
 
 [[plugins]]
 repo =  'hynek/vim-python-pep8-indent'
@@ -68,7 +77,9 @@ on_ft = ['python']
 [[plugins]]
 repo = 'lambdalisue/vim-pyenv'
 on_ft = ['python']
-hook_source = 'source ~/.vim/rc/plugins/jedi-vim.rc.vim'
+hook_source = '''
+  source ~/.vim/rc/plugins/jedi-vim.rc.vim
+'''
 
 # Golang
 [[plugins]]
@@ -98,12 +109,14 @@ on_ft = ['go']
 [[plugins]]
 repo = 'nelstrom/vim-markdown-folding'
 on_ft = ['markdown']
+
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
 on_ft = ['markdown']
 hook_source ='''
   let g:markdown_fold_style = 'nested'
 '''
+
 [[plugins]]
 repo = 'kannokanno/previm'
 on_ft = ['markdown']
@@ -115,6 +128,7 @@ hook_source ='''
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
+
 [[plugins]]
 repo = 'jiangmiao/simple-javascript-indenter'
 on_ft = ['javascript']
@@ -123,9 +137,11 @@ on_ft = ['javascript']
 [[plugins]]
 repo = 'vim-scripts/html-improved-indentation'
 on_ft = ['html', 'css']
+
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'css']
+
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
 on_ft = ['html', 'css']
