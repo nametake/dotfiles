@@ -5,7 +5,7 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
-# depends unite
+# depends unite {{{
 [[plugins]]
 repo = 'thinca/vim-unite-history'
 on_source = 'unite.vim'
@@ -16,6 +16,7 @@ repo = 'osyo-manga/unite-filetype'
 [[plugins]]
 repo = 'Shougo/unite-help'
 on_source = 'unite.vim'
+# }}}
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
