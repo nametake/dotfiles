@@ -1,0 +1,84 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+# depends unite {{{
+[[plugins]]
+repo = 'thinca/vim-unite-history'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'osyo-manga/unite-filetype'
+
+[[plugins]]
+repo = 'Shougo/unite-help'
+on_source = 'unite.vim'
+# }}}
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'haya14busa/vim-migemo'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'vim-scripts/Align'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'thinca/vim-template'
+hook_add = '''
+  autocmd MyAutoCmd User plugin-template-loaded call s:template_keywords()
+  function! s:template_keywords()
+    silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
+    silent! %s/<+FILENAME+>/\=expand('%:r')/g
+  endfunction
+
+  autocmd MyAutoCmd User plugin-template-loaded
+        \   if search('<+CURSOR+>')
+        \ |   silent! execute 'normal! "_da>'
+        \ | endif
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+  source ~/.vim/rc/plugins/quickrun.rc.vim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+
+[[plugins]]
+repo = 'fuenor/qfixgrep'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+

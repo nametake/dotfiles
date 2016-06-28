@@ -1,12 +1,11 @@
-"--------------------
-" neobundle
-"--------------------
+" neobundle configurations.
 " Note: Skip initialization for vim-tiny or vim-small.
+
 if !1 | finish | endif
 
 if has('vim_starting')
   if &compatible
-    set nocompatible               " Be iMproved
+    set nocompatible " Be iMproved
   endif
 
   " Required:
@@ -80,6 +79,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'cespare/vim-toml'
 " *** hobby ***
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'thinca/vim-scouter'
