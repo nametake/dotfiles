@@ -179,7 +179,7 @@ set foldcolumn=2
 set mouse=a
 " clipboard setting
 if IsMac()
-  set clipboard=unnamed,autoselect
+  set clipboard=unnamed,unnamedplus
 elseif IsWindows()
 else
   set clipboard=unnamedplus,autoselect
@@ -251,7 +251,9 @@ noremap  O o<ESC>
 "{{{
 
 set t_Co=256
-set term=screen-256color
+if !has('nvim')
+  set term=screen-256color
+endif
 colorscheme molokai
 
 syntax on
