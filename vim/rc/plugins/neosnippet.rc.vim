@@ -3,6 +3,7 @@
 " 自分用 snippet ファイルの場所
 let s:my_snippet = '~/.vim/snippet/'
 let g:neosnippet#snippets_directory = s:my_snippet
+g:neosnippet#enable_completed_snippet = 1
 
 " For snippet_complete marker.
 if has('conceal')
