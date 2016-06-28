@@ -71,7 +71,7 @@ repo = 'davidhalter/jedi-vim'
 if = '!has("neovim")'
 on_ft = ['python']
 hook_source = '''
-  source ~/.vim/rc/plugins/jedi-vim.vim
+  source ~/.vim/rc/plugins/jedi-vim.rc.vim
 '''
 
 [[plugins]]

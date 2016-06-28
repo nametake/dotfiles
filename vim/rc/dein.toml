@@ -63,6 +63,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+hook_add = '''
+  source ~/.vim/rc/plugins/quickrun.rc.vim
+'''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
