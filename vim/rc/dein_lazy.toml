@@ -63,6 +63,14 @@ hook_source = '''
         \}
 '''
 
+[[plugins]]
+repo = 'lambdalisue/vim-gista'
+on_cmd = ['Gista']
+hook_add = '''
+  let g:gista#client#default_username = 'nametake'
+'''
+
+
 # Filetype {{{
 
 # Python {{{
