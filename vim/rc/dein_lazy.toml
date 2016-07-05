@@ -68,8 +68,9 @@ repo = 'lambdalisue/vim-gista'
 on_cmd = ['Gista']
 hook_add = '''
   let g:gista#client#default_username = 'nametake'
+  nnoremap <silent> <Space>gl :<C-u>Gista list --no-cache<CR>
+  nnoremap <silent> <Space>gp :<C-u>Gista post<CR>
 '''
-
 
 # Filetype {{{
 
