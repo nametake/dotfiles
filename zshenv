@@ -6,8 +6,7 @@ function _osx_only() {
   if [ -e ${HOME}/.go ]; then
     # golang
     export GOPATH=$HOME/.go
-    export GOROOT=/usr/local/opt/go/libexec
-    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+    export PATH=$GOPATH/bin:$PATH
   fi
 }
 
@@ -15,8 +14,7 @@ function _linux_only() {
   if [ -x "`which go`" ]; then
     # golang
     export GOPATH=$HOME/.go
-    export GOROOT=/usr/lib/go
-    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+    export PATH=$GOPATH/bin:$PATH
   fi
 }
 
