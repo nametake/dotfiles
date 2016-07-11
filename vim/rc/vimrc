@@ -260,3 +260,16 @@ syntax on
 
 "}}}
 
+"----------------------------------------------------------------
+" Platform
+"
+"{{{
+"
+if IsWindows()
+  call s:source_rc('windows.rc.vim')
+else
+  call s:source_rc('unix.rc.vim')
+endif
+
+"}}}
+"
