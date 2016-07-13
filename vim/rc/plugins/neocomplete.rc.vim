@@ -17,9 +17,9 @@ let g:neocomplete#auto_completion_start_length = 2
 " Set manual completion length.
 let g:neocomplete#manual_completion_start_length = 0
 " Set minimum keyword length.
-let g:neocomplete#min_keyword_length = 3
+let g:neocomplete#min_keyword_length = 2
 
-let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 0
 let g:neocomplete#enable_cursor_hold_i = 0
 
 "==================
