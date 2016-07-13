@@ -1,23 +1,21 @@
 " neosnippet
 
-" 自分用 snippet ファイルの場所
-let s:my_snippet = '~/.vim/snippet/'
-let g:neosnippet#snippets_directory = s:my_snippet
-g:neosnippet#enable_completed_snippet = 1
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#enable_complete_done = 1
+let g:neosnippet#expand_word_boundary = 1
 
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
+let g:neosnippet#snippets_directory = '~/.vim/snippets'
 
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+" Key map {{{
 
-" <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+" Expand select word
+imap <expr><C-k> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<C-k>"
+smap <expr><C-k> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<C-k>"
+xmap <expr><C-k> neosnippet#expandable() ?
+      \ "\<Plug>(neosnippet_expand)" : "\<C-k>"
+smap <expr><BS> "\<ESC>i"
 
 inoremap <expr><CR>  pumvisible() ?
       \ neocomplete#close_popup() : "\<CR>"
@@ -29,3 +27,4 @@ imap <expr><TAB> pumvisible() ?
 smap <expr><TAB> neosnippet#jumpable()?
       \"\<Plug>(neosnippet_expand)"
       \: "\<TAB>"
+" }}}
