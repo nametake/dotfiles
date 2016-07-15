@@ -30,8 +30,5 @@ imap <expr><TAB> pumvisible() ?
 smap <expr><TAB> neosnippet#jumpable()?
       \"\<Plug>(neosnippet_expand)"
       \: "\<TAB>"
-<<<<<<< HEAD
-""" }}}
-=======
+
 " }}}
->>>>>>> 070acf81ce55f4c7b62985e0fd9bebc523b77fe6
