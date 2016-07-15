@@ -30,4 +30,4 @@ imap <expr><TAB> pumvisible() ?
 smap <expr><TAB> neosnippet#jumpable()?
       \"\<Plug>(neosnippet_expand)"
       \: "\<TAB>"
-}}}
+" }}}
