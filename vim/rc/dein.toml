@@ -35,7 +35,10 @@ hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
+repo = 'kana/vim-smartinput'
+hook_post_source = '''
+  call smartinput#define_default_rules()
+'''
 
 [[plugins]]
 repo = 'vim-scripts/Align'
