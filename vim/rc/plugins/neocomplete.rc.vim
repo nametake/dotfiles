@@ -49,10 +49,9 @@ inoremap <expr><C-s>  neocomplete#start_manual_complete()
 "   return pumvisible() ? "\<C-y>" : "\<CR>"
 " endfunction
 " ### smartinput ###
-imap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return pumvisible() ? "\<C-y>" : "\<Plug>(smartinput_CR)>"
-endfunction
+imap <expr><CR> !pumvisible() ? "\<Plug>(smartinput_CR)" :
+      \ neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" :
+      \ neocomplete#close_popup()
 
 "" <TAB>: completion.
 inoremap <silent><expr> <TAB>
@@ -84,8 +83,11 @@ let g:neocomplete#enable_auto_close_preview = 1
 let g:neocomplete#sources#omni#input_patterns.python =
       \ '[^. *\t]\.\w*\|\h\w*'
 
-let g:neocomplete#sources#omni#functions.go =
-      \ 'gocomplte#Complete'
+" let g:neocomplete#sources#omni#functions.go =
+"       \ 'gocomplte#Complete'
+"
+" let g:neocomplete#sources#omni#input_patterns.go =
+"       \ '[^.[:digit:] *\t]\.\w*'
 
 let g:neocomplete#sources#omni#input_patterns.php =
       \'\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'

@@ -94,7 +94,6 @@ on_ft = ['python']
 [[plugins]]
 repo = 'lambdalisue/vim-pyenv'
 on_ft = ['python']
-
 # }}}
 
 # Golang {{{
@@ -117,6 +116,7 @@ hook_source = '''
   let g:go_fmt_autosave = 1
   let g:go_term_mode = "split"
 '''
+
 [[plugins]]
 repo = 'zchee/vim-goiferr'
 on_ft = ['go']
