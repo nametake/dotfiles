@@ -12,7 +12,11 @@ repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}
 on_if = "isdirectory(bufname('%'))"
-hook_add = 'nnoremap <silent> <Space>f :<C-u>VimFiler -invisible<CR>'
+hook_add = '''
+  nnoremap <silent> <Space>f :<C-u>VimFiler -invisible<CR>
+  nnoremap <silent> <Space>1 :<C-u>VimFiler -split -simple -winwidth=35 -no-quit<CR>
+'''
+
 # }}}
 
 # Auto complete {{{
@@ -105,12 +109,12 @@ on_ft = ['go']
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_source = '''
-  let g:go_highlight_functions = 0
-  let g:go_highlight_methods = 0
-  let g:go_highlight_structs = 0
-  let g:go_highlight_interfaces = 0
-  let g:go_highlight_operators = 0
-  let g:go_highlight_build_constraints = 0
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_interfaces = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_build_constraints = 1
 
   let g:go_fmt_fail_silently = 0
   let g:go_fmt_autosave = 1
@@ -119,6 +123,14 @@ hook_source = '''
 
 [[plugins]]
 repo = 'zchee/vim-goiferr'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'dgryski/vim-godef'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'jstemmer/gotags'
 on_ft = ['go']
 # }}}
 

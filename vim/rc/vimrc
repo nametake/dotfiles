@@ -242,6 +242,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 noremap  O o<ESC>
+map <C-b> <C-]>
 
 "}}}
 
@@ -254,7 +255,7 @@ set t_Co=256
 if !has('nvim')
   set term=screen-256color
 endif
-colorscheme molokai
+" colorscheme molokai
 
 syntax on
 

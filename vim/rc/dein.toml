@@ -25,6 +25,12 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'haya14busa/vim-migemo'
 
 [[plugins]]
+repo = 'tomasr/molokai'
+hook_post_source = '''
+colorscheme molokai
+'''
+
+[[plugins]]
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
@@ -101,4 +107,50 @@ repo = 'fuenor/qfixgrep'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+  nnoremap <silent> <Space>2 :<C-u>Tagbar<CR>
+'''
+hook_source = '''
+  let g:tagbar_type_go = {
+      \ 'ctagstype' : 'go',
+      \ 'kinds'     : [
+          \ 'p:package',
+          \ 'i:imports:1',
+          \ 'c:constants',
+          \ 'v:variables',
+          \ 't:types',
+          \ 'n:interfaces',
+          \ 'w:fields',
+          \ 'e:embedded',
+          \ 'm:methods',
+          \ 'r:constructor',
+          \ 'f:functions'
+      \ ],
+      \ 'sro' : '.',
+      \ 'kind2scope' : {
+          \ 't' : 'ctype',
+          \ 'n' : 'ntype'
+      \ },
+      \ 'scope2kind' : {
+          \ 'ctype' : 't',
+          \ 'ntype' : 'n'
+      \ },
+      \ 'ctagsbin'  : 'gotags',
+      \ 'ctagsargs' : '-sort -silent'
+  \ }
+'''
+
+[[plugins]]
+repo = 'soramugi/auto-ctags.vim'
+hook_source = '''
+  let g:auto_ctags = 1
+  let g:auto_ctags_tags_args = '--tag-relative --recurse'
+  let g:auto_ctags_directory_list = ['.git', '.svn', '$HOME/.ctags.d']
+  set tags+=.git/tags
+  set tags+=.svn/tags
+  set tags+=$HOME/.ctags.d/tags
+'''
 
