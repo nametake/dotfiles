@@ -111,9 +111,8 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'majutsushi/tagbar'
 hook_add = '''
-  nnoremap <silent> <Space>2 :<C-u>Tagbar<CR>
-'''
-hook_source = '''
+  nnoremap <silent> <Space>2 :<C-u>TagbarToggle<CR>
+  let g:tagbar_autofocus = 1
   let g:tagbar_type_go = {
       \ 'ctagstype' : 'go',
       \ 'kinds'     : [
@@ -145,7 +144,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'soramugi/auto-ctags.vim'
-hook_source = '''
+hook_add = '''
   let g:auto_ctags = 1
   let g:auto_ctags_tags_args = '--tag-relative --recurse'
   let g:auto_ctags_directory_list = ['.git', '.svn', '$HOME/.ctags.d']
