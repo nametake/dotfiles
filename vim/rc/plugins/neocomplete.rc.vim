@@ -65,7 +65,7 @@ endfunction"}}}
 " <S-TAB>: completion back.
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" }}}
+"}}}
 
 " Input pattern {{{
 
@@ -95,4 +95,4 @@ let g:neocomplete#sources#omni#input_patterns.php =
 let g:neocomplete#sources#omni#input_patterns.lua =
       \ '\w\+[.:]\|require\s*(\?["'']\w*'
 
-" }}}
+"}}}

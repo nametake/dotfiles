@@ -107,6 +107,11 @@ repo = 'fuenor/qfixgrep'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  let g:gitgutter_sign_added = '+'
+  let g:gitgutter_sign_modified = '>'
+  let g:gitgutter_sign_removed = '-'
+'''
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
