@@ -1,5 +1,7 @@
 " neosnippet
 
+let g:neosnippet#snippets_directory = '~/.vim/snippet/'
+
 let g:neosnippet#enable_completed_snippet = 1
 
 let g:neosnippet#enable_snipmate_compatibility = 1
