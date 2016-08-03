@@ -16,3 +16,5 @@ endif
 " window size
 set lines=50
 set columns=96
+
+set autoread
