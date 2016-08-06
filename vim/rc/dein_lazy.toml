@@ -184,6 +184,12 @@ repo = 'hail2u/vim-css3-syntax'
 on_ft = ['html', 'css']
 #}}}
 
+# CoffeeScript {{{
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
+#}}}
+
 # json {{{
 [[plugins]]
 repo = 'elzr/vim-json'
