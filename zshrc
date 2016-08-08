@@ -152,7 +152,8 @@ case "${OSTYPE}" in
     if [ -e /Applications/MacVim.app ]; then
       alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
       alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-      alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim'
+      # alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim'
+      alias gvim='open -a /Applications/MacVim.app --args $@'
     fi
     ;;
   linux*)
