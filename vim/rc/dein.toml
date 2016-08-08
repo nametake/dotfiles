@@ -48,6 +48,9 @@ hook_post_source = '''
 
 [[plugins]]
 repo = 'vim-scripts/Align'
+hook_add ='''
+  let g:Align_xstrlen = 3
+'''
 
 [[plugins]]
 repo = 'LeafCage/yankround.vim'
