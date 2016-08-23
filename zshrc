@@ -194,6 +194,8 @@ alias egrep='egrep --color=auto'
 
 alias tmux='tmux -2'
 
+alias g='cd $(ghq list --full-path | peco)'
+
 ########################################
 # key bind 
 ########################################
