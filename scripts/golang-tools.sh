@@ -1,5 +1,8 @@
 #!/bin/sh
-go get github.com/nsf/gocode
 go get github.com/peco/peco/cmd/peco
-go get -v github.com/rogpeppe/godef
-go get github.com/jstemmer/gotags
+
+# vim
+go get -u github.com/nsf/gocode
+go get -u github.com/rogpeppe/godef
+go get -u github.com/jstemmer/gotags
+go get -u github.com/golang/lint/golint
