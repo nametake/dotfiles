@@ -58,16 +58,9 @@ on_event = ['BufEnter']
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
-on_i = 1
+on_event = ['BufEnter']
 hook_source = '''
-  let g:syntastic_enable_signs=1
-  let g:syntastic_auto_loc_list=2
-
-  let g:syntastic_mode_map = {
-        \ 'mode': 'active',
-        \ 'active_filetypes': ['javascript'],
-        \ 'passive_filetypes': ['tex']
-        \}
+  source ~/.vim/rc/plugins/syntastic.vim
 '''
 
 [[plugins]]
