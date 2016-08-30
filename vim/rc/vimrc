@@ -112,7 +112,7 @@ set wrap
 "{{{
 
 set backspace=indent,eol,start
-set whichwrap=b,s,h,l,<,>,[,]
+"set whichwrap=b,s,h,l,<,>,[,]
 set startofline
 set textwidth=0
 
@@ -254,7 +254,6 @@ set t_Co=256
 if !has('nvim')
   set term=screen-256color
 endif
-" colorscheme molokai
 
 syntax on
 
