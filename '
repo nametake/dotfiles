@@ -1,0 +1,20 @@
+[user]
+  name = nametake
+  email = nametake.kyarabuki@gmail.com
+
+[push]
+  default = simple
+  path = ~/.gitconfig.local
+
+[alias]
+  tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
+[core]
+  editor = "vim -u NONE -i NONE -N -c 'syntax on'"
+
+[include]
+  path = ~/.gitconfig.local
+
+[ghq]
+  root = ~/.ghq
+  root = ~/go/src
+  root = ~/Workspace
