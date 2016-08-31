@@ -110,7 +110,7 @@ repo = 'fuenor/qfixgrep'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-hook_add = '''
+hook_post_source = '''
   let g:gitgutter_sign_added = '+'
   let g:gitgutter_sign_modified = '>'
   let g:gitgutter_sign_removed = '-'

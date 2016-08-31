@@ -163,6 +163,14 @@ on_ft = ['javascript']
 [[plugins]]
 repo = 'jiangmiao/simple-javascript-indenter'
 on_ft = ['javascript']
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'pmsorhaindo/syntastic-local-eslint.vim'
+on_ft = ['javascript']
 #}}}
 
 # HTML/CSS {{{
