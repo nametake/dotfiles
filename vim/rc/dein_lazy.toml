@@ -141,6 +141,10 @@ on_ft = ['go']
 [[plugins]]
 repo = 'jstemmer/gotags'
 on_ft = ['go']
+
+[[plugins]]
+repo = 'nsf/gocode'
+on_ft = ['go']
 #}}}
 
 # Markdown {{{
