@@ -116,6 +116,7 @@ on_ft = ['go']
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_source = '''
+  nnoremap gi :<C-u>GoImport 
   let g:go_highlight_functions = 1
   let g:go_highlight_methods = 1
   let g:go_highlight_fields = 1
