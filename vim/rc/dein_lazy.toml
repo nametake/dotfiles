@@ -116,7 +116,6 @@ on_ft = ['go']
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_source = '''
-  nnoremap gi :<C-u>GoImport 
   let g:go_highlight_functions = 1
   let g:go_highlight_methods = 1
   let g:go_highlight_fields = 1
@@ -146,6 +145,14 @@ on_ft = ['go']
 [[plugins]]
 repo = 'nsf/gocode'
 on_ft = ['go']
+
+[[plugins]]
+repo = 'rhysd/unite-go-import.vim'
+depends = 'unite.vim'
+on_ft = ['go']
+hook_source = '''
+  nnoremap gi :<C-u>Unite go/import<CR>
+'''
 #}}}
 
 # Markdown {{{
