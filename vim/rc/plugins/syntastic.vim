@@ -17,5 +17,5 @@ let g:syntastic_mode_map = {
       \ 'active_filetypes': ['go', 'javascript'],
       \ 'passive_filetypes': ['tex']
       \}
-let g:syntastic_go_checkers = ['go', 'golint']
+let g:syntastic_go_checkers = ['golint']
 let g:syntastic_javascript_checkers=['eslint']
