@@ -8,6 +8,7 @@
 
 [alias]
   tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
+  delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
 [core]
   editor = "vim -u NONE -i NONE -N -c 'syntax on'"
 
