@@ -242,8 +242,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 noremap  O o<ESC>
-nnoremap <ESC> :noh<CR>
-nnoremap <C-[> :noh<CR>
+nnoremap <silent> <ESC> :noh<CR>
+nnoremap <silent> <C-[> :noh<CR>
 
 "}}}
 
