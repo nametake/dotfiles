@@ -152,7 +152,6 @@ depends = 'unite.vim'
 on_ft = ['go']
 hook_source = '''
   nnoremap gi :<C-u>Unite go/import<CR>
-  inoremap <C-i><C-i> <ESC>:<C-u>Unite go/import<CR>
 '''
 #}}}
 
