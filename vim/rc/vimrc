@@ -103,6 +103,7 @@ set listchars=tab:»-,trail:･,extends:»,precedes:«,nbsp:%,eol:↲
 set matchtime=3
 set matchpairs& matchpairs+=<:>
 set wrap
+set breakindent
 
 "}}}
 "
