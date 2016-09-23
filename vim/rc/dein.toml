@@ -24,11 +24,16 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
 
+# color {{{
 [[plugins]]
 repo = 'tomasr/molokai'
 hook_post_source = '''
 colorscheme molokai
 '''
+
+[[plugins]]
+repo = 'keith/tmux.vim'
+# }}}
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
