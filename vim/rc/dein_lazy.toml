@@ -188,7 +188,7 @@ repo = 'jiangmiao/simple-javascript-indenter'
 on_ft = ['javascript']
 
 [[plugins]]
-repo = 'mxw/vim-jsx'
+repo = 'MaxMEllon/vim-jsx-pretty'
 on_ft = ['javascript']
 
 [[plugins]]
