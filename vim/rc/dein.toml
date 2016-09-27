@@ -33,6 +33,9 @@ colorscheme molokai
 
 [[plugins]]
 repo = 'keith/tmux.vim'
+
+[[plugins]]
+repo = 'elubow/cql-vim'
 # }}}
 
 [[plugins]]
