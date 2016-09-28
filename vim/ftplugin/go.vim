@@ -7,4 +7,4 @@ set foldmethod=indent
 set foldlevel=0
 set foldnestmax=99
 
-autocmd MyAutoCmd BufWritePre *.go Fmt
+autocmd MyAutoCmd BufWritePre <buffer> silent Fmt
