@@ -64,7 +64,18 @@ if [ -d /usr/texbin ]; then
   export PATH=/usr/texbin:$PATH
 fi
 
+# Play2
 if [ -d /usr/local/lib/activator-1.2.2 ]; then
   export PATH=/usr/local/lib/activator-1.2.2:$PATH
+fi
+
+# ruby version manager
+if [ -d ${HOME}/.rvm/bin ]; then
+  export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+fi
+
+# nodebrew
+if [ -d ${HOME}/.nodebrew/current/bin ]; then
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 

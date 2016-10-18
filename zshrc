@@ -306,5 +306,3 @@ fi
 if [ -e $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
