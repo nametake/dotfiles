@@ -7,6 +7,8 @@ if exists("did_load_filetypes")
 endif
 
 augroup filetypedetect
+  " jsx
+  autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
   " jade
   autocmd BufNewFile,BufRead *.jade set filetype=jade
   " coffee
