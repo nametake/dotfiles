@@ -17,7 +17,7 @@ on_map = {n = '<Plug>'}
 on_if = "isdirectory(bufname('%'))"
 hook_add = '''
   nnoremap <silent> <Space>f :<C-u>VimFiler -invisible<CR>
-  nnoremap <silent> <Space>1 :<C-u>VimFiler -split -simple -winwidth=35 -no-quit<CR>
+  nnoremap <silent> <Space>1 :<C-u>VimFiler -split -simple -winwidth=30 -no-quit<CR>
 '''
 
 #}}}
