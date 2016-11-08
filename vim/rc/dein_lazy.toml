@@ -157,11 +157,8 @@ hook_source = '''
 
 # Markdown {{{
 [[plugins]]
-repo = 'nelstrom/vim-markdown-folding'
+repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
-hook_source = '''
-  let g:vim_markdown_folding_disabled = 1
-'''
 
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
