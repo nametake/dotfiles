@@ -83,12 +83,8 @@ let g:neocomplete#enable_auto_close_preview = 1
 let g:neocomplete#sources#omni#input_patterns.python =
       \ '[^. *\t]\.\w*\|\h\w*'
 
-
 let g:neocomplete#sources#omni#functions.go =
       \ 'gocomplte#Complete'
-
-let g:neocomplete#sources#omni#input_patterns.go =
-      \ '[^.[:digit:] *\t]\.\w*'
 
 let g:neocomplete#force_omni_input_patterns.go =
       \ '[^.[:digit:] *\t]\.\w*'
