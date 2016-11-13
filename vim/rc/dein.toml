@@ -27,8 +27,8 @@ repo = 'haya14busa/vim-migemo'
 # color {{{
 [[plugins]]
 repo = 'tomasr/molokai'
-hook_post_source = '''
-colorscheme molokai
+hook_add = '''
+  autocmd MyAutoCmd VimEnter * nested colorscheme molokai
 '''
 
 [[plugins]]

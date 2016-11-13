@@ -45,13 +45,6 @@ if has('vim_starting')
   call s:source_rc('init.rc.vim')
 endif
 
-"if has('vim_starting')
-"  call s:source_rc('neobundle.rc.vim')
-"  for f in split(glob('~/.vim/rc/neobundle-plugins/*.vim'), '\n')
-"    exe 'source' f
-"  endfor
-"endif
-
 " dein.vim
 call s:source_rc('dein.rc.vim')
 
@@ -267,16 +260,3 @@ syntax on
 
 "}}}
 
-"----------------------------------------------------------------
-" Platform
-"
-"{{{
-"
-if IsWindows()
-  call s:source_rc('windows.rc.vim')
-else
-  call s:source_rc('unix.rc.vim')
-endif
-
-"}}}
-"
