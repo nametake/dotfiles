@@ -86,6 +86,9 @@ let g:neocomplete#sources#omni#input_patterns.python =
 let g:neocomplete#sources#omni#functions.go =
       \ 'gocomplte#Complete'
 
+let g:neocomplete#sources#omni#input_patterns.go =
+      \ '[^.[:digit:] *\t]\.\w*'
+
 let g:neocomplete#force_omni_input_patterns.go =
       \ '[^.[:digit:] *\t]\.\w*'
 
