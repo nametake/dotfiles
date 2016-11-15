@@ -53,6 +53,3 @@ endif
 
 " Disable the mouse.
 set mouse=
-
-" Colorscheme
-colorscheme molokai
