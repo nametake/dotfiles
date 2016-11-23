@@ -8,3 +8,5 @@ set foldlevel=0
 set foldnestmax=99
 
 autocmd MyAutoCmd BufWritePre <buffer> silent Fmt
+autocmd MyAutoCmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd MyAutoCmd FileType go :match goErr /\<err\>/
