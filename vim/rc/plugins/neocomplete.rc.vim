@@ -19,6 +19,8 @@ let g:neocomplete#min_keyword_length = 0
 let g:neocomplete#enable_auto_select = 0
 let g:neocomplete#enable_cursor_hold_i = 0
 
+let g:neocomplete#enable_auto_close_preview = 0
+
 " Key map {{{
 "
 call smartinput#map_to_trigger('i', '<Plug>(smartinput_BS)',
@@ -68,7 +70,9 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 "}}}
 
 " Input pattern {{{
-
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
@@ -78,7 +82,8 @@ endif
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
-let g:neocomplete#enable_auto_close_preview = 1
+
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 let g:neocomplete#sources#omni#input_patterns.python =
       \ '[^. *\t]\.\w*\|\h\w*'
@@ -88,10 +93,10 @@ let g:neocomplete#sources#omni#functions.go =
 
 " let g:neocomplete#sources#omni#input_patterns.go =
 "       \ '[^.[:digit:] *\t]\.\w*'
-"
+
 let g:neocomplete#force_omni_input_patterns.go =
-      \ '\h\w\.\w*'
-" \ '[^.[:digit:] *\t]\.\w*'
+      \ '[^.[:digit:] *\t]\.\w*'
+"      \ '\h\w\.\w*'
 
 let g:neocomplete#sources#omni#input_patterns.php =
       \'\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
@@ -100,3 +105,4 @@ let g:neocomplete#sources#omni#input_patterns.lua =
       \ '\w\+[.:]\|require\s*(\?["'']\w*'
 
 "}}}
+

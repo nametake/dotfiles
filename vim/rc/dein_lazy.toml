@@ -32,6 +32,10 @@ hook_add = '''
   let g:neocomplete#enable_at_startup = 1
   source ~/.vim/rc/plugins/neocomplete.rc.vim
 '''
+hook_post_source = '''
+  call neocomplete#custom#source('tag', 'disabled_filetypes', {'_' : 1})
+  call neocomplete#custom#source('buffer', 'disabled_filetypes', {'_' : 1})
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
