@@ -26,12 +26,6 @@ repo = 'haya14busa/vim-migemo'
 
 # color {{{
 [[plugins]]
-repo = 'tomasr/molokai'
-hook_add = '''
-  autocmd MyAutoCmd VimEnter * nested colorscheme molokai
-'''
-
-[[plugins]]
 repo = 'keith/tmux.vim'
 
 [[plugins]]
