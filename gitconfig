@@ -10,6 +10,9 @@
   tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
   delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
   p = !git push origin `git rev-parse --abbrev-ref HEAD`
+  ac = !git add -A && git commit
+  ch = checkout
+  di = diff
 
 [core]
   editor = "vim -u NONE -i NONE -N -c 'syntax on'"
