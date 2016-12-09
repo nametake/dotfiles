@@ -165,6 +165,9 @@ hook_add = '''
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
+hook_add ='''
+let g:vim_markdown_conceal = 0
+'''
 
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
