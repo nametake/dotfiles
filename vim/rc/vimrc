@@ -45,13 +45,6 @@ if has('vim_starting')
   call s:source_rc('init.rc.vim')
 endif
 
-"if has('vim_starting')
-"  call s:source_rc('neobundle.rc.vim')
-"  for f in split(glob('~/.vim/rc/neobundle-plugins/*.vim'), '\n')
-"    exe 'source' f
-"  endfor
-"endif
-
 " dein.vim
 call s:source_rc('dein.rc.vim')
 
@@ -265,13 +258,15 @@ endif
 
 syntax on
 
+colorscheme molokai
+
 "}}}
 
 "----------------------------------------------------------------
 " Platform
 "
 "{{{
-"
+
 if IsWindows()
   call s:source_rc('windows.rc.vim')
 else
@@ -279,4 +274,3 @@ else
 endif
 
 "}}}
-"

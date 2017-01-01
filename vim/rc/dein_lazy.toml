@@ -29,8 +29,11 @@ depends = 'context_filetype.vim'
 if = "has('lua')"
 on_event = 'InsertEnter'
 hook_add = '''
-  let g:neocomplete#enable_at_startup = 1
   source ~/.vim/rc/plugins/neocomplete.rc.vim
+'''
+hook_post_source = '''
+  call neocomplete#custom#source('tag', 'disabled_filetypes', {'_' : 1})
+  " call neocomplete#custom#source('buffer', 'disabled_filetypes', {'_' : 1})
 '''
 
 [[plugins]]
@@ -60,7 +63,7 @@ on_event = ['BufEnter']
 repo = 'scrooloose/syntastic'
 on_event = ['BufEnter']
 hook_add = '''
-  source ~/.vim/rc/plugins/syntastic.vim
+  source ~/.vim/rc/plugins/syntastic.rc.vim
 '''
 
 [[plugins]]
@@ -162,6 +165,9 @@ hook_add = '''
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
+hook_add ='''
+let g:vim_markdown_conceal = 0
+'''
 
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'

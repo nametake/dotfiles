@@ -18,7 +18,7 @@ endif
 
 let s:toml_path = '~/.vim/rc/dein.toml'
 let s:toml_lazy_path = '~/.vim/rc/dein_lazy.toml'
-let s:toml_neovim_path = '~/.vim/rc/dein_neo.toml'
+" let s:toml_neovim_path = '~/.vim/rc/dein_neo.toml'
 
 
 call dein#begin(s:path, [expand('<sfile>')]
@@ -27,16 +27,14 @@ call dein#begin(s:path, [expand('<sfile>')]
 " load toml and cache
 call dein#load_toml(s:toml_path, {'lazy': 0})
 call dein#load_toml(s:toml_lazy_path, {'lazy': 1})
-if has('nvim')
-  call dein#load_toml(s:toml_neovim_path, {})
-endif
+" if has('nvim')
+"   call dein#load_toml(s:toml_neovim_path, {})
+" endif
 
 " disable other plugins
 if dein#tap('deoplete.nvim') && has('nvim')
   call dein#disable('neocomplete.vim')
 endif
-call dein#disable('neobundle.vim')
-call dein#disable('neopairs.vim')
 
 call dein#end()
 call dein#save_state()

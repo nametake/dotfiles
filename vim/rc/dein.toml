@@ -26,12 +26,6 @@ repo = 'haya14busa/vim-migemo'
 
 # color {{{
 [[plugins]]
-repo = 'tomasr/molokai'
-hook_post_source = '''
-colorscheme molokai
-'''
-
-[[plugins]]
 repo = 'keith/tmux.vim'
 
 [[plugins]]
@@ -50,9 +44,7 @@ repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'kana/vim-smartinput'
-hook_post_source = '''
-  call smartinput#define_default_rules()
-'''
+hook_add = 'source ~/.vim/rc/plugins/smartinput.rc.vim'
 
 [[plugins]]
 repo = 'vim-scripts/Align'
@@ -83,6 +75,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+
 hook_add = '''
   source ~/.vim/rc/plugins/quickrun.rc.vim
 '''
