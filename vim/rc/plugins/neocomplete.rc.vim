@@ -55,7 +55,7 @@ imap <expr><CR> !pumvisible() ? "\<Plug>(smartinput_CR)" :
       \ neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" :
       \ neocomplete#close_popup()
 
-"" <TAB>: completion.
+" <TAB>: completion.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -83,7 +83,7 @@ if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+let g:neocomplete#keyword_patterns['default'] = '[a-zA-Z_]\k*\(?'
 
 let g:neocomplete#sources#omni#input_patterns.python =
       \ '[^. *\t]\.\w*\|\h\w*'
