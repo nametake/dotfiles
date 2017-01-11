@@ -37,7 +37,7 @@ repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
+hook_post_source = 'source ~/.vim/rc/plugins/lightline.rc.vim'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -75,7 +75,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-
 hook_add = '''
   source ~/.vim/rc/plugins/quickrun.rc.vim
 '''

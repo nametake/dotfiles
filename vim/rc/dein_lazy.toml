@@ -25,7 +25,7 @@ hook_add = '''
 # Auto complete {{{
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
-depends = 'context_filetype.vim'
+depends = ['context_filetype.vim', 'vim-smartinput']
 if = "has('lua')"
 on_event = 'InsertEnter'
 hook_add = '''
@@ -34,6 +34,15 @@ hook_add = '''
 hook_post_source = '''
   call neocomplete#custom#source('tag', 'disabled_filetypes', {'_' : 1})
   " call neocomplete#custom#source('buffer', 'disabled_filetypes', {'_' : 1})
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+if = "has('nvim')"
+on_i = 1
+hook_add = '''
+  source ~/.vim/rc/plugins/deoplete.rc.vim
 '''
 
 [[plugins]]
@@ -64,6 +73,11 @@ repo = 'scrooloose/syntastic'
 on_event = ['BufEnter']
 hook_add = '''
   source ~/.vim/rc/plugins/syntastic.rc.vim
+'''
+hook_post_source = '''
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
 '''
 
 [[plugins]]
