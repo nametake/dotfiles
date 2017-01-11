@@ -97,6 +97,7 @@ set matchtime=3
 set matchpairs& matchpairs+=<:>
 set wrap
 set breakindent
+set lazyredraw
 
 "}}}
 "
