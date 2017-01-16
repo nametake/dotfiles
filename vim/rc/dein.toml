@@ -44,7 +44,7 @@ repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'kana/vim-smartinput'
-hook_add = 'source ~/.vim/rc/plugins/smartinput.rc.vim'
+hook_post_source = 'source ~/.vim/rc/plugins/smartinput.rc.vim'
 
 [[plugins]]
 repo = 'vim-scripts/Align'
