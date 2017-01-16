@@ -42,4 +42,4 @@ let g:quickrun_config={
       \}
 
 nnoremap <Space>r :QuickRun<Cr>
-autocmd MyAutoCmd BufWritePost,FileWritePost *.go QuickRun go
+" autocmd MyAutoCmd BufWritePost,FileWritePost *.go QuickRun go
