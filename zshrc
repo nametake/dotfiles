@@ -80,6 +80,9 @@ tmux_automatically_attach_session
 ########################################
 if [ -e $HOME/.zplug ]; then
   source $HOME/.zshrc.zplug
+else
+  autoload -Uz compinit
+  compinit
 fi
 
 ########################################
@@ -108,9 +111,6 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 ########################################
 # Complete
 ########################################
-# 補完機能を有効にする
-autoload -Uz compinit
-compinit
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -275,8 +275,6 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
-autoload -U compinit
-compinit
 
 ########################################
 # peco
