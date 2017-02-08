@@ -225,8 +225,12 @@ on_ft = ['javascript']
 repo = 'MaxMEllon/vim-jsx-pretty'
 on_ft = ['javascript']
 
+#[[plugins]]
+#repo = 'pmsorhaindo/syntastic-local-eslint.vim'
+#on_ft = ['javascript']
+
 [[plugins]]
-repo = 'pmsorhaindo/syntastic-local-eslint.vim'
+repo = 'benjie/neomake-local-eslint.vim'
 on_ft = ['javascript']
 #}}}
 
