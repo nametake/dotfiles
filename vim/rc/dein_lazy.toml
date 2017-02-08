@@ -72,16 +72,23 @@ repo = 'osyo-manga/vim-precious'
 depends = 'context_filetype.vim'
 on_event = ['BufEnter']
 
+#[[plugins]]
+#repo = 'scrooloose/syntastic'
+#on_event = ['BufEnter']
+#hook_add = '''
+#  source ~/.vim/rc/plugins/syntastic.rc.vim
+#'''
+#hook_post_source = '''
+#  set statusline+=%#warningmsg#
+#  set statusline+=%{SyntasticStatuslineFlag()}
+#  set statusline+=%*
+#'''
+
 [[plugins]]
-repo = 'scrooloose/syntastic'
+repo = 'neomake/neomake'
 on_event = ['BufEnter']
 hook_add = '''
-  source ~/.vim/rc/plugins/syntastic.rc.vim
-'''
-hook_post_source = '''
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
+  autocmd! BufWritePost * Neomake
 '''
 
 [[plugins]]
