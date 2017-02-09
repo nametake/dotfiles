@@ -88,8 +88,7 @@ on_event = ['BufEnter']
 repo = 'neomake/neomake'
 on_event = ['BufEnter']
 hook_add = '''
-  autocmd! BufWritePost * Neomake
-  let g:neomake_go_enabled_makers = ['go', 'golint', 'govet', 'errcheck']
+  source ~/.vim/rc/plugins/neomake.rc.vim
 '''
 
 [[plugins]]
