@@ -10,6 +10,17 @@ let g:deoplete#enable_camel_case = 1
 let g:deoplete#auto_complete_start_length = 1
 
 " Key map {{{
+
+call smartinput#map_to_trigger('i', '<Plug>(smartinput_BS)',
+      \                        '<BS>',
+      \                        '<BS>')
+call smartinput#map_to_trigger('i', '<Plug>(smartinput_C-h)',
+      \                        '<BS>',
+      \                        '<C-h>')
+call smartinput#map_to_trigger('i', '<Plug>(smartinput_CR)',
+      \                        '<Enter>',
+      \                        '<Enter>')
+
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"

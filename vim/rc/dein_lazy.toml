@@ -42,7 +42,7 @@ hook_post_source = '''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
+depends = ['context_filetype.vim', 'vim-smartinput']
 if = "has('nvim')"
 on_i = 1
 hook_add = '''
