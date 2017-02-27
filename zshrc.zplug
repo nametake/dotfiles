@@ -16,5 +16,6 @@ zplug "plugins/docker-compose", from:oh-my-zsh
 # zplug "plugins/brew-cask", from:oh-my-zsh
 zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh
+zplug "plugins/aws", from:oh-my-zsh
 
 zplug load --verbose
