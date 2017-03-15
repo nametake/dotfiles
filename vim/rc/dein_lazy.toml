@@ -162,6 +162,14 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'jodosha/vim-godebug'
+depends = ['vim-go']
+on_ft = ['go']
+hook_add = '''
+  let g:go_term_enabled = 1
+'''
+
+[[plugins]]
 repo = 'zchee/vim-goiferr'
 on_ft = ['go']
 

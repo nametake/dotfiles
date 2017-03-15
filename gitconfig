@@ -24,3 +24,6 @@
   root = ~/.ghq
   root = ~/go/src
   root = ~/Workspace
+
+[init]
+  templatedir=${HOME}/.scripts/git_hook_template
