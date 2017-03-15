@@ -9,7 +9,7 @@ dotfiles=(
           "vim"
           "tmux.conf"
           "gitconfig"
-          "scripts"
+          "git_template"
           )
 
 # Arg parse

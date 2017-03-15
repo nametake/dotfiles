@@ -26,4 +26,4 @@
   root = ~/Workspace
 
 [init]
-  templatedir=${HOME}/.scripts/git_hook_template
+  templatedir=~/.git_template
