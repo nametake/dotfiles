@@ -87,7 +87,7 @@ set modified
 
 set number
 set ruler
-set cursorline
+set nocursorline
 set laststatus=2
 set cmdheight=1
 set showmatch
