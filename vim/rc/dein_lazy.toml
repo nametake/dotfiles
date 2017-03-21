@@ -165,6 +165,7 @@ hook_add = '''
 repo = 'jodosha/vim-godebug'
 depends = ['vim-go']
 on_ft = ['go']
+if = "has('nvim')"
 hook_add = '''
   let g:go_term_enabled = 1
 '''
