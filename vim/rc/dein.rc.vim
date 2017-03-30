@@ -1,5 +1,7 @@
 " dein.vim configurations.
 
+let g:dein#enable_notification = 1
+
 let s:path = expand('~/.cache/dein')
 let s:repo = s:path . '/repos/github.com/Shougo/dein.vim'
 
@@ -15,8 +17,8 @@ if !dein#load_state(s:path)
   finish
 endif
 
-call dein#begin(s:path, [expand('<sfile>')]
-      \ + split(glob('~/.vim/rc/*.toml'), '\n'))
+
+call dein#begin(s:path, expand('<sfile>'))
 
 " load toml and cache
 call dein#load_toml('~/.vim/rc/dein.toml', {'lazy': 0})
