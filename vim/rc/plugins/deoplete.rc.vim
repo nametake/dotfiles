@@ -44,6 +44,13 @@ endfunction"}}}
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 " }}}
 
+" Complete sources {{{
+let g:deoplete#sources = {}
+
+let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources._ = ['buffer', 'tag', 'around']
+" }}}
+
 " Input pattern {{{
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
@@ -66,3 +73,5 @@ let g:deoplete#omni#input_patterns.lua =
 
 let g:deoplete#skip_chars = ['(', ')']
 " }}}
+"
+"
