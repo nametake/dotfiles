@@ -48,7 +48,7 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 let g:deoplete#sources = {}
 
 let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources._ = ['buffer', 'tag', 'around']
+let g:deoplete#ignore_sources.go = ['buffer', 'tag', 'around']
 " }}}
 
 " Input pattern {{{
