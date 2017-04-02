@@ -147,6 +147,7 @@ repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = '''
   autocmd MyAutoCmd FileType go set omnifunc=gocomplete#Complete
+  autocmd MyAutoCmd BufWritePre *.go GoImports
   let g:go_highlight_functions = 1
   let g:go_highlight_methods = 1
   let g:go_highlight_fields = 1
