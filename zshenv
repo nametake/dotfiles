@@ -9,6 +9,7 @@ export HISTSIZE=1000000
 export SAVEHIST=1000000
 
 export EDITOR=vim
+bindkey -e
 
 export XDG_CONFIG_HOME=~/.config
 export GOPATH=${HOME}/go

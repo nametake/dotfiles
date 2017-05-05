@@ -18,4 +18,6 @@ zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh
 zplug "plugins/aws", from:oh-my-zsh
 
+zplug "jimeh/zsh-peco-history"
+
 zplug load --verbose
