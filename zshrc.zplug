@@ -3,6 +3,7 @@ source ~/.zplug/init.zsh
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 zplug "zsh-users/zsh-completions"
+zplug "jimeh/zsh-peco-history"
 
 # zplug "plugins/git", from:oh-my-zsh
 # zplug "plugins/tmux", from:oh-my-zsh
@@ -18,6 +19,5 @@ zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh
 zplug "plugins/aws", from:oh-my-zsh
 
-zplug "jimeh/zsh-peco-history"
 
 zplug load --verbose

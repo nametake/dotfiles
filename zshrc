@@ -1,6 +1,3 @@
-
-[ -d ${HOME}/.zsh ] && source ${HOME}/.zsh/*.zsh
-
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
 function is_osx() { [[ $OSTYPE == darwin* ]]; }
 function is_screen_running() { [ ! -z "$STY" ]; }
@@ -64,47 +61,29 @@ function tmux_automatically_attach_session()
 tmux_automatically_attach_session
 
 
-########################################
-# Complete
-########################################
+# complete
+autoload -Uz compinit
+compinit
 
-# 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# ../ の後は今いるディレクトリを補完しない
 zstyle ':completion:*' ignore-parents parent pwd ..
 
-# sudo の後ろでコマンド名を補完する
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
-# ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
-# 単語の区切り文字を指定する
 autoload -Uz select-word-style
 select-word-style default
 
-# ここで指定した文字は単語区切りとみなされる
-# / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
-# ls コマンドの色
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-# 選択補完
 zstyle ':completion:*:default' menu select=1
 
 # zplug
-if [ -e $HOME/.zplug ]; then
-  source $HOME/.zshrc.zplug
-else
-  autoload -Uz compinit
-  compinit
-fi
-
-# bind
 
 # prompt
 PROMPT="%B%F{green}[${USER}@${HOST}]%f:%F{blue}%2~%f%b%(!.#.%%) "
@@ -186,4 +165,5 @@ setopt extended_glob
 
 setopt nonomatch
 
+[ -d $HOME/.zplug ] && source $HOME/.zshrc.zplug
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
