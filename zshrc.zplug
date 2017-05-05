@@ -1,12 +1,16 @@
 source ~/.zplug/init.zsh
 
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART_ONCE=true
+export ZSH_TMUX_AUTOCONNECT=true
+
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 zplug "zsh-users/zsh-completions"
 zplug "jimeh/zsh-peco-history"
 
+zplug "plugins/tmux", from:oh-my-zsh
 # zplug "plugins/git", from:oh-my-zsh
-# zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
 # zplug "plugins/django", from:oh-my-zsh
