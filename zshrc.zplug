@@ -6,10 +6,11 @@ export ZSH_TMUX_AUTOCONNECT=true
 
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
+zplug "plugins/tmux", from:oh-my-zsh
+
 zplug "zsh-users/zsh-completions"
 zplug "jimeh/zsh-peco-history"
 
-zplug "plugins/tmux", from:oh-my-zsh
 # zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/vagrant", from:oh-my-zsh
 zplug "plugins/pip", from:oh-my-zsh
@@ -22,6 +23,5 @@ zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/npm", from:oh-my-zsh
 zplug "plugins/golang", from:oh-my-zsh
 zplug "plugins/aws", from:oh-my-zsh
-
 
 zplug load --verbose
