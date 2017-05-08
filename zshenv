@@ -13,6 +13,7 @@ bindkey -e
 
 export XDG_CONFIG_HOME=~/.config
 export GOPATH=${HOME}/go
+export PATH=${GOPATH}/bin:${PATH}
 
 [ -d ${HOME}/.local/bin ] && \
   export export PATH=${HOME}/.local/bin:${PATH}
