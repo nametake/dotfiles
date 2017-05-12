@@ -17,3 +17,8 @@ hook_add = '''
   " let g:deoplete#sources#go#json_directory = $HOME.'/.cache/deoplete/go/'
   let g:deoplete#sources#go#package_dot = 1
 '''
+
+[[plugins]]
+repo = 'zchee/nvim-go'
+on_ft = 'go'
+build = 'make'
