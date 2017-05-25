@@ -7,6 +7,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
 repo = 'Shougo/neomru.vim'
 on_event = ['BufEnter']
 
@@ -71,18 +74,6 @@ repo = 'Shougo/context_filetype.vim'
 repo = 'osyo-manga/vim-precious'
 depends = 'context_filetype.vim'
 on_event = ['BufEnter']
-
-#[[plugins]]
-#repo = 'scrooloose/syntastic'
-#on_event = ['BufEnter']
-#hook_add = '''
-#  source ~/.vim/rc/plugins/syntastic.rc.vim
-#'''
-#hook_post_source = '''
-#  set statusline+=%#warningmsg#
-#  set statusline+=%{SyntasticStatuslineFlag()}
-#  set statusline+=%*
-#'''
 
 [[plugins]]
 repo = 'neomake/neomake'
@@ -229,20 +220,21 @@ repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
 [[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript']
+depends = 'yajs.vim'
+
+[[plugins]]
 repo = 'jiangmiao/simple-javascript-indenter'
 on_ft = ['javascript']
 
 [[plugins]]
 repo = 'MaxMEllon/vim-jsx-pretty'
-on_ft = ['javascript']
-
-#[[plugins]]
-#repo = 'pmsorhaindo/syntastic-local-eslint.vim'
-#on_ft = ['javascript']
-
-[[plugins]]
-repo = 'benjie/neomake-local-eslint.vim'
-on_ft = ['javascript']
+on_ft = ['javascript', 'jsx']
 #}}}
 
 # HTML/CSS {{{
