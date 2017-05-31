@@ -73,5 +73,3 @@ let g:deoplete#omni#input_patterns.lua =
 
 let g:deoplete#skip_chars = ['(', ')']
 " }}}
-"
-"

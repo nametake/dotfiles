@@ -22,3 +22,12 @@ hook_add = '''
 repo = 'zchee/nvim-go'
 on_ft = 'go'
 build = 'make'
+
+[[plugins]]
+repo = 'jodosha/vim-godebug'
+depends = ['vim-go']
+on_ft = ['go']
+if = "has('nvim')"
+hook_add = '''
+  let g:go_term_enabled = 1
+'''

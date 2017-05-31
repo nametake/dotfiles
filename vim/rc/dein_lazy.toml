@@ -130,10 +130,6 @@ on_ft = ['python']
 
 # Golang {{{
 [[plugins]]
-repo = 'vim-jp/vim-go-extra'
-on_ft = ['go']
-
-[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = '''
@@ -153,15 +149,6 @@ hook_add = '''
   let g:go_fmt_autosave = 0
   let g:go_fmt_command = "goimports"
   let g:go_term_mode = "split"
-'''
-
-[[plugins]]
-repo = 'jodosha/vim-godebug'
-depends = ['vim-go']
-on_ft = ['go']
-if = "has('nvim')"
-hook_add = '''
-  let g:go_term_enabled = 1
 '''
 
 [[plugins]]
