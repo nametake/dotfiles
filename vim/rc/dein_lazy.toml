@@ -218,10 +218,13 @@ depends = 'yajs.vim'
 [[plugins]]
 repo = 'jiangmiao/simple-javascript-indenter'
 on_ft = ['javascript']
+hook_add = '''
+  let g:SimpleJsIndenter_BriefMode = 1
+'''
 
-[[plugins]]
-repo = 'MaxMEllon/vim-jsx-pretty'
-on_ft = ['javascript', 'jsx']
+# [[plugins]]
+# repo = 'MaxMEllon/vim-jsx-pretty'
+# on_ft = ['javascript', 'jsx']
 #}}}
 
 # HTML/CSS {{{
