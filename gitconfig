@@ -20,6 +20,7 @@
 
 [core]
   editor = "vim -u NONE -i NONE -N -c 'syntax on'"
+  excludesfile = ~/.gitignore
 
 [include]
   path = ~/.gitconfig.local

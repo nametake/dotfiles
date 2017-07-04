@@ -9,6 +9,7 @@ dotfiles=(
           "vim"
           "tmux.conf"
           "gitconfig"
+          "gitignore"
           "git_template"
           )
 
