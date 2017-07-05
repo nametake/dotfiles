@@ -82,14 +82,6 @@ hook_add = '''
   source ~/.vim/rc/plugins/ale.rc.vim
 '''
 
-
-# [[plugins]]
-# repo = 'neomake/neomake'
-# on_event = ['BufEnter']
-# hook_add = '''
-#   source ~/.vim/rc/plugins/neomake.rc.vim
-# '''
-
 [[plugins]]
 repo = 'lambdalisue/vim-gista'
 on_cmd = ['Gista']
