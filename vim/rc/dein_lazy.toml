@@ -75,12 +75,12 @@ repo = 'osyo-manga/vim-precious'
 depends = 'context_filetype.vim'
 on_event = ['BufEnter']
 
-[[plugins]]
-repo = 'neomake/neomake'
-on_event = ['BufEnter']
-hook_add = '''
-  source ~/.vim/rc/plugins/neomake.rc.vim
-'''
+# [[plugins]]
+# repo = 'neomake/neomake'
+# on_event = ['BufEnter']
+# hook_add = '''
+#   source ~/.vim/rc/plugins/neomake.rc.vim
+# '''
 
 [[plugins]]
 repo = 'lambdalisue/vim-gista'
