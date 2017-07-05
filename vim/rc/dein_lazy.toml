@@ -75,6 +75,16 @@ repo = 'osyo-manga/vim-precious'
 depends = 'context_filetype.vim'
 on_event = ['BufEnter']
 
+[[plugins]]
+repo = 'w0rp/ale'
+on_event = ['BufEnter']
+hook_add = '''
+  let g:ale_linters = {
+        \  'go': ['gofmt', 'goling', 'go vet', 'go build', 'staticcheck']
+        \ }
+'''
+
+
 # [[plugins]]
 # repo = 'neomake/neomake'
 # on_event = ['BufEnter']
