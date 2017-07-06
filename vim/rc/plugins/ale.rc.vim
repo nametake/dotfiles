@@ -1,5 +1,5 @@
 let g:ale_linters = {
-      \  'go': ['gofmt', 'goling', 'go vet', 'go build', 'staticcheck']
+      \  'go': ['gofmt', 'golint', 'go vet', 'go build', 'staticcheck', 'errcheck']
       \ }
 
 let g:ale_sign_column_always = 1
