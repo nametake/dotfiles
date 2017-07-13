@@ -76,6 +76,13 @@ depends = 'context_filetype.vim'
 on_event = ['BufEnter']
 
 [[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+on_event = ['BufEnter']
+hook_add = '''
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+'''
+
+[[plugins]]
 repo = 'w0rp/ale'
 on_event = ['BufEnter']
 hook_add = '''

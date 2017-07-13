@@ -123,6 +123,7 @@ set hlsearch
 set wrapscan
 set ignorecase
 set smartcase
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png
 
 "}}}
 
