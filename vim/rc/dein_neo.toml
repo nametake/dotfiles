@@ -19,11 +19,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'zchee/nvim-go'
-on_ft = 'go'
-build = 'make'
-
-[[plugins]]
 repo = 'jodosha/vim-godebug'
 depends = ['vim-go']
 on_ft = ['go']
