@@ -14,16 +14,6 @@ repo = 'Shougo/neomru.vim'
 on_event = ['BufEnter']
 
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
-depends = 'unite.vim'
-on_map = {n = '<Plug>'}
-on_if = "isdirectory(bufname('%'))"
-hook_add = '''
-  nnoremap <silent> <Space>f :<C-u>VimFiler -invisible<CR>
-  nnoremap <silent> <Space>1 :<C-u>VimFiler -split -simple -winwidth=30 -no-quit<CR>
-'''
-
-[[plugins]]
 repo = 'Shougo/unite-outline'
 depends = 'unite.vim'
 

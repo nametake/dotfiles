@@ -5,6 +5,15 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  nnoremap <silent> <Space>f :<C-u>NERDTree<CR>
+  nnoremap <silent> <Space>c :<C-u>NERDTreeClose<CR>
+
+  let g:NERDTreeQuitOnOpen=1
+'''
+
 # depends unite {{{
 [[plugins]]
 repo = 'thinca/vim-unite-history'
