@@ -90,6 +90,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+hook_add = '''
+  command! Gac Gw|Gcommit
+'''
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
