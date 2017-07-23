@@ -6,12 +6,41 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+  " vim-devicons
+  let g:webdevicons_conceal_nerdtree_brackets = 1
+  let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+
+  " dir-icons
+  let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+  let g:DevIconsEnableFoldersOpenClose = 1
+  let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+  let g:DevIconsDefaultFolderOpenSymbol = ''
+
+  " file-icons
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+'''
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   nnoremap <silent> <Space>f :<C-u>NERDTree<CR>
   nnoremap <silent> <Space>c :<C-u>NERDTreeClose<CR>
 
   let g:NERDTreeQuitOnOpen=1
+'''
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+  let g:NERDTreeFileExtensionHighlightFullName = 1
+  let g:NERDTreeExactMatchHighlightFullName = 1
+  let g:NERDTreePatternMatchHighlightFullName = 1
 '''
 
 # depends unite {{{

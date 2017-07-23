@@ -39,11 +39,20 @@ function! LightlineFilename()
 endfunction
 
 function! LightlineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-    return fugitive#head()
-  else
-    return ''
-  endif
+  " if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+  "   return fugitive#head()
+  " else
+  "   return ''
+  " endif
+
+  " use nerd-fonts
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head())
+      return ' ' . fugitive#head()
+    endif
+  catch
+  endtry
+  return ''
 endfunction
 
 function! LightlineFileformat()
