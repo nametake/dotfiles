@@ -62,6 +62,12 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
 
+[[plugins]]
+repo = 'ujihisa/neco-look'
+
+[[plugins]]
+repo = 'daisuzu/translategoogle.vim'
+
 # color {{{
 [[plugins]]
 repo = 'keith/tmux.vim'
