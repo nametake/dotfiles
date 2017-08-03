@@ -130,6 +130,7 @@ on_ft = ['python']
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = '''
+  nnoremap <silent> <Space>gd :<C-u>GoDoc<CR>
   autocmd MyAutoCmd FileType go set omnifunc=gocomplete#Complete
   autocmd MyAutoCmd BufWritePre *.go GoImports
   let g:go_highlight_functions = 1
