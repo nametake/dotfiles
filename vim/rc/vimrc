@@ -99,6 +99,7 @@ set matchpairs& matchpairs+=<:>
 set wrap
 set breakindent
 set lazyredraw
+set signcolumn=yes
 
 "}}}
 "
