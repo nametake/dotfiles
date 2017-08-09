@@ -5,3 +5,7 @@ set -g __fish_git_prompt_char_conflictedstate "*"
 set -g __fish_git_prompt_char_cleanstate "#"
 
 set -U GHQ_SELECTOR peco
+
+if test -e /Applications/MacVim.app
+  alias gvim='/Applications/MacVim.app/Contents/bin/gvim'
+end
