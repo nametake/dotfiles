@@ -3,6 +3,7 @@ oh-my-fish/plugin-aws
 barnybug/docker-fish-completion
 fisherman/getopts
 decors/fish-ghq
+decors/fish-lscolors
 nametake/plugin-peco
 fisherman/spin
 fisherman/z
