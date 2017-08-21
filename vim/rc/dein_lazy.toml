@@ -203,6 +203,15 @@ hook_add ='''
 
 # JavaScript {{{
 [[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = ['javascript']
+build = 'npm install -g tern'
+hook_add = '''
+  let g:deoplete#sources#ternjs#tern_bin = system('which tern')
+  let g:deoplete#sources#ternjs#timeout = 1
+'''
+
+[[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
