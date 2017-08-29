@@ -216,6 +216,14 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'millermedeiros/vim-esformatter'
+on_ft = ['javascript']
+build = 'npm install -g esformatter'
+hook_add ='''
+  autocmd MyAutoCmd Filetype javascript autocmd BufWritePre <buffer> Esformatter
+'''
+
+[[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
