@@ -80,6 +80,19 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'sbdchd/neoformat'
+on_event = ['BufEnter']
+hook_add = '''
+  let g:neoformat_javascript_prettiereslint = {
+        \   'exe': './node_modules/.bin/prettier-eslint',
+        \   'args': ['--stdin'],
+        \   'stdin': 1,
+        \ }
+  autocmd MyAutoCmd BufWritePre * Neoformat
+  let g:neoformat_enabled_javascript = ['prettiereslint']
+'''
+
+[[plugins]]
 repo = 'lambdalisue/vim-gista'
 on_cmd = ['Gista']
 hook_add = '''
@@ -213,14 +226,6 @@ build = 'npm install -g tern'
 hook_add = '''
   let g:deoplete#sources#ternjs#tern_bin = system('which tern')
   let g:deoplete#sources#ternjs#timeout = 1
-'''
-
-[[plugins]]
-repo = 'millermedeiros/vim-esformatter'
-on_ft = ['javascript']
-build = 'npm install -g esformatter'
-hook_add ='''
-  autocmd MyAutoCmd Filetype javascript autocmd BufWritePre <buffer> Esformatter
 '''
 
 [[plugins]]
