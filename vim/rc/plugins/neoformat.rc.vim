@@ -1,4 +1,4 @@
-autocmd MyAutoCmd BufWritePre * undojoin | Neoformat
+autocmd MyAutoCmd BufWritePre * Neoformat
 
 " Javascript
 let g:neoformat_javascript_prettiereslint = {
