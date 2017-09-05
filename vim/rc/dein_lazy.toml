@@ -83,13 +83,7 @@ hook_add = '''
 repo = 'sbdchd/neoformat'
 on_event = ['BufEnter']
 hook_add = '''
-  let g:neoformat_javascript_prettiereslint = {
-        \   'exe': './node_modules/.bin/prettier-eslint',
-        \   'args': ['--stdin'],
-        \   'stdin': 1,
-        \ }
-  autocmd MyAutoCmd BufWritePre * Neoformat
-  let g:neoformat_enabled_javascript = ['prettiereslint']
+  source ~/.vim/rc/plugins/neoformat.rc.vim
 '''
 
 [[plugins]]
