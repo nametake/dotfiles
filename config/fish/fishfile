@@ -1,8 +1,10 @@
 oh-my-fish/plugin-aws
 0rax/fish-bd
 barnybug/docker-fish-completion
+fisherman/done
 fisherman/getopts
 decors/fish-ghq
+fisherman/humanize_duration
 decors/fish-lscolors
 nametake/plugin-peco
 fisherman/spin
