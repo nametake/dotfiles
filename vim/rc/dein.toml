@@ -146,8 +146,7 @@ hook_add ='''
   let g:memolist_prompt_tags = 1
   let g:memolist_prompt_categories = 1
   let g:memolist_qfixgrep = 1
-  let g:memolist_vimfiler = 1
-  let g:memolist_vimfiler_option = "-toggle"
+  let g:memolist_ex_cmd = "NERDTree"
   let g:memolist_template_dir_path = "~/.vim/template/memolist"
 
   map <Space>mn  :MemoNew<CR>
