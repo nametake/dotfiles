@@ -282,10 +282,23 @@ repo = 'cespare/vim-toml'
 on_ft = ['toml']
 #}}}
 
-#{{{
+# fish {{{
 [[plugins]]
 repo = 'dag/vim-fish'
 on_ft = ['fish']
 #}}}
+
+# api-blueprint {{{
+[[plugins]]
+repo = 'kylef/apiblueprint.vim'
+on_ft = ['apiblueprint']
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+on_ft = ['apiblueprint']
+hook_add = '''
+  autocmd FileType apiblueprint nnoremap <C-b> :call GenerateRefract()<cr>
+'''
+# }}}
 
 #}}}
