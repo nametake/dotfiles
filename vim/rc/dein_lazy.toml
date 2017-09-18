@@ -82,6 +82,7 @@ hook_add = '''
 [[plugins]]
 repo = 'sbdchd/neoformat'
 on_event = ['BufEnter']
+build = 'npm install -g js-beautify prettier-eslint-cli'
 hook_add = '''
   source ~/.vim/rc/plugins/neoformat.rc.vim
 '''
