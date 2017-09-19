@@ -298,4 +298,10 @@ hook_add = '''
 '''
 #}}}
 
+# terraform {{{
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = ['tf']
+#}}}
+
 #}}}
