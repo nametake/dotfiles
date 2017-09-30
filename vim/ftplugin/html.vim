@@ -1,2 +1,1 @@
-set noexpandtab
-set indentexpr=
+set expandtab

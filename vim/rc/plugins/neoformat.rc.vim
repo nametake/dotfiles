@@ -1,4 +1,4 @@
-autocmd MyAutoCmd BufWritePre * Neoformat
+autocmd MyAutoCmd BufWritePre *.js,*.html Neoformat
 
 " Javascript
 let g:neoformat_javascript_prettiereslint = {
