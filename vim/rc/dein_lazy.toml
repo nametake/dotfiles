@@ -64,6 +64,22 @@ repo = 'Shougo/context_filetype.vim'
 repo = 'osyo-manga/vim-precious'
 depends = 'context_filetype.vim'
 on_event = ['BufEnter']
+hook_add = '''
+  "insert mode に入った時に 'filetype' を切り換える。
+  "カーソル移動時の自動切り替えを無効化
+  let g:precious_enable_switch_CursorMoved = {
+  \   "*" : 0
+  \ }
+  let g:precious_enable_switch_CursorMoved_i = {
+  \   "*" : 0
+  \ }
+
+  augroup test
+    autocmd!
+    autocmd InsertEnter * :PreciousSwitch
+    autocmd InsertLeave * :PreciousReset
+  augroup END
+'''
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
