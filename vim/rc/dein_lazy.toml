@@ -215,6 +215,7 @@ repo = 'dhruvasagar/vim-table-mode'
 on_ft = ['markdown']
 hook_add ='''
   let g:markdown_fold_style = 'nested'
+  let g:table_mode_always_active = 1
 '''
 
 [[plugins]]
