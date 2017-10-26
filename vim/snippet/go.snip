@@ -1,9 +1,9 @@
 # method
-snippet     funcm 
-abbr        func () ...() { ... }
-options     head
-  func (${1:receiver}) ${2:fname}(${3}) ${4:int }{
-    ${0:TARGET:return }
+snippet funcm
+abbr func (self Type) Method(...) [error] { ... }
+regexp /^meth/
+  func (${1:self} ${2:Type}) ${3:Do}(${4}) ${5:error }{
+    ${0}
   }
 
 # shorthand variable declaration
