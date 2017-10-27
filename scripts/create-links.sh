@@ -11,6 +11,7 @@ dotfiles=(
           "gitconfig"
           "gitignore"
           "git_template"
+          "tern-config"
           )
 
 # Arg parse
