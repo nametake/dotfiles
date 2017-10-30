@@ -6,6 +6,21 @@ regexp /^meth/
     ${0}
   }
 
+# server
+snippet server
+abbr type Server struct { ... }
+  type Server struct {
+    http.Server
+  }
+
+  func (s *Server) ListenAndServe() error {
+    return s.Server.ListenAndServe()
+  }
+  ${0}
+
+
+# nvim-go snippets
+
 # shorthand variable declaration
 snippet :
 abbr v := value
