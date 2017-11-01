@@ -1,6 +1,7 @@
-autocmd MyAutoCmd BufWritePre *.js,*.html Neoformat
+" Javascript {{{
+autocmd MyAutoCmd FileType javascript
+      \ autocmd! MyAutoCmd BufWritePre <buffer> undojoin | Neoformat
 
-" Javascript
 let g:neoformat_javascript_prettiereslint = {
       \   'exe': './node_modules/.bin/prettier-eslint',
       \   'args': ['--stdin'],
@@ -8,6 +9,12 @@ let g:neoformat_javascript_prettiereslint = {
       \ }
 
 let g:neoformat_enabled_javascript = ['prettiereslint']
+" }}}
+
+
+" HTML {{{
+autocmd MyAutoCmd FileType html
+      \ autocmd! MyAutoCmd BufWritePre <buffer> undojoin | Neoformat
 
 let g:neoformat_html_jsbeautify = {
       \   'exe': 'js-beautify',
@@ -16,3 +23,12 @@ let g:neoformat_html_jsbeautify = {
       \ }
 
 let g:neoformat_enabled_html = ['jsbeautify']
+" }}}
+
+
+" JSON {{{
+autocmd MyAutoCmd FileType json
+      \ autocmd! MyAutoCmd BufWritePre <buffer> undojoin | Neoformat
+
+let g:neoformat_enabled_json = ['jq']
+" }}}
