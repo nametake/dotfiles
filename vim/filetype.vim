@@ -8,7 +8,7 @@ endif
 
 augroup filetypedetect
   " jsx
-  autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   " jade
   autocmd BufNewFile,BufRead *.jade set filetype=jade
   " coffee
@@ -16,5 +16,7 @@ augroup filetypedetect
   " tex
   autocmd BufNewFile,BufRead *.tex set filetype=tex
   " markdown
-  autocmd BufRead,BufNewFile *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  " json
+  autocmd BufNewFile,BufRead *.{eslintrc,babelrc,tern-config} set filetype=json
 augroup END
