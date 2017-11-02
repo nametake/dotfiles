@@ -2,6 +2,8 @@
 
 dotfiles_root=$(cd $(dirname $0)/.. && pwd)
 dotfiles=(
+          "bash_profile"
+          "bashrc"
           "zshenv"
           "zshrc"
           "zshrc.zplug"
