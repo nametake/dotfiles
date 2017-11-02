@@ -12,23 +12,32 @@ export EDITOR=vim
 bindkey -e
 
 export XDG_CONFIG_HOME=~/.config
+
+# local bin
+[ -e ${HOME}/.local/bin ] && \
+  export PATH=${HOME}/.local/bin:${PATH}
+
+# programming languages
 export GOPATH=${HOME}/go
-export PATH=${GOPATH}/bin:${PATH}
+export TEXBIN_PATH=/usr/texbin
 
-[ -d ${HOME}/.local/bin ] && \
-  export export PATH=${HOME}/.local/bin:${PATH}
+[ -e ${GOPATH} ] && \
+  export PATH=${GOPATH}/bin:${PATH}
 
- [ -e ${HOME}/.rbenv ] && \
-  export PATH="$HOME/.rbenv/bin:$PATH"
+[ -e ${TEXBIN_PATH} ] && \
+  export PATH=${TEXBIN_PATH}:$PATH
 
-[ -d {$HOME}/.pyenv ] && \
-  export PYENV_ROOT=${HOME}/.pyenv && \
+# env tools
+export PYENV_ROOT=${HOME}/.pyenv
+export RBENV_ROOT=${HOME}/.rbenv
+export NODEBREW_ROOT=${HOME}/.nodebrew
+
+[ -e ${PYENV_ROOT} ] && \
   export PATH=${PYENV_ROOT}/bin:$PATH && \
   eval "$(pyenv init -)"
 
-[ -d ${HOME}/.nodebrew/current/bin ] && \
-  export PATH=$HOME/.nodebrew/current/bin:$PATH
+[ -e ${RBENV_ROOT} ] && \
+  export PATH=${RBENV_ROOT}/bin:$PATH
 
-[ -d /usr/texbin ] && \
-  export PATH=/usr/texbin:$PATH
-
+[ -e ${NODEBREW_ROOT} ] && \
+  export PATH=${NODEBREW_ROOT}/current/bin:$PATH
