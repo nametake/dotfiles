@@ -112,6 +112,8 @@ set backspace=indent,eol,start
 "set whichwrap=b,s,h,l,<,>,[,]
 set startofline
 set textwidth=0
+set cursorline
+set cursorcolumn
 
 "}}}
 
