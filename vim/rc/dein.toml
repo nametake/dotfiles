@@ -135,10 +135,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-hook_add = '''
-  command! Gac Gw|Gcommit
-'''
+repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
