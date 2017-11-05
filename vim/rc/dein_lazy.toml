@@ -67,8 +67,6 @@ on_event = ['BufEnter']
 hook_add = '''
   nnoremap <silent> <Space>s :PreciousSwitch<CR>
   nnoremap <silent> <Space>p :PreciousReset<CR>
-  "insert mode に入った時に 'filetype' を切り換える。
-  "カーソル移動時の自動切り替えを無効化
   let g:precious_enable_switch_CursorMoved = {
   \   "*" : 0
   \ }
@@ -79,7 +77,6 @@ hook_add = '''
   augroup test
     autocmd!
     autocmd InsertEnter * :PreciousSwitch
-    autocmd InsertLeave * :PreciousReset
   augroup END
 '''
 

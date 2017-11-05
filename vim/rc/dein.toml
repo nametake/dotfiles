@@ -223,6 +223,9 @@ repo = 'Shougo/vinarise'
 
 [[plugins]]
 repo = 'osyo-manga/vim-over'
+hook_add = '''
+  nnoremap <silent> ,m :OverCommandLine<CR>
+'''
 
 [[plugins]]
 repo = 'haya14busa/vim-asterisk'
