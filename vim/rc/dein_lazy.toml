@@ -232,18 +232,6 @@ repo = 'heavenshell/vim-jsdoc'
 on_ft = ['javascript']
 
 [[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-on_ft = ['javascript']
-build = 'npm install -g tern'
-hook_add = '''
-  let g:deoplete#sources#ternjs#types = 1
-  let g:deoplete#sources#ternjs#case_insensitive = 1
-  let g:deoplete#sources#ternjs#filter = 0
-  let g:deoplete#sources#ternjs#omit_object_prototype = 0
-  let g:deoplete#sources#ternjs#include_keywords = 1
-'''
-
-[[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
