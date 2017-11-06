@@ -63,14 +63,6 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'haya14busa/vim-migemo'
 
 [[plugins]]
-repo = 'haya14busa/incsearch.vim'
-hook_add = '''
-  map /  <Plug>(incsearch-forward)
-  map ?  <Plug>(incsearch-backward)
-  map g/ <Plug>(incsearch-stay)
-'''
-
-[[plugins]]
 repo = 'ujihisa/neco-look'
 
 [[plugins]]
@@ -221,20 +213,16 @@ repo = 'Shougo/vinarise'
 [[plugins]]
 repo = 'osyo-manga/vim-over'
 hook_add = '''
-  nnoremap <silent> ,m :OverCommandLine<CR>
+  map <silent> ,c :OverCommandLine<CR>
 '''
 
 [[plugins]]
 repo = 'haya14busa/vim-asterisk'
 hook_add = '''
-  map *   <Plug>(asterisk-*)
-  map #   <Plug>(asterisk-#)
-  map g*  <Plug>(asterisk-g*)
-  map g#  <Plug>(asterisk-g#)
-  map z*  <Plug>(asterisk-z*)
-  map gz* <Plug>(asterisk-gz*)
-  map z#  <Plug>(asterisk-z#)
-  map gz# <Plug>(asterisk-gz#)
+  nmap *  <Plug>(asterisk-z*)
+  nmap #  <Plug>(asterisk-z#)
+  nmap g* <Plug>(asterisk-gz*)
+  nmap g# <Plug>(asterisk-gz#)
 
   let g:asterisk#keeppos = 1
 '''
@@ -244,4 +232,29 @@ repo = 'haya14busa/vim-edgemotion'
 hook_add = '''
   map <C-j> <Plug>(edgemotion-j)
   map <C-k> <Plug>(edgemotion-k)
+'''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+  map  <Leader>f <Plug>(easymotion-bd-f)
+  nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+  nmap s <Plug>(easymotion-overwin-f2)
+
+  map <Space>L <Plug>(easymotion-bd-jk)
+  nmap <Space>L <Plug>(easymotion-overwin-line)
+
+  map  <Space>w <Plug>(easymotion-bd-w)
+  nmap <Space>w <Plug>(easymotion-overwin-w)
+
+  map  / <Plug>(easymotion-sn)
+  omap / <Plug>(easymotion-tn)
+  
+  map  n <Plug>(easymotion-next)
+  map  N <Plug>(easymotion-prev)
+
+  let g:EasyMotion_smartcase = 1
+
+  let g:EasyMotion_use_smartsign_us = 1
 '''
