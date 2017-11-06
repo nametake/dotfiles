@@ -138,6 +138,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png
 
 set infercase
 set completeopt=menu,preview
+set spell
 
 "}}}
 
