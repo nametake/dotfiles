@@ -12,7 +12,7 @@ let g:lightline = {
         \ 'component_function': {
         \   'modified': 'LightlineModified',
         \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
+        \   'fugitive': 'LightlineGina',
         \   'filename': 'LightlineFilename',
         \   'fileformat': 'LightlineFileformat',
         \   'filetype': 'LightlineFiletype',
@@ -36,6 +36,14 @@ function! LightlineFilename()
         \  &ft == 'vimshell' ? vimshell#get_status_string() :
         \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
         \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function LightlineGina() abort
+  try
+    return ' ' . gina#component#repo#branch()
+  catch
+  endtry
+  return ''
 endfunction
 
 function! LightlineFugitive()
