@@ -219,10 +219,10 @@ hook_add = '''
 [[plugins]]
 repo = 'haya14busa/vim-asterisk'
 hook_add = '''
-  nmap *  <Plug>(asterisk-z*)
-  nmap #  <Plug>(asterisk-z#)
-  nmap g* <Plug>(asterisk-gz*)
-  nmap g# <Plug>(asterisk-gz#)
+  map *  <Plug>(asterisk-z*)
+  map #  <Plug>(asterisk-z#)
+  map g* <Plug>(asterisk-gz*)
+  map g# <Plug>(asterisk-gz#)
 
   let g:asterisk#keeppos = 1
 '''
@@ -237,22 +237,13 @@ hook_add = '''
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 hook_add = '''
-  map  <Leader>f <Plug>(easymotion-bd-f)
-  nmap <Leader>f <Plug>(easymotion-overwin-f)
-
   nmap s <Plug>(easymotion-overwin-f2)
 
   map <Space>L <Plug>(easymotion-bd-jk)
   nmap <Space>L <Plug>(easymotion-overwin-line)
 
-  map  <Space>w <Plug>(easymotion-bd-w)
-  nmap <Space>w <Plug>(easymotion-overwin-w)
-
   map  / <Plug>(easymotion-sn)
   omap / <Plug>(easymotion-tn)
-
-  map  n <Plug>(easymotion-next)
-  map  N <Plug>(easymotion-prev)
 
   let g:EasyMotion_smartcase = 1
 
