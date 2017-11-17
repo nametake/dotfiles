@@ -38,7 +38,7 @@ function! LightlineFilename()
         \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
 endfunction
 
-function LightlineGina() abort
+function! LightlineGina() abort
   try
     return ' ' . gina#component#repo#branch()
   catch
