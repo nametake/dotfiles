@@ -43,7 +43,11 @@ export NODEBREW_ROOT=${HOME}/.nodebrew
   export PATH=${NODEBREW_ROOT}/current/bin:$PATH
 
 # GCP
-export GOOGLE_CLOUD_SDK=${HOME}/.google-cloud-sdk
+export GOOGLE_CLOUD_SDK=${HOME}/.local/share/google-cloud-sdk
+export GOAPP=${GOOGLE_CLOUD_SDK}/platform/google_appengine
 
 [ -e ${GOOGLE_CLOUD_SDK} ] && \
   export PATH=${GOOGLE_CLOUD_SDK}/bin:$PATH
+
+[ -e ${GOAPP} ] && \
+  export PATH=${GOAPP}:$PATH
