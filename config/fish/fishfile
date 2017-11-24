@@ -4,6 +4,7 @@ barnybug/docker-fish-completion
 fisherman/done
 fisherman/getopts
 decors/fish-ghq
+Doctusoft/google-cloud-sdk-fish-completion
 fisherman/humanize_duration
 decors/fish-lscolors
 nametake/plugin-peco
