@@ -11,6 +11,7 @@ export SAVEHIST=1000000
 export EDITOR=vim
 bindkey -e
 
+export PATH=/usr/local/bin:${PATH}
 export XDG_CONFIG_HOME=~/.config
 
 # local bin
