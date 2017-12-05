@@ -29,6 +29,11 @@ export TEXBIN_PATH=/usr/texbin
   export PATH=${TEXBIN_PATH}:$PATH
 
 # env tools
+export ANYENV=${HOME}/.anyenv
+[ -e ${ANYENV} ] && \
+  export PATH=${ANYENV}/bin:${PATH} && \
+  eval "$(anyenv init -)"
+
 export PYENV_ROOT=${HOME}/.pyenv
 export RBENV_ROOT=${HOME}/.rbenv
 export NODEBREW_ROOT=${HOME}/.nodebrew
