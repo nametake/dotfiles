@@ -1,3 +1,15 @@
+" Golang {{{
+" autocmd MyAutoCmd FileType go
+"       \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
+"
+" let g:neoformat_go_gofmtrlx = {
+"       \   'exe': 'gofmtrlx',
+"       \   'stdin': 1,
+"       \ }
+"
+" let g:neoformat_enabled_go = ['gofmtrlx']
+" }}}
+
 " Javascript {{{
 autocmd MyAutoCmd FileType javascript
       \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
