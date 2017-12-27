@@ -252,3 +252,12 @@ hook_add = '''
 
 [[plugins]]
 repo = 'junegunn/vader.vim'
+
+[[plugins]]
+repo = 'mileszs/ack.vim'
+hook_add = '''
+  nnoremap <silent> <C-s> :<C-u>Ack!<Space>
+
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+  let g:ack_autoclose = 1
+'''
