@@ -32,7 +32,7 @@ export TEXBIN_PATH=/usr/texbin
 export ANYENV=${HOME}/.anyenv
 [ -e ${ANYENV} ] && \
   export PATH=${ANYENV}/bin:${PATH} && \
-  eval "$(anyenv init -)"
+  eval "$(anyenv init - zsh)"
 
 export PYENV_ROOT=${HOME}/.pyenv
 export RBENV_ROOT=${HOME}/.rbenv
