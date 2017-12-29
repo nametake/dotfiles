@@ -21,7 +21,7 @@
   pu = push
   puu = push -u
   di = diff
-  default = "!f () { git ch master; git pull; git delete-merged-branch; };f"
+  default = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
 
 [core]
   editor = "vim -u NONE -i NONE -N -c 'syntax on'"
