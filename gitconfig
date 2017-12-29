@@ -14,7 +14,12 @@
   delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
   p = !git push origin `git rev-parse --abbrev-ref HEAD`
   ac = !git add -A && git commit
-  ch = checkout
+  c = commit -v
+  o = checkout
+  b = checkout -b
+  p = pull
+  pu = push
+  puu = push -u
   di = diff
   default = "!f () { git ch master; git pull; git delete-merged-branch; };f"
 

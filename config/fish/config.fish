@@ -6,8 +6,8 @@ set -g __fish_git_prompt_char_cleanstate "#"
 
 set -U GHQ_SELECTOR peco
 
+alias g='git'
+
 if test -e /Applications/MacVim.app
   alias gvim='/Applications/MacVim.app/Contents/bin/gvim'
 end
-
-alias gitp='git p'
