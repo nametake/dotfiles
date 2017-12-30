@@ -12,7 +12,7 @@ let g:lightline = {
         \ 'component_function': {
         \   'modified': 'LightlineModified',
         \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineGina',
+        \   'fugitive': 'LightlineFugitive',
         \   'filename': 'LightlineFilename',
         \   'fileformat': 'LightlineFileformat',
         \   'filetype': 'LightlineFiletype',

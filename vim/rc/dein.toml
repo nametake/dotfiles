@@ -127,7 +127,10 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'lambdalisue/gina.vim'
+repo = 'tpope/vim-fugitive'
+
+# [[plugins]]
+# repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
