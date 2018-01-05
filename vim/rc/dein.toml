@@ -36,6 +36,29 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+'''
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+depends = ['ctrlp.vim']
+hook_add = '''
+  nmap p <Plug>(yankround-p)
+  xmap p <Plug>(yankround-p)
+  nmap P <Plug>(yankround-P)
+  nmap gp <Plug>(yankround-gp)
+  xmap gp <Plug>(yankround-gp)
+  nmap gP <Plug>(yankround-gP)
+  nmap <C-n> <Plug>(yankround-next)
+
+  let g:ctrlp_map = ''
+  nnoremap <silent><SID>(ctrlp) :<C-u>CtrlP<CR>
+  nmap <expr><C-p> yankround#is_active() ? "\<Plug>(yankround-prev)" : "<SID>(ctrlp)"
+'''
+
+[[plugins]]
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 hook_add = '''
   let g:NERDTreeFileExtensionHighlightFullName = 1
@@ -98,9 +121,6 @@ repo = 'vim-scripts/Align'
 hook_add ='''
   let g:Align_xstrlen = 3
 '''
-
-[[plugins]]
-repo = 'LeafCage/yankround.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'

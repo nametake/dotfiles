@@ -1,7 +1,7 @@
 # Unite {{{
 [[plugins]]
 repo = 'Shougo/unite.vim'
-depends = 'neomru.vim'
+depends = ['neomru.vim']
 hook_add = '''
   source ~/.vim/rc/plugins/unite.rc.vim
 '''
@@ -15,7 +15,7 @@ on_event = ['BufEnter']
 
 [[plugins]]
 repo = 'Shougo/unite-outline'
-depends = 'unite.vim'
+depends = ['unite.vim']
 
 #}}}
 
@@ -62,7 +62,7 @@ repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
-depends = 'context_filetype.vim'
+depends = ['context_filetype.vim']
 on_event = ['BufEnter']
 hook_add = '''
   nnoremap <silent> <Space>s :PreciousSwitch<CR>
@@ -78,13 +78,6 @@ hook_add = '''
     autocmd!
     autocmd InsertEnter * :PreciousSwitch
   augroup END
-'''
-
-[[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
-on_event = ['BufEnter']
-hook_add = '''
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 '''
 
 [[plugins]]
@@ -193,7 +186,7 @@ on_ft = ['go']
 
 [[plugins]]
 repo = 'rhysd/unite-go-import.vim'
-depends = 'unite.vim'
+depends = ['unite.vim']
 on_ft = ['go']
 hook_add = '''
   nnoremap gi :<C-u>Unite go/import<CR>
@@ -250,7 +243,7 @@ on_ft = ['javascript']
 [[plugins]]
 repo = 'othree/es.next.syntax.vim'
 on_ft = ['javascript']
-depends = 'yajs.vim'
+depends = ['yajs.vim']
 
 [[plugins]]
 repo = 'jiangmiao/simple-javascript-indenter'
