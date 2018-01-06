@@ -17,11 +17,10 @@
   c = commit -v
   o = checkout
   b = checkout -b
-  p = pull
-  pu = push
-  puu = push -u
+  p = push
+  pu = pull
   di = diff
-  default = "!f () { git ch master; git pull; git delete-merged-branch; };f"
+  default = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
 
 [core]
   editor = "vim -u NONE -i NONE -N -c 'syntax on'"

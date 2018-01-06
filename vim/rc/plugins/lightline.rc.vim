@@ -40,7 +40,7 @@ endfunction
 
 function! LightlineGina() abort
   try
-    return ' ' . gina#component#repo#branch()
+    return '' . gina#component#repo#branch()
   catch
   endtry
   return ''
