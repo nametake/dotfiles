@@ -286,3 +286,6 @@ hook_add = '''
   let g:ackprg = 'ag --nogroup --nocolor --column'
   let g:ack_autoclose = 1
 '''
+
+[[plugins]]
+repo = 'tpope/vim-abolish'
