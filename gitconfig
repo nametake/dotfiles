@@ -17,7 +17,7 @@
   c = commit -v
   o = checkout
   b = checkout -b
-  p = push
+  p = !git push origin `git rev-parse --abbrev-ref HEAD`
   pu = pull
   di = diff
   default = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
