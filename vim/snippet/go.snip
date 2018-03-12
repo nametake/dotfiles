@@ -6,6 +6,15 @@ regexp /^meth/
     ${0}
   }
 
+
+# error snippet with errors.Wrap
+snippet errw
+abbr if err != nil { ... }
+  if err != nil {
+    return errors.Wrap(err, ${1})
+  }
+  ${0}
+
 # server
 snippet server
 abbr type Server struct { ... }
