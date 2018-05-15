@@ -11,7 +11,14 @@ let g:neoformat_go_gofmtrlx = {
       \   'stdin': 0,
       \ }
 
-let g:neoformat_enabled_go = ['gofmtrlx', 'goimports']
+let g:neoformat_go_goreturns = {
+      \   'exe': 'goreturns',
+      \   'args': [],
+      \   'replace': 0,
+      \   'stdin': 1,
+      \ }
+
+let g:neoformat_enabled_go = ['gofmtrlx', 'goreturns']
 " }}}
 
 " Javascript {{{
