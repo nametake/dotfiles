@@ -12,14 +12,10 @@
 [alias]
   tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
   delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
-  p = !git push origin `git rev-parse --abbrev-ref HEAD`
   ac = !git add -A && git commit
-  c = commit -v
-  o = checkout
-  b = checkout -b
-  p = !git push origin `git rev-parse --abbrev-ref HEAD`
-  pu = pull
+  ch = checkout
   di = diff
+  p = !git push origin `git rev-parse --abbrev-ref HEAD`
   default = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
 
 [core]

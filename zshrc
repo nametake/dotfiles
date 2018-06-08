@@ -71,6 +71,8 @@ alias grep='grep --color=auto'
 
 alias tmux='tmux -2'
 
+alias g='git'
+
 if [ -d /Applications/MacVim.app ]; then
   alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
   alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
