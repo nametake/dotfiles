@@ -244,9 +244,9 @@ hook_add ='''
 repo = 'heavenshell/vim-jsdoc'
 on_ft = ['javascript']
 
-# [[plugins]]
-# repo = 'pangloss/vim-javascript'
-# on_ft = ['javascript']
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript']
 
 [[plugins]]
 repo = 'othree/yajs.vim'
@@ -258,15 +258,12 @@ on_ft = ['javascript']
 depends = ['yajs.vim']
 
 [[plugins]]
-repo = 'jiangmiao/simple-javascript-indenter'
-on_ft = ['javascript']
-hook_add = '''
-  let g:SimpleJsIndenter_BriefMode = 1
-'''
+repo = 'MaxMEllon/vim-jsx-pretty'
+on_ft = ['javascript', 'jsx']
 
-# [[plugins]]
-# repo = 'MaxMEllon/vim-jsx-pretty'
-# on_ft = ['javascript', 'jsx']
+[[plugins]]
+repo = 'gavocanov/vim-js-indent'
+on_ft = ['javascript', 'jsx']
 #}}}
 
 # HTML/CSS {{{
