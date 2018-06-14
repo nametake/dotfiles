@@ -1,4 +1,6 @@
 " dein.vim configurations.
+"
+command! DeinUpdate call dein#update()
 
 let g:dein#enable_notification = 1
 
@@ -40,5 +42,3 @@ call dein#save_state()
 if dein#check_install()
   call dein#install()
 endif
-
-command! DeinUpdate call dein#update()
