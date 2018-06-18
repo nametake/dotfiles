@@ -297,4 +297,10 @@ hook_add = '''
 repo = 'tpope/vim-abolish'
 
 [[plugins]]
-repo = 'terryma/vim-multiple-cursors'
+repo = 'bfredl/nvim-miniyank'
+hook_add = '''
+  map p <Plug>(miniyank-autoput)
+  map P <Plug>(miniyank-autoPut)
+  map <C-n> <Plug>(miniyank-cycle)
+'''
+
