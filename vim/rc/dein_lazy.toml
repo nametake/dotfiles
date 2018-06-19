@@ -240,25 +240,28 @@ hook_add ='''
 #}}}
 
 # JavaScript {{{
-[[plugins]]
-repo = 'heavenshell/vim-jsdoc'
-on_ft = ['javascript']
+# [[plugins]]
+# repo = 'heavenshell/vim-jsdoc'
+# on_ft = ['javascript']
 
 [[plugins]]
 repo = 'pangloss/vim-javascript'
-on_ft = ['javascript']
+on_ft = ['javascript', 'jsx']
 
 [[plugins]]
 repo = 'othree/yajs.vim'
-on_ft = ['javascript']
+on_ft = ['javascript', 'jsx']
 
 [[plugins]]
 repo = 'othree/es.next.syntax.vim'
-on_ft = ['javascript']
-depends = ['yajs.vim']
+on_ft = ['javascript', 'jsx']
 
 [[plugins]]
 repo = 'MaxMEllon/vim-jsx-pretty'
+on_ft = ['javascript', 'jsx']
+
+[[plugins]]
+repo = 'posva/vim-vue'
 on_ft = ['javascript', 'jsx']
 
 [[plugins]]
