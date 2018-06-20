@@ -23,20 +23,14 @@ let g:neoformat_enabled_go = ['gofmtrlx', 'goreturns']
 
 " Javascript {{{
 autocmd MyAutoCmd FileType javascript
-      \ autocmd! MyAutoCmd BufWritePre <buffer> call WrapNeoformat()
-
-let g:neoformat_javascript_prettiereslint = {
-      \   'exe': './node_modules/.bin/prettier-eslint',
-      \   'args': ['--stdin'],
-      \   'stdin': 1,
-      \ }
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
 
 let g:neoformat_enabled_javascript = ['prettiereslint']
 " }}}
 
 " HTML {{{
 autocmd MyAutoCmd FileType html
-      \ autocmd! MyAutoCmd BufWritePre <buffer> call WrapNeoformat()
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
 
 let g:neoformat_html_jsbeautify = {
       \   'exe': 'js-beautify',
@@ -49,7 +43,7 @@ let g:neoformat_enabled_html = ['jsbeautify']
 
 " JSON {{{
 autocmd MyAutoCmd FileType json
-      \ autocmd! MyAutoCmd BufWritePre <buffer>  Neoformat
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
 
 let g:neoformat_enabled_json = ['jq']
 " }}}
@@ -80,6 +74,7 @@ function! WrapNeoformat() abort
   " Restore our cursor/windows positions, folds, etc.
   if empty(l:curw)
     silent! loadview
+    loadview
   else
     call winrestview(l:curw)
   endif
