@@ -17,6 +17,10 @@ DOTFILES := \
 	tern-config \
 
 GO_TOOLS := \
+	github.com/nsf/gocode \
+	github.com/rogpeppe/godef \
+	github.com/jstemmer/gotags \
+	github.com/golang/lint/golint \
 	github.com/golangci/golangci-lint/cmd/golangci-lint \
 	github.com/rhysd/gofmtrlx \
 	sourcegraph.com/sqs/goreturns \
