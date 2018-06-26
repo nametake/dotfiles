@@ -9,6 +9,8 @@ endif
 augroup filetypedetect
   " jsx
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  " typescript
+  autocmd BufNewFile,BufRead *.ts set filetype=typescript
   " jade
   autocmd BufNewFile,BufRead *.jade set filetype=jade
   " coffee
