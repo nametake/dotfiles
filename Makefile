@@ -28,11 +28,15 @@ GO_TOOLS := \
 	github.com/cweill/gotests/... \
 
 NPM_TOOLS := \
+	neovim \
 	eslint \
 	prettier \
 	prettier-eslint \
 	eslint-plugin-vue \
 	js-beautify \
+
+PIP_TOOLS := \
+	neovim \
 
 .PHONY: help
 help: # Refer: https://postd.cc/auto-documented-makefile/
@@ -53,6 +57,10 @@ go_get: ## Install go cli tools
 
 npm_i: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
+
+pip_i: ## Install pip tools
+	pip install --upgrade $(PIP_TOOLS)
+	pip3 install --upgrade $(PIP_TOOLS)
 
 gcloud: ## Install gcloud cli tools
 	@./bin/gcloud.sh
