@@ -267,6 +267,10 @@ on_ft = ['javascript', 'jsx']
 [[plugins]]
 repo = 'gavocanov/vim-js-indent'
 on_ft = ['javascript', 'jsx']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript', 'jsx']
 #}}}
 
 # HTML/CSS {{{
