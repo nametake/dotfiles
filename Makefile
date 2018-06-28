@@ -52,6 +52,8 @@ zplug: ## Install zplug
 tmp: ## Install tmux plugin manager
 	@./bin/tmp.sh
 
+all_tools: go_get npm_i pip_i ## Install all cli tools
+
 go_get: ## Install go cli tools
 	go get -u $(GO_TOOLS)
 
