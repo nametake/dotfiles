@@ -8,8 +8,11 @@ DOTFILES := \
 	zshenv \
 	zshrc \
 	zshrc.zplug \
+	config/fish/config.fish \
+	config/fish/fishfile \
 	vimrc \
 	vim \
+	config/nvim \
 	tmux.conf \
 	gitconfig \
 	gitignore \
