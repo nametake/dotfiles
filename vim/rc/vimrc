@@ -100,6 +100,7 @@ set wrap
 set breakindent
 set lazyredraw
 set signcolumn=yes
+set splitbelow
 
 "}}}
 "

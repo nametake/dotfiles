@@ -147,6 +147,7 @@ repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = '''
   nnoremap <silent> <Space>gd :<C-u>GoDoc<CR>
+  nnoremap <silent> <Space>t :<C-u>GoTest<CR>
   autocmd MyAutoCmd FileType go set omnifunc=gocomplete#Complete
   " autocmd MyAutoCmd BufWritePre *.go GoImports
 
@@ -172,7 +173,11 @@ hook_add = '''
   let g:go_fmt_fail_silently = 1
   let g:go_fmt_autosave = 0
   let g:go_fmt_command = "goimports"
+
   let g:go_term_mode = "split"
+  let g:go_term_height = 10
+  let g:go_term_width = 10
+
 
   let g:go_gocode_unimported_packages = 1
 '''
