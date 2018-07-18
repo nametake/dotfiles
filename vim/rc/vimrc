@@ -170,7 +170,7 @@ set foldnestmax=2
 set foldcolumn=2
 
 " Save fold settings.
-autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+autocmd MyAutoCmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
 " autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
 " Don't save options.
 set viewoptions-=options
@@ -260,6 +260,29 @@ cnoremap <C-n> <Down>
 cnoremap <C-p> <Up>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
+
+"}}}
+
+"----------------------------------------------------------------
+" autocmd
+"
+"{{{
+
+autocmd MyAutoCmd InsertLeave * set nopaste
+
+"}}}
+
+"----------------------------------------------------------------
+" command
+"
+"{{{
+
+function! s:clear_messages() abort
+  for i in range(201)
+    echomsg ''
+  endfor
+endfunction
+command! -bar Clear  call s:clear_messages()
 
 "}}}
 
