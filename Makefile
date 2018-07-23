@@ -37,6 +37,7 @@ NPM_TOOLS := \
 	prettier-eslint \
 	eslint-plugin-vue \
 	js-beautify \
+	git-open \
 
 PIP_TOOLS := \
 	neovim \
