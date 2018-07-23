@@ -173,6 +173,9 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]]
+repo = 'cohama/agit.vim'
+
 # [[plugins]]
 # repo = 'lambdalisue/gina.vim'
 
