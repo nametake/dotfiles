@@ -36,10 +36,31 @@ build = 'make'
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   nnoremap <silent> <Space>f :<C-u>NERDTree<CR>
-  nnoremap <silent> <Space>c :<C-u>NERDTreeClose<CR>
 
   let g:NERDTreeQuitOnOpen=0
 '''
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['nerdtree']
+hook_add = '''
+  let g:NERDTreeIndicatorMapCustom = {
+      \ "Modified"  : "*",
+      \ "Staged"    : "+",
+      \ "Untracked" : "-",
+      \ "Renamed"   : ">",
+      \ "Unmerged"  : "═",
+      \ "Deleted"   : "D",
+      \ "Dirty"     : "✗",
+      \ "Clean"     : "✔︎",
+      \ 'Ignored'   : 'I',
+      \ "Unknown"   : "?"
+      \ }
+'''
+
+[[plugins]]
+repo = 'EvanDotPro/nerdtree-chmod'
+depends = ['nerdtree']
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
