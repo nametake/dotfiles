@@ -260,6 +260,10 @@ cnoremap <C-p> <Up>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
 
+nnoremap <C-o> :bnext<CR>
+nnoremap <S-o> :bprev<CR>
+nnoremap <C-d> :bd<CR>
+
 "}}}
 
 "----------------------------------------------------------------
