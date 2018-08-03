@@ -31,6 +31,7 @@ GO_TOOLS := \
 	github.com/cweill/gotests/... \
 
 NPM_TOOLS := \
+	npm \
 	neovim \
 	eslint \
 	prettier \
@@ -40,6 +41,7 @@ NPM_TOOLS := \
 	git-open \
 
 PIP_TOOLS := \
+	pip \
 	neovim \
 
 .PHONY: help
