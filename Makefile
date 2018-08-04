@@ -10,6 +10,7 @@ DOTFILES := \
 	zshrc.zplug \
 	config/fish/config.fish \
 	config/fish/fishfile \
+	config/karabiner \
 	vimrc \
 	vim \
 	config/nvim \
