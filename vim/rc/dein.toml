@@ -131,23 +131,6 @@ repo = 'elubow/cql-vim'
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
-repo = 'ap/vim-buftabline'
-hook_add = '''
-  let g:buftabline_numbers = 1
-  let g:buftabline_separators = 1
-  nmap ,1 <Plug>BufTabLine.Go(1)
-  nmap ,2 <Plug>BufTabLine.Go(2)
-  nmap ,3 <Plug>BufTabLine.Go(3)
-  nmap ,4 <Plug>BufTabLine.Go(4)
-  nmap ,5 <Plug>BufTabLine.Go(5)
-  nmap ,6 <Plug>BufTabLine.Go(6)
-  nmap ,7 <Plug>BufTabLine.Go(7)
-  nmap ,8 <Plug>BufTabLine.Go(8)
-  nmap ,9 <Plug>BufTabLine.Go(9)
-  nmap ,0 <Plug>BufTabLine.Go(10)
-'''
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_post_source = 'source ~/.vim/rc/plugins/lightline.rc.vim'
 
