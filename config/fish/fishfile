@@ -4,8 +4,6 @@ barnybug/docker-fish-completion
 fisherman/done
 fisherman/getopts
 decors/fish-ghq
-jhillyerd/plugin-git
-ryotako/fish-global-abbreviation
 Doctusoft/google-cloud-sdk-fish-completion
 fisherman/humanize_duration
 decors/fish-lscolors
