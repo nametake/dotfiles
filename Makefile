@@ -20,8 +20,22 @@ DOTFILES := \
 	git_template \
 	tern-config \
 
+BREW_TOOLS := \
+	zsh \
+	fish \
+	tmux \
+	git \
+	vim \
+	neovim \
+	go \
+	node \
+	python2 \
+	python3 \
+	peco \
+	ghq \
+
 GO_TOOLS := \
-	github.com/nsf/gocode \
+	github.com/mdempsky/gocode \
 	github.com/rogpeppe/godef \
 	github.com/jstemmer/gotags \
 	github.com/golang/lint/golint \
@@ -60,6 +74,9 @@ tmp: ## Install tmux plugin manager
 	@./bin/tmp.sh
 
 all_tools: go_get npm_i pip_i ## Install all cli tools
+
+brew_i: ## Install brew tools
+	brew install $(BREW_TOOLS)
 
 go_get: ## Install go cli tools
 	go get -u $(GO_TOOLS)
