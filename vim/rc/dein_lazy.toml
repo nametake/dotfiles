@@ -317,6 +317,16 @@ repo = 'cespare/vim-toml'
 on_ft = ['toml']
 #}}}
 
+# Protobuf {{{
+[[plugins]]
+repo = 'uber/prototool'
+on_ft = ['proto']
+rtp = 'vim/prototool'
+hook_add = '''
+  autocmd VimEnter *.proto call PrototoolFormatEnable()
+'''
+#}}}
+
 # fish {{{
 [[plugins]]
 repo = 'dag/vim-fish'
