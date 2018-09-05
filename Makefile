@@ -54,6 +54,7 @@ NPM_TOOLS := \
 	eslint-plugin-vue \
 	js-beautify \
 	git-open \
+	typescript \
 
 PIP_TOOLS := \
 	pip \
