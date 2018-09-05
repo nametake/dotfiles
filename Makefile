@@ -20,7 +20,7 @@ DOTFILES := \
 	git_template \
 	tern-config \
 
-BREW_TOOLS := \
+PKG_MANAGER_TOOLS := \
 	zsh \
 	fish \
 	tmux \
@@ -33,6 +33,8 @@ BREW_TOOLS := \
 	python3 \
 	peco \
 	ghq \
+	jq \
+	yamllint \
 
 GO_TOOLS := \
 	github.com/mdempsky/gocode \
@@ -77,7 +79,7 @@ tmp: ## Install tmux plugin manager
 all_tools: go_get npm_i pip_i ## Install all cli tools
 
 brew_i: ## Install brew tools
-	brew install $(BREW_TOOLS)
+	brew install $(PKG_MANAGER_TOOLS)
 
 go_get: ## Install go cli tools
 	go get -u $(GO_TOOLS)
