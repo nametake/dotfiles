@@ -36,6 +36,9 @@ PKG_MANAGER_TOOLS := \
 	jq \
 	yamllint \
 
+BREW_TOOLS := \
+	the_silver_searcher \
+
 GO_TOOLS := \
 	github.com/mdempsky/gocode \
 	github.com/rogpeppe/godef \
@@ -46,6 +49,7 @@ GO_TOOLS := \
 	sourcegraph.com/sqs/goreturns \
 	github.com/kisielk/errcheck \
 	github.com/cweill/gotests/... \
+	github.com/gohugoio/hugo \
 
 NPM_TOOLS := \
 	npm \
@@ -79,7 +83,7 @@ tmp: ## Install tmux plugin manager
 all_tools: go_get npm_i pip_i ## Install all cli tools
 
 brew_i: ## Install brew tools
-	brew install $(PKG_MANAGER_TOOLS)
+	brew install $(PKG_MANAGER_TOOLS) $(BREW_TOOLS)
 
 go_get: ## Install go cli tools
 	go get -u $(GO_TOOLS)
