@@ -169,6 +169,8 @@ hook_add = '''
   let g:go_highlight_variable_declarations = 1
   let g:go_highlight_variable_assignments = 1
 
+  let g:go_def_mode = "godef"
+
   let g:go_fmt_experimental = 1
   let g:go_fmt_fail_silently = 1
   let g:go_fmt_autosave = 0
@@ -184,10 +186,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'zchee/vim-goiferr'
-on_ft = ['go']
-
-[[plugins]]
-repo = 'dgryski/vim-godef'
 on_ft = ['go']
 
 [[plugins]]
