@@ -227,6 +227,13 @@ hook_add ='''
 '''
 
 [[plugins]]
+repo = 'moorereason/vim-markdownfmt'
+on_ft = ['markdown']
+hook_add = '''
+  let g:markdownfmt_autosave = 1
+'''
+
+[[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
 on_ft = ['markdown']
 hook_add ='''

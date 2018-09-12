@@ -50,6 +50,7 @@ GO_TOOLS := \
 	github.com/kisielk/errcheck \
 	github.com/cweill/gotests/... \
 	mvdan.cc/sh/cmd/shfmt \
+	github.com/shurcooL/markdownfmt \
 	github.com/gohugoio/hugo \
 
 NPM_TOOLS := \
