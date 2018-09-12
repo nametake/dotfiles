@@ -51,6 +51,13 @@ autocmd MyAutoCmd FileType json
 let g:neoformat_enabled_json = ['jq']
 " }}}
 
+" Shell script {{{
+autocmd MyAutoCmd FileType sh
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
+
+let g:neoformat_enabled_sh = ['shfmt']
+" }}}
+
 " func {{{
 " Refer: https://github.com/fatih/vim-go/blob/7cfb890609b50e11fb27e0fee90a930646b5419f/autoload/go/fmt.vim#L16-L91
 function! WrapNeoformat() abort

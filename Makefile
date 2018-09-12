@@ -49,6 +49,7 @@ GO_TOOLS := \
 	sourcegraph.com/sqs/goreturns \
 	github.com/kisielk/errcheck \
 	github.com/cweill/gotests/... \
+	mvdan.cc/sh/cmd/shfmt \
 	github.com/gohugoio/hugo \
 
 NPM_TOOLS := \
