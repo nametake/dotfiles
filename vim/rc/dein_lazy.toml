@@ -231,6 +231,7 @@ repo = 'moorereason/vim-markdownfmt'
 on_ft = ['markdown']
 hook_add = '''
   let g:markdownfmt_autosave = 1
+  let g:markdownfmt_command = 'mdfmt'
 '''
 
 [[plugins]]
