@@ -52,7 +52,6 @@ GO_TOOLS := \
 	github.com/cweill/gotests/... \
 	mvdan.cc/sh/cmd/shfmt \
 	github.com/moorereason/mdfmt \
-	github.com/gohugoio/hugo \
 
 NPM_TOOLS := \
 	npm \
