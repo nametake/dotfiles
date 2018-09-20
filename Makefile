@@ -44,6 +44,7 @@ GO_TOOLS := \
 	github.com/rogpeppe/godef \
 	github.com/jstemmer/gotags \
 	github.com/golang/lint/golint \
+	honnef.co/go/tools/... \
 	github.com/golangci/golangci-lint/cmd/golangci-lint \
 	github.com/rhysd/gofmtrlx \
 	sourcegraph.com/sqs/goreturns \
