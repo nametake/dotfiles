@@ -88,5 +88,7 @@ function! WrapNeoformat() abort
   else
     call winrestview(l:curw)
   endif
+
+  syntax sync fromstart
 endfunction
 " }}}
