@@ -185,6 +185,11 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mdempsky/gocode'
+on_ft = ['go']
+rtp = 'vim/'
+
+[[plugins]]
 repo = 'zchee/vim-goiferr'
 on_ft = ['go']
 
