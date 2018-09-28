@@ -231,10 +231,6 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'AndrewRadev/splitjoin.vim'
-on_ft = ['go']
-
-[[plugins]]
 repo = 'buoto/gotests-vim''
 on_ft = ['go']
 #}}}

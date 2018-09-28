@@ -330,3 +330,7 @@ hook_add = '''
   map P <Plug>(miniyank-autoPut)
   map <C-n> <Plug>(miniyank-cycle)
 '''
+
+[[plugins]]
+repo = 'AndrewRadev/splitjoin.vim'
+
