@@ -19,15 +19,11 @@ if !dein#load_state(s:path)
   finish
 endif
 
-
 call dein#begin(s:path, expand('<sfile>'))
 
 " load toml and cache
 call dein#load_toml('~/.vim/rc/dein.toml', {'lazy': 0})
 call dein#load_toml('~/.vim/rc/dein_lazy.toml', {'lazy': 1})
-if has('nvim')
-  call dein#load_toml('~/.vim/rc/dein_neo.toml', {})
-endif
 
 " disable other plugins
 if dein#tap('deoplete.nvim') && has('nvim')
@@ -36,7 +32,6 @@ endif
 
 call dein#end()
 call dein#save_state()
-
 
 " Installation check.
 if dein#check_install()

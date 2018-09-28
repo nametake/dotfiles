@@ -36,11 +36,11 @@ hook_post_source = '''
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = ['context_filetype.vim', 'vim-smartinput']
-if = "has('nvim')"
 on_i = 1
 hook_add = '''
   source ~/.vim/rc/plugins/deoplete.rc.vim
 '''
+
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
@@ -122,6 +122,10 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = 'python'
+
+[[plugins]]
 repo =  'hynek/vim-python-pep8-indent'
 on_ft = ['python']
 
@@ -190,15 +194,29 @@ on_ft = ['go']
 rtp = 'vim/'
 
 [[plugins]]
-repo = 'zchee/vim-goiferr'
+repo = 'zchee/deoplete-go'
+on_ft = 'go'
+build = 'make'
+hook_add = '''
+  let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+  let g:deoplete#sources#go#sort_class = ['var', 'package', 'func', 'type', 'const']
+  " let g:deoplete#sources#go#use_cache = 1
+  " let g:deoplete#sources#go#json_directory = $HOME.'/.cache/deoplete/go/'
+  let g:deoplete#sources#go#package_dot = 0
+'''
+
+[[plugins]]
+repo = 'jodosha/vim-godebug'
+depends = ['vim-go']
 on_ft = ['go']
+if = "has('nvim')"
+hook_add = '''
+  nnoremap <silent> <Space>bk :<C-u>GoToggleBreakpoint<CR>
+  let g:go_term_enabled = 1
+'''
 
 [[plugins]]
 repo = 'jstemmer/gotags'
-on_ft = ['go']
-
-[[plugins]]
-repo = 'nsf/gocode'
 on_ft = ['go']
 
 [[plugins]]
@@ -323,6 +341,18 @@ hook_add = '''
       \   }
       \ ]
 '''
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = ['javascript']
+build = 'npm install -g tern'
+hook_add = '''
+  let g:deoplete#sources#ternjs#types = 1
+  let g:deoplete#sources#ternjs#case_insensitive = 1
+  let g:deoplete#sources#ternjs#filter = 0
+  let g:deoplete#sources#ternjs#omit_object_prototype = 0
+  let g:deoplete#sources#ternjs#include_keywords = 1
+'''
 #}}}
 
 # HTML/CSS {{{
@@ -368,6 +398,12 @@ rtp = 'vim/prototool'
 hook_add = '''
   autocmd VimEnter *.proto call PrototoolFormatEnable()
 '''
+#}}}
+
+# clang {{{
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+on_ft = ['c', 'cpp']
 #}}}
 
 # fish {{{
