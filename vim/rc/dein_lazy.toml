@@ -162,7 +162,7 @@ hook_add = '''
   let g:go_highlight_trailing_whitespace_error = 1
   let g:go_highlight_operators = 1
   let g:go_highlight_functions = 1
-  let g:go_highlight_function_arguments = 0
+  let g:go_highlight_function_arguments = 1
   let g:go_highlight_function_calls = 1
   let g:go_highlight_types = 1
   let g:go_highlight_fields = 1
@@ -190,8 +190,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'mdempsky/gocode'
-on_ft = ['go']
-rtp = 'vim/'
+rtp = 'nvim/'
 
 [[plugins]]
 repo = 'zchee/deoplete-go'

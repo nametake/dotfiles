@@ -286,13 +286,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'haya14busa/vim-edgemotion'
-hook_add = '''
-  map <C-j> <Plug>(edgemotion-j)
-  map <C-k> <Plug>(edgemotion-k)
-'''
-
-[[plugins]]
 repo = 'easymotion/vim-easymotion'
 hook_add = '''
   nmap s <Plug>(easymotion-overwin-f2)
