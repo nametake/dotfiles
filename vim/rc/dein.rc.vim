@@ -4,6 +4,12 @@ command! DeinUpdate call dein#update()
 
 let g:dein#enable_notification = 1
 
+
+if has('nvim')
+  let g:python3_host_prog = '/usr/local/bin/python3'
+  let g:python3_host_skip_check = 1
+endif
+
 let s:path = expand('~/.cache/dein')
 let s:repo = s:path . '/repos/github.com/Shougo/dein.vim'
 
