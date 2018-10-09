@@ -84,7 +84,6 @@ function! WrapNeoformat() abort
   " Restore our cursor/windows positions, folds, etc.
   if empty(l:curw)
     silent! loadview
-    loadview
   else
     call winrestview(l:curw)
   endif
