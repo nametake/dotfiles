@@ -188,9 +188,9 @@ hook_add = '''
   let g:go_gocode_unimported_packages = 1
 '''
 
-[[plugins]]
-repo = 'mdempsky/gocode'
-rtp = 'nvim/'
+# [[plugins]]
+# repo = 'mdempsky/gocode'
+# rtp = 'nvim/'
 
 [[plugins]]
 repo = 'zchee/deoplete-go'
