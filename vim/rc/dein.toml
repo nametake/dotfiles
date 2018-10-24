@@ -314,7 +314,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'tpope/vim-abolish'
+repo = 'nicwest/vim-camelsnek'
 
 [[plugins]]
 repo = 'bfredl/nvim-miniyank'
