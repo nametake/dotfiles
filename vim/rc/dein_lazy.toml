@@ -420,4 +420,10 @@ repo = 'hashivim/vim-terraform'
 on_ft = ['tf']
 #}}}
 
+# Dockerfile {{{
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+on_ft = ['dockerfile']
+#}}}
+
 #}}}
