@@ -64,6 +64,7 @@ NPM_TOOLS := \
 	js-beautify \
 	git-open \
 	typescript \
+	textlint \
 
 PIP_TOOLS := \
 	pip \
