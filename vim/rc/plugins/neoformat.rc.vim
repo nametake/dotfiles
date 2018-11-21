@@ -31,6 +31,13 @@ autocmd MyAutoCmd FileType javascript
 let g:neoformat_enabled_javascript = ['prettiereslint']
 " }}}
 
+" TypeScript {{{
+autocmd MyAutoCmd FileType typescript
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
+
+let g:neoformat_enabled_typescript = ['tsfmt']
+" }}}
+
 " HTML {{{
 autocmd MyAutoCmd FileType html
       \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
