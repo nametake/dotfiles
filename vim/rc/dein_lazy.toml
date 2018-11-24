@@ -21,26 +21,12 @@ depends = ['unite.vim']
 
 # Auto complete {{{
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-depends = ['context_filetype.vim', 'vim-smartinput']
-if = "has('lua')"
-on_event = 'InsertEnter'
-hook_add = '''
-  source ~/.vim/rc/plugins/neocomplete.rc.vim
-'''
-hook_post_source = '''
-  call neocomplete#custom#source('tag', 'disabled_filetypes', {'_' : 1})
-  " call neocomplete#custom#source('buffer', 'disabled_filetypes', {'_' : 1})
-'''
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = ['context_filetype.vim', 'vim-smartinput']
 on_i = 1
 hook_add = '''
   source ~/.vim/rc/plugins/deoplete.rc.vim
 '''
-
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
@@ -95,55 +81,7 @@ hook_add = '''
   source ~/.vim/rc/plugins/neoformat.rc.vim
 '''
 
-[[plugins]]
-repo = 'lambdalisue/vim-gista'
-on_cmd = ['Gista']
-hook_add = '''
-  let g:gista#client#default_username = 'nametake'
-  nnoremap <silent> <Space>gl :<C-u>Gista list --no-cache<CR>
-  nnoremap <silent> <Space>gp :<C-u>Gista post<CR>
-'''
-
 # Filetype {{{
-
-# Python {{{
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-if = '!has("neovim")'
-on_ft = ['python']
-hook_add = '''
-  let g:jedi#completions_enabled = 1
-  let g:jedi#auto_vim_configuration = 0
-  let g:jedi#smart_auto_mappings = 0
-  let g:jedi#show_call_signatures = 0
-'''
-hook_source = '''
-  setlocal completeopt-=preview
-'''
-
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_ft = 'python'
-
-[[plugins]]
-repo =  'hynek/vim-python-pep8-indent'
-on_ft = ['python']
-
-[[plugins]]
-repo = 'lambdalisue/vim-pyenv'
-on_ft = ['python']
-
-[[plugins]]
-repo = 'hdima/python-syntax'
-on_ft = ['python']
-hook_add = '''
-  let python_highlight_all = 1
-'''
-
-[[plugins]]
-repo = 'tmhedberg/SimpylFold'
-on_ft = ['python']
-#}}}
 
 # Golang {{{
 [[plugins]]
@@ -188,10 +126,6 @@ hook_add = '''
   let g:go_gocode_unimported_packages = 1
 '''
 
-# [[plugins]]
-# repo = 'mdempsky/gocode'
-# rtp = 'nvim/'
-
 [[plugins]]
 repo = 'zchee/deoplete-go'
 on_ft = 'go'
@@ -200,16 +134,6 @@ hook_add = '''
   let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
   let g:deoplete#sources#go#sort_class = ['var', 'package', 'func', 'type', 'const']
   let g:deoplete#sources#go#package_dot = 0
-'''
-
-[[plugins]]
-repo = 'jodosha/vim-godebug'
-depends = ['vim-go']
-on_ft = ['go']
-if = "has('nvim')"
-hook_add = '''
-  nnoremap <silent> <Space>bk :<C-u>GoToggleBreakpoint<CR>
-  let g:go_term_enabled = 1
 '''
 
 [[plugins]]
@@ -266,10 +190,6 @@ hook_add ='''
 #}}}
 
 # JavaScript {{{
-# [[plugins]]
-# repo = 'heavenshell/vim-jsdoc'
-# on_ft = ['javascript']
-
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript', 'jsx']
@@ -322,40 +242,40 @@ on_ft = ['typescript']
 [[plugins]]
 repo = 'mhartington/nvim-typescript'
 on_ft = ['typescript']
-# build = './install.sh'
-# hook_add = '''
-#   let g:nvim_typescript#default_signs = [
-#       \    {
-#       \    'TSerror': {
-#       \     'texthl': 'SpellBad',
-#       \     'signText': '.',
-#       \     'signTexthl': 'NeomakeErrorSign'
-#       \    }
-#       \   },
-#       \   {
-#       \     'TSwarning': {
-#       \      'texthl': 'SpellBad',
-#       \      'signText': '.',
-#       \      'signTexthl': 'NeomakeWarningSign'
-#       \     }
-#       \   },
-#       \   {
-#       \     'TSinformation': {
-#       \      'texthl': 'SpellBad',
-#       \      'signText': '.',
-#       \      'signTexthl': 'NeomakeInfoSign'
-#       \      }
-#       \   },
-#       \   {
-#       \     'TShint': {
-#       \      'texthl': 'SpellBad',
-#       \      'signText': '?',
-#       \      'signTexthl': 'NeomakeInfoSign'
-#       \      }
-#       \   }
-#       \ ]
-# '''
-### }}}
+build = './install.sh'
+hook_add = '''
+  let g:nvim_typescript#default_signs = [
+      \    {
+      \    'TSerror': {
+      \     'texthl': 'SpellBad',
+      \     'signText': '.',
+      \     'signTexthl': 'NeomakeErrorSign'
+      \    }
+      \   },
+      \   {
+      \     'TSwarning': {
+      \      'texthl': 'SpellBad',
+      \      'signText': '.',
+      \      'signTexthl': 'NeomakeWarningSign'
+      \     }
+      \   },
+      \   {
+      \     'TSinformation': {
+      \      'texthl': 'SpellBad',
+      \      'signText': '.',
+      \      'signTexthl': 'NeomakeInfoSign'
+      \      }
+      \   },
+      \   {
+      \     'TShint': {
+      \      'texthl': 'SpellBad',
+      \      'signText': '?',
+      \      'signTexthl': 'NeomakeInfoSign'
+      \      }
+      \   }
+      \ ]
+'''
+# }}}
 
 # HTML/CSS {{{
 [[plugins]]
@@ -369,12 +289,6 @@ on_ft = ['html', 'css']
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
 on_ft = ['html', 'css']
-#}}}
-
-# CoffeeScript {{{
-[[plugins]]
-repo = 'kchmck/vim-coffee-script'
-on_ft = ['coffee']
 #}}}
 
 # json {{{
@@ -412,21 +326,6 @@ on_ft = ['c', 'cpp']
 [[plugins]]
 repo = 'dag/vim-fish'
 on_ft = ['fish']
-#}}}
-
-# api-blueprint {{{
-[[plugins]]
-repo = 'kylef/apiblueprint.vim'
-on_ft = ['apiblueprint']
-hook_add = '''
-  autocmd FileType apiblueprint nnoremap <C-b> :call GenerateRefract()<cr>
-'''
-#}}}
-
-# terraform {{{
-[[plugins]]
-repo = 'hashivim/vim-terraform'
-on_ft = ['tf']
 #}}}
 
 # Dockerfile {{{
