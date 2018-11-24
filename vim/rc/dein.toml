@@ -141,10 +141,6 @@ repo = 'tpope/vim-surround'
 repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
-repo = 'kana/vim-smartinput'
-hook_post_source = 'source ~/.vim/rc/plugins/smartinput.rc.vim'
-
-[[plugins]]
 repo = 'vim-scripts/Align'
 hook_add ='''
   let g:Align_xstrlen = 3

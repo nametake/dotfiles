@@ -291,49 +291,8 @@ repo = 'posva/vim-vue'
 on_ft = ['javascript', 'jsx']
 
 [[plugins]]
-repo = 'gavocanov/vim-js-indent'
-on_ft = ['javascript', 'jsx']
-
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = ['typescript']
-
-[[plugins]]
-repo = 'mhartington/nvim-typescript'
-on_ft = ['typescript']
-build = './install.sh'
-hook_add = '''
-  let g:nvim_typescript#default_signs = [
-      \    {
-      \    'TSerror': {
-      \     'texthl': 'SpellBad',
-      \     'signText': '.',
-      \     'signTexthl': 'NeomakeErrorSign'
-      \    }
-      \   },
-      \   {
-      \     'TSwarning': {
-      \      'texthl': 'SpellBad',
-      \      'signText': '.',
-      \      'signTexthl': 'NeomakeWarningSign'
-      \     }
-      \   },
-      \   {
-      \     'TSinformation': {
-      \      'texthl': 'SpellBad',
-      \      'signText': '.',
-      \      'signTexthl': 'NeomakeInfoSign'
-      \      }
-      \   },
-      \   {
-      \     'TShint': {
-      \      'texthl': 'SpellBad',
-      \      'signText': '?',
-      \      'signTexthl': 'NeomakeInfoSign'
-      \      }
-      \   }
-      \ ]
-'''
+repo = 'jason0x43/vim-js-indent'
+on_ft = ['javascript', 'jsx', 'typescript']
 
 [[plugins]]
 repo = 'carlitux/deoplete-ternjs'
@@ -347,6 +306,56 @@ hook_add = '''
   let g:deoplete#sources#ternjs#include_keywords = 1
 '''
 #}}}
+
+# TypeScript {{{
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+hook_add = '''
+  autocmd FileType typescript setlocal completeopt-=menu
+'''
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+on_ft = ['typescript']
+# build = './install.sh'
+# hook_add = '''
+#   let g:nvim_typescript#default_signs = [
+#       \    {
+#       \    'TSerror': {
+#       \     'texthl': 'SpellBad',
+#       \     'signText': '.',
+#       \     'signTexthl': 'NeomakeErrorSign'
+#       \    }
+#       \   },
+#       \   {
+#       \     'TSwarning': {
+#       \      'texthl': 'SpellBad',
+#       \      'signText': '.',
+#       \      'signTexthl': 'NeomakeWarningSign'
+#       \     }
+#       \   },
+#       \   {
+#       \     'TSinformation': {
+#       \      'texthl': 'SpellBad',
+#       \      'signText': '.',
+#       \      'signTexthl': 'NeomakeInfoSign'
+#       \      }
+#       \   },
+#       \   {
+#       \     'TShint': {
+#       \      'texthl': 'SpellBad',
+#       \      'signText': '?',
+#       \      'signTexthl': 'NeomakeInfoSign'
+#       \      }
+#       \   }
+#       \ ]
+# '''
+### }}}
 
 # HTML/CSS {{{
 [[plugins]]
