@@ -183,17 +183,17 @@ hook_add = '''
   \ }
 '''
 
-[[plugins]]
-repo = 'soramugi/auto-ctags.vim'
-hook_add = '''
-  let g:auto_ctags = 1
-  let g:auto_ctags_tags_args = '--tag-relative --recurse'
-  let g:auto_ctags_directory_list = ['.git', '.svn', '$HOME/.ctags.d']
-  let g:auto_ctags_filetype_mode = 1
-  set tags+=.git/tags
-  set tags+=.svn/tags
-  set tags+=$HOME/.ctags.d/tags
-'''
+# [[plugins]]
+# repo = 'soramugi/auto-ctags.vim'
+# hook_add = '''
+#   let g:auto_ctags = 1
+#   let g:auto_ctags_tags_args = '--tag-relative --recurse'
+#   let g:auto_ctags_directory_list = ['.git', '.svn', '$HOME/.ctags.d']
+#   let g:auto_ctags_filetype_mode = 1
+#   set tags+=.git/tags
+#   set tags+=.svn/tags
+#   set tags+=$HOME/.ctags.d/tags
+# '''
 
 [[plugins]]
 repo = 'Shougo/vinarise'
@@ -220,4 +220,20 @@ hook_add = '''
   map p <Plug>(miniyank-autoput)
   map P <Plug>(miniyank-autoPut)
   map <C-n> <Plug>(miniyank-cycle)
+'''
+
+ [[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+  nmap s <Plug>(easymotion-overwin-f2)
+
+  map <Space>L <Plug>(easymotion-bd-jk)
+  nmap <Space>L <Plug>(easymotion-overwin-line)
+
+  map  / <Plug>(easymotion-sn)
+  omap / <Plug>(easymotion-tn)
+
+  let g:EasyMotion_smartcase = 1
+
+  let g:EasyMotion_use_smartsign_us = 1
 '''
