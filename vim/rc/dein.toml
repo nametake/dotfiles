@@ -117,17 +117,6 @@ repo = 'haya14busa/vim-migemo'
 repo = 'ujihisa/neco-look'
 
 [[plugins]]
-repo = 'daisuzu/translategoogle.vim'
-
-# color {{{
-[[plugins]]
-repo = 'keith/tmux.vim'
-
-[[plugins]]
-repo = 'elubow/cql-vim'
-# }}}
-
-[[plugins]]
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
@@ -177,35 +166,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'cohama/agit.vim'
-
-# [[plugins]]
-# repo = 'lambdalisue/gina.vim'
-
-[[plugins]]
 repo = 'tyru/open-browser.vim'
-
-[[plugins]]
-repo = 'glidenote/memolist.vim'
-hook_add ='''
-  let g:memolist_path = "~/Documents/Memo"
-  let g:memolist_memo_suffix = "md"
-  let g:memolist_memo_date = "%Y-%m-%d %H:%M"
-  let g:memolist_memo_date = "epoch"
-  let g:memolist_memo_date = "%D %T"
-  let g:memolist_prompt_tags = 1
-  let g:memolist_prompt_categories = 1
-  let g:memolist_qfixgrep = 1
-  let g:memolist_ex_cmd = "NERDTree"
-  let g:memolist_template_dir_path = "~/.vim/template/memolist"
-
-  map <Space>mn  :MemoNew<CR>
-  map <Space>ml  :MemoList<CR>
-  map <Space>mg  :MemoGrep<CR>
-'''
-
-[[plugins]]
-repo = 'fuenor/qfixgrep'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
@@ -265,39 +226,6 @@ hook_add = '''
 repo = 'Shougo/vinarise'
 
 [[plugins]]
-repo = 'osyo-manga/vim-over'
-hook_add = '''
-  map <silent> ,c :OverCommandLine<CR>
-'''
-
-[[plugins]]
-repo = 'haya14busa/vim-asterisk'
-hook_add = '''
-  map *  <Plug>(asterisk-z*)
-  map #  <Plug>(asterisk-z#)
-  map g* <Plug>(asterisk-gz*)
-  map g# <Plug>(asterisk-gz#)
-
-  let g:asterisk#keeppos = 1
-'''
-
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
-hook_add = '''
-  nmap s <Plug>(easymotion-overwin-f2)
-
-  map <Space>L <Plug>(easymotion-bd-jk)
-  nmap <Space>L <Plug>(easymotion-overwin-line)
-
-  map  / <Plug>(easymotion-sn)
-  omap / <Plug>(easymotion-tn)
-
-  let g:EasyMotion_smartcase = 1
-
-  let g:EasyMotion_use_smartsign_us = 1
-'''
-
-[[plugins]]
 repo = 'junegunn/vader.vim'
 
 [[plugins]]
@@ -314,12 +242,9 @@ repo = 'tpope/vim-abolish'
 
 [[plugins]]
 repo = 'bfredl/nvim-miniyank'
+if = "has('nvim')"
 hook_add = '''
   map p <Plug>(miniyank-autoput)
   map P <Plug>(miniyank-autoPut)
   map <C-n> <Plug>(miniyank-cycle)
 '''
-
-[[plugins]]
-repo = 'AndrewRadev/splitjoin.vim'
-

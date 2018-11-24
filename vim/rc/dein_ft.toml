@@ -1,5 +1,0 @@
-hook_add = '''
-if $GOROOT != ''
-   set runtimepath+=$GOROOT/misc/vim
-endif
-'''
