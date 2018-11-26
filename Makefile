@@ -19,6 +19,8 @@ DOTFILES := \
 	gitignore \
 	git_template \
 	tern-config \
+	eslintrc \
+	prettierrc \
 
 PKG_MANAGER_TOOLS := \
 	zsh \
