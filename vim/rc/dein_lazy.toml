@@ -22,7 +22,7 @@ depends = ['unite.vim']
 # Auto complete {{{
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-depends = ['context_filetype.vim', 'vim-smartinput']
+depends = ['context_filetype.vim']
 on_i = 1
 hook_add = '''
   source ~/.vim/rc/plugins/deoplete.rc.vim

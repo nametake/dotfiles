@@ -103,6 +103,9 @@ repo = 'tpope/vim-surround'
 repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
 repo = 'vim-scripts/Align'
 hook_add ='''
   let g:Align_xstrlen = 3
