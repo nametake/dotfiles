@@ -231,13 +231,10 @@ hook_add = '''
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript', 'tsx']
-hook_add = '''
-  autocmd FileType typescript setlocal completeopt-=menu
-'''
 
-[[plugins]]
-repo = 'peitalin/vim-jsx-typescript'
-on_ft = ['typescript', 'tsx']
+# [[plugins]]
+# repo = 'peitalin/vim-jsx-typescript'
+# on_ft = ['typescript', 'tsx']
 
 [[plugins]]
 repo = 'HerringtonDarkholme/yats.vim'
@@ -246,6 +243,9 @@ on_ft = ['typescript', 'tsx']
 [[plugins]]
 repo = 'Quramy/tsuquyomi'
 on_ft = ['typescript']
+hook_add = '''
+  autocmd FileType typescript setlocal completeopt-=menu
+'''
 
 [[plugins]]
 repo = 'mhartington/nvim-typescript'
