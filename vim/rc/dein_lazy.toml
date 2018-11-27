@@ -232,12 +232,8 @@ hook_add = '''
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript', 'tsx']
 
-# [[plugins]]
-# repo = 'peitalin/vim-jsx-typescript'
-# on_ft = ['typescript', 'tsx']
-
 [[plugins]]
-repo = 'HerringtonDarkholme/yats.vim'
+repo = 'tasn/vim-tsx'
 on_ft = ['typescript', 'tsx']
 
 [[plugins]]
