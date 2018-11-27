@@ -36,6 +36,15 @@ repo = 'EvanDotPro/nerdtree-chmod'
 depends = ['nerdtree']
 
 [[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+depends = ['nerdtree']
+hook_add = '''
+  let g:NERDTreeFileExtensionHighlightFullName = 1
+  let g:NERDTreeExactMatchHighlightFullName = 1
+  let g:NERDTreePatternMatchHighlightFullName = 1
+'''
+
+[[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 hook_add = '''
   nnoremap <silent> <C-i> :<C-u>CtrlPBuffer<CR>
@@ -60,15 +69,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-hook_add = '''
-  let g:NERDTreeFileExtensionHighlightFullName = 1
-  let g:NERDTreeExactMatchHighlightFullName = 1
-  let g:NERDTreePatternMatchHighlightFullName = 1
-'''
-
-# depends unite {{{
-[[plugins]]
 repo = 'thinca/vim-unite-history'
 on_source = 'unite.vim'
 
@@ -78,7 +78,6 @@ repo = 'osyo-manga/unite-filetype'
 [[plugins]]
 repo = 'Shougo/unite-help'
 on_source = 'unite.vim'
-# }}}
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
