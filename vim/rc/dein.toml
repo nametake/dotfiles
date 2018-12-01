@@ -109,6 +109,8 @@ hook_post_source = '''
   call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'delete': 1})
   call lexima#add_rule({'char': '<CR>', 'at': '<\%#>', 'input': '<CR><TAB>', 'input_after': '<CR>'})
   call lexima#add_rule({'char': '<CR>', 'at': '<\%#$', 'input_after': '<CR>)', 'except': '\C\v^(\s*)\S.*%#\n%(%(\s*|\1\s.+)\n)*\1>'})
+
+  call lexima#add_rule({'char': '<CR>', 'at': '```.*\%#```', 'input_after': '<CR>', 'except': '\C\v^(\s*)\S.*%#\n%(%(\s*|\1\s.+)\n)*\1>'})
 '''
 
 [[plugins]]
