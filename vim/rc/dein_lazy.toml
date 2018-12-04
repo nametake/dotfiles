@@ -161,16 +161,8 @@ on_ft = ['go']
 repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
 hook_add ='''
-  let g:vim_markdown_conceal = 0
+  let g:vim_markdown_folding_disabled = 1
   let g:vim_markdown_new_list_item_indent = 2
-'''
-
-[[plugins]]
-repo = 'moorereason/vim-markdownfmt'
-on_ft = ['markdown']
-hook_add = '''
-  let g:markdownfmt_autosave = 1
-  let g:markdownfmt_command = 'mdfmt'
 '''
 
 [[plugins]]
