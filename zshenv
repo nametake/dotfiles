@@ -20,6 +20,7 @@ export XDG_CONFIG_HOME=~/.config
 
 # programming languages
 export GOPATH=${HOME}/go
+export GO111MODULE=on
 export TEXBIN_PATH=/usr/texbin
 
 [ -e ${GOPATH} ] && \
