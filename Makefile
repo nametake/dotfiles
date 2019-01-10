@@ -47,12 +47,12 @@ GO_TOOLS := \
 	github.com/rogpeppe/godef \
 	github.com/jstemmer/gotags \
 	github.com/golang/lint/golint \
-	honnef.co/go/tools/... \
+	honnef.co/go/tools/staticcheck \
 	github.com/golangci/golangci-lint/cmd/golangci-lint \
 	github.com/rhysd/gofmtrlx \
 	sourcegraph.com/sqs/goreturns \
 	github.com/kisielk/errcheck \
-	github.com/cweill/gotests/... \
+	github.com/cweill/gotests/gotests \
 	mvdan.cc/sh/cmd/shfmt \
 	github.com/moorereason/mdfmt \
 	github.com/kyoshidajp/ghkw \
@@ -95,7 +95,7 @@ brew_i: ## Install brew tools
 	brew install $(PKG_MANAGER_TOOLS) $(BREW_TOOLS)
 
 go_get: ## Install go cli tools
-	go get -u $(GO_TOOLS)
+	go get $(GO_TOOLS)
 
 npm_i: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
