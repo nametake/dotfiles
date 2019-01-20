@@ -24,7 +24,8 @@
                       "^com\\.apple\\.Terminal$",
                       "^org\\.vim\\.",
                       "^com\\.googlecode\\.iterm2$",
-                      "^com\\.qvacua\\.VimR$"
+                      "^com\\.qvacua\\.VimR$",
+                      "^com\\.jetbrains\\.intellij\\."
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -54,7 +55,8 @@
                       "^com\\.apple\\.Terminal$",
                       "^org\\.vim\\.",
                       "^com\\.googlecode\\.iterm2$",
-                      "^com\\.qvacua\\.VimR$"
+                      "^com\\.qvacua\\.VimR$",
+                      "^com\\.jetbrains\\.intellij\\."
                     ],
                     "type": "frontmost_application_if"
                   }
