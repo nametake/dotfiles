@@ -1,0 +1,15 @@
+
+set surround
+
+" Run/Debug
+nnoremap <Space>r :<C-u>action Run<CR>
+nnoremap <Space>d :<C-u>action Debug<CR>
+
+" Search
+nnoremap / :<C-u>action Find<CR>
+
+" Code jump
+nnoremap <C-o> :<C-u>action Back<CR>
+nnoremap <C-i> :<C-u>action Forward<CR>
+nnoremap <C-S-o> <C-o>
+nnoremap <C-S-i> <C-i>

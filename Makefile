@@ -21,6 +21,7 @@ DOTFILES := \
 	tern-config \
 	eslintrc \
 	prettierrc \
+	ideavimrc \
 
 PKG_MANAGER_TOOLS := \
 	zsh \
