@@ -1,4 +1,4 @@
-
+set clipboard=unnamed
 set surround
 
 " Run/Debug
