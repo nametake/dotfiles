@@ -7,6 +7,7 @@ nnoremap <Space>d :<C-u>action Debug<CR>
 
 " Search
 nnoremap / :<C-u>action Find<CR>
+nnoremap <C-s> :<C-u>action FindInPath<CR>
 
 " Code jump
 nnoremap <C-o> :<C-u>action Back<CR>
