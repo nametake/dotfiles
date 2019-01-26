@@ -14,3 +14,11 @@ nnoremap <C-o> :<C-u>action Back<CR>
 nnoremap <C-i> :<C-u>action Forward<CR>
 nnoremap <C-S-o> <C-o>
 nnoremap <C-S-i> <C-i>
+
+" Split
+nnoremap <C-t>n :<C-u>action NextTab<CR>
+nnoremap <C-t>p :<C-u>action PreviousTab<CR>
+nnoremap <C-t>s :<C-u>action MoveTabDown<CR>
+nnoremap <C-t>v :<C-u>action MoveTabRight<CR>
+nnoremap <C-t>l :<C-u>action NextSplitter<CR>
+nnoremap <C-t>h :<C-u>action PrevSplitter<CR>
