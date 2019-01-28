@@ -55,8 +55,10 @@ GO_TOOLS := \
 	github.com/kisielk/errcheck \
 	github.com/cweill/gotests/gotests \
 	mvdan.cc/sh/cmd/shfmt \
-	github.com/moorereason/mdfmt \
 	github.com/kyoshidajp/ghkw \
+
+GO_MOD_TOOLS := \
+	github.com/moorereason/mdfmt \
 
 NPM_TOOLS := \
 	npm \
@@ -97,6 +99,8 @@ brew_i: ## Install brew tools
 
 go_get: ## Install go cli tools
 	go get $(GO_TOOLS)
+	@./bin/gomod.sh $(GO_MOD_TOOLS)
+
 
 npm_i: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
