@@ -93,7 +93,6 @@ tmp: ## Install tmux plugin manager
 	@./bin/tmp.sh
 
 all_tools: go_get npm_i pip_i ## Install all cli tools
-	fisher
 
 brew_i: ## Install brew tools
 	brew install $(PKG_MANAGER_TOOLS) $(BREW_TOOLS)
