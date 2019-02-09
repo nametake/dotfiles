@@ -93,14 +93,14 @@ tmp: ## Install tmux plugin manager
 	@./bin/tmp.sh
 
 all_tools: go_get npm_i pip_i ## Install all cli tools
+	fisher
 
 brew_i: ## Install brew tools
 	brew install $(PKG_MANAGER_TOOLS) $(BREW_TOOLS)
 
 go_get: ## Install go cli tools
 	go get $(GO_TOOLS)
-	@./bin/gomod.sh $(GO_MOD_TOOLS)
-
+	./bin/gomod.sh $(GO_MOD_TOOLS)
 
 npm_i: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
