@@ -4,6 +4,7 @@ set surround
 " Run/Debug
 nnoremap <Space>r :<C-u>action Run<CR>
 nnoremap <Space>d :<C-u>action Debug<CR>
+nnoremap <Space>t :<C-u>action RunClass<CR>
 
 " Search
 nnoremap <C-p> :<C-u>action GotoFile<CR>
