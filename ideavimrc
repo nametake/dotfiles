@@ -6,6 +6,9 @@ nnoremap <Space>r :<C-u>action Run<CR>
 nnoremap <Space>d :<C-u>action Debug<CR>
 nnoremap <Space>t :<C-u>action RunClass<CR>
 
+" Show info
+nnoremap <Space>e :<C-u>action ShowErrorDescription<CR>
+
 " Search
 nnoremap <C-p> :<C-u>action GotoFile<CR>
 nnoremap / :<C-u>action Find<CR>
