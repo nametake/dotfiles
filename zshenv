@@ -3,7 +3,6 @@ export TERM=xterm-256color
 
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS='di=01;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=30;42:ow=30;43:st=01;36:'
-
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000
 export SAVEHIST=1000000
@@ -48,6 +47,9 @@ export NODEBREW_ROOT=${HOME}/.nodebrew
 
 [ -e ${NODEBREW_ROOT} ] && \
   export PATH=${NODEBREW_ROOT}/current/bin:$PATH
+
+# Kube
+export KUBECONFIG="$KUBECONFIG:`ls ${HOME}/.kube/*.yml | tr '\n' ':'`"
 
 # GCP
 export GOOGLE_CLOUD_SDK=${HOME}/.local/share/google-cloud-sdk

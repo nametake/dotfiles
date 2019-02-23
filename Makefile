@@ -78,6 +78,7 @@ NPM_TOOLS := \
 PIP_TOOLS := \
 	pip \
 	neovim \
+	awscli \
 
 .PHONY: help
 help: # Refer: https://postd.cc/auto-documented-makefile/
