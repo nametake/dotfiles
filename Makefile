@@ -57,6 +57,7 @@ GO_TOOLS := \
 	mvdan.cc/sh/cmd/shfmt \
 	github.com/kyoshidajp/ghkw \
 	golang.org/x/tools/cmd/golsp \
+	github.com/golang/protobuf/protoc-gen-go \
 
 GO_MOD_TOOLS := \
 	github.com/moorereason/mdfmt \
