@@ -56,7 +56,6 @@ GO_TOOLS := \
 	github.com/cweill/gotests/gotests \
 	mvdan.cc/sh/cmd/shfmt \
 	github.com/kyoshidajp/ghkw \
-	golang.org/x/tools/cmd/golsp \
 	github.com/golang/protobuf/protoc-gen-go \
 
 GO_MOD_TOOLS := \
