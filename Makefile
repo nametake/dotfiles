@@ -47,7 +47,6 @@ GO_TOOLS := \
 	github.com/mdempsky/gocode \
 	github.com/rogpeppe/godef \
 	github.com/jstemmer/gotags \
-	github.com/golang/lint/golint \
 	honnef.co/go/tools/staticcheck \
 	github.com/golangci/golangci-lint/cmd/golangci-lint \
 	github.com/rhysd/gofmtrlx \
