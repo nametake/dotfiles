@@ -8,7 +8,7 @@ build = 'make'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
-  nnoremap <silent> <Space>f :<C-u>NERDTree<CR>
+  nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
 
   let g:NERDTreeQuitOnOpen=0
 '''
