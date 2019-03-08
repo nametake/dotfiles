@@ -34,6 +34,8 @@ let g:neoformat_enabled_javascript = ['prettiereslint']
 " TypeScript {{{
 autocmd MyAutoCmd FileType typescript
       \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
+autocmd MyAutoCmd FileType typescript.tsx
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
 
 let g:neoformat_enabled_typescript = ['prettier']
 " }}}
