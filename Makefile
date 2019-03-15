@@ -39,6 +39,7 @@ PKG_MANAGER_TOOLS := \
 	ghq \
 	jq \
 	yamllint \
+	create-react-app \
 
 BREW_TOOLS := \
 	the_silver_searcher \
