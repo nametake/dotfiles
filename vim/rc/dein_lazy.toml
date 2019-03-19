@@ -251,6 +251,7 @@ repo = 'Quramy/tsuquyomi'
 on_ft = ['typescript']
 hook_add = '''
   autocmd FileType typescript setlocal completeopt-=menu
+  autocmd MyAutoCmd BufWritePre *.{ts,tsx} TsuquyomiImport
 '''
 
 [[plugins]]
