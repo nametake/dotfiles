@@ -1,4 +1,9 @@
 {
     "editor.fontFamily": "RictyDiscordNerdFontAOPL-Regular, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Dark (Molokai)",
+    "explorer.confirmDragAndDrop": false,
+    "editor.renderWhitespace": "all",
+    "explorer.confirmDelete": false,
+    "vim.useSystemClipboard": true
 }
