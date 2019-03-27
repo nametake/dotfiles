@@ -11,6 +11,7 @@ DOTFILES := \
 	config/fish/config.fish \
 	config/fish/fishfile \
 	config/karabiner \
+	config/Code \
 	vimrc \
 	vim \
 	config/nvim \
