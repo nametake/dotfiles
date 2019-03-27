@@ -66,6 +66,13 @@ NPM_TOOLS := \
 	npm \
 	neovim \
 	eslint \
+	eslint-plugin-import \
+	eslint-plugin-jest \
+	eslint-plugin-react \
+	eslint-plugin-prettier \
+	eslint-config-prettier \
+	@typescript-eslint/eslint-plugin \
+	@typescript-eslint/parser \
 	prettier \
 	prettier-eslint \
 	eslint-plugin-vue \
