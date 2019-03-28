@@ -100,5 +100,15 @@
   {
     "key": "alt+cmd+0",
     "command": "-workbench.action.toggleEditorGroupLayout"
+  },
+  {
+    "key": "ctrl+- ctrl+-",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+/",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
