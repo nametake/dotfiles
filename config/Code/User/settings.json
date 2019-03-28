@@ -11,5 +11,6 @@
         "list.focusBackground": "#186fcc",
     },
     "workbench.colorTheme": "Dark (Molokai)",
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "editor.formatOnType": true
 }
