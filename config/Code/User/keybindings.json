@@ -94,16 +94,6 @@
     "command": "-workbench.action.findInFiles"
   },
   {
-    "key": "ctrl+v",
-    "command": "workbench.action.splitEditorDown",
-    "when": "editorFocus && vim.mode == 'Normal'"
-  },
-  {
-    "key": "ctrl+s",
-    "command": "workbench.action.splitEditorRight",
-    "when": "editorFocus && vim.mode == 'Normal'"
-  },
-  {
     "key": "ctrl+w space",
     "command": "workbench.action.toggleEditorGroupLayout"
   },
