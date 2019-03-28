@@ -5,5 +5,10 @@
     "explorer.confirmDragAndDrop": false,
     "editor.renderWhitespace": "all",
     "explorer.confirmDelete": false,
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "workbench.colorCustomizations": {
+        "list.focusBackground": "#186fcc",
+    }
 }
