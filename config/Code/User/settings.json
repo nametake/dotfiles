@@ -1,7 +1,6 @@
 {
     "editor.fontFamily": "RictyDiscordNerdFontAOPL-Regular, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 16,
-    "workbench.colorTheme": "Dark (Molokai)",
     "explorer.confirmDragAndDrop": false,
     "editor.renderWhitespace": "all",
     "explorer.confirmDelete": false,
@@ -10,5 +9,7 @@
     "editor.formatOnPaste": true,
     "workbench.colorCustomizations": {
         "list.focusBackground": "#186fcc",
-    }
+    },
+    "workbench.colorTheme": "Dark (Molokai)",
+    "window.zoomLevel": 0
 }

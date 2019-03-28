@@ -84,5 +84,31 @@
     "key": "enter",
     "command": "-renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "workbench.action.splitEditorDown",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.splitEditorRight",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+w space",
+    "command": "workbench.action.toggleEditorGroupLayout"
+  },
+  {
+    "key": "alt+cmd+0",
+    "command": "-workbench.action.toggleEditorGroupLayout"
   }
 ]
