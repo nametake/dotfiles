@@ -59,7 +59,7 @@
   {
     "key": "space f",
     "command": "workbench.view.explorer",
-    "when": "editorFocus && vim.mode == 'Normal'",
+    "when": "editorFocus && vim.mode == 'Normal'"
   },
   {
     "key": "shift+cmd+e",
@@ -110,5 +110,20 @@
     "key": "cmd+/",
     "command": "-editor.action.commentLine",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "listFocus && !inputFocus && filesExplorerFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.toggleExpand",
+    "when": "listFocus && !inputFocus && explorerResourceIsFolder"
+  },
+  {
+    "key": "x",
+    "command": "list.collapse",
+    "when": "listFocus && !inputFocus"
   }
 ]
