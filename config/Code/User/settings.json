@@ -1,17 +1,17 @@
 {
-    "editor.fontFamily": "RictyDiscordNerdFontAOPL-Regular, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 16,
-    "explorer.confirmDragAndDrop": false,
-    "editor.renderWhitespace": "all",
-    "explorer.confirmDelete": false,
-    "vim.useSystemClipboard": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "workbench.colorCustomizations": {
-        "list.focusBackground": "#186fcc",
-    },
-    "workbench.colorTheme": "Dark (Molokai)",
-    "window.zoomLevel": 0,
-    "editor.formatOnType": true,
-    "files.insertFinalNewline": true
+  "editor.fontSize": 16,
+  "explorer.confirmDragAndDrop": false,
+  "editor.renderWhitespace": "all",
+  "explorer.confirmDelete": false,
+  "vim.useSystemClipboard": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "workbench.colorCustomizations": {
+    "list.focusBackground": "#186fcc"
+  },
+  "workbench.colorTheme": "Dark (Molokai)",
+  "window.zoomLevel": 0,
+  "editor.formatOnType": true,
+  "files.insertFinalNewline": true,
+  "editor.fontFamily": "'Ricty Discord', Menlo, Monaco, 'Courier New', monospace"
 }
