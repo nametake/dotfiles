@@ -2,7 +2,8 @@
 [
   {
     "key": "ctrl+p",
-    "command": "workbench.action.quickOpen"
+    "command": "workbench.action.quickOpen",
+    "when": "!suggestWidgetVisible"
   },
   {
     "key": "cmd+p",
@@ -66,7 +67,7 @@
     "command": "-workbench.view.explorer"
   },
   {
-    "key": "ctrl+v",
+    "key": "s",
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
   },
@@ -135,5 +136,20 @@
     "key": "m d",
     "command": "deleteFile",
     "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "jumpToNextSnippetPlaceholder",
+    "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "insertSnippet",
+    "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
   }
 ]
