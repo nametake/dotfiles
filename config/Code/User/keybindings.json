@@ -114,16 +114,26 @@
   {
     "key": "enter",
     "command": "list.select",
-    "when": "listFocus && !inputFocus && filesExplorerFocus"
+    "when": "explorerViewletFocus && !inputFocus && filesExplorerFocus"
   },
   {
     "key": "enter",
     "command": "list.toggleExpand",
-    "when": "listFocus && !inputFocus && explorerResourceIsFolder"
+    "when": "explorerViewletFocus && !inputFocus && explorerResourceIsFolder"
   },
   {
     "key": "x",
     "command": "list.collapse",
-    "when": "listFocus && !inputFocus"
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "key": "m a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "key": "m d",
+    "command": "deleteFile",
+    "when": "explorerViewletFocus && !inputFocus"
   }
 ]
