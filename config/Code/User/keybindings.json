@@ -77,7 +77,7 @@
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
   },
   {
-    "key": "m v",
+    "key": "m m",
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
