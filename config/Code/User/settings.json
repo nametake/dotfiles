@@ -13,7 +13,7 @@
   "window.zoomLevel": 0,
   "editor.formatOnType": true,
   "files.insertFinalNewline": true,
-  "editor.fontFamily": "'Ricty Discord', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Ricty Discord'",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.editor.enablePreview": false
 }
