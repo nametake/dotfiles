@@ -153,6 +153,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'tpope/vim-rhubarb'
+
+[[plugins]]
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
