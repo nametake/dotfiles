@@ -49,7 +49,8 @@ export NODEBREW_ROOT=${HOME}/.nodebrew
   export PATH=${NODEBREW_ROOT}/current/bin:$PATH
 
 # Kube
-export KUBECONFIG="$KUBECONFIG:`ls ${HOME}/.kube/*.yml | tr '\n' ':'`"
+[ -e ${ROOT}/.kube ] && \
+  export KUBECONFIG="$KUBECONFIG:`ls ${HOME}/.kube/*.yml | tr '\n' ':'`"
 
 # GCP
 export GOOGLE_CLOUD_SDK=${HOME}/.local/share/google-cloud-sdk
