@@ -120,3 +120,6 @@ pip_i: ## Install pip tools
 
 gcloud: ## Install gcloud cli tools
 	@./bin/gcloud.sh
+
+show_update_cmd:
+	@echo 'brew update; brew upgrade; brew cleanup; cd $HOME/.dotfiles; make all_tools; fisher; nvim -c DeinUpdate -c GoUpdateBinaries -c q;'
