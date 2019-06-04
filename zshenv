@@ -49,7 +49,7 @@ export NODEBREW_ROOT=${HOME}/.nodebrew
   export PATH=${NODEBREW_ROOT}/current/bin:$PATH
 
 # Kube
-[ -e ${ROOT}/.kube ] && \
+[ -e ${HOME}/.kube ] && \
   export KUBECONFIG="$KUBECONFIG:`ls ${HOME}/.kube/*.yml | tr '\n' ':'`"
 
 # GCP
