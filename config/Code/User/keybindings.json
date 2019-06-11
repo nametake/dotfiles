@@ -3,7 +3,12 @@
   {
     "key": "ctrl+p",
     "command": "workbench.action.quickOpen",
-    "when": "!suggestWidgetVisible"
+    "when": "!suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen",
+    "when": "!suggestWidgetVisible && filesExplorerFocus"
   },
   {
     "key": "cmd+p",
@@ -151,5 +156,10 @@
     "key": "ctrl+k",
     "command": "insertSnippet",
     "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
+  },
+  {
+    "key": "c r",
+    "command": "extension.changeCase.commands",
+    "when": "editorTextFocus"
   }
 ]
