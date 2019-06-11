@@ -160,6 +160,6 @@
   {
     "key": "c r",
     "command": "extension.changeCase.commands",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus && vim.mode == 'Normal'"
   }
 ]
