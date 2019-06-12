@@ -161,5 +161,15 @@
     "key": "c r",
     "command": "extension.changeCase.commands",
     "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "space r",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && vim.mode == 'Normal'"
+  },
+  {
+    "key": "f2",
+    "command": "-editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   }
 ]
