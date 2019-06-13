@@ -106,6 +106,7 @@ hook_add = '''
   nnoremap <silent> <Space>t :<C-u>GoTest<CR>
   autocmd MyAutoCmd FileType go set omnifunc=gocomplete#Complete
   " autocmd MyAutoCmd BufWritePre *.go GoImports
+  let g:go_metalinter_disabled = ['gochecknoinits', 'gochecknoglobals']
 
   let g:go_highlight_array_whitespace_error = 1
   let g:go_highlight_chan_whitespace_error = 1
