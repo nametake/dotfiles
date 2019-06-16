@@ -158,7 +158,7 @@
     "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
   },
   {
-    "key": "c r",
+    "key": "space c",
     "command": "extension.changeCase.commands",
     "when": "editorTextFocus && vim.mode == 'Normal'"
   },
