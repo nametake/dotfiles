@@ -15,5 +15,14 @@
   "files.insertFinalNewline": true,
   "editor.fontFamily": "'Ricty Discord'",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "todo-tree.excludeGlobs": [
+    "modules/mod_additive_*/*",
+    "!./modules/**",
+    "plugins/content/additive_*/*",
+    "components/com_add*/*",
+    "templates/**",
+    "!**/node_modules/**",
+    "!**/dist/**"
+  ]
 }
