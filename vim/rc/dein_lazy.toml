@@ -20,13 +20,21 @@ depends = ['unite.vim']
 #}}}
 
 # Auto complete {{{
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# depends = ['context_filetype.vim']
+# on_event = 'InsertEnter'
+# hook_source = '''
+#   source ~/.vim/rc/plugins/deoplete.rc.vim
+#   call deoplete#enable()
+# '''
+
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = ['context_filetype.vim']
-on_i = 1
+repo = 'neoclide/coc.nvim'
+build = 'yarn install --frozen-lockfile'
+on_event = 'InsertEnter'
 hook_source = '''
-  source ~/.vim/rc/plugins/deoplete.rc.vim
-  call deoplete#enable()
+  call coc#util#install()
 '''
 
 [[plugins]]
