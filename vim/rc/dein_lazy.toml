@@ -35,6 +35,7 @@ build = 'yarn install --frozen-lockfile'
 on_event = 'InsertEnter'
 hook_source = '''
   call coc#util#install()
+  source ~/.vim/rc/plugins/coc.rc.vim
 '''
 
 [[plugins]]
