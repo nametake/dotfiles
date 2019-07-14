@@ -20,12 +20,22 @@ depends = ['unite.vim']
 #}}}
 
 # Auto complete {{{
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# depends = ['context_filetype.vim']
+# on_event = 'InsertEnter'
+# hook_source = '''
+#   source ~/.vim/rc/plugins/deoplete.rc.vim
+#   call deoplete#enable()
+# '''
+
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = ['context_filetype.vim']
-on_i = 1
-hook_add = '''
-  source ~/.vim/rc/plugins/deoplete.rc.vim
+repo = 'neoclide/coc.nvim'
+build = 'yarn install --frozen-lockfile'
+on_event = 'InsertEnter'
+hook_source = '''
+  call coc#util#install()
+  source ~/.vim/rc/plugins/coc.rc.vim
 '''
 
 [[plugins]]
@@ -104,7 +114,7 @@ on_ft = ['go']
 hook_add = '''
   nnoremap <silent> <Space>gd :<C-u>GoDoc<CR>
   nnoremap <silent> <Space>t :<C-u>GoTest<CR>
-  autocmd MyAutoCmd FileType go set omnifunc=gocomplete#Complete
+  " autocmd MyAutoCmd FileType go set omnifunc=gocomplete#Complete
   " autocmd MyAutoCmd BufWritePre *.go GoImports
 
   let g:go_highlight_array_whitespace_error = 1
@@ -125,7 +135,8 @@ hook_add = '''
   let g:go_highlight_variable_declarations = 1
   let g:go_highlight_variable_assignments = 1
 
-  let g:go_def_mode = "godef"
+  let g:go_def_mode='gopls'
+  let g:go_info_mode='gopls'
 
   let g:go_fmt_experimental = 1
   let g:go_fmt_fail_silently = 1
@@ -139,19 +150,18 @@ hook_add = '''
 
   let g:go_gocode_unimported_packages = 1
 
-  " let g:go_def_mapping_enabled = 0
+  let g:go_def_mapping_enabled = 0
   " let g:go_doc_keywordprg_enabled = 0
 '''
 
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_ft = 'go'
-build = 'make'
-hook_add = '''
-  let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-  let g:deoplete#sources#go#sort_class = ['var', 'package', 'func', 'type', 'const']
-  let g:deoplete#sources#go#package_dot = 0
-'''
+# [[plugins]]
+# repo = 'deoplete-plugins/deoplete-go'
+# on_ft = 'go'
+# build = 'make'
+# depends = ['deoplete.nvim']
+# hook_add = '''
+#   let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+# '''
 
 [[plugins]]
 repo = 'jstemmer/gotags'
@@ -167,10 +177,6 @@ hook_add = '''
 hook_source = '''
   call unite#custom#source('go/import', 'ignore_pattern', '.*/vendor/.*')
 '''
-
-[[plugins]]
-repo = 'buoto/gotests-vim''
-on_ft = ['go']
 #}}}
 
 # Markdown {{{
@@ -197,113 +203,6 @@ on_ft = ['markdown']
 hook_add ='''
   let g:previm_show_header = 0
 '''
-#}}}
-
-# JavaScript {{{
-[[plugins]]
-repo = 'pangloss/vim-javascript'
-on_ft = ['javascript', 'jsx']
-
-[[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = ['javascript', 'jsx']
-
-[[plugins]]
-repo = 'othree/es.next.syntax.vim'
-on_ft = ['javascript', 'jsx']
-
-[[plugins]]
-repo = 'MaxMEllon/vim-jsx-pretty'
-on_ft = ['javascript', 'jsx']
-
-[[plugins]]
-repo = 'posva/vim-vue'
-on_ft = ['javascript', 'jsx']
-
-[[plugins]]
-repo = 'jason0x43/vim-js-indent'
-on_ft = ['javascript', 'jsx', 'typescript']
-
-[[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-on_ft = ['javascript']
-build = 'npm install -g tern'
-hook_add = '''
-  let g:deoplete#sources#ternjs#types = 1
-  let g:deoplete#sources#ternjs#case_insensitive = 1
-  let g:deoplete#sources#ternjs#filter = 0
-  let g:deoplete#sources#ternjs#omit_object_prototype = 0
-  let g:deoplete#sources#ternjs#include_keywords = 1
-'''
-#}}}
-
-# TypeScript {{{
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = ['typescript', 'tsx']
-
-[[plugins]]
-repo = 'tasn/vim-tsx'
-on_ft = ['typescript', 'tsx']
-
-[[plugins]]
-repo = 'Quramy/tsuquyomi'
-on_ft = ['typescript']
-hook_add = '''
-  autocmd FileType typescript setlocal completeopt-=menu
-  " autocmd MyAutoCmd BufWritePre *.{ts,tsx} TsuquyomiImport
-'''
-
-[[plugins]]
-repo = 'mhartington/nvim-typescript'
-on_ft = ['typescript']
-build = './install.sh'
-hook_add = '''
-  let g:nvim_typescript#default_signs = [
-      \    {
-      \    'TSerror': {
-      \     'texthl': 'SpellBad',
-      \     'signText': '.',
-      \     'signTexthl': 'NeomakeErrorSign'
-      \    }
-      \   },
-      \   {
-      \     'TSwarning': {
-      \      'texthl': 'SpellBad',
-      \      'signText': '.',
-      \      'signTexthl': 'NeomakeWarningSign'
-      \     }
-      \   },
-      \   {
-      \     'TSinformation': {
-      \      'texthl': 'SpellBad',
-      \      'signText': '.',
-      \      'signTexthl': 'NeomakeInfoSign'
-      \      }
-      \   },
-      \   {
-      \     'TShint': {
-      \      'texthl': 'SpellBad',
-      \      'signText': '?',
-      \      'signTexthl': 'NeomakeInfoSign'
-      \      }
-      \   }
-      \ ]
-'''
-# }}}
-
-# HTML/CSS {{{
-[[plugins]]
-repo = 'vim-scripts/html-improved-indentation'
-on_ft = ['html', 'css']
-
-[[plugins]]
-repo = 'mattn/emmet-vim'
-on_ft = ['html', 'css']
-
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-on_ft = ['html', 'css']
 #}}}
 
 # json {{{
