@@ -37,6 +37,9 @@ endfunction
 call deoplete#custom#option({
       \   'smart_case': v:true,
       \   'camel_case': v:true,
+      \   'skip_multibyte': v:true,
+      \   'prev_completion_mode': 'length',
+      \   'auto_preview': v:true,
       \ })
 
 call deoplete#custom#source('_', 'matchers',
@@ -65,6 +68,4 @@ call deoplete#custom#var('omni', 'input_patterns', {
       \   'python': '[^. *\t]\.\w*\|\h\w*',
       \   'lua': '\w\+[.:]\|require\s*(\?["',
       \ })
-
-call deoplete#custom#option('skip_chars', ['(', ')'])
 " }}}

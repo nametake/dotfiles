@@ -144,6 +144,15 @@ hook_add = '''
   " let g:go_doc_keywordprg_enabled = 0
 '''
 
+# [[plugins]]
+# repo = 'deoplete-plugins/deoplete-go'
+# on_ft = 'go'
+# build = 'make'
+# depends = ['deoplete.nvim']
+# hook_add = '''
+#   let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+# '''
+
 [[plugins]]
 repo = 'jstemmer/gotags'
 on_ft = ['go']
