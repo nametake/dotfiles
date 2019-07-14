@@ -105,7 +105,7 @@ on_ft = ['go']
 hook_add = '''
   nnoremap <silent> <Space>gd :<C-u>GoDoc<CR>
   nnoremap <silent> <Space>t :<C-u>GoTest<CR>
-  autocmd MyAutoCmd FileType go set omnifunc=gocomplete#Complete
+  " autocmd MyAutoCmd FileType go set omnifunc=gocomplete#Complete
   " autocmd MyAutoCmd BufWritePre *.go GoImports
 
   let g:go_highlight_array_whitespace_error = 1
@@ -126,7 +126,8 @@ hook_add = '''
   let g:go_highlight_variable_declarations = 1
   let g:go_highlight_variable_assignments = 1
 
-  let g:go_def_mode = "godef"
+  let g:go_def_mode='gopls'
+  let g:go_info_mode='gopls'
 
   let g:go_fmt_experimental = 1
   let g:go_fmt_fail_silently = 1
