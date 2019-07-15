@@ -45,6 +45,9 @@ if has('vim_starting')
   call s:source_rc('init.rc.vim')
 endif
 
+" vim-plug
+call s:source_rc('plug.rc.vim')
+
 " dein.vim
 " call s:source_rc('dein.rc.vim')
 "
