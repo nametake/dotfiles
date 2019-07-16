@@ -8,34 +8,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" nerdtree {{{
-Plug 'scrooloose/nerdtree'
-nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
-let g:NERDTreeQuitOnOpen=0
-
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  let g:NERDTreeIndicatorMapCustom = {
-        \   'Modified'  : '*',
-        \   'Staged'    : '+',
-        \   'Untracked' : '-',
-        \   'Renamed'   : '>',
-        \   'Unmerged'  : '=',
-        \   'Deleted'   : '!',
-        \   'Dirty'     : 'x',
-        \   'Clean'     : ':',
-        \   'Ignored'   : 'I',
-        \   'Unknown'   : '?'
-        \ }
-
-  Plug 'EvanDotPro/nerdtree-chmod'
-
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  let g:NERDTreeFileExtensionHighlightFullName = 1
-  let g:NERDTreeExactMatchHighlightFullName = 1
-  let g:NERDTreePatternMatchHighlightFullName = 1
-
-" }}}
-
 " View {{{
 Plug 'itchyny/lightline.vim'
 source ~/.vim/rc/plugins/lightline.rc.vim
@@ -56,8 +28,8 @@ Plug 'vim-scripts/Align'
 Plug 'tpope/vim-abolish'
 
 Plug 'bfredl/nvim-miniyank'
-map p <Plug>(miniyank-startput)
-map P <Plug>(miniyank-startPut)
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
 map <C-n> <Plug>(miniyank-cycle)
 " }}}
 
@@ -88,9 +60,36 @@ command! Gac Gw|Gcommit
   Plug 'tpope/vim-rhubarb'
 
 Plug 'airblade/vim-gitgutter'
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '>'
-let g:gitgutter_sign_removed = '-'
 " }}}
+
+" nerdtree {{{
+Plug 'scrooloose/nerdtree'
+nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
+let g:NERDTreeQuitOnOpen=0
+
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  let g:NERDTreeIndicatorMapCustom = {
+        \   'Modified'  : '*',
+        \   'Staged'    : '+',
+        \   'Untracked' : '-',
+        \   'Renamed'   : '>',
+        \   'Unmerged'  : '=',
+        \   'Deleted'   : '!',
+        \   'Dirty'     : 'x',
+        \   'Clean'     : ':',
+        \   'Ignored'   : 'I',
+        \   'Unknown'   : '?'
+        \ }
+
+  Plug 'EvanDotPro/nerdtree-chmod'
+
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  let g:NERDTreeFileExtensionHighlightFullName = 1
+  let g:NERDTreeExactMatchHighlightFullName = 1
+  let g:NERDTreePatternMatchHighlightFullName = 1
+
+" }}}
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
