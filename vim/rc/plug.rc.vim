@@ -91,5 +91,6 @@ let g:NERDTreeQuitOnOpen=0
 " }}}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+source ~/.vim/rc/plugins/coc.rc.vim
 
 call plug#end()
