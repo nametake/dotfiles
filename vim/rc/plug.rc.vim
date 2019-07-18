@@ -87,19 +87,26 @@ let g:NERDTreeQuitOnOpen=0
   let g:NERDTreeFileExtensionHighlightFullName = 1
   let g:NERDTreeExactMatchHighlightFullName = 1
   let g:NERDTreePatternMatchHighlightFullName = 1
-
 " }}}
 
+" lint/format {{{
 Plug 'w0rp/ale'
 source ~/.vim/rc/plugins/ale.rc.vim
 
 Plug 'sbdchd/neoformat'
 source ~/.vim/rc/plugins/neoformat.rc.vim
+" }}}
 
+" coc {{{
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
 
+  Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
+" }}}
+
+" Language {{{
 Plug 'fatih/vim-go', {'for': 'go'}
 source ~/.vim/rc/plugins/vim-go.vim
+" }}}
 
 call plug#end()

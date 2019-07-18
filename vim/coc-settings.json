@@ -3,7 +3,9 @@
   "languageserver": {
     "golang": {
       "command": "go-langserver",
-      "filetypes": ["go"],
+      "filetypes": [
+        "go"
+      ],
       "initializationOptions": {
         "gocodeCompletionEnabled": true,
         "diagnosticsEnabled": true,
