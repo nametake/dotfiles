@@ -90,7 +90,16 @@ let g:NERDTreeQuitOnOpen=0
 
 " }}}
 
+Plug 'w0rp/ale'
+source ~/.vim/rc/plugins/ale.rc.vim
+
+Plug 'sbdchd/neoformat'
+source ~/.vim/rc/plugins/neoformat.rc.vim
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
+
+Plug 'fatih/vim-go', {'for': 'go'}
+source ~/.vim/rc/plugins/vim-go.vim
 
 call plug#end()
