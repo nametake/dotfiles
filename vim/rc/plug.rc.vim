@@ -97,11 +97,13 @@ Plug 'sbdchd/neoformat'
 source ~/.vim/rc/plugins/neoformat.rc.vim
 " }}}
 
-" coc {{{
+" Complement {{{
+Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
 
   Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " Language {{{

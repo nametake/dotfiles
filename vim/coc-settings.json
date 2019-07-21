@@ -1,5 +1,9 @@
 {
   "diagnostic.displayByAle": true,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "gosnippets/UltiSnips"
+  ],
   "languageserver": {
     "golang": {
       "command": "go-langserver",
