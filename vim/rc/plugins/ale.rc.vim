@@ -1,3 +1,5 @@
+" ale
+
 let g:ale_linters = {
       \  'go': ['gobuild', 'gofmt', 'govet', 'staticcheck', 'golangci-lint'],
       \  'proto': ['prototool'],

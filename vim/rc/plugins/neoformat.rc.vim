@@ -1,7 +1,9 @@
-let g:neoformat_run_all_formatters = 1
+" neoformat
 
 " debug
 " let g:neoformat_verbose = 1
+
+let g:neoformat_run_all_formatters = 1
 
 " Golang {{{
 autocmd MyAutoCmd FileType go
@@ -22,35 +24,6 @@ let g:neoformat_go_goreturns = {
       \ }
 
 let g:neoformat_enabled_go = ['gofmtrlx', 'goreturns']
-" }}}
-
-" Javascript {{{
-autocmd MyAutoCmd FileType javascript
-      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
-
-let g:neoformat_enabled_javascript = ['prettiereslint']
-" }}}
-
-" TypeScript {{{
-autocmd MyAutoCmd FileType typescript
-      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
-autocmd MyAutoCmd FileType typescript.tsx
-      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
-
-let g:neoformat_enabled_typescript = ['prettier']
-" }}}
-
-" HTML {{{
-autocmd MyAutoCmd FileType html
-      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
-
-let g:neoformat_html_jsbeautify = {
-      \   'exe': 'js-beautify',
-      \   'args': ['-r', '--type html', '-s 2'],
-      \   'replace': 1,
-      \ }
-
-let g:neoformat_enabled_html = ['jsbeautify']
 " }}}
 
 " JSON {{{

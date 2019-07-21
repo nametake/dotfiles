@@ -24,5 +24,7 @@
     "templates/**",
     "!**/node_modules/**",
     "!**/dist/**"
-  ]
+  ],
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "relative"
 }
