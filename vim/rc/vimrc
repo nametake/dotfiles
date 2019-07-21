@@ -187,7 +187,7 @@ set viewoptions-=options
 set mouse=a
 " clipboard setting
 if IsMac()
-  " set clipboard=unnamed,unnamedplus
+  set clipboard=unnamed,unnamedplus
 elseif IsWindows()
 else
   set clipboard=unnamedplus,autoselect
