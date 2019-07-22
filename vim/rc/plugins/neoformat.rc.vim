@@ -40,6 +40,21 @@ autocmd MyAutoCmd FileType sh
 let g:neoformat_enabled_sh = ['shfmt']
 " }}}
 
+" VimScript {{{
+autocmd MyAutoCmd FileType vim
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
+
+let g:neoformat_go_goreturns = {
+      \   'exe': 'vint',
+      \   'args': [],
+      \   'replace': 0,
+      \   'stdin': 1,
+      \ }
+
+let g:neoformat_enabled_vim = ['']
+" }}}
+
+
 " Markdown {{{
 autocmd MyAutoCmd FileType markdown
       \ autocmd! MyAutoCmd BufWritePre <buffer> call WrapNeoformat()

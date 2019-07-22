@@ -10,17 +10,17 @@
 
 hi clear
 
-if version > 580
+if v:version > 580
     " no guarantees for version 5.8 and below, but this makes it stop
     " complaining
     hi clear
-    if exists("syntax_on")
+    if exists('syntax_on')
         syntax reset
     endif
 endif
-let g:colors_name="molokai"
+let g:colors_name='molokai'
 
-if exists("g:molokai_original")
+if exists('g:molokai_original')
     let s:molokai_original = g:molokai_original
 else
     let s:molokai_original = 0
@@ -81,7 +81,7 @@ hi SignColumn      guifg=#A6E22E guibg=#232526
 hi SpecialChar     guifg=#F92672               gui=bold
 hi SpecialComment  guifg=#7E8E91               gui=bold
 hi Special         guifg=#66D9EF guibg=bg      gui=italic
-if has("spell")
+if has('spell')
     hi SpellBad    guisp=#FF0000 gui=undercurl
     hi SpellCap    guisp=#7070F0 gui=undercurl
     hi SpellLocal  guisp=#70F0F0 gui=undercurl
@@ -199,7 +199,7 @@ if &t_Co > 255
    hi SpecialChar     ctermfg=161               cterm=bold
    hi SpecialComment  ctermfg=245               cterm=bold
    hi Special         ctermfg=81
-   if has("spell")
+   if has('spell')
        hi SpellBad                ctermbg=52
        hi SpellCap                ctermbg=17
        hi SpellLocal              ctermbg=17
@@ -232,7 +232,7 @@ if &t_Co > 255
 
    hi SpecialKey      ctermfg=59
 
-   if exists("g:rehash256") && g:rehash256 == 1
+   if exists('g:rehash256') && g:rehash256 == 1
        hi Normal       ctermfg=252 ctermbg=234
        hi CursorLine               ctermbg=236   cterm=none
        hi CursorLineNr ctermfg=208               cterm=none

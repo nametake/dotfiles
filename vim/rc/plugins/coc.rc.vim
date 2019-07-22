@@ -1,5 +1,4 @@
-" -------------------------------------------------------------------------------------------------
-" coc.nvim default settings
+" coc.nvim
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -19,5 +18,5 @@ endfunction
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-let g:coc_snippet_next = "<C-k>"
-let g:coc_snippet_prev = "<C-j>"
+let g:coc_snippet_next = '<C-k>'
+let g:coc_snippet_prev = '<C-j>'
