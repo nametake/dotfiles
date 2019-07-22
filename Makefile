@@ -66,27 +66,17 @@ NPM_TOOLS := \
 	npm \
 	neovim \
 	eslint \
-	eslint-plugin-import \
-	eslint-plugin-jest \
-	eslint-plugin-react \
-	eslint-plugin-prettier \
-	eslint-config-prettier \
-	@typescript-eslint/eslint-plugin \
-	@typescript-eslint/parser \
-	prettier \
-	prettier-eslint \
-	eslint-plugin-vue \
-	js-beautify \
 	git-open \
-	typescript \
-	tslint \
-	typescript-formatter \
 	textlint \
+	textlint-rule-max-ten \
+	textlint-rule-spellcheck-tech-word \
+	textlint-rule-no-mix-dearu-desumasu \
 
 PIP_TOOLS := \
 	pip \
 	neovim \
 	awscli \
+	vim-vint \
 
 .PHONY: help
 help: # Refer: https://postd.cc/auto-documented-makefile/
