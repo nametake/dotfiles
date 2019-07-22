@@ -68,9 +68,7 @@ NPM_TOOLS := \
 	eslint \
 	git-open \
 	textlint \
-	textlint-rule-max-ten \
-	textlint-rule-spellcheck-tech-word \
-	textlint-rule-no-mix-dearu-desumasu \
+	textlint-rule-preset-ja-technical-writing \
 
 PIP_TOOLS := \
 	pip \

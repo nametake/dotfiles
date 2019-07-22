@@ -3,6 +3,7 @@
 let g:ale_linters = {
       \  'go': ['gobuild', 'gofmt', 'govet', 'staticcheck', 'golangci-lint'],
       \  'proto': ['prototool'],
+      \  'markdown': ['textlint'],
       \ }
 
 let g:ale_sign_column_always = 1
