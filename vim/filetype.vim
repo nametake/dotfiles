@@ -24,5 +24,6 @@ augroup filetypedetect
   " markdown
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
   " json
-  autocmd BufNewFile,BufRead *.{eslintrc,babelrc,tern-config} set filetype=json
+  autocmd BufNewFile,BufRead .{eslintrc,babelrc,tern-config,textlintrc} set filetype=json
+  autocmd BufNewFile,BufRead {eslintrc,babelrc,tern-config,textlintrc} set filetype=json
 augroup END
