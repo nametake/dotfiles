@@ -23,6 +23,7 @@ DOTFILES := \
 	eslintrc \
 	prettierrc \
 	ideavimrc \
+	textlintrc \
 
 PKG_MANAGER_TOOLS := \
 	zsh \
