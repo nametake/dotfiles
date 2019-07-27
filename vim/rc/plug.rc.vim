@@ -98,17 +98,21 @@ source ~/.vim/rc/plugins/neoformat.rc.vim
 " }}}
 
 " Complement {{{
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'honza/vim-snippets'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
 
-  Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
   Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " Language {{{
 Plug 'fatih/vim-go', {'for': 'go'}
 source ~/.vim/rc/plugins/vim-go.vim
+
+Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
 " }}}
 
 call plug#end()
