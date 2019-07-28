@@ -70,6 +70,8 @@ NPM_TOOLS := \
 	git-open \
 	textlint \
 	textlint-rule-preset-ja-technical-writing \
+	textlint-filter-rule-comments \
+	textlint-filter-rule-whitelist \
 
 PIP_TOOLS := \
 	pip \

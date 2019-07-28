@@ -3,7 +3,7 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  autocmd MyAutoCmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -23,7 +23,9 @@ Plug 'tpope/vim-surround'
 
 Plug 'tomtom/tcomment_vim'
 
-Plug 'vim-scripts/Align'
+Plug 'junegunn/vim-easy-align'
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 Plug 'tpope/vim-abolish'
 
@@ -63,7 +65,7 @@ Plug 'airblade/vim-gitgutter'
 " }}}
 
 " nerdtree {{{
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle','NERDTreeFind']}
 nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=0
 
@@ -109,10 +111,18 @@ source ~/.vim/rc/plugins/coc.rc.vim
 " }}}
 
 " Language {{{
+
+" Go {{{
 Plug 'fatih/vim-go', {'for': 'go'}
 source ~/.vim/rc/plugins/vim-go.vim
 
 Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
+" }}}
+
+" Markdown {{{
+Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+" }}}
+
 " }}}
 
 call plug#end()
