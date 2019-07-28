@@ -65,7 +65,7 @@ Plug 'airblade/vim-gitgutter'
 " }}}
 
 " nerdtree {{{
-Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle','NERDTreeFind']}
+Plug 'scrooloose/nerdtree'
 nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=0
 
