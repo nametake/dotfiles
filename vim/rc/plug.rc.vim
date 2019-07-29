@@ -123,6 +123,10 @@ Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 " }}}
 
+" TOML {{{
+Plug 'cespare/vim-toml'
+" }}}
+
 " }}}
 
 call plug#end()
