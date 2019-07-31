@@ -113,7 +113,7 @@ source ~/.vim/rc/plugins/coc.rc.vim
 " Language {{{
 
 " Go {{{
-Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
 source ~/.vim/rc/plugins/vim-go.vim
 
 Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
