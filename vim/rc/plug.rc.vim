@@ -116,6 +116,9 @@ source ~/.vim/rc/plugins/coc.rc.vim
 Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
 source ~/.vim/rc/plugins/vim-go.vim
 
+Plug 'nametake/ctrlp-goimport', {'for': 'go'}
+nmap <C-g><C-i> <Plug>(ctrlp-goimport)
+
 Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
 " }}}
 
