@@ -1,6 +1,7 @@
 " vim-go
 
 nnoremap <silent> <C-g><C-g> :<C-u>GoInfo<CR>
+inoremap <silent> <C-g><C-i> <Esc>:<C-u>GoFillStruct<CR>i
 
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_chan_whitespace_error = 1
@@ -21,4 +22,3 @@ let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 
 let g:go_fmt_autosave = 0
-let g:go_auto_type_info = 1
