@@ -126,6 +126,13 @@ Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 " }}}
 
+
+" Protocol Buffers {{{
+Plug 'uber/prototool', {'for': 'proto', 'rtp':'vim/prototool'}
+autocmd MyAutoCmd FileType proto
+      \ autocmd! MyAutoCmd BufWritePre <buffer> call PrototoolFormatEnable()
+" }}}
+
 " TOML {{{
 Plug 'cespare/vim-toml'
 " }}}

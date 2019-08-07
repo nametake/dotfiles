@@ -78,6 +78,7 @@ PIP_TOOLS := \
 	neovim \
 	awscli \
 	vim-vint \
+	pre-commit \
 
 .PHONY: help
 help: # Refer: https://postd.cc/auto-documented-makefile/
