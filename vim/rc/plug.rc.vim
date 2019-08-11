@@ -92,7 +92,7 @@ let g:NERDTreeQuitOnOpen=0
 " }}}
 
 " lint/format {{{
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 source ~/.vim/rc/plugins/ale.rc.vim
 
 Plug 'sbdchd/neoformat'
