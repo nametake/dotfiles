@@ -126,10 +126,9 @@ Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 " }}}
 
-
 " Protocol Buffers {{{
 Plug 'uber/prototool', {'for': 'proto', 'rtp':'vim/prototool'}
-" autocmd MyAutoCmd User prototool call PrototoolFormatFixEnable()
+autocmd MyAutoCmd User prototool call PrototoolFormatEnable()
 " }}}
 
 " TOML {{{
