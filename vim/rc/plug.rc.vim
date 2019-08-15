@@ -15,7 +15,6 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 Plug 'itchyny/vim-cursorword'
 
 Plug 'Yggdroot/indentLine'
-let g:indentLine_setConceal = 0
 " }}}
 
 " Text operation {{{
