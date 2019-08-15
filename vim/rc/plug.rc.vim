@@ -67,6 +67,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("a") + v:val) . "[^.]*$"')
 
   Plug 'Xuyuanp/nerdtree-git-plugin'
   let g:NERDTreeIndicatorMapCustom = {
