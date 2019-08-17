@@ -2,7 +2,7 @@
 " My filetype setting
 "--------------------
 
-if exists("did_load_filetypes")
+if exists('did_load_filetypes')
   finish
 endif
 
