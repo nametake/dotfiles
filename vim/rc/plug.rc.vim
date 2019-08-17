@@ -124,6 +124,7 @@ Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
 
 " Markdown {{{
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+let g:vim_markdown_conceal = 0
 " }}}
 
 " Protocol Buffers {{{
