@@ -134,7 +134,11 @@ autocmd MyAutoCmd User prototool call PrototoolFormatEnable()
 " }}}
 
 " TOML {{{
-Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml', {'for': 'toml'}
+" }}}
+
+" fish {{{
+Plug 'dag/vim-fish', {'for': 'fish'}
 " }}}
 
 " }}}

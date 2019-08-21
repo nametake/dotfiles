@@ -4,6 +4,7 @@ let g:ale_linters = {
       \  'go': ['gobuild', 'gofmt', 'govet', 'staticcheck', 'golangci-lint'],
       \  'markdown': ['textlint'],
       \  'dockerfile': ['hadolint'],
+      \  'fish': ['fish'],
       \ }
 
 let g:ale_sign_column_always = 1
