@@ -118,6 +118,8 @@ source ~/.vim/rc/plugins/coc.rc.vim
 Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
 source ~/.vim/rc/plugins/vim-go.vim
 
+Plug 'buoto/gotests-vim', {'for': 'go'}
+
 Plug 'nametake/ctrlp-goimport', {'for': 'go'}
 nmap <C-g><C-i> <Plug>(ctrlp-goimport)
 
