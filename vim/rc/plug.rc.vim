@@ -129,6 +129,10 @@ Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
 " Markdown {{{
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 let g:vim_markdown_conceal = 0
+
+Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
+let g:markdown_fold_style = 'nested'
+let g:table_mode_always_active = 1
 " }}}
 
 " Protocol Buffers {{{
