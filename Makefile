@@ -85,6 +85,8 @@ help: # Refer: https://postd.cc/auto-documented-makefile/
 	@echo 'usage: make [target]'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+update: brew_update go_get npm_install pip_install fish_plugin_update vim_plugin_update ## Update all tools
+
 link: ## Create symbolic link
 	./bin/ln_dotfiles.sh $(DOTFILES)
 
@@ -94,24 +96,30 @@ zplug: ## Install zplug
 tmp: ## Install tmux plugin manager
 	@./bin/tmp.sh
 
-all_tools: go_get npm_i pip_i ## Install all cli tools
-
-brew_i: ## Install brew tools
+brew_install: ## Install brew tools
 	brew install $(PKG_MANAGER_TOOLS) $(BREW_TOOLS)
+
+brew_update: ## Update brew tools
+	brew update
+	brew upgrade
+	brew cleanup
 
 go_get: ## Install go cli tools
 	go get $(GO_TOOLS)
 	./bin/gomod.sh $(GO_MOD_TOOLS)
 
-npm_i: ## Install npm cli tools
+npm_install: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
 
-pip_i: ## Install pip tools
+pip_install: ## Install pip tools
 	pip install --upgrade $(PIP_TOOLS)
 	pip3 install --upgrade $(PIP_TOOLS)
 
 gcloud: ## Install gcloud cli tools
 	@./bin/gcloud.sh
 
-show_update_cmd:
-	@echo 'brew update; brew upgrade; brew cleanup; cd $HOME/.dotfiles; make all_tools; fisher; nvim -c DeinUpdate -c GoUpdateBinaries -c q;'
+fish_plugin_update: ## Update fish plugins
+	fish -c fisher
+
+vim_plugin_update: ## Update vim plugins
+	nvim -c PlugUpdate -c GoUpdateBinaries -c q -c q
