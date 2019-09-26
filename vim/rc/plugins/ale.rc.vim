@@ -5,6 +5,7 @@ let g:ale_linters = {
       \  'markdown': ['textlint'],
       \  'dockerfile': ['hadolint'],
       \  'fish': ['fish'],
+      \  'proto': ['prototool-lint'],
       \ }
 
 let g:ale_sign_column_always = 1
