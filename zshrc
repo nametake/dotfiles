@@ -80,6 +80,10 @@ if [ -d /Applications/MacVim.app ]; then
   alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim'
 fi
 
+if (type "hub" >/dev/null 2>&1); then
+  eval "$(hub alias -s)"
+fi
+
 setopt print_eight_bit
 setopt no_beep
 setopt no_flow_control

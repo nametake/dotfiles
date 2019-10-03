@@ -8,6 +8,10 @@ set -U GHQ_SELECTOR peco
 
 alias g='git'
 
+if type -q hub
+  alias git=hub
+end
+
 if test -e /Applications/MacVim.app
   alias gvim='/Applications/MacVim.app/Contents/bin/gvim'
 end

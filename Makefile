@@ -40,6 +40,7 @@ PKG_MANAGER_TOOLS := \
 	peco \
 	ghq \
 	jq \
+	hub \
 	yamllint \
 	create-react-app \
 
