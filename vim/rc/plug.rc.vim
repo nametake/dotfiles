@@ -115,8 +115,10 @@ source ~/.vim/rc/plugins/coc.rc.vim
 " Language {{{
 
 " Go {{{
-Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
-source ~/.vim/rc/plugins/vim-go.vim
+" Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
+" source ~/.vim/rc/plugins/vim-go.vim
+
+Plug 'arp242/gopher.vim', {'for': 'go'}
 
 Plug 'buoto/gotests-vim', {'for': 'go'}
 

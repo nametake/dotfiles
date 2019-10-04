@@ -1,0 +1,15 @@
++# set -x PATH \
++#   /Users/nametake/go/bin \
++#   /Users/nametake/.zplug/repos/zplug/zplug/bin \
++#   /Users/nametake/.zplug/bin \
++#   /Users/nametake/.local/share/google-cloud-sdk/platform/google_appengine \
++#   /Users/nametake/.local/share/google-cloud-sdk/bin \
++#   /Users/nametake/.anyenv/envs/nodenv/shims \
++#   /Users/nametake/.anyenv/envs/nodenv/bin \
++#   /Users/nametake/.anyenv/bin \
++#   /usr/local/bin \
++#   /usr/local/sbin \
++#   /usr/bin \
++#   /bin \
++#   /usr/sbin \
++#   /sbin
