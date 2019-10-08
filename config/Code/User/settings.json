@@ -26,5 +26,7 @@
     "!**/dist/**"
   ],
   "typescript.preferences.importModuleSpecifier": "relative",
-  "javascript.preferences.importModuleSpecifier": "relative"
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true
 }
