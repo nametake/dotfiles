@@ -120,13 +120,9 @@ source ~/.vim/rc/plugins/coc.rc.vim
 
 Plug 'arp242/gopher.vim', {'for': 'go'}
 let g:gopher_highlight = [
-      \   'complex',
       \   'string-fmt',
       \   'string-spell',
       \   'fold-block',
-      \   'fold-comment',
-      \   'fold-import',
-      \   'fold-pkg-comment',
       \   'fold-varconst',
       \ ]
 let g:gopher_map = {
