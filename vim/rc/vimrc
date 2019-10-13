@@ -91,7 +91,6 @@ set modified
 
 set number
 set ruler
-set nocursorline
 set laststatus=2
 set cmdheight=1
 set showmatch
@@ -115,8 +114,10 @@ set backspace=indent,eol,start
 "set whichwrap=b,s,h,l,<,>,[,]
 set startofline
 set textwidth=0
-set cursorline
-set cursorcolumn
+set nocursorline
+set nocursorcolumn
+set norelativenumber
+
 
 "}}}
 
@@ -302,6 +303,9 @@ if !has('nvim')
   set term=screen-256color
 endif
 
+set regexpengine=1
+set synmaxcol=256
+syntax sync minlines=256
 syntax on
 
 colorscheme molokai
