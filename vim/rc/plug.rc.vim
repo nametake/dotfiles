@@ -17,6 +17,7 @@ Plug 'itchyny/vim-cursorword'
 Plug 'Yggdroot/indentLine'
 let g:indentLine_fileTypeExclude = ['markdown', 'json']
 
+Plug 'fatih/molokai'
 " }}}
 
 " Text operation {{{

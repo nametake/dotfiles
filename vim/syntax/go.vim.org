@@ -61,12 +61,12 @@ syn keyword     goTodo              contained TODO FIXME XXX BUG
 syn cluster     goCommentGroup      contains=goTodo
 
 syn region      goComment           start="//" end="$" contains=goGenerate,@goCommentGroup,@Spell
-syn region      goComment           start="/\*" end="\*/" contains=@goCommentGroup,@Spell fold
-syn match       goComment           "\v(^\s*//.*\n)+" contains=goGenerate,@goCommentGroup,@Spell fold
+syn region      goComment           start="/\*" end="\*/" contains=@goCommentGroup,@Spell
 
 hi def link     goComment           Comment
 hi def link     goTodo              Todo
 
+" Generatee tags;
 syn match       goGenerateVariables contained /\%(\$GOARCH\|\$GOOS\|\$GOFILE\|\$GOLINE\|\$GOPACKAGE\|\$DOLLAR\)\>/
 syn region      goGenerate          start="^\s*//go:generate" end="$" contains=goGenerateVariables
 hi def link     goGenerate          PreProc
@@ -90,9 +90,15 @@ hi def link     goEscapeError       Error
 
 " Strings and their contents
 syn cluster     goStringGroup       contains=goEscapeOctal,goEscapeC,goEscapeX,goEscapeU,goEscapeBigU,goEscapeError
-syn region      goString            start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=@goStringGroup,@Spell
-syn region      goRawString         start=+`+ end=+`+ contains=@Spell
+" if go#config#HighlightStringSpellcheck()
+"   syn region      goString            start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=@goStringGroup,@Spell
+"   syn region      goRawString         start=+`+ end=+`+ contains=@Spell
+" else
+  syn region      goString            start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=@goStringGroup
+  syn region      goRawString         start=+`+ end=+`+
+" endif
 
+" Format strings;
 " [n] notation is valid for specifying explicit argument indexes
 " 1. Match a literal % not preceded by a %.
 " 2. Match any number of -, #, 0, space, or +
@@ -119,16 +125,16 @@ hi def link     goCharacter         Character
 
 " Regions
 syn region      goParen             start='(' end=')' transparent
-syn region      goBlock             start="{" end="}" transparent fold
+syn region      goBlock             start="{" end="}" transparent
 
 " import
-syn region      goImport            start='import (' end=')' transparent fold contains=goImport,goString,goComment
+syn region    goImport            start='import (' end=')' transparent contains=goImport,goString,goComment
 
 " var, const
-syn region      goVar               start='var ('   end='^\s*)$' transparent fold
-                        \ contains=ALLBUT,goParen,goBlock,goFunction,goTypeName,goReceiverType,goReceiverVar,goParamName,goParamType,goSimpleParams,goPointerOperator
-syn region      goConst             start='const (' end='^\s*)$' transparent fold
-                        \ contains=ALLBUT,goParen,goBlock,goFunction,goTypeName,goReceiverType,goReceiverVar,goParamName,goParamType,goSimpleParams,goPointerOperator
+syn region    goVar               start='var ('   end='^\s*)$' transparent
+                      \ contains=ALLBUT,goParen,goBlock,goFunction,goTypeName,goReceiverType,goReceiverVar,goParamName,goParamType,goSimpleParams,goPointerOperator
+syn region    goConst             start='const (' end='^\s*)$' transparent
+                      \ contains=ALLBUT,goParen,goBlock,goFunction,goTypeName,goReceiverType,goReceiverVar,goParamName,goParamType,goSimpleParams,goPointerOperator
 
 " Single-line var, const, and import.
 syn match       goSingleDecl        /\%(import\|var\|const\) [^(]\@=/ contains=goImport,goVar,goConst
@@ -229,7 +235,7 @@ syn match goReceiverVar       /\w\+\ze\s\+\%(\w\|\*\)/ nextgroup=goPointerOperat
 syn match goPointerOperator   /\*/ nextgroup=goReceiverType contained skipwhite skipnl
 syn match goFunction          /\w\+/ nextgroup=goSimpleParams contained skipwhite skipnl
 syn match goReceiverType      /\w\+/ contained
-" Function parameters
+" Function parameters;
 syn match goSimpleParams      /(\%(\w\|\_s\|[*\.\[\],\{\}<>-]\)*)/ contained contains=goParamName,goType nextgroup=goFunctionReturn skipwhite skipnl
 syn match goFunctionReturn   /(\%(\w\|\_s\|[*\.\[\],\{\}<>-]\)*)/ contained contains=goParamName,goType skipwhite skipnl
 syn match goParamName        /\w\+\%(\s*,\s*\w\+\)*\ze\s\+\%(\w\|\.\|\*\|\[\)/ contained nextgroup=goParamType skipwhite skipnl
@@ -237,8 +243,8 @@ syn match goParamType        /\%([^,)]\|\_s\)\+,\?/ contained nextgroup=goParamN
                       \ contains=goVarArgs,goType,goSignedInts,goUnsignedInts,goFloats,goComplexes,goDeclType,goBlock
 hi def link   goReceiverVar    goParamName
 hi def link   goParamName      Identifier
-
 syn match goReceiver          /(\s*\w\+\%(\s\+\*\?\s*\w\+\)\?\s*)\ze\s*\w/ contained nextgroup=goFunction contains=goReceiverVar skipwhite skipnl
+
 hi def link     goFunction          Function
 
 " Function calls;
@@ -268,6 +274,7 @@ syn match goTypeDecl             /\<type\>/ nextgroup=goTypeName skipwhite skipn
 syn match goTypeName             /\w\+/ contained nextgroup=goDeclType skipwhite skipnl
 syn match goDeclType             /\<\%(interface\|struct\)\>/ skipwhite skipnl
 hi def link     goReceiverType      Type
+
 hi def link     goTypeConstructor   Type
 hi def link     goTypeName          Type
 hi def link     goTypeDecl          Keyword
@@ -302,48 +309,16 @@ hi def link goBuildCommentStart Comment
 hi def link goBuildDirectives   Type
 hi def link goBuildKeyword      PreProc
 
-" One or more line comments that are followed immediately by a "package"
-" declaration are treated like package documentation, so these must be
-" matched as comments to avoid looking like working build constraints.
-" The he, me, and re options let the "package" itself be highlighted by
-" the usual rules.
-" exe 'syn region  goPackageComment    start=/\v(\/\/.*\n)+\s*package/'
-"       \ . ' end=/\v\n\s*package/he=e-7,me=e-7,re=e-7'
-"       \ . ' contains=@goCommentGroup,@Spell'
-"       \ . (go#config#FoldEnable('package_comment') ? ' fold' : '')
-" exe 'syn region  goPackageComment    start=/\v^\s*\/\*.*\n(.*\n)*\s*\*\/\npackage/'
-"       \ . ' end=/\v\*\/\n\s*package/he=e-7,me=e-7,re=e-7'
-"       \ . ' contains=@goCommentGroup,@Spell'
-"       \ . (go#config#FoldEnable('package_comment') ? ' fold' : '')
 hi def link goPackageComment    Comment
 
 " :GoCoverage commands
 hi def link goCoverageNormalText Comment
-
-function! s:hi()
-  hi def link goSameId Search
-
-  " :GoCoverage commands
-  hi def      goCoverageCovered    ctermfg=green guifg=#A6E22E
-  hi def      goCoverageUncover    ctermfg=red guifg=#F92672
-
-  " :GoDebug commands
-  hi GoDebugBreakpoint term=standout ctermbg=117 ctermfg=0 guibg=#BAD4F5  guifg=Black
-  hi GoDebugCurrent term=reverse  ctermbg=12  ctermfg=7 guibg=DarkBlue guifg=White
-endfunction
-
-augroup vim-go-hi
-  autocmd!
-  autocmd ColorScheme * call s:hi()
-augroup end
-call s:hi()
 
 " Search backwards for a global declaration to start processing the syntax.
 "syn sync match goSync grouphere NONE /^\(const\|var\|type\|func\)\>/
 
 " There's a bug in the implementation of grouphere. For now, use the
 " following as a more expensive/less precise workaround.
-syn sync minlines=500
 
 let b:current_syntax = "go"
 
