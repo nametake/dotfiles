@@ -1,6 +1,4 @@
-if exists("b:custom_go_syntax")
-  finish
-endif
+" go syntax
 
 syn case match
 
@@ -18,7 +16,5 @@ syn match goField /\.\w\+\
       \%([,\:.]\)\)\@=/hs=s+1
 
 hi def link goFunctionCall Type
-
-let b:custom_go_syntax = "go"
 
 " vim: sw=2 ts=2 et
