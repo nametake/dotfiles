@@ -123,4 +123,4 @@ fish_plugin_update: ## Update fish plugins
 	fish -c fisher
 
 vim_plugin_update: ## Update vim plugins
-	nvim -c PlugUpdate -c GoSetup -c q -c q
+	vim -c PlugUpdate -c GoSetup -c q -c q
