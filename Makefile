@@ -48,9 +48,8 @@ BREW_TOOLS := \
 	the_silver_searcher \
 
 GO_TOOLS := \
-	github.com/mdempsky/gocode \
-	github.com/rogpeppe/godef \
-	github.com/jstemmer/gotags \
+	golang.org/x/tools/cmd/gopls \
+	github.com/sourcegraph/go-langserver \
 	honnef.co/go/tools/staticcheck \
 	github.com/golangci/golangci-lint/cmd/golangci-lint \
 	github.com/rhysd/gofmtrlx \
@@ -58,8 +57,8 @@ GO_TOOLS := \
 	github.com/kisielk/errcheck \
 	github.com/cweill/gotests/gotests \
 	mvdan.cc/sh/cmd/shfmt \
-	github.com/kyoshidajp/ghkw \
 	github.com/golang/protobuf/protoc-gen-go \
+	github.com/nametake/protoc-gen-gohttp \
 
 GO_MOD_TOOLS := \
 	github.com/moorereason/mdfmt \
@@ -106,7 +105,7 @@ brew_update: ## Update brew tools
 	brew cleanup
 
 go_get: ## Install go cli tools
-	go get $(GO_TOOLS)
+	go get -u $(GO_TOOLS)
 	./bin/gomod.sh $(GO_MOD_TOOLS)
 
 npm_install: ## Install npm cli tools
@@ -123,4 +122,4 @@ fish_plugin_update: ## Update fish plugins
 	fish -c fisher
 
 vim_plugin_update: ## Update vim plugins
-	vim -c PlugUpdate -c GoSetup -c q -c q
+	vim -c PlugUpdate -c q -c 'set filetype=go' -c GoSetup -c q

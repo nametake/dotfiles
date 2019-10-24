@@ -20,5 +20,10 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 inoremap <C-g><C-g> <ESC>:<C-u>call CocActionAsync('showSignatureHelp')<CR>l<INSERT>
 
+" Code jump
+nmap <C-]> <Plug>(coc-definition)
+" Rename
+nmap <Space>r <Plug>(coc-rename)
+
 let g:coc_snippet_next = '<C-k>'
 let g:coc_snippet_prev = '<C-j>'
