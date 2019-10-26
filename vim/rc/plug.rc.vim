@@ -149,7 +149,7 @@ let g:table_mode_always_active = 1
 
 " Protocol Buffers {{{
 Plug 'uber/prototool', {'for': 'proto', 'rtp':'vim/prototool'}
-autocmd MyAutoCmd User prototool call PrototoolFormatEnable()
+" autocmd MyAutoCmd User prototool call PrototoolFormatFixEnable()
 " }}}
 
 " TOML {{{
