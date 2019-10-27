@@ -57,6 +57,7 @@ GO_TOOLS := \
 	github.com/kisielk/errcheck \
 	github.com/cweill/gotests/gotests \
 	mvdan.cc/sh/cmd/shfmt \
+	github.com/google/wire/cmd/wire \
 	github.com/golang/protobuf/protoc-gen-go \
 	github.com/nametake/protoc-gen-gohttp \
 
