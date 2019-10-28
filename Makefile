@@ -48,6 +48,7 @@ BREW_TOOLS := \
 	the_silver_searcher \
 
 GO_TOOLS := \
+	golang.org/x/tools/cmd/goimports \
 	golang.org/x/tools/cmd/gopls \
 	github.com/sourcegraph/go-langserver \
 	honnef.co/go/tools/staticcheck \
