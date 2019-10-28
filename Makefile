@@ -51,6 +51,7 @@ GO_TOOLS := \
 	golang.org/x/tools/cmd/gopls \
 	github.com/sourcegraph/go-langserver \
 	honnef.co/go/tools/staticcheck \
+	golang.org/x/lint/golint \
 	github.com/golangci/golangci-lint/cmd/golangci-lint \
 	github.com/rhysd/gofmtrlx \
 	sourcegraph.com/sqs/goreturns \
