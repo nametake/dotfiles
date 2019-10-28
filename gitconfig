@@ -19,7 +19,7 @@
   default = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
 
 [core]
-  editor = "nvim"
+  editor = "vim"
   excludesfile = ~/.gitignore
 
 [include]
