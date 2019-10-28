@@ -57,12 +57,13 @@ GO_TOOLS := \
 	github.com/kisielk/errcheck \
 	github.com/cweill/gotests/gotests \
 	mvdan.cc/sh/cmd/shfmt \
-	github.com/google/wire/cmd/wire \
+	github.com/xo/xo \
 	github.com/golang/protobuf/protoc-gen-go \
 	github.com/nametake/protoc-gen-gohttp \
 
 GO_MOD_TOOLS := \
 	github.com/moorereason/mdfmt \
+	github.com/google/wire/cmd/wire \
 
 NPM_TOOLS := \
 	npm \
