@@ -59,6 +59,7 @@ GO_TOOLS := \
 	github.com/kisielk/errcheck \
 	github.com/cweill/gotests/gotests \
 	mvdan.cc/sh/cmd/shfmt \
+	github.com/jackc/sqlfmt/... \
 	github.com/xo/xo \
 	github.com/k0kubun/sqldef/cmd/... \
 	github.com/golang/protobuf/protoc-gen-go \

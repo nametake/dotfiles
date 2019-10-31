@@ -51,6 +51,13 @@ let g:neoformat_markdown_mdfmt = {
 let g:neoformat_enabled_markdown = ['mdfmt']
 " }}}
 
+" SQL {{{
+autocmd MyAutoCmd FileType sql
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
+
+let g:neoformat_enabled_sql = ['sqlfmt']
+" }}}
+
 " func {{{
 " Refer: https://github.com/fatih/vim-go/blob/7cfb890609b50e11fb27e0fee90a930646b5419f/autoload/go/fmt.vim#L16-L91
 function! WrapNeoformat() abort
