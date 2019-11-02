@@ -127,7 +127,9 @@ let g:gopher_highlight = [
       \   'fold-varconst',
       \ ]
 let g:gopher_map = {
-      \   '_nmap_prefix': '<C-g>',
+      \   '_popup': 0,
+      \   '_imap_prefix': '<C-g>',
+      \   '_imap_ctrl': 1,
       \ }
 
 Plug 'buoto/gotests-vim', {'for': 'go'}
