@@ -1,18 +1,21 @@
 {
   "diagnostic.displayByAle": true,
+  "signature.maxWindowHeight": 32,
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "gosnippets/UltiSnips"
   ],
   "languageserver": {
     "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod"
-      ],
+      "command": "go-langserver",
       "filetypes": [
         "go"
-      ]
+      ],
+      "initializationOptions": {
+        "gocodeCompletionEnabled": true,
+        "diagnosticsEnabled": true,
+        "lintTool": "golint"
+      }
     }
   }
 }
