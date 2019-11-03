@@ -20,8 +20,21 @@ inoremap <expr> <C-k> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 inoremap <C-g><C-g> <ESC>:<C-u>call CocActionAsync('showSignatureHelp')<CR>l<INSERT>
 
+function JumpDefinitionWithSetTagStack() abort
+  let l:old_location = [bufnr('%'), line('.'), col('.'), 0]
+  let l:tagname = expand('<cword>')
+  let l:winid = win_getid()
+  call settagstack(l:winid, {'items': [{'from': l:old_location, 'tagname': l:tagname}]}, 'a')
+  call settagstack(l:winid, {'curidx': len(gettagstack(l:winid)['items']) + 1})
+  call CocAction('jumpDefinition')
+endfunction
+
+nnoremap <Plug>(jump-definition-with-settagstack) :<C-u>call JumpDefinitionWithSetTagStack()<CR>
+
 " Code jump
-nmap <C-]> <Plug>(coc-definition)
+" nmap <C-]> <Plug>(coc-definition)
+nmap <C-]> <Plug>(jump-definition-with-settagstack)
+
 " Rename
 nmap <Space>r <Plug>(coc-rename)
 
