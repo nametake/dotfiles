@@ -134,7 +134,7 @@ let g:gopher_map = {
 
 Plug 'buoto/gotests-vim', {'for': 'go'}
 
-Plug 'nametake/ctrlp-goimport', {'for': 'go'}
+Plug '~/Workspace/github.com/nametake/ctrlp-goimport', {'for': 'go'}
 nmap <C-g><C-i> <Plug>(ctrlp-goimport)
 
 Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}

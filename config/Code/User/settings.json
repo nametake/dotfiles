@@ -4,7 +4,6 @@
   "editor.renderWhitespace": "all",
   "explorer.confirmDelete": false,
   "vim.useSystemClipboard": true,
-  "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "workbench.colorCustomizations": {
     "list.focusBackground": "#186fcc"
@@ -29,5 +28,17 @@
   "javascript.preferences.importModuleSpecifier": "relative",
   "eslint.alwaysShowStatus": true,
   "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
   "workbench.editor.openPositioning": "last"
 }
