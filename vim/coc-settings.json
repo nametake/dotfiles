@@ -13,7 +13,11 @@
       ],
       "filetypes": [
         "go"
-      ]
+      ],
+      "settings": {
+        "usePlaceholders": true,
+        "completeUnimported": true
+      }
     }
   }
 }

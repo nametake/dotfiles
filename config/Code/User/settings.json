@@ -40,5 +40,6 @@
       "autoFix": true
     }
   ],
-  "workbench.editor.openPositioning": "last"
+  "workbench.editor.openPositioning": "last",
+  "editor.formatOnSave": true
 }
