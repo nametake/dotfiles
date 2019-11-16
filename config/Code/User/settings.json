@@ -1,29 +1,21 @@
 {
   "editor.fontSize": 16,
-  "explorer.confirmDragAndDrop": false,
   "editor.renderWhitespace": "all",
-  "explorer.confirmDelete": false,
-  "vim.useSystemClipboard": true,
+  "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.fontFamily": "'Ricty'",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 0,
+  "files.insertFinalNewline": true,
+  "workbench.editor.enablePreview": false,
   "workbench.colorCustomizations": {
     "list.focusBackground": "#186fcc"
   },
   "workbench.colorTheme": "Dark (Molokai)",
-  "window.zoomLevel": 0,
-  "editor.formatOnType": true,
-  "files.insertFinalNewline": true,
-  "editor.fontFamily": "'Ricty Discord'",
+  "workbench.editor.openPositioning": "last",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.editor.enablePreview": false,
-  "todo-tree.excludeGlobs": [
-    "modules/mod_additive_*/*",
-    "!./modules/**",
-    "plugins/content/additive_*/*",
-    "components/com_add*/*",
-    "templates/**",
-    "!**/node_modules/**",
-    "!**/dist/**"
-  ],
   "typescript.preferences.importModuleSpecifier": "relative",
   "javascript.preferences.importModuleSpecifier": "relative",
   "eslint.alwaysShowStatus": true,
@@ -40,6 +32,46 @@
       "autoFix": true
     }
   ],
-  "workbench.editor.openPositioning": "last",
-  "editor.formatOnSave": true
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "d",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  }
 }
