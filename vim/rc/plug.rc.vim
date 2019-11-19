@@ -131,6 +131,7 @@ let g:gopher_map = {
       \   '_imap_prefix': '<C-g>',
       \   '_imap_ctrl': 1,
       \ }
+nmap ; <Plug>(gopher-popup)
 
 Plug 'buoto/gotests-vim', {'for': 'go'}
 
