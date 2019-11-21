@@ -4,7 +4,6 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
-  "editor.fontFamily": "'Ricty'",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "window.zoomLevel": 0,
@@ -73,5 +72,7 @@
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
-  }
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.fontFamily": "'Ricty Diminished',Menlo, Monaco, 'Courier New', monospace"
 }
