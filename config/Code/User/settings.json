@@ -1,5 +1,8 @@
 {
-  "editor.fontFamily": "'Ricty Diminished',Menlo, Monaco, 'Courier New', monospace",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true
+  },
+  "editor.fontFamily": "'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -8,8 +11,6 @@
   "eslint.alwaysShowStatus": true,
   "eslint.autoFixOnSave": true,
   "eslint.validate": [
-    "javascript",
-    "javascriptreact",
     {
       "autoFix": true,
       "language": "typescript"
