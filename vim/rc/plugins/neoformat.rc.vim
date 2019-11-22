@@ -30,6 +30,11 @@ let g:neoformat_enabled_go = ['gofmtrlx', 'goreturns']
 autocmd MyAutoCmd FileType json
       \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
 
+let g:neoformat_json_jq = {
+      \   'exe': 'jq',
+      \   'args': ['.', '--sort-keys'],
+      \ }
+
 let g:neoformat_enabled_json = ['jq']
 " }}}
 
