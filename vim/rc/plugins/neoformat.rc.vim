@@ -57,8 +57,8 @@ let g:neoformat_enabled_markdown = ['mdfmt']
 " }}}
 
 " SQL {{{
-autocmd MyAutoCmd FileType sql
-      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
+" autocmd MyAutoCmd FileType sql
+"       \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
 
 let g:neoformat_enabled_sql = ['sqlfmt']
 " }}}
