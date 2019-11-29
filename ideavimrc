@@ -27,3 +27,5 @@ nnoremap <C-t>s :<C-u>action MoveTabDown<CR>
 nnoremap <C-t>v :<C-u>action MoveTabRight<CR>
 nnoremap <C-t>l :<C-u>action NextSplitter<CR>
 nnoremap <C-t>h :<C-u>action PrevSplitter<CR>
+
+nnoremap <Space>f :<C-u>action ActivateProjectToolWindow<CR>
