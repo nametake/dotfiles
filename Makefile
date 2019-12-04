@@ -64,6 +64,7 @@ GO_TOOLS := \
 	github.com/k0kubun/sqldef/cmd/... \
 	github.com/golang/protobuf/protoc-gen-go \
 	github.com/nametake/protoc-gen-gohttp \
+	github.com/cespare/reflex \
 
 GO_MOD_TOOLS := \
 	github.com/moorereason/mdfmt \
