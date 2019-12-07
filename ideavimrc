@@ -15,10 +15,11 @@ nnoremap / :<C-u>action Find<CR>
 nnoremap <C-s> :<C-u>action FindInPath<CR>
 
 " Code jump
-nnoremap <C-o> :<C-u>action Back<CR>
-nnoremap <C-i> :<C-u>action Forward<CR>
-nnoremap <C-S-o> <C-o>
+nnoremap <C-i> :<C-u>action Back<CR>
+nnoremap <C-o> :<C-u>action Forward<CR>
 nnoremap <C-S-i> <C-i>
+nnoremap <C-S-o> <C-o>
+nnoremap <C-t><C-t> <C-t>
 
 " Split
 nnoremap <C-t>n :<C-u>action NextTab<CR>
