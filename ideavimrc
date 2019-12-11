@@ -1,5 +1,9 @@
 set clipboard=unnamed
 set surround
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
 
 " Run/Debug
 nnoremap <Space>r :<C-u>action Run<CR>
@@ -11,7 +15,6 @@ nnoremap <Space>e :<C-u>action ShowErrorDescription<CR>
 
 " Search
 nnoremap <C-p> :<C-u>action GotoFile<CR>
-nnoremap / :<C-u>action Find<CR>
 nnoremap <C-s> :<C-u>action FindInPath<CR>
 
 " Code jump
@@ -20,6 +23,7 @@ nnoremap <C-o> :<C-u>action Forward<CR>
 nnoremap <C-S-i> <C-i>
 nnoremap <C-S-o> <C-o>
 nnoremap <C-t><C-t> <C-t>
+nnoremap <C-S-]> :<C-u>action GotoImplementation<CR>
 
 " Split
 nnoremap <C-t>n :<C-u>action NextTab<CR>
