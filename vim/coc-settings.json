@@ -1,23 +1,26 @@
 {
   "diagnostic.displayByAle": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "filetypes": [
+        "go"
+      ],
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "settings": {
+        "completeUnimported": true,
+        "usePlaceholders": true
+      }
+    }
+  },
   "signature.maxWindowHeight": 32,
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "gosnippets/UltiSnips"
-  ],
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod"
-      ],
-      "filetypes": [
-        "go"
-      ],
-      "settings": {
-        "usePlaceholders": true,
-        "completeUnimported": true
-      }
-    }
-  }
+  ]
 }
