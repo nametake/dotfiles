@@ -71,7 +71,6 @@ GO_MOD_TOOLS := \
 	github.com/google/wire/cmd/wire \
 
 NPM_TOOLS := \
-	npm \
 	neovim \
 	eslint \
 	git-open \
