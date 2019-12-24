@@ -132,3 +132,9 @@ flycheck_*.el
 # projectiles files
 .projectile
 
+
+
+.bloop/
+.metals/
+project/.bloop/
+project/project/.bloop/
