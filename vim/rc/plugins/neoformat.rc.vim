@@ -53,7 +53,7 @@ let g:neoformat_markdown_mdfmt = {
       \   'exe': 'mdfmt',
       \ }
 
-let g:neoformat_enabled_markdown = ['mdfmt']
+let g:neoformat_enabled_markdown = ['remark']
 " }}}
 
 " SQL {{{

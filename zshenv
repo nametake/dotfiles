@@ -28,6 +28,9 @@ export TEXBIN_PATH=/usr/texbin
 [ -e ${TEXBIN_PATH} ] && \
   export PATH=${TEXBIN_PATH}:$PATH
 
+[ -e /usr/local/lib/node_modules ] && \
+  export NODE_PATH=/usr/local/lib/node_modules
+
 # env tools
 export ANYENV=${HOME}/.anyenv
 [ -e ${ANYENV} ] && \

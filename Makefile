@@ -23,6 +23,7 @@ DOTFILES := \
 	eslintrc \
 	prettierrc \
 	ideavimrc \
+	remarkrc \
 	textlintrc \
 
 PKG_MANAGER_TOOLS := \
@@ -74,6 +75,11 @@ NPM_TOOLS := \
 	neovim \
 	eslint \
 	git-open \
+	remark-cli \
+	remark-preset-lint-consistent \
+	remark-preset-lint-markdown-style-guide \
+	remark-preset-lint-recommended \
+	remark-frontmatter \
 	textlint \
 	textlint-rule-preset-ja-technical-writing \
 	textlint-filter-rule-comments \

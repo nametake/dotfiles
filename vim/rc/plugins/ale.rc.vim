@@ -2,7 +2,7 @@
 
 let g:ale_linters = {
       \  'go': ['gobuild', 'gofmt', 'govet', 'staticcheck', 'golangci-lint'],
-      \  'markdown': ['textlint'],
+      \  'markdown': ['remark_lint', 'textlint'],
       \  'dockerfile': ['hadolint'],
       \  'fish': ['fish'],
       \  'proto': ['prototool-lint'],
