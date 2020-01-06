@@ -44,6 +44,7 @@ PKG_MANAGER_TOOLS := \
 	hub \
 	yamllint \
 	create-react-app \
+	hugo \
 
 BREW_TOOLS := \
 	the_silver_searcher \
@@ -68,7 +69,6 @@ GO_TOOLS := \
 	github.com/cespare/reflex \
 
 GO_MOD_TOOLS := \
-	github.com/moorereason/mdfmt \
 	github.com/google/wire/cmd/wire \
 
 NPM_TOOLS := \
