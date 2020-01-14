@@ -33,6 +33,17 @@
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        ":",
+        "W"
+      ],
+      "commands": [
+        ":w"
+      ]
+    }
+  ],
   "vim.sneak": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
