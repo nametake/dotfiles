@@ -1,0 +1,17 @@
+snippet link "Link" b
+[${2:${VISUAL}}](${1:`!v getreg("*")`})${0:}
+endsnippet
+
+snippet codeblock "Code block" b
+\`\`\`${1:lang} \{linenos=table\}
+${2:code}
+\`\`\`
+${0:}
+endsnippet
+
+snippet codeblock-yank "Code block filled with yank register" b
+\`\`\`${1:lang} \{linenos=table\}
+`!v getreg("*")`
+\`\`\`
+${0:}
+endsnippet
