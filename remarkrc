@@ -5,6 +5,10 @@
     "remark-preset-lint-recommended",
     "remark-frontmatter",
     [
+      "remark-lint-maximum-line-length",
+      140
+    ],
+    [
       "remark-lint-list-item-spacing",
       {
         "checkBlanks": true
