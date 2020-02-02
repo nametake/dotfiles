@@ -9,6 +9,10 @@
       140
     ],
     [
+      "remark-lint-ordered-list-marker-value",
+      "ordered"
+    ],
+    [
       "remark-lint-list-item-spacing",
       {
         "checkBlanks": true

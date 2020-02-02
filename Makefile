@@ -80,6 +80,7 @@ NPM_TOOLS := \
 	remark-preset-lint-markdown-style-guide \
 	remark-preset-lint-recommended \
 	remark-lint-maximum-line-length \
+	remark-lint-ordered-list-marker-value \
 	remark-lint-list-item-spacing \
 	remark-lint-list-item-indent \
 	remark-frontmatter \
