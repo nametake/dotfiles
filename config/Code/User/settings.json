@@ -4,7 +4,7 @@
     "source.fixAll.tslint": true
   },
   "editor.codeActionsOnSaveTimeout": 3000,
-  "editor.fontFamily": "'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Hackgen', 'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
