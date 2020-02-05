@@ -1,5 +1,7 @@
 ---
 extends: default
 rules:
+  line-length:
+    max: 100
   truthy:
     allowed-values: ['true', 'false', 'on']
