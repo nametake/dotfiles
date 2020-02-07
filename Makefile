@@ -139,4 +139,4 @@ fish_plugin_update: ## Update fish plugins
 	fish -c fisher
 
 vim_plugin_update: ## Update vim plugins
-	vim -c PlugUpdate -c q -c 'set filetype=go' -c GoSetup -c q
+	vim -c PlugUpdate -c PlugUpgrade -c q -c 'set filetype=go' -c GoSetup -c q

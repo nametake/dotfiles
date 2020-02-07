@@ -119,7 +119,7 @@ source ~/.vim/rc/plugins/coc.rc.vim
 " Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
 " source ~/.vim/rc/plugins/vim-go.vim
 
-Plug 'arp242/gopher.vim', {'for': 'go'}
+Plug 'arp242/gopher.vim', {'for': ['go']}
 let g:gopher_highlight = [
       \   'string-fmt',
       \   'string-spell',
@@ -133,40 +133,40 @@ let g:gopher_map = {
       \ }
 nmap ; <Plug>(gopher-popup)
 
-Plug 'buoto/gotests-vim', {'for': 'go'}
+Plug 'buoto/gotests-vim', {'for': ['go']}
 
-Plug 'nametake/ctrlp-goimport', {'for': 'go'}
+Plug 'nametake/ctrlp-goimport', {'for': ['go']}
 nmap <C-g><C-i> <Plug>(ctrlp-goimport)
 
-Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
+Plug 'nametake/vim-goiferr-snippets', {'for': ['go']}
 " }}}
 
 " Rust {{{
-Plug 'rust-lang/rust', {'for': 'rust'}
+Plug 'rust-lang/rust.vim', {'for': ['rust']}
 
-Plug 'neoclide/coc-rls', {'for': 'rust'}
+Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " Markdown {{{
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'plasticboy/vim-markdown', {'for': ['markdown']}
 let g:vim_markdown_conceal = 0
 
-Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
+Plug 'dhruvasagar/vim-table-mode', {'for': ['markdown']}
 let g:markdown_fold_style = 'nested'
 let g:table_mode_always_active = 1
 " }}}
 
 " Protocol Buffers {{{
-Plug 'uber/prototool', {'for': 'proto', 'rtp':'vim/prototool'}
+Plug 'uber/prototool', {'for': ['proto'], 'rtp':'vim/prototool'}
 " autocmd MyAutoCmd User prototool call PrototoolFormatFixEnable()
 " }}}
 
 " TOML {{{
-Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'cespare/vim-toml', {'for': ['toml']}
 " }}}
 
 " fish {{{
-Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'dag/vim-fish', {'for': ['fish']}
 " }}}
 
 " }}}
