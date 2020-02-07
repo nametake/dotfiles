@@ -6,6 +6,7 @@ let g:ale_linters = {
       \  'dockerfile': ['hadolint'],
       \  'fish': ['fish'],
       \  'proto': ['prototool-lint'],
+      \  'rust': ['rustc', 'cargo', 'rls'],
       \ }
 
 let g:ale_sign_column_always = 1

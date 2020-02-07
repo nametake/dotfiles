@@ -56,6 +56,13 @@ let g:neoformat_markdown_mdfmt = {
 let g:neoformat_enabled_markdown = ['remark']
 " }}}
 
+" Rust {{{
+autocmd MyAutoCmd FileType rust
+      \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
+
+let g:neoformat_enabled_rust = ['rustfmt']
+" }}}
+
 " SQL {{{
 " autocmd MyAutoCmd FileType sql
 "       \ autocmd! MyAutoCmd BufWritePre <buffer> Neoformat
