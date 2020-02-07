@@ -21,9 +21,13 @@ export XDG_CONFIG_HOME=~/.config
 export GOPATH=${HOME}/go
 export GO111MODULE=auto
 export TEXBIN_PATH=/usr/texbin
+export CARGO_PATH=${HOME}/.cargo
 
 [ -e ${GOPATH} ] && \
   export PATH=${GOPATH}/bin:${PATH}
+
+[ -e ${CARGO_PATH} ] && \
+  export PATH=${CARGO_PATH}/bin:${PATH}
 
 [ -e ${TEXBIN_PATH} ] && \
   export PATH=${TEXBIN_PATH}:$PATH

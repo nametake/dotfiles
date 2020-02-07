@@ -26,3 +26,5 @@ export NODEBREW_ROOT=${HOME}/.nodebrew
 
 [ -e ${NODEBREW_ROOT} ] && \
   export PATH=${NODEBREW_ROOT}/current/bin:$PATH
+
+export PATH="$HOME/.cargo/bin:$PATH"

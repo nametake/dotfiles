@@ -141,6 +141,12 @@ nmap <C-g><C-i> <Plug>(ctrlp-goimport)
 Plug 'nametake/vim-goiferr-snippets', {'for': 'go'}
 " }}}
 
+" Rust {{{
+Plug 'rust-lang/rust', {'for': 'rust'}
+
+Plug 'neoclide/coc-rls', {'for': 'rust'}
+" }}}
+
 " Markdown {{{
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 let g:vim_markdown_conceal = 0
