@@ -78,7 +78,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>780 1012 918 452 0 0 3360 1867 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1680 15 1666 1852 0 0 3360 1867 </string>
+	<string>1680 0 1675 1867 0 0 3360 1867 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1675 1867 0 0 3360 1867 </string>
 	<key>New Bookmarks</key>
@@ -699,7 +699,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Cica-Regular 18</string>
+			<string>HackGenConsole-Regular 18</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -785,24 +785,27 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.4</string>
 		<string>3.3.8</string>
+		<string>3.3.2</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
-		<string>3.3.0</string>
-		<string>3.3.2</string>
 		<string>3.2.9</string>
+		<string>3.3.0</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
-		<string>Cica</string>
-		<string>RictyDiscord Nerd Font</string>
+		<string>HackGen Console</string>
+		<string>HackGen</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Cica</string>
+		<string>HackGen Console</string>
+		<string>HackGen</string>
+		<string>HackGen35 Console for Powerline</string>
+		<string>HackGen Console for Powerline</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -814,9 +817,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {3360, 1890}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{936, 784}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -825,7 +828,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>6AC3CCDD-8A36-4DEB-8AAA-50AB3C1112CC</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>99</integer>
+	<integer>102</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1588,7 +1591,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-03T13:31:19Z</date>
+	<date>2020-02-07T15:45:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
