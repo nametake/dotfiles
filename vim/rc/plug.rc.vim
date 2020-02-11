@@ -147,8 +147,12 @@ Plug 'rust-lang/rust.vim', {'for': ['rust']}
 Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile'}
 " }}}
 
-" {{{
+" TypeScript {{{
 Plug 'neoclide/coc-tsserver',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
+
+Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescript.tsx']}
+
+Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript, typescript.tsx']}
 " }}}
 
 " Markdown {{{
