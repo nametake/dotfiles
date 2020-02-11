@@ -26,4 +26,7 @@ augroup filetypedetect
   " json
   autocmd BufNewFile,BufRead .{*rc,tern-config} set filetype=json
   autocmd BufNewFile,BufRead {*rc,tern-config} set filetype=json
+  " vim
+  autocmd BufNewFile,BufRead .vimrc set filetype=vim
+  autocmd BufNewFile,BufRead vimrc set filetype=vim
 augroup END
