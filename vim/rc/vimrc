@@ -94,7 +94,7 @@ set shortmess+=c
 set number
 set ruler
 set laststatus=2
-set cmdheight=2
+set cmdheight=1
 set showmatch
 set list
 set listchars=tab:»-,trail:･,extends:»,precedes:«,nbsp:%,eol:↲
