@@ -48,5 +48,8 @@ nmap <C-]> <Plug>(jump-definition-with-settagstack)
 " Rename
 nmap <Space>r <Plug>(coc-rename)
 
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
 let g:coc_snippet_next = '<C-k>'
 let g:coc_snippet_prev = '<C-j>'
