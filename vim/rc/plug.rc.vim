@@ -14,8 +14,8 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 
 Plug 'itchyny/vim-cursorword'
 
-Plug 'Yggdroot/indentLine'
-let g:indentLine_fileTypeExclude = ['markdown', 'json']
+" Plug 'Yggdroot/indentLine'
+" let g:indentLine_fileTypeExclude = ['markdown', 'json']
 
 Plug 'fatih/molokai'
 " }}}
@@ -92,6 +92,7 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
   let g:NERDTreeFileExtensionHighlightFullName = 1
   let g:NERDTreeExactMatchHighlightFullName = 1
   let g:NERDTreePatternMatchHighlightFullName = 1
+  let g:NERDTreeLimitedSyntax = 1
 " }}}
 
 " lint/format {{{
@@ -149,6 +150,8 @@ Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile
 
 " TypeScript {{{
 Plug 'neoclide/coc-tsserver',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
+
+Plug 'neoclide/coc-prettier',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
 
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescript.tsx']}
 

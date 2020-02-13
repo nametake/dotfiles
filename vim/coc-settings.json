@@ -1,4 +1,9 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
+  ],
   "diagnostic.displayByAle": true,
   "languageserver": {
     "golang": {
