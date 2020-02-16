@@ -96,11 +96,11 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
 " }}}
 
 " lint/format {{{
-Plug 'dense-analysis/ale'
-source ~/.vim/rc/plugins/ale.rc.vim
+" Plug 'dense-analysis/ale'
+" source ~/.vim/rc/plugins/ale.rc.vim
 
-Plug 'sbdchd/neoformat'
-source ~/.vim/rc/plugins/neoformat.rc.vim
+" Plug 'sbdchd/neoformat'
+" source ~/.vim/rc/plugins/neoformat.rc.vim
 " }}}
 
 " Complement {{{
@@ -112,6 +112,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
 
   Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+
+  Plug 'iamcco/coc-diagnostic', {'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " Language {{{

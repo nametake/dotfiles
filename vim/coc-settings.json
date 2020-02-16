@@ -4,7 +4,6 @@
     "typescript.tsx",
     "typescriptreact"
   ],
-  "diagnostic.displayByAle": true,
   "languageserver": {
     "golang": {
       "command": "gopls",

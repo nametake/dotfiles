@@ -45,6 +45,9 @@ nnoremap <Plug>(jump-definition-with-settagstack) :<C-u>call JumpDefinitionWithS
 " nmap <C-]> <Plug>(coc-definition)
 nmap <C-]> <Plug>(jump-definition-with-settagstack)
 
+nmap <silent> <Space>n <Plug>(coc-diagnostic-next)
+nmap <silent> <Space>p <Plug>(coc-diagnostic-prev)
+
 " Rename
 nmap <Space>r <Plug>(coc-rename)
 
@@ -53,3 +56,6 @@ command! -nargs=0 Format :call CocAction('format')
 
 let g:coc_snippet_next = '<C-k>'
 let g:coc_snippet_prev = '<C-j>'
+
+" Highlight
+hi default link CocErrorHighlight CocErrorSign
