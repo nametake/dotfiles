@@ -8,6 +8,15 @@
     "yaml"
   ],
   "languageserver": {
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": [
+        "go",
+        "json",
+        "yaml"
+      ]
+    },
     "golang": {
       "command": "gopls",
       "filetypes": [
@@ -23,11 +32,6 @@
         "completeUnimported": true,
         "usePlaceholders": true
       }
-    },
-    "efm": {
-      "command": "efm-langserver",
-      "args": [],
-      "filetypes": ["go", "json", "yaml"]
     }
   },
   "signature.maxWindowHeight": 32,

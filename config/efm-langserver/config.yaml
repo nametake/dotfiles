@@ -2,24 +2,28 @@
 version: 2
 
 tools:
+  golangci-lint: &golangci-lint
+    lint-command: 'golangci-lint run --enable-all'
+
   gofmtrlx: &gofmtrlx
-    format-command: 'gofmtrlx -s > /dev/null'
+    format-command: 'gofmtrlx -s -w'
 
   json-jq: &json-jq
     lint-command: 'jq .'
+
+  json-fixjson: &json-fixjson
+    format-command: 'fixjson'
 
   yaml-yamllint: &yaml-yamllint
     lint-command: 'yamllint -f parsable -'
     lint-stdin: true
 
-  json-fixjson: &json-fixjson
-    format-command: 'fixjson'
-
 languages:
+  go:
+    - <<: *golangci-lint
+    - <<: *gofmtrlx
   json:
     - <<: *json-jq
     - <<: *json-fixjson
   yaml:
     - <<: *yaml-yamllint
-  # go:
-  #   - <<: *gofmtrlx

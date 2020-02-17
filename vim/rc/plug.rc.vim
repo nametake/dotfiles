@@ -112,6 +112,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
 
   Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+  Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " Language {{{
