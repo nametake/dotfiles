@@ -2,7 +2,10 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "typescript",
     "typescript.tsx",
-    "typescriptreact"
+    "typescriptreact",
+    "go",
+    "json",
+    "yaml"
   ],
   "languageserver": {
     "golang": {
@@ -20,6 +23,11 @@
         "completeUnimported": true,
         "usePlaceholders": true
       }
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["go", "json", "yaml"]
     }
   },
   "signature.maxWindowHeight": 32,

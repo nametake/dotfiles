@@ -11,6 +11,7 @@ DOTFILES := \
 	config/fish/config.fish \
 	config/fish/fishfile \
 	config/yamllint \
+	config/efm-langserver \
 	config/karabiner \
 	config/Code \
 	vimrc \
@@ -54,6 +55,7 @@ GO_TOOLS := \
 	golang.org/x/tools/cmd/goimports \
 	golang.org/x/tools/gopls \
 	github.com/sourcegraph/go-langserver \
+	github.com/mattn/efm-langserver \
 	honnef.co/go/tools/staticcheck \
 	golang.org/x/lint/golint \
 	github.com/golangci/golangci-lint/cmd/golangci-lint \
@@ -76,6 +78,7 @@ NPM_TOOLS := \
 	neovim \
 	eslint \
 	git-open \
+	fixjson \
 	remark-cli \
 	remark-preset-lint-consistent \
 	remark-preset-lint-markdown-style-guide \
@@ -89,7 +92,6 @@ NPM_TOOLS := \
 	textlint-rule-preset-ja-technical-writing \
 	textlint-filter-rule-comments \
 	textlint-filter-rule-whitelist \
-	diagnostic-languageserver \
 
 PIP_TOOLS := \
 	pip \

@@ -1,0 +1,25 @@
+---
+version: 2
+
+tools:
+  gofmtrlx: &gofmtrlx
+    format-command: 'gofmtrlx -s > /dev/null'
+
+  json-jq: &json-jq
+    lint-command: 'jq .'
+
+  yaml-yamllint: &yaml-yamllint
+    lint-command: 'yamllint -f parsable -'
+    lint-stdin: true
+
+  json-fixjson: &json-fixjson
+    format-command: 'fixjson'
+
+languages:
+  json:
+    - <<: *json-jq
+    - <<: *json-fixjson
+  yaml:
+    - <<: *yaml-yamllint
+  # go:
+  #   - <<: *gofmtrlx
