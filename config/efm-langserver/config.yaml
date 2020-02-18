@@ -5,9 +5,6 @@ tools:
   golangci-lint: &golangci-lint
     lint-command: 'golangci-lint run --enable-all'
 
-  gofmtrlx: &gofmtrlx
-    format-command: 'gofmtrlx -s -w'
-
   json-jq: &json-jq
     lint-command: 'jq .'
 
@@ -21,7 +18,6 @@ tools:
 languages:
   go:
     - <<: *golangci-lint
-    - <<: *gofmtrlx
   json:
     - <<: *json-jq
     - <<: *json-fixjson

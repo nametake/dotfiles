@@ -112,7 +112,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
 
   Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " Language {{{
@@ -153,10 +152,6 @@ Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile
 Plug 'neoclide/coc-tsserver',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
 
 Plug 'neoclide/coc-prettier',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
-
-Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescript.tsx']}
-
-Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript, typescript.tsx']}
 " }}}
 
 " Markdown {{{

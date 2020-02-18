@@ -1,4 +1,5 @@
 {
+  "prettier.disableLanguages": ["json", "markdown", "graphql"],
   "coc.preferences.formatOnSaveFiletypes": [
     "typescript",
     "typescript.tsx",
