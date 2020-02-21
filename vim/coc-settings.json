@@ -1,5 +1,4 @@
 {
-  "prettier.disableLanguages": ["json", "markdown", "graphql"],
   "coc.preferences.formatOnSaveFiletypes": [
     "typescript",
     "typescript.tsx",
@@ -10,30 +9,40 @@
   ],
   "languageserver": {
     "dls": {
+      "args": [
+        "--stdio"
+      ],
       "command": "diagnostic-languageserver",
-      "args": ["--stdio"],
-      "filetypes": [ "sh", "email", "json" ],
+      "filetypes": [
+        "sh",
+        "email",
+        "json"
+      ],
       "initializationOptions": {
-        "linters": {
-        },
-        "filetypes": {
+        "filetypes": {},
+        "formatFiletypes": {
+          "json": [
+            "json-fixjson",
+            "json-jq"
+          ]
         },
         "formatters": {
           "json-fixjson": {
             "command": "fixjson",
-            "isStdout": true,
-            "isStderr": false
+            "isStderr": false,
+            "isStdout": true
           },
           "json-jq": {
+            "args": [
+              ".",
+              "--sort-keys"
+            ],
             "command": "jq",
-            "args": [".", "--sort-keys"],
-            "isStdout": true,
-            "isStderr": false
+            "isStderr": false,
+            "isStdout": true
           }
         },
-        "formatFiletypes": {
-          "json": ["json-fixjson", "json-jq"]
-        }
+        "linters": {}
       }
     },
     "golang": {

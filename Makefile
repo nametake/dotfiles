@@ -29,6 +29,14 @@ DOTFILES := \
 	textlintrc \
 
 PKG_MANAGER_TOOLS := \
+	grep \
+	gawk \
+	gzip \
+	gnu-tar \
+	gnu-sed \
+	gnu-time \
+	gnu-getopt \
+	moreutils \
 	zsh \
 	fish \
 	tmux \
