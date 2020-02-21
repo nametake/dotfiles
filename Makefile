@@ -152,3 +152,6 @@ fish_plugin_update: ## Update fish plugins
 
 vim_plugin_update: ## Update vim plugins
 	vim -c PlugUpdate -c PlugUpgrade -c q -c 'set filetype=go' -c GoSetup -c q
+
+fmt_coc_settings:
+	cat ./vim/coc-settings.json | jq '.' --sort-keys | sponge ./vim/coc-settings.json

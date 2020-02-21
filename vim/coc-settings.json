@@ -1,10 +1,10 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "json",
     "typescript",
     "typescript.tsx",
     "typescriptreact",
-    "go",
-    "json",
     "yaml"
   ],
   "languageserver": {
@@ -14,9 +14,8 @@
       ],
       "command": "diagnostic-languageserver",
       "filetypes": [
-        "sh",
-        "email",
-        "json"
+        "json",
+        "sh"
       ],
       "initializationOptions": {
         "filetypes": {},
