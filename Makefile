@@ -92,6 +92,7 @@ NPM_TOOLS := \
 	textlint-rule-preset-ja-technical-writing \
 	textlint-filter-rule-comments \
 	textlint-filter-rule-whitelist \
+	diagnostic-languageserver \
 
 PIP_TOOLS := \
 	pip \

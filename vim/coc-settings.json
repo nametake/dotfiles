@@ -9,14 +9,32 @@
     "yaml"
   ],
   "languageserver": {
-    "efm": {
-      "command": "efm-langserver",
-      "args": [],
-      "filetypes": [
-        "go",
-        "json",
-        "yaml"
-      ]
+    "dls": {
+      "command": "diagnostic-languageserver",
+      "args": ["--stdio"],
+      "filetypes": [ "sh", "email", "json" ],
+      "initializationOptions": {
+        "linters": {
+        },
+        "filetypes": {
+        },
+        "formatters": {
+          "json-fixjson": {
+            "command": "fixjson",
+            "isStdout": true,
+            "isStderr": false
+          },
+          "json-jq": {
+            "command": "jq",
+            "args": [".", "--sort-keys"],
+            "isStdout": true,
+            "isStderr": false
+          }
+        },
+        "formatFiletypes": {
+          "json": ["json-fixjson", "json-jq"]
+        }
+      }
     },
     "golang": {
       "command": "gopls",
