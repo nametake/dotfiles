@@ -15,10 +15,18 @@
       "command": "diagnostic-languageserver",
       "filetypes": [
         "json",
-        "sh"
+        "sh",
+        "vim"
       ],
       "initializationOptions": {
-        "filetypes": {},
+        "filetypes": {
+          "make": [
+            "make-checkmake"
+          ],
+          "vim": [
+            "vim-vint"
+          ]
+        },
         "formatFiletypes": {
           "json": [
             "json-fixjson",
@@ -41,7 +49,28 @@
             "isStdout": true
           }
         },
-        "linters": {}
+        "linters": {
+          "vim-vint": {
+            "args": [
+              "--enable-neovim",
+              "-"
+            ],
+            "command": "vint",
+            "debounce": 100,
+            "formatLines": 1,
+            "formatPattern": [
+              "[^:]+:(\\d+):(\\d+):\\s*(.*)(\\r|\\n)*$",
+              {
+                "column": 2,
+                "line": 1,
+                "message": 3
+              }
+            ],
+            "offsetColumn": 0,
+            "offsetLine": 0,
+            "sourceName": "vint"
+          }
+        }
       }
     },
     "golang": {

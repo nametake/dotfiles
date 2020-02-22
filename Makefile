@@ -73,6 +73,7 @@ GO_TOOLS := \
 	github.com/cweill/gotests/gotests \
 	mvdan.cc/sh/cmd/shfmt \
 	github.com/jackc/sqlfmt/... \
+	github.com/mrtazz/checkmake \
 	github.com/xo/xo \
 	github.com/k0kubun/sqldef/cmd/... \
 	github.com/golang/protobuf/protoc-gen-go \
@@ -106,8 +107,9 @@ PIP_TOOLS := \
 	pip \
 	neovim \
 	awscli \
-	vim-vint \
+	git+https://github.com/Vimjas/vint.git@master \
 	pre-commit \
+	pathlib \
 
 .PHONY: help
 help: # Refer: https://postd.cc/auto-documented-makefile/
@@ -154,4 +156,4 @@ vim_plugin_update: ## Update vim plugins
 	vim -c PlugUpdate -c PlugUpgrade -c q -c 'set filetype=go' -c GoSetup -c q
 
 fmt_coc_settings:
-	cat ./vim/coc-settings.json | jq '.' --sort-keys | sponge ./vim/coc-settings.json
+	fixjson ./vim/coc-settings.json && cat ./vim/coc-settings.json | jq '.' --sort-keys | sponge ./vim/coc-settings.json
