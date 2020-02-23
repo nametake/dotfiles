@@ -76,11 +76,15 @@
               "^ +(\\d+):(\\d+)-(\\d+):(\\d+)  (warning|error)  (.+?(?=  +)) +(.+?(?=  +)) +(.+)$",
               {
                 "column": 2,
-                "line": 1,
                 "endColumn": 4,
                 "endLine": 3,
+                "line": 1,
                 "message": [
-                  6, " ", 7, " ", 8
+                  6,
+                  " ",
+                  7,
+                  " ",
+                  8
                 ],
                 "security": 5
               }
