@@ -48,6 +48,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ack_autoclose = 1
 
 Plug 'easymotion/vim-easymotion'
+map  f <Plug>(easymotion-bd-f)
+nmap f <Plug>(easymotion-overwin-f)
 nmap s <Plug>(easymotion-overwin-f2)
 map <Space>L <Plug>(easymotion-bd-jk)
 nmap <Space>L <Plug>(easymotion-overwin-line)

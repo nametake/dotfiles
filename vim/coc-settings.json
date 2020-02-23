@@ -2,6 +2,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "json",
+    "markdown",
     "typescript",
     "typescript.tsx",
     "typescriptreact",
@@ -15,6 +16,7 @@
       "command": "diagnostic-languageserver",
       "filetypes": [
         "json",
+        "markdown",
         "sh",
         "vim"
       ],
@@ -22,6 +24,9 @@
         "filetypes": {
           "make": [
             "make-checkmake"
+          ],
+          "markdown": [
+            "markdown-remark-lint"
           ],
           "vim": [
             "vim-vint"
@@ -31,6 +36,9 @@
           "json": [
             "json-fixjson",
             "json-jq"
+          ],
+          "markdown": [
+            "markdown-remark"
           ]
         },
         "formatters": {
@@ -47,9 +55,41 @@
             "command": "jq",
             "isStderr": false,
             "isStdout": true
+          },
+          "markdown-remark": {
+            "args": [
+              "--no-color",
+              "--silent"
+            ],
+            "command": "remark"
           }
         },
         "linters": {
+          "markdown-remark-lint": {
+            "args": [
+              "--no-stdout",
+              "--no-color"
+            ],
+            "command": "remark",
+            "formatPattern": [
+              "^ +(\\d+):(\\d+)(-(\\d+):(\\d+))?  (warning|error)  (.+)$",
+              {
+                "column": 2,
+                "line": 1,
+                "message": [
+                  7
+                ],
+                "security": 6
+              }
+            ],
+            "isStderr": true,
+            "securities": {
+              "error": "error",
+              "note": "info",
+              "warning": "warning"
+            },
+            "sourceName": "remark"
+          },
           "vim-vint": {
             "args": [
               "--enable-neovim",
