@@ -15,6 +15,8 @@
       ],
       "command": "diagnostic-languageserver",
       "filetypes": [
+        "dockerfile",
+        "go",
         "json",
         "markdown",
         "sh",
@@ -22,6 +24,9 @@
       ],
       "initializationOptions": {
         "filetypes": {
+          "go": [
+            "golang-golangci-lint"
+          ],
           "make": [
             "make-checkmake"
           ],
@@ -66,6 +71,29 @@
           }
         },
         "linters": {
+          "golang-golangci-lint": {
+            "args": [
+              "run",
+              "--enable-all",
+              "--out-format",
+              "json",
+              "--skip-files",
+              "[^%filename]"
+            ],
+            "command": "golangci-lint",
+            "debounce": 100,
+            "parseJson": {
+              "column": "Pos.Column",
+              "errorsRoot": "Issues",
+              "line": "Pos.Line",
+              "message": "${Text} [${FromLinter}]"
+            },
+            "rootPatterns": [
+              ".git",
+              "go.mod"
+            ],
+            "sourceName": "golangci-lint"
+          },
           "markdown-remark-lint": {
             "args": [
               "--quiet",

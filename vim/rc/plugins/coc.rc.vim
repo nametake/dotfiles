@@ -38,7 +38,7 @@ function JumpDefinitionWithSetTagStack() abort
   call CocAction('jumpDefinition')
 endfunction
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd MyAutoCmd CursorHold * silent call CocActionAsync('highlight')
 
 nnoremap <Plug>(jump-definition-with-settagstack) :<C-u>call JumpDefinitionWithSetTagStack()<CR>
 
