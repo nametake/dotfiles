@@ -26,7 +26,8 @@
             "make-checkmake"
           ],
           "markdown": [
-            "markdown-remark-lint"
+            "markdown-remark-lint",
+            "markdown-textlint"
           ],
           "vim": [
             "vim-vint"
@@ -96,6 +97,27 @@
               "warning": "warning"
             },
             "sourceName": "remark"
+          },
+          "markdown-textlint": {
+            "args": [
+              "-f",
+              "json",
+              "--stdin"
+            ],
+            "command": "textlint",
+            "isStdout": true,
+            "parseJson": {
+              "column": "column",
+              "errorsRoot": "[0].messages",
+              "line": "line",
+              "message": "${message} ${ruleId}",
+              "security": "severity"
+            },
+            "securities": {
+              "error": "2",
+              "warning": "1"
+            },
+            "sourceName": "textlint"
           },
           "vim-vint": {
             "args": [
