@@ -18,9 +18,8 @@ endfunction
 inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 inoremap <expr> <C-k> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
-inoremap <C-g><C-g> <ESC>:<C-u>call CocActionAsync('showSignatureHelp')<CR>l<INSERT>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-inoremap <C-g><C-g> <ESC>:<C-u>call <SID>show_documentation()<CR>l<INSERT>
+inoremap <C-k> <ESC>:<C-u>call <SID>show_documentation()<CR>l<INSERT>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -38,6 +37,8 @@ function JumpDefinitionWithSetTagStack() abort
   call settagstack(l:winid, {'curidx': len(gettagstack(l:winid)['items']) + 1})
   call CocAction('jumpDefinition')
 endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nnoremap <Plug>(jump-definition-with-settagstack) :<C-u>call JumpDefinitionWithSetTagStack()<CR>
 
