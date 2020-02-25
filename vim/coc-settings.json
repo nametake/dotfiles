@@ -25,7 +25,6 @@
       "initializationOptions": {
         "filetypes": {
           "go": [
-            "golang-golangci-lint"
           ],
           "make": [
             "make-checkmake"
@@ -77,8 +76,7 @@
               "--enable-all",
               "--out-format",
               "json",
-              "--skip-files",
-              "[^%filename]"
+              "%filename"
             ],
             "command": "golangci-lint",
             "debounce": 100,
