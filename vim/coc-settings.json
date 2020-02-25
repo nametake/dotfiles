@@ -6,6 +6,7 @@
     "typescript",
     "typescript.tsx",
     "typescriptreact",
+    "sh",
     "yaml"
   ],
   "languageserver": {
@@ -32,6 +33,9 @@
             "markdown-remark-lint",
             "markdown-textlint"
           ],
+          "sh": [
+            "sh-shellcheck"
+          ],
           "vim": [
             "vim-vint"
           ]
@@ -47,6 +51,9 @@
           ],
           "markdown": [
             "markdown-remark"
+          ],
+          "sh": [
+            "sh-shfmt"
           ]
         },
         "formatters": {
@@ -76,6 +83,9 @@
               "--silent"
             ],
             "command": "remark"
+          },
+          "sh-shfmt": {
+            "command": "shfmt"
           }
         },
         "linters": {
@@ -153,6 +163,32 @@
               "warning": "1"
             },
             "sourceName": "textlint"
+          },
+          "sh-shellcheck": {
+            "args": [
+              "--format=gcc",
+              "-"
+            ],
+            "command": "shellcheck",
+            "debounce": 100,
+            "formatLines": 1,
+            "formatPattern": [
+              "^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
+              {
+                "column": 2,
+                "line": 1,
+                "message": 4,
+                "security": 3
+              }
+            ],
+            "offsetColumn": 0,
+            "offsetLine": 0,
+            "securities": {
+              "error": "error",
+              "note": "info",
+              "warning": "warning"
+            },
+            "sourceName": "shellcheck"
           },
           "vim-vint": {
             "args": [
