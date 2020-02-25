@@ -21,6 +21,7 @@
         "json",
         "markdown",
         "sh",
+        "yaml",
         "vim"
       ],
       "initializationOptions": {
@@ -41,6 +42,9 @@
           ],
           "vim": [
             "vim-vint"
+          ],
+          "yaml": [
+            "yaml-yamllint"
           ]
         },
         "formatFiletypes": {
@@ -233,6 +237,28 @@
             "offsetColumn": 0,
             "offsetLine": 0,
             "sourceName": "vint"
+          },
+          "yaml-yamllint": {
+            "args": [
+              "--format",
+              "parsable",
+              "%file"
+            ],
+            "command": "yamllint",
+            "formatPattern": [
+              "^.*:(\\d+):(\\d+): \\[(error|warning)\\] (.+)$",
+              {
+                "column": 2,
+                "line": 1,
+                "message": 4,
+                "security": 3
+              }
+            ],
+            "securities": {
+              "error": "error",
+              "warning": "warning"
+            },
+            "sourceName": "yamllint"
           }
         }
       }
