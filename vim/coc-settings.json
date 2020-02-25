@@ -175,7 +175,8 @@
             "args": [
               "-f",
               "json",
-              "--stdin"
+              "--stdin --stdin-filename",
+              "%file"
             ],
             "command": "textlint",
             "isStdout": true,
