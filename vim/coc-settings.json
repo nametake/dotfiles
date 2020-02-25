@@ -24,8 +24,7 @@
       ],
       "initializationOptions": {
         "filetypes": {
-          "go": [
-          ],
+          "go": [],
           "make": [
             "make-checkmake"
           ],
@@ -38,6 +37,10 @@
           ]
         },
         "formatFiletypes": {
+          "go": [
+            "go-gofmtrlx",
+            "go-goimports"
+          ],
           "json": [
             "json-fixjson",
             "json-jq"
@@ -47,6 +50,12 @@
           ]
         },
         "formatters": {
+          "go-gofmtrlx": {
+            "command": "gofmtrlx"
+          },
+          "go-goimports": {
+            "command": "goimports"
+          },
           "json-fixjson": {
             "command": "fixjson",
             "isStderr": false,
@@ -70,7 +79,7 @@
           }
         },
         "linters": {
-          "golang-golangci-lint": {
+          "go-golangci-lint": {
             "args": [
               "run",
               "--enable-all",
