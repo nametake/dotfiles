@@ -25,6 +25,9 @@
       ],
       "initializationOptions": {
         "filetypes": {
+          "dockerfile": [
+            "dockerfile-hadolint"
+          ],
           "go": [],
           "make": [
             "make-checkmake"
@@ -89,6 +92,27 @@
           }
         },
         "linters": {
+          "dockerfile-hadolint": {
+            "args": [
+              "-f",
+              "json",
+              "-"
+            ],
+            "command": "hadolint",
+            "parseJson": {
+              "column": "column",
+              "line": "line",
+              "message": "${message} [${code}]",
+              "security": "level"
+            },
+            "securities": {
+              "error": "error",
+              "info": "info",
+              "style": "hint",
+              "warning": "warning"
+            },
+            "sourceName": "hadolint"
+          },
           "go-golangci-lint": {
             "args": [
               "run",

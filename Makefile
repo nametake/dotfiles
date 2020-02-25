@@ -53,6 +53,7 @@ PKG_MANAGER_TOOLS := \
 	jq \
 	hub \
 	yamllint \
+	hadolint \
 	create-react-app \
 	hugo \
 
