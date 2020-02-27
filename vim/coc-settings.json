@@ -281,6 +281,10 @@
       }
     }
   },
+  "prettier.disableLanguages": [
+    "markdown",
+    "json"
+  ],
   "signature.maxWindowHeight": 32,
   "snippets.ultisnips.directories": [
     "UltiSnips",
