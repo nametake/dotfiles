@@ -10,6 +10,10 @@
     "yaml"
   ],
   "languageserver": {
+    "golangci-lint-languageserver": {
+      "command": "golangci-lint-langserver",
+      "filetypes": ["go"]
+    },
     "dls": {
       "args": [
         "--stdio"
