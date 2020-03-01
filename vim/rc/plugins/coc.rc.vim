@@ -45,8 +45,8 @@ nnoremap <Plug>(jump-definition-with-settagstack) :<C-u>call JumpDefinitionWithS
 " nmap <C-]> <Plug>(coc-definition)
 nmap <C-]> <Plug>(jump-definition-with-settagstack)
 
-nmap <silent> <Space>n <Plug>(coc-diagnostic-next)
-nmap <silent> <Space>p <Plug>(coc-diagnostic-prev)
+nmap <silent> <Space>j <Plug>(coc-diagnostic-next)
+nmap <silent> <Space>k <Plug>(coc-diagnostic-prev)
 
 " Rename
 nmap <Space>r <Plug>(coc-rename)
