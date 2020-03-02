@@ -12,7 +12,13 @@
   "languageserver": {
     "golangci-lint-languageserver": {
       "command": "golangci-lint-langserver",
-      "filetypes": ["go"]
+      "filetypes": ["go"],
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ]
     },
     "dls": {
       "args": [
