@@ -58,4 +58,5 @@ let g:coc_snippet_next = '<C-k>'
 let g:coc_snippet_prev = '<C-j>'
 
 " Highlight
-hi default link CocErrorHighlight CocErrorSign
+hi default link CocErrorHighlight Error
+hi default link CocWarningHighlight Error
