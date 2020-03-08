@@ -171,9 +171,9 @@ Plug 'styled-components/vim-styled-components', {'for': ['typescript, typescript
 " }}}
 
 " Markdown {{{
-" Plug 'plasticboy/vim-markdown', {'for': ['markdown']}
-" let g:vim_markdown_conceal = 0
-" let g:vim_markdown_folding_disabled = 1
+Plug 'plasticboy/vim-markdown', {'for': ['markdown']}
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_folding_disabled = 1
 
 Plug 'dhruvasagar/vim-table-mode', {'for': ['markdown']}
 let g:markdown_fold_style = 'nested'

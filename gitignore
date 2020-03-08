@@ -2,6 +2,7 @@
 
 ## vim
 .vimrc.local
+.vim/
 
 ## nodejs
 .tern-port
