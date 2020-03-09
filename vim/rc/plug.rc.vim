@@ -35,6 +35,10 @@ Plug 'bfredl/nvim-miniyank'
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 map <C-n> <Plug>(miniyank-cycle)
+
+Plug 'thinca/vim-template'
+
+Plug 'mattn/vim-sonictemplate'
 " }}}
 
 " Search {{{
