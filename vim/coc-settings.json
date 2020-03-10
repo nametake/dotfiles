@@ -305,6 +305,7 @@
     "markdown",
     "json"
   ],
+  "prettier.stylelintIntegration": true,
   "signature.maxWindowHeight": 32,
   "snippets.ultisnips.directories": [
     "UltiSnips",

@@ -167,6 +167,8 @@ Plug 'neoclide/coc-tsserver',  {'for': ['typescript, typescript.tsx'], 'do': 'ya
 
 Plug 'neoclide/coc-prettier',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
 
+Plug 'neoclide/coc-stylelint',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
+
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescript.tsx']}
 
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript, typescript.tsx']}
