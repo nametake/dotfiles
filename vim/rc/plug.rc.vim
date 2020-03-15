@@ -121,6 +121,7 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'honza/vim-snippets'
 
+" let $NVIM_COC_LOG_LEVEL = 'debug'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
 
@@ -163,15 +164,17 @@ Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile
 " }}}
 
 " TypeScript {{{
-Plug 'neoclide/coc-tsserver',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver',  {'do': 'yarn install --frozen-lockfile'}
 
-" Plug 'neoclide/coc-prettier',  {'for': ['typescript, typescript.tsx'], 'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-stylelint',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescript.tsx']}
+Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescriptreact']}
 
-Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript, typescript.tsx']}
+Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript, typescriptreact']}
 
-Plug 'styled-components/vim-styled-components', {'for': ['typescript, typescript.tsx'], 'branch': 'main'}
+Plug 'styled-components/vim-styled-components', {'for': ['typescript, typescriptreact'], 'branch': 'main'}
 " }}}
 
 " Markdown {{{
