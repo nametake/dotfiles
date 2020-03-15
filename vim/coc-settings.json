@@ -4,7 +4,6 @@
     "json",
     "markdown",
     "typescript",
-    "typescript.tsx",
     "typescriptreact",
     "sh",
     "yaml"
@@ -21,6 +20,9 @@
         "json",
         "markdown",
         "sh",
+        "tsx",
+        "typescript",
+        "typescriptreact",
         "yaml",
         "vim"
       ],
@@ -29,7 +31,6 @@
           "dockerfile": [
             "dockerfile-hadolint"
           ],
-          "go": [],
           "make": [
             "make-checkmake"
           ],
@@ -39,6 +40,14 @@
           ],
           "sh": [
             "sh-shellcheck"
+          ],
+          "typescript": [
+            "fe-eslint",
+            "fe-stylelint"
+          ],
+          "typescriptreact": [
+            "fe-eslint",
+            "fe-stylelint"
           ],
           "vim": [
             "vim-vint"
@@ -116,6 +125,59 @@
               "warning": "warning"
             },
             "sourceName": "hadolint"
+          },
+          "fe-eslint": {
+            "args": [
+              "--stdin",
+              "--stdin-filename",
+              "%filepath",
+              "--format",
+              "json"
+            ],
+            "command": "./node_modules/.bin/eslint",
+            "debounce": 100,
+            "parseJson": {
+              "column": "column",
+              "endColumn": "endColumn",
+              "endLine": "endLine",
+              "errorsRoot": "[0].messages",
+              "line": "line",
+              "message": "${message} [${ruleId}]",
+              "security": "severity"
+            },
+            "rootPatterns": [
+              ".git"
+            ],
+            "securities": {
+              "1": "warning",
+              "2": "error"
+            },
+            "sourceName": "eslint"
+          },
+          "fe-stylelint": {
+            "args": [
+              "--formatter",
+              "json",
+              "--stdin-filename",
+              "%filepath"
+            ],
+            "command": "./node_modules/.bin/stylelint",
+            "debounce": 100,
+            "parseJson": {
+              "column": "column",
+              "errorsRoot": "[0].warnings",
+              "line": "line",
+              "message": "${text}",
+              "security": "severity"
+            },
+            "rootPatterns": [
+              ".git"
+            ],
+            "securities": {
+              "error": "error",
+              "warning": "warning"
+            },
+            "sourceName": "stylelint"
           },
           "go-golangci-lint": {
             "args": [

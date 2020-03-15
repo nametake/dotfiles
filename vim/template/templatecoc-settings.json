@@ -1,16 +1,6 @@
 {
   "languageserver": {
     "dls": {
-      "command": "diagnostic-languageserver",
-      "filetypes": [
-        "dockerfile",
-        "go",
-        "json",
-        "markdown",
-        "sh",
-        "yaml",
-        "vim"
-      ],
       "initializationOptions": {
         "formatFiletypes": {
           "json": [
