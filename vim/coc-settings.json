@@ -70,9 +70,41 @@
           ],
           "sh": [
             "sh-shfmt"
+          ],
+          "typescript": [
+            "fe-prettier",
+            "fe-stylelint"
+          ],
+          "typescriptreact": [
+            "fe-prettier",
+            "fe-stylelint"
           ]
         },
         "formatters": {
+          "fe-prettier": {
+            "args": [
+              "--stdin",
+              "--stdin-filepath",
+              "%filename"
+            ],
+            "command": "./node_modules/.bin/prettier",
+            "isStderr": false,
+            "isStdout": true,
+            "rootPatterns": [
+              ".git"
+            ]
+          },
+          "fe-stylelint": {
+            "args": [
+              "--fix"
+            ],
+            "command": "./node_modules/.bin/stylelint",
+            "isStderr": false,
+            "isStdout": true,
+            "rootPatterns": [
+              ".git"
+            ]
+          },
           "go-gofmtrlx": {
             "command": "gofmtrlx"
           },
@@ -367,6 +399,8 @@
     "markdown",
     "json"
   ],
+  "prettier.eslintIntegration": true,
+  "prettier.formatterPriority": -1,
   "prettier.stylelintIntegration": true,
   "signature.maxWindowHeight": 32,
   "snippets.ultisnips.directories": [
