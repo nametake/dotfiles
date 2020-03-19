@@ -41,12 +41,7 @@
           "sh": [
             "sh-shellcheck"
           ],
-          "typescript": [
-            "fe-eslint",
-            "fe-stylelint"
-          ],
           "typescriptreact": [
-            "fe-eslint",
             "fe-stylelint"
           ],
           "vim": [
@@ -70,14 +65,6 @@
           ],
           "sh": [
             "sh-shfmt"
-          ],
-          "typescript": [
-            "fe-prettier",
-            "fe-stylelint"
-          ],
-          "typescriptreact": [
-            "fe-prettier",
-            "fe-stylelint"
           ]
         },
         "formatters": {
@@ -400,7 +387,6 @@
     "json"
   ],
   "prettier.eslintIntegration": true,
-  "prettier.formatterPriority": -1,
   "prettier.stylelintIntegration": true,
   "signature.maxWindowHeight": 32,
   "snippets.ultisnips.directories": [

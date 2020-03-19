@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 source ~/.vim/rc/plugins/lightline.rc.vim
 
-Plug 'itchyny/vim-cursorword'
+" Plug 'itchyny/vim-cursorword'
 
 " Plug 'Yggdroot/indentLine'
 " let g:indentLine_fileTypeExclude = ['markdown', 'json']
@@ -21,6 +21,10 @@ Plug 'fatih/molokai'
 " }}}
 
 " Text operation {{{
+Plug 'kana/vim-textobj-user'
+  Plug 'kana/vim-textobj-jabraces'
+  Plug 'sgur/vim-textobj-parameter'
+
 Plug 'tpope/vim-surround'
 
 Plug 'tomtom/tcomment_vim'
@@ -166,12 +170,12 @@ Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile
 " TypeScript {{{
 Plug 'neoclide/coc-tsserver',  {'do': 'yarn install --frozen-lockfile'}
 
-" Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-stylelint',  {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescriptreact']}
+Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
 
+Plug 'othree/yajs.vim', {'for': ['typescript, typescriptreact']}
+"
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript, typescriptreact']}
 
 Plug 'styled-components/vim-styled-components', {'for': ['typescript, typescriptreact'], 'branch': 'main'}
