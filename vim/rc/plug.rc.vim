@@ -125,7 +125,7 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'honza/vim-snippets'
 
-" let $NVIM_COC_LOG_LEVEL = 'debug'
+let $NVIM_COC_LOG_LEVEL = 'debug'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 source ~/.vim/rc/plugins/coc.rc.vim
 
