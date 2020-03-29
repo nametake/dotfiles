@@ -22,5 +22,10 @@
       "remark-lint-list-item-indent",
       "tab-size"
     ]
-  ]
+  ],
+  "settings": {
+    "rule": "-",
+    "ruleRepetition": 3,
+    "ruleSpaces": false
+  }
 }
