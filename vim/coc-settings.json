@@ -9,6 +9,18 @@
     "yaml"
   ],
   "languageserver": {
+    "apex-langserver": {
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "nametake/apex-langserver:latest"
+      ],
+      "command": "docker",
+      "filetypes": [
+        "apex"
+      ]
+    },
     "dls": {
       "args": [
         "--stdio"

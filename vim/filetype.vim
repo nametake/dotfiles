@@ -15,6 +15,8 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
   " post css
   autocmd BufNewFile,BufRead *.{pcss} set filetype=scss
+  " apex
+  autocmd BufNewFile,BufRead *.cls set filetype=apex
   " jade
   autocmd BufNewFile,BufRead *.jade set filetype=jade
   " coffee

@@ -205,6 +205,10 @@ Plug 'cespare/vim-toml', {'for': ['toml']}
 Plug 'dag/vim-fish', {'for': ['fish']}
 " }}}
 
+" apex {{{
+Plug 'ejholmes/vim-forcedotcom', {'for': ['apex']}
+" }}}
+
 " }}}
 
 call plug#end()
