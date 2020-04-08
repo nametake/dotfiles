@@ -27,6 +27,7 @@
       ],
       "command": "diagnostic-languageserver",
       "filetypes": [
+        "apex",
         "dockerfile",
         "go",
         "json",
@@ -40,6 +41,9 @@
       ],
       "initializationOptions": {
         "filetypes": {
+          "apex": [
+            "apex-pmd"
+          ],
           "dockerfile": [
             "dockerfile-hadolint"
           ],
@@ -136,6 +140,37 @@
           }
         },
         "linters": {
+          "apex-pmd": {
+            "args": [
+              "pmd",
+              "-format",
+              "csv",
+              "-rulesets",
+              "apex-quickstart",
+              "-d",
+              "%file"
+            ],
+            "command": "pmd",
+            "formatPattern": [
+              "^\"(.*)\",\"(.*)\",\"(.*)\",\"(.*)\",\"(.*)\",\"(.*)\",\"(.*)\",\"(.*)\"$",
+              {
+                "line": 5,
+                "message": [
+                  7,
+                  ": ",
+                  8,
+                  ": ",
+                  6
+                ],
+                "security": 4
+              }
+            ],
+            "securities": {
+              "error": "error",
+              "warning": "warning"
+            },
+            "sourceName": "pmd"
+          },
           "dockerfile-hadolint": {
             "args": [
               "-f",
