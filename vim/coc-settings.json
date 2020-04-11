@@ -2,6 +2,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "json",
+    "javascript",
     "markdown",
     "typescript",
     "typescriptreact",
@@ -19,6 +20,10 @@
       "command": "docker",
       "filetypes": [
         "apex"
+      ],
+      "rootPatterns": [
+        ".git",
+        ".sfdx"
       ]
     },
     "dls": {
