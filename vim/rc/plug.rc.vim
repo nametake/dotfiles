@@ -209,6 +209,13 @@ Plug 'dag/vim-fish', {'for': ['fish']}
 Plug 'ejholmes/vim-forcedotcom', {'for': ['apex']}
 " }}}
 
+" apex {{{
+Plug 'derekwyatt/vim-scala', {'for': ['scala']}
+
+Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+nmap <Space>ws <Plug>(coc-metals-expand-decoration)
+" }}}
+
 " }}}
 
 call plug#end()
