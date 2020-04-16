@@ -109,7 +109,7 @@ PIP_TOOLS := \
 	neovim \
 	awscli \
 	git+https://github.com/Vimjas/vint.git@master \
-	pre-commit \
+	git+https://github.com/pre-commit/pre-commit.git@master \
 	pathlib \
 
 .PHONY: help
