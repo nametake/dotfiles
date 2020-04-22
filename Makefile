@@ -67,7 +67,6 @@ GO_TOOLS := \
 	github.com/mattn/efm-langserver \
 	honnef.co/go/tools/staticcheck \
 	golang.org/x/lint/golint \
-	github.com/golangci/golangci-lint/cmd/golangci-lint \
 	github.com/rhysd/gofmtrlx \
 	sourcegraph.com/sqs/goreturns \
 	github.com/kisielk/errcheck \
@@ -83,6 +82,7 @@ GO_TOOLS := \
 
 GO_MOD_TOOLS := \
 	github.com/google/wire/cmd/wire \
+	github.com/golangci/golangci-lint/cmd/golangci-lint \
 
 NPM_TOOLS := \
 	neovim \
