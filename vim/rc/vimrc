@@ -208,7 +208,7 @@ set showcmd
 set wildmenu
 set wildchar=<tab>
 set wildmode=list:full
-set history=10000
+set history=100
 
 "}}}
 

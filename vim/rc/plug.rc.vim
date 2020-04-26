@@ -176,9 +176,9 @@ Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'othree/yajs.vim', {'for': ['typescript, typescriptreact']}
 "
-Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript, typescriptreact']}
+Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript.tsx', 'typescriptreact']}
 
-Plug 'styled-components/vim-styled-components', {'for': ['typescript, typescriptreact'], 'branch': 'main'}
+Plug 'styled-components/vim-styled-components', {'for': ['typescript.tsx', 'typescriptreact'], 'branch': 'main'}
 " }}}
 
 " Markdown {{{
