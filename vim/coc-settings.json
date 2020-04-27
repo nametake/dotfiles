@@ -2,6 +2,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "apex",
     "go",
+    "html",
     "json",
     "javascript",
     "markdown",
@@ -77,6 +78,9 @@
           "go": [
             "go-gofmtrlx",
             "go-goimports"
+          ],
+          "html": [
+            "fe-prettier"
           ],
           "json": [
             "json-fixjson",
