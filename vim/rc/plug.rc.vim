@@ -181,6 +181,10 @@ Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript.tsx', 'typescriptreact']}
 Plug 'styled-components/vim-styled-components', {'for': ['typescript.tsx', 'typescriptreact'], 'branch': 'main'}
 " }}}
 
+" HTML,XML {{{
+Plug 'alvan/vim-closetag', {'for': ['html', 'xml']}
+" }}}
+
 " Markdown {{{
 Plug 'plasticboy/vim-markdown', {'for': ['markdown']}
 let g:vim_markdown_conceal = 0
@@ -189,7 +193,6 @@ let g:vim_markdown_folding_disabled = 1
 Plug 'dhruvasagar/vim-table-mode', {'for': ['markdown']}
 let g:markdown_fold_style = 'nested'
 let g:table_mode_always_active = 1
-
 " }}}
 
 " Protocol Buffers {{{
