@@ -27,6 +27,11 @@ Plug 'kana/vim-textobj-user'
 
 Plug 'tpope/vim-surround'
 
+Plug 'kana/vim-operator-user'
+
+Plug 'kana/vim-operator-replace'
+map _ <Plug>(operator-replace)
+
 Plug 'tomtom/tcomment_vim'
 
 Plug 'junegunn/vim-easy-align'
