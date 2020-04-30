@@ -78,7 +78,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>780 1012 918 452 0 0 3360 1867 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1680 936 1672 931 0 0 3360 1867 </string>
+	<string>1680 0 1672 1867 0 0 3360 1867 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 831 745 1036 0 0 3360 1867 </string>
 	<key>New Bookmarks</key>
@@ -364,6 +364,8 @@
 			<string>Default</string>
 			<key>Disable Window Resizing</key>
 			<true/>
+			<key>Draw Powerline Glyphs</key>
+			<false/>
 			<key>Flashing Bell</key>
 			<false/>
 			<key>Foreground Color</key>
@@ -765,7 +767,7 @@
 			<key>Use Cursor Guide</key>
 			<false/>
 			<key>Use Italic Font</key>
-			<true/>
+			<false/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Use Tab Color</key>
@@ -786,7 +788,7 @@
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.8</string>
-		<string>3.2.9</string>
+		<string>3.3.4</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
@@ -794,7 +796,7 @@
 		<string>3.3.9</string>
 		<string>3.3.0</string>
 		<string>3.3.2</string>
-		<string>3.3.4</string>
+		<string>3.2.9</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -803,10 +805,10 @@
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Cica</string>
 		<string>HackGen Console</string>
 		<string>HackGen</string>
 		<string>HackGen35 Console for Powerline</string>
-		<string>HackGen Console for Powerline</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -829,7 +831,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>6AC3CCDD-8A36-4DEB-8AAA-50AB3C1112CC</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>132</integer>
+	<integer>147</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1592,7 +1594,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-11T04:14:36Z</date>
+	<date>2020-04-29T00:52:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -1602,7 +1604,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
