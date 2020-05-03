@@ -5,7 +5,7 @@
       "manipulators": [
         {
           "from": {
-            "key_code": "tab",
+            "key_code": "1",
             "modifiers": {
               "mandatory": [
                 "command",
