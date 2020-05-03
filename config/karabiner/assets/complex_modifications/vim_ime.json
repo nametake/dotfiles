@@ -1,11 +1,20 @@
 {
-  "title": "Turn IME off when ESC or ^[ is pressed at vim bind application",
   "rules": [
     {
       "description": "Turn IME off when ESC or ^[ is pressed at vim bind application",
       "manipulators": [
         {
-          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^org\\.vim\\.",
+                "^com\\.googlecode\\.iterm2$",
+                "^com\\.qvacua\\.VimR$"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
           "from": {
             "key_code": "escape",
             "modifiers": {
@@ -22,20 +31,20 @@
               "key_code": "escape"
             }
           ],
+          "type": "basic"
+        },
+        {
           "conditions": [
             {
-              "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^org\\.vim\\.",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.qvacua\\.VimR$"
-              ]
+              ],
+              "type": "frontmost_application_if"
             }
-          ]
-        },
-        {
-          "type": "basic",
+          ],
           "from": {
             "key_code": "open_bracket",
             "modifiers": {
@@ -52,19 +61,10 @@
               "key_code": "escape"
             }
           ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^org\\.vim\\.",
-                "^com\\.googlecode\\.iterm2$",
-                "^com\\.qvacua\\.VimR$"
-              ]
-            }
-          ]
+          "type": "basic"
         }
       ]
     }
-  ]
+  ],
+  "title": "Turn IME off when ESC or ^[ is pressed at vim bind application"
 }
