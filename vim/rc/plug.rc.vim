@@ -213,11 +213,11 @@ Plug 'cespare/vim-toml', {'for': ['toml']}
 Plug 'dag/vim-fish', {'for': ['fish']}
 " }}}
 
-" apex {{{
+" Salesforce {{{
 Plug 'ejholmes/vim-forcedotcom', {'for': ['apex']}
 " }}}
 
-" apex {{{
+" Scala {{{
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
