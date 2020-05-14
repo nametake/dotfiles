@@ -187,7 +187,7 @@ Plug 'styled-components/vim-styled-components', {'for': ['typescript.tsx', 'type
 " }}}
 
 " HTML,XML {{{
-Plug 'alvan/vim-closetag', {'for': ['html', 'xml']}
+Plug 'alvan/vim-closetag', {'for': ['html', 'xml', 'typescript.tsx', 'typescriptreact']}
 " }}}
 
 " Markdown {{{
