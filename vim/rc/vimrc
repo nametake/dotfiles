@@ -170,7 +170,7 @@ set smartindent
 set foldenable
 set foldmethod=syntax
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
-set foldlevel=0
+set foldlevel=16
 set foldnestmax=2
 set foldcolumn=2
 
