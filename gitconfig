@@ -20,6 +20,7 @@
   di = diff
   p = !git push origin `git rev-parse --abbrev-ref HEAD`
   default = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
+  pull-master = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
 
 [core]
   editor = "vim"
