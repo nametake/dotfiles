@@ -21,6 +21,10 @@
     [
       "remark-lint-list-item-indent",
       "tab-size"
+    ],
+    [
+      "remark-lint-code-block-style",
+      "fenced"
     ]
   ],
   "settings": {
