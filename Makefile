@@ -59,6 +59,7 @@ PKG_MANAGER_TOOLS := \
 
 BREW_TOOLS := \
 	the_silver_searcher \
+	golangci/tap/golangci-lint \
 
 GO_TOOLS := \
 	golang.org/x/tools/cmd/goimports \
@@ -79,10 +80,7 @@ GO_TOOLS := \
 	github.com/golang/protobuf/protoc-gen-go \
 	github.com/nametake/protoc-gen-gohttp \
 	github.com/cespare/reflex \
-
-GO_MOD_TOOLS := \
 	github.com/google/wire/cmd/wire \
-	github.com/golangci/golangci-lint/cmd/golangci-lint \
 
 NPM_TOOLS := \
 	neovim \
@@ -137,8 +135,7 @@ brew_update: ## Update brew tools
 	brew cleanup
 
 go_get: ## Install go cli tools
-	go get -u $(GO_TOOLS)
-	./bin/gomod.sh $(GO_MOD_TOOLS)
+	@export GO111MODULE=on; go get -u $(GO_TOOLS)
 
 npm_install: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
