@@ -110,11 +110,11 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
 
   Plug 'EvanDotPro/nerdtree-chmod'
 
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  let g:NERDTreeFileExtensionHighlightFullName = 1
-  let g:NERDTreeExactMatchHighlightFullName = 1
-  let g:NERDTreePatternMatchHighlightFullName = 1
-  let g:NERDTreeLimitedSyntax = 1
+  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  " let g:NERDTreeFileExtensionHighlightFullName = 1
+  " let g:NERDTreeExactMatchHighlightFullName = 1
+  " let g:NERDTreePatternMatchHighlightFullName = 1
+  " let g:NERDTreeLimitedSyntax = 1
 " }}}
 
 " lint/format {{{
