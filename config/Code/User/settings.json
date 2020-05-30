@@ -53,5 +53,6 @@
   },
   "workbench.colorTheme": "Dark (Molokai)",
   "workbench.editor.enablePreview": false,
-  "workbench.editor.openPositioning": "last"
+  "workbench.editor.openPositioning": "last",
+  "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true
 }
