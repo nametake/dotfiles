@@ -6,6 +6,9 @@
   default = simple
   path = ~/.gitconfig.local
 
+[pull]
+  rebase = false
+
 [diff]
   compactionHeuristic = true
 
