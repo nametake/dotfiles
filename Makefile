@@ -95,6 +95,7 @@ NPM_TOOLS := \
 	remark-lint-ordered-list-marker-value \
 	remark-lint-list-item-spacing \
 	remark-lint-list-item-indent \
+	remark-lint-code-block-style \
 	remark-frontmatter \
 	textlint \
 	textlint-rule-preset-ja-technical-writing \
