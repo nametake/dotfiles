@@ -8,9 +8,11 @@
     "markdown",
     "typescript",
     "typescriptreact",
+    "scala",
     "sh",
     "yaml"
   ],
+  "coc.preferences.formatOnType": true,
   "languageserver": {
     "apex-langserver": {
       "args": [
