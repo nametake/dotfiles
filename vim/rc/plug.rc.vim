@@ -177,7 +177,7 @@ Plug 'neoclide/coc-tsserver',  {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile', 'tag': '1.1.12'}
+Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'othree/yajs.vim', {'for': ['typescript, typescriptreact']}
 "
