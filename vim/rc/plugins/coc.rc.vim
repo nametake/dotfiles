@@ -55,6 +55,9 @@ nmap <silent> <Space>k <Plug>(coc-diagnostic-prev)
 " Rename
 nmap <Space>r <Plug>(coc-rename)
 
+" Focus float window
+nmap <silent> <Space>; <Plug>(coc-float-jump)
+
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
