@@ -307,7 +307,7 @@ endif
 
 " set regexpengine=1
 set synmaxcol=256
-syntax sync minlines=256
+syntax sync minlines=1024
 syntax on
 
 colorscheme molokai
