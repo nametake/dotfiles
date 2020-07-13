@@ -179,8 +179,8 @@ Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'leafgarland/typescript-vim', {'for': ['typescript, typescriptreact']}
-"
+Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescriptreact']}
+
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript.tsx', 'typescriptreact']}
 
 Plug 'styled-components/vim-styled-components', {'for': ['typescript.tsx', 'typescriptreact'], 'branch': 'main'}
