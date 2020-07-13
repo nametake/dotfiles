@@ -17,7 +17,7 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 " Plug 'Yggdroot/indentLine'
 " let g:indentLine_fileTypeExclude = ['markdown', 'json']
 
-Plug 'fatih/molokai'
+Plug 'tomasr/molokai'
 " }}}
 
 " Text operation {{{
@@ -179,7 +179,7 @@ Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'othree/yajs.vim', {'for': ['typescript, typescriptreact']}
+Plug 'leafgarland/typescript-vim', {'for': ['typescript, typescriptreact']}
 "
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript.tsx', 'typescriptreact']}
 
