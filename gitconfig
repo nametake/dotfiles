@@ -16,8 +16,7 @@
   prune = true
 
 [alias]
-  tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative 
-  delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
+  tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %Creset%cd%Creset' --abbrev-commit --date=format-local:'%Y/%m/%d %H:%M'
   ac = !git add -A && git commit
   b = branch
   ch = checkout
@@ -25,8 +24,7 @@
   re = restore
   di = diff
   p = !git push origin `git rev-parse --abbrev-ref HEAD`
-  default = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
-  pull-master = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
+  pm = "!f () { git switch master; git pull --prune; };f"
 
 [core]
   editor = "vim"
