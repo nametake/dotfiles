@@ -20,6 +20,8 @@
   delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
   ac = !git add -A && git commit
   ch = checkout
+  sw = switch
+  re = restore
   di = diff
   p = !git push origin `git rev-parse --abbrev-ref HEAD`
   default = "!f () { git checkout master; git pull; git delete-merged-branch; };f"
