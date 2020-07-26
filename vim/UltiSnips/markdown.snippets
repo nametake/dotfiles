@@ -15,3 +15,19 @@ snippet codeblock-yank "Code block filled with yank register" b
 \`\`\`
 ${0:}
 endsnippet
+
+snippet textlint-diable "Disable textlint" b
+<!-- textlint-disable ${1:ja-technical-writing/ja-no-weak-phrase} -->${0:}
+endsnippet
+
+snippet textlint-enable "Enable textlint" b
+<!-- textlint-enable ${1:ja-technical-writing/ja-no-weak-phrase} -->${0:}
+endsnippet
+
+snippet textlint-wrap "Wrap textlint disable and enable comments"
+<!-- textlint-disable ${1:ja-technical-writing/ja-no-weak-phrase} -->
+
+`!v getreg("*")`
+
+<!-- textlint-enable ${1:ja-technical-writing/ja-no-weak-phrase} -->${0:}
+endsnippet
