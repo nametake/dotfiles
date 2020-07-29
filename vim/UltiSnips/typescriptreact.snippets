@@ -1,0 +1,18 @@
+snippet storybook-template "Storybook template" b
+/* eslint-disable import/no-extraneous-dependencies,import/no-default-export,@typescript-eslint/explicit-module-boundary-types */
+import { action } from '@storybook/addon-actions';
+import React from 'react';
+
+import { ${1:} } from './index';
+
+export default {
+  title: '${1:}',
+  component: ${1:},
+};
+
+export const ${1:}Story = () => <${1:} onChange={action('changed')} />;
+
+${1:}Story.story = {
+  name: '${1:}',
+};
+endsnippet
