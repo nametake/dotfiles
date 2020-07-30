@@ -1,3 +1,31 @@
+snippet change-event-input "HTMLInputElement change event" i
+e: React.ChangeEvent<HTMLInputElement>
+endsnippet
+
+snippet change-event-textarea "HTMLTextAreaElement change event" i
+e: React.ChangeEvent<HTMLTextAreaElement>
+endsnippet
+
+snippet form-event "Form event" i
+e: React.FormEvent<HTMLFormElement>
+endsnippet
+
+snippet click-event-mouse "Mouse click event" i
+e: React.MouseEvent<HTMLElement, MouseEvent>
+endsnippet
+
+snippet component-template "React component template" b
+import React from 'react';
+
+type ${1:}Props = {
+  text?: string;
+};
+
+export const ${1:}: React.FC<${1:}Props> = ({ text }) => {
+  return <div>{text}</div>;
+};
+endsnippet
+
 snippet storybook-template "Storybook template" b
 /* eslint-disable import/no-extraneous-dependencies,import/no-default-export,@typescript-eslint/explicit-module-boundary-types */
 import { action } from '@storybook/addon-actions';
