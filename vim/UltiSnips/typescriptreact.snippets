@@ -15,18 +15,34 @@ e: React.MouseEvent<HTMLElement, MouseEvent>
 endsnippet
 
 snippet component-template "React component template" b
+export function ${1:}(${2:}): JSX.Element {
+  return ${3:<div>template</div>};
+}
+endsnippet
+
+snippet storybook-template "Storybook template" b
+export function ${1:}Story() {
+  return ${3:<div>storybook</div>};
+}
+
+${1:}Story.story = {
+  name: '${2:name}',
+};
+endsnippet
+
+snippet init-component-template "Initial react component template" b
 import React from 'react';
 
 type ${1:}Props = {
   text?: string;
 };
 
-export const ${1:}: React.FC<${1:}Props> = ({ text }) => {
+export function ${1:}({ text }: ${1:}Props): JSX.Element {
   return <div>{text}</div>;
-};
+}
 endsnippet
 
-snippet storybook-template "Storybook template" b
+snippet init-storybook-template "Initial storybook template" b
 /* eslint-disable import/no-extraneous-dependencies,import/no-default-export,@typescript-eslint/explicit-module-boundary-types */
 import { action } from '@storybook/addon-actions';
 import React from 'react';
@@ -38,7 +54,9 @@ export default {
   component: ${1:},
 };
 
-export const ${1:}Story = () => <${1:} onChange={action('changed')} />;
+export function ${1:}Story() {
+  return <${1:} onChange={action('changed')} />;
+}
 
 ${1:}Story.story = {
   name: '${1:}',
