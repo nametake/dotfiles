@@ -179,9 +179,11 @@ Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript, typescriptreact']}
+Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
 
 Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript.tsx', 'typescriptreact']}
+
+Plug 'ap/vim-css-color', {'for': ['typescript', 'typescriptreact']}
 
 " Plug 'styled-components/vim-styled-components', {'for': ['typescript.tsx', 'typescriptreact'], 'branch': 'main'}
 " autocmd MyAutoCmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
