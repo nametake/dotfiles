@@ -1,7 +1,6 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.tslint": true
+    "source.fixAll.eslint": true
   },
   "editor.codeActionsOnSaveTimeout": 3000,
   "editor.fontFamily": "'Hackgen', 'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
@@ -35,13 +34,8 @@
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        ":",
-        "W"
-      ],
-      "commands": [
-        ":w"
-      ]
+      "before": [":", "W"],
+      "commands": [":w"]
     }
   ],
   "vim.sneak": true,
