@@ -95,7 +95,7 @@ let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("a") + v:val) . "[^.]*$"')
 
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  let g:NERDTreeIndicatorMapCustom = {
+  let g:NERDTreeGitStatusIndicatorMapCustom = {
         \   'Modified'  : '*',
         \   'Staged'    : '+',
         \   'Untracked' : '-',
@@ -107,6 +107,7 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
         \   'Ignored'   : 'I',
         \   'Unknown'   : '?'
         \ }
+
 
   Plug 'EvanDotPro/nerdtree-chmod'
 
