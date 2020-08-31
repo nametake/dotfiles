@@ -6,7 +6,7 @@
     "remark-frontmatter",
     [
       "remark-lint-maximum-line-length",
-      140
+      160
     ],
     [
       "remark-lint-ordered-list-marker-value",
