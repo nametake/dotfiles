@@ -10,17 +10,6 @@
   "editor.formatOnType": true,
   "editor.renderWhitespace": "all",
   "eslint.alwaysShowStatus": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "autoFix": true,
-      "language": "typescript"
-    },
-    {
-      "autoFix": true,
-      "language": "typescriptreact"
-    }
-  ],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
