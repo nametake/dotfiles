@@ -63,6 +63,8 @@ BREW_TOOLS := \
 
 GO_TOOLS := \
 	golang.org/x/tools/cmd/goimports \
+	mvdan.cc/gofumpt \
+	mvdan.cc/gofumpt/gofumports \
 	golang.org/x/tools/gopls \
 	github.com/sourcegraph/go-langserver \
 	github.com/mattn/efm-langserver \

@@ -84,7 +84,7 @@
         "formatFiletypes": {
           "go": [
             "go-gofmtrlx",
-            "go-goimports"
+            "go-gofumports"
           ],
           "html": [
             "fe-prettier"
@@ -127,6 +127,12 @@
           },
           "go-gofmtrlx": {
             "command": "gofmtrlx"
+          },
+          "go-gofumports": {
+            "command": "gofumports"
+          },
+          "go-gofumpt": {
+            "command": "gofumpt"
           },
           "go-goimports": {
             "command": "goimports"
