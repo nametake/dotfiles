@@ -14,6 +14,7 @@
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
   "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.updateImportsOnFileMove.enabled": "always",
