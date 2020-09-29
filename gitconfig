@@ -35,8 +35,8 @@
   path = ~/.gitconfig.local
 
 [ghq]
-  root = ~/Workspace
   root = ~/go/src
+  root = ~/Workspace
 
 [init]
   templatedir=~/.git_template
