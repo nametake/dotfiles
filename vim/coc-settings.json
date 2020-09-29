@@ -84,6 +84,7 @@
         "formatFiletypes": {
           "go": [
             "go-gofmtrlx",
+            "go-goimports",
             "go-gofumports"
           ],
           "html": [
