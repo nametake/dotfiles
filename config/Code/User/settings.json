@@ -1,13 +1,10 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll": true
   },
   "editor.codeActionsOnSaveTimeout": 3000,
   "editor.fontFamily": "'Hackgen', 'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
   "editor.renderWhitespace": "all",
   "eslint.alwaysShowStatus": true,
   "explorer.confirmDelete": false,
