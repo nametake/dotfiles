@@ -77,7 +77,6 @@ GO_TOOLS := \
 	mvdan.cc/sh/cmd/shfmt \
 	github.com/jackc/sqlfmt/... \
 	github.com/mrtazz/checkmake \
-	github.com/xo/xo \
 	github.com/k0kubun/sqldef/cmd/... \
 	github.com/golang/protobuf/protoc-gen-go \
 	github.com/nametake/protoc-gen-gohttp \
