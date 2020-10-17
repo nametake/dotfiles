@@ -28,8 +28,8 @@
     ]
   ],
   "settings": {
-    "rule": "-",
-    "ruleRepetition": 3,
-    "ruleSpaces": false
+    "bullet": "-",
+    "fences": true,
+    "ruleRepetition": 3
   }
 }
