@@ -139,3 +139,5 @@ flycheck_*.el
 .metals/
 project/.bloop/
 project/project/.bloop/
+project/project/metals.sbt
+project/project/project/
