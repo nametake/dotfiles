@@ -1,8 +1,18 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "editor.codeActionsOnSaveTimeout": 3000,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'Hackgen', 'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
   "editor.renderWhitespace": "all",
