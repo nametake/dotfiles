@@ -17,6 +17,8 @@
   "editor.fontSize": 16,
   "editor.renderWhitespace": "all",
   "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "yarn",
+  "eslint.run": "onSave",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.insertFinalNewline": true,
