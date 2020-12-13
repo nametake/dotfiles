@@ -1,7 +1,5 @@
 " coc.nvim
 
-" let $NVIM_COC_LOG_LEVEL = 'debug'
-
 let g:coc_node_path = substitute(system('which node'), '\n', '', 'g')
 
 " Use tab for trigger completion with characters ahead and navigate.
