@@ -30,25 +30,33 @@ function! s:show_documentation()
   endif
 endfunction
 
-function JumpDefinitionWithSetTagStack() abort
+function CocActionWithSetTagStack(action) abort
   let l:old_location = [bufnr('%'), line('.'), col('.'), 0]
   let l:tagname = expand('<cword>')
   let l:winid = win_getid()
   call settagstack(l:winid, {'items': [{'from': l:old_location, 'tagname': l:tagname}]}, 'a')
   call settagstack(l:winid, {'curidx': len(gettagstack(l:winid)['items']) + 1})
-  call CocAction('jumpDefinition')
+  call CocActionAsync(a:action)
 endfunction
 
 autocmd MyAutoCmd CursorHold * silent call CocActionAsync('highlight')
 
-nnoremap <Plug>(jump-definition-with-settagstack) :<C-u>call JumpDefinitionWithSetTagStack()<CR>
+nnoremap <silent> <Plug>(coc-definition-with-settagstack) :<C-u>call CocActionWithSetTagStack('jumpDefinition')<CR>
+nnoremap <silent> <Plug>(coc-implementation-with-settagstack) :<C-u>call CocActionWithSetTagStack('jumpImplementation')<CR>
+nnoremap <silent> <Plug>(coc-type-definition-with-settagstack) :<C-u>call CocActionWithSetTagStack('jumpTypeDefinition')<CR>
+nnoremap <silent> <Plug>(coc-references-with-settagstack) :<C-u>call CocActionWithSetTagStack('jumpReferences')<CR>
+nnoremap <silent> <Plug>(coc-references-used-with-settagstack) :<C-u>call CocActionWithSetTagStack('jumpUsed')<CR>
 
 " Code jump
-" nmap <C-]> <Plug>(coc-definition)
-nmap <C-]> <Plug>(jump-definition-with-settagstack)
+nmap <C-]> <Plug>(coc-definition-with-settagstack)
+nmap <silent> gy <Plug>(coc-type-definition-with-settagstack)
+nmap <silent> gi <Plug>(coc-implementation-with-settagstack)
+nmap <silent> gr <Plug>(coc-references-with-settagstack)
+nmap <silent> gr <Plug>(coc-references-used-with-settagstack)
 
 nmap <silent> <Space>j <Plug>(coc-diagnostic-next)
 nmap <silent> <Space>k <Plug>(coc-diagnostic-prev)
+
 
 " Rename
 nmap <Space>r <Plug>(coc-rename)
