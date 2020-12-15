@@ -311,6 +311,7 @@ syntax sync minlines=1024
 syntax on
 
 colorscheme molokai
+highlight CursorLine ctermbg=242
 
 "}}}
 

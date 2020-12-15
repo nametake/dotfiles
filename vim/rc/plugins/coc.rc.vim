@@ -52,7 +52,7 @@ nmap <C-]> <Plug>(coc-definition-with-settagstack)
 nmap <silent> gy <Plug>(coc-type-definition-with-settagstack)
 nmap <silent> gi <Plug>(coc-implementation-with-settagstack)
 nmap <silent> gr <Plug>(coc-references-with-settagstack)
-nmap <silent> gr <Plug>(coc-references-used-with-settagstack)
+nmap <silent> gu <Plug>(coc-references-used-with-settagstack)
 
 nmap <silent> <Space>j <Plug>(coc-diagnostic-next)
 nmap <silent> <Space>k <Plug>(coc-diagnostic-prev)
