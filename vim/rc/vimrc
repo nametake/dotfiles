@@ -171,6 +171,7 @@ set foldenable
 set foldmethod=syntax
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
 set foldlevel=0
+set foldlevelstart=99
 set foldnestmax=16
 set foldcolumn=2
 
