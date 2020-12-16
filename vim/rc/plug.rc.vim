@@ -18,6 +18,8 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 " let g:indentLine_fileTypeExclude = ['markdown', 'json']
 
 Plug 'tomasr/molokai'
+
+Plug 'simeji/winresizer'
 " }}}
 
 " Text operation {{{
