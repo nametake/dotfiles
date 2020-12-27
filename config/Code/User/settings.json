@@ -16,6 +16,7 @@
   "editor.fontFamily": "'Hackgen', 'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
   "editor.renderWhitespace": "all",
+  "emmet.triggerExpansionOnTab": false,
   "eslint.alwaysShowStatus": true,
   "eslint.packageManager": "yarn",
   "eslint.run": "onSave",
