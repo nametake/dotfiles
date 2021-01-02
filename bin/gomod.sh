@@ -3,11 +3,11 @@ export GO111MODULE=on
 
 wd=$(pwd)
 
-for mod in ${@}; do
-  cd ${GOPATH}/src/${mod}
-  git pull
-  go mod download
-  go install
+for mod in "${@}"; do
+	cd "${GOPATH}/src/${mod}" || exit
+	git pull
+	go mod download
+	go install
 done
 
-cd ${wd}
+cd "${wd}" || exit

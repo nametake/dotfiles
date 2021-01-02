@@ -65,7 +65,7 @@ GO_TOOLS := \
 	golang.org/x/tools/cmd/goimports \
 	mvdan.cc/gofumpt \
 	mvdan.cc/gofumpt/gofumports \
-	golang.org/x/tools/gopls \
+	golang.org/x/tools/gopls@latest \
 	github.com/sourcegraph/go-langserver \
 	github.com/mattn/efm-langserver \
 	honnef.co/go/tools/staticcheck \
@@ -137,7 +137,7 @@ brew_update: ## Update brew tools
 	brew cleanup
 
 go_get: ## Install go cli tools
-	@export GO111MODULE=on; go get -u $(GO_TOOLS)
+	./bin/go_get.sh $(GO_TOOLS)
 
 npm_install: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
