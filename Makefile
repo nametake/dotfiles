@@ -106,7 +106,7 @@ NPM_TOOLS := \
 
 PIP_TOOLS := \
 	pip \
-	neovim \
+	pynvim \
 	awscli \
 	git+https://github.com/Vimjas/vint.git@master \
 	git+https://github.com/pre-commit/pre-commit.git@master \
