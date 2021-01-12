@@ -137,7 +137,7 @@ brew_update: ## Update brew tools
 	brew cleanup
 
 go_get: ## Install go cli tools
-	./bin/go_get.sh $(GO_TOOLS)
+	@./bin/go_get.sh $(GO_TOOLS)
 
 npm_install: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
