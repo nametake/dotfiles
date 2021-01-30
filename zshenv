@@ -59,6 +59,11 @@ export NODEBREW_ROOT=${HOME}/.nodebrew
 [ -e ${HOME}/.kube ] && \
   export KUBECONFIG="$KUBECONFIG:`ls ${HOME}/.kube/*.yml | tr '\n' ':'`"
 
+# Flutter
+export FLUTTER_ROOT=${HOME}/.local/share/flutter
+[ -e ${FLUTTER_ROOT} ] && \
+  export PATH=${FLUTTER_ROOT}/bin:$PATH
+
 # GCP
 export GOOGLE_CLOUD_SDK=${HOME}/.local/share/google-cloud-sdk
 export GOAPP=${GOOGLE_CLOUD_SDK}/platform/google_appengine
