@@ -46,7 +46,6 @@ PKG_MANAGER_TOOLS := \
 	go \
 	node \
 	yarn \
-	python2 \
 	python3 \
 	peco \
 	ghq \
