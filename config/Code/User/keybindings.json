@@ -1,175 +1,184 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "ctrl+p",
-    "command": "workbench.action.quickOpen",
-    "when": "!suggestWidgetVisible && editorTextFocus"
+    "command": "-workbench.action.toggleEditorGroupLayout",
+    "key": "alt+cmd+0"
   },
   {
-    "key": "ctrl+p",
-    "command": "workbench.action.quickOpen",
-    "when": "!suggestWidgetVisible && filesExplorerFocus"
+    "command": "-workbench.action.nextEditor",
+    "key": "alt+cmd+right"
   },
   {
-    "key": "cmd+p",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
-    "key": "ctrl+t n",
-    "command": "workbench.action.nextEditor"
-  },
-  {
-    "key": "alt+cmd+right",
-    "command": "-workbench.action.nextEditor"
-  },
-  {
-    "key": "ctrl+t p",
-    "command": "workbench.action.previousEditor"
-  },
-  {
-    "key": "shift+cmd+[",
-    "command": "-workbench.action.previousEditor"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.focusLeftGroup"
-  },
-  {
-    "key": "cmd+k cmd+left",
-    "command": "-workbench.action.focusLeftGroup"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.focusRightGroup"
-  },
-  {
-    "key": "cmd+k cmd+right",
-    "command": "-workbench.action.focusRightGroup"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.focusBelowGroup"
-  },
-  {
-    "key": "cmd+k cmd+down",
-    "command": "-workbench.action.focusBelowGroup"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.focusAboveGroup"
-  },
-  {
-    "key": "cmd+k cmd+up",
-    "command": "-workbench.action.focusAboveGroup"
-  },
-  {
-    "key": "space f",
-    "command": "workbench.view.explorer",
-    "when": "editorFocus && vim.mode == 'Normal'"
-  },
-  {
-    "key": "shift+cmd+e",
-    "command": "-workbench.view.explorer"
-  },
-  {
-    "key": "s",
-    "command": "explorer.openToSide",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  },
-  {
-    "key": "ctrl+enter",
-    "command": "-explorer.openToSide",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  },
-  {
-    "key": "m m",
-    "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "enter",
-    "command": "-renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "ctrl+s",
-    "command": "workbench.action.findInFiles"
-  },
-  {
-    "key": "shift+cmd+f",
-    "command": "-workbench.action.findInFiles"
-  },
-  {
-    "key": "ctrl+w space",
-    "command": "workbench.action.toggleEditorGroupLayout"
-  },
-  {
-    "key": "alt+cmd+0",
-    "command": "-workbench.action.toggleEditorGroupLayout"
-  },
-  {
-    "key": "ctrl+- ctrl+-",
-    "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+/",
     "command": "-editor.action.commentLine",
+    "key": "cmd+/",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "enter",
-    "command": "list.select",
-    "when": "explorerViewletFocus && !inputFocus && filesExplorerFocus"
+    "command": "-workbench.action.focusBelowGroup",
+    "key": "cmd+k cmd+down"
   },
   {
-    "key": "enter",
-    "command": "list.toggleExpand",
-    "when": "explorerViewletFocus && !inputFocus && explorerResourceIsFolder"
+    "command": "-workbench.action.focusLeftGroup",
+    "key": "cmd+k cmd+left"
   },
   {
-    "key": "x",
-    "command": "list.collapse",
-    "when": "explorerViewletFocus && !inputFocus"
+    "command": "-workbench.action.focusRightGroup",
+    "key": "cmd+k cmd+right"
   },
   {
-    "key": "m a",
-    "command": "explorer.newFile",
-    "when": "explorerViewletFocus && !inputFocus"
+    "command": "-workbench.action.focusAboveGroup",
+    "key": "cmd+k cmd+up"
   },
   {
-    "key": "m d",
-    "command": "deleteFile",
-    "when": "explorerViewletFocus && !inputFocus"
+    "command": "-workbench.action.quickOpen",
+    "key": "cmd+p"
   },
   {
-    "key": "ctrl+k",
-    "command": "jumpToNextSnippetPlaceholder",
-    "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
+    "command": "editor.action.commentLine",
+    "key": "ctrl+- ctrl+-",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+k",
+    "command": "-explorer.openToSide",
+    "key": "ctrl+enter",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "command": "workbench.action.focusLeftGroup",
+    "key": "ctrl+h"
+  },
+  {
+    "command": "workbench.action.focusBelowGroup",
+    "key": "ctrl+j"
+  },
+  {
     "command": "acceptSelectedSuggestion",
+    "key": "ctrl+k",
     "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "ctrl+k",
     "command": "insertSnippet",
+    "key": "ctrl+k",
     "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
   },
   {
-    "key": "space c",
+    "command": "jumpToNextSnippetPlaceholder",
+    "key": "ctrl+k",
+    "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
+  },
+  {
+    "command": "workbench.action.focusAboveGroup",
+    "key": "ctrl+k"
+  },
+  {
+    "command": "workbench.action.focusRightGroup",
+    "key": "ctrl+l"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "ctrl+p",
+    "when": "!suggestWidgetVisible && editorTextFocus"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "ctrl+p",
+    "when": "!suggestWidgetVisible && filesExplorerFocus"
+  },
+  {
+    "command": "workbench.action.findInFiles",
+    "key": "ctrl+s"
+  },
+  {
+    "command": "workbench.action.nextEditor",
+    "key": "ctrl+t n"
+  },
+  {
+    "command": "workbench.action.previousEditor",
+    "key": "ctrl+t p"
+  },
+  {
+    "command": "workbench.action.toggleEditorGroupLayout",
+    "key": "ctrl+w space"
+  },
+  {
+    "command": "-renameFile",
+    "key": "enter",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "command": "list.select",
+    "key": "enter",
+    "when": "explorerViewletFocus && !inputFocus && filesExplorerFocus"
+  },
+  {
+    "command": "list.toggleExpand",
+    "key": "enter",
+    "when": "explorerViewletFocus && !inputFocus && explorerResourceIsFolder"
+  },
+  {
+    "command": "-editor.action.rename",
+    "key": "f2",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "explorer.newFile",
+    "key": "m a",
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "m d",
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "m m",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "command": "explorer.openToSide",
+    "key": "s",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "command": "-workbench.action.previousEditor",
+    "key": "shift+cmd+["
+  },
+  {
+    "command": "-workbench.view.explorer",
+    "key": "shift+cmd+e"
+  },
+  {
+    "command": "-workbench.action.findInFiles",
+    "key": "shift+cmd+f"
+  },
+  {
     "command": "extension.changeCase.commands",
+    "key": "space c",
     "when": "editorTextFocus && vim.mode == 'Normal'"
   },
   {
-    "key": "space r",
-    "command": "editor.action.rename",
+    "command": "workbench.view.explorer",
+    "key": "space f",
+    "when": "editorFocus && vim.mode == 'Normal'"
+  },
+  {
+    "command": "editor.action.marker.next",
+    "key": "space j",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && vim.mode == 'Normal'"
   },
   {
-    "key": "f2",
-    "command": "-editor.action.rename",
-    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    "command": "editor.action.marker.prev",
+    "key": "space k",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && vim.mode == 'Normal'"
+  },
+  {
+    "command": "editor.action.rename",
+    "key": "space r",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly && vim.mode == 'Normal'"
+  },
+  {
+    "command": "list.collapse",
+    "key": "x",
+    "when": "explorerViewletFocus && !inputFocus"
   }
 ]
