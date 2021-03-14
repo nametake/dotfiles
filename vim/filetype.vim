@@ -26,8 +26,8 @@ augroup filetypedetect
   " markdown
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
   " json
-  autocmd BufNewFile,BufRead .{*rc,tern-config} set filetype=json
-  autocmd BufNewFile,BufRead {*rc,tern-config} set filetype=json
+  " autocmd BufNewFile,BufRead .{*rc,tern-config} set filetype=json
+  " autocmd BufNewFile,BufRead {*rc,tern-config} set filetype=json
   " vim
   autocmd BufNewFile,BufRead .vimrc set filetype=vim
   autocmd BufNewFile,BufRead vimrc set filetype=vim

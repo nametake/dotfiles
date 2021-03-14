@@ -42,10 +42,12 @@ nmap ga <Plug>(EasyAlign)
 
 Plug 'tpope/vim-abolish'
 
-Plug 'bfredl/nvim-miniyank'
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
-map <C-n> <Plug>(miniyank-cycle)
+if has('nvim')
+  Plug 'bfredl/nvim-miniyank'
+  map p <Plug>(miniyank-autoput)
+  map P <Plug>(miniyank-autoPut)
+  map <C-n> <Plug>(miniyank-cycle)
+endif
 
 Plug 'thinca/vim-template'
 
