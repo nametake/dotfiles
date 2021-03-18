@@ -472,7 +472,7 @@
           "run",
           "--enable-all",
           "--disable",
-          "lll",
+          "lll,exhaustivestruct",
           "--out-format",
           "json"
         ]
