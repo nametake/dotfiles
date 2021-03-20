@@ -135,6 +135,16 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'honza/vim-snippets'
 
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+source ~/.vim/rc/plugins/vim-lsp.rc.vim
+
 " let $NVIM_COC_LOG_LEVEL = 'debug'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " source ~/.vim/rc/plugins/coc.rc.vim
@@ -146,22 +156,24 @@ Plug 'honza/vim-snippets'
 " Language {{{
 
 " Go {{{
+Plug 'mattn/vim-goimports'
+
 " Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
 " source ~/.vim/rc/plugins/vim-go.vim
 
-Plug 'arp242/gopher.vim', {'for': ['go']}
-let g:gopher_highlight = [
-      \   'string-fmt',
-      \   'string-spell',
-      \   'fold-block',
-      \   'fold-varconst',
-      \ ]
-let g:gopher_map = {
-      \   '_popup': 0,
-      \   '_imap_prefix': '<C-g>',
-      \   '_imap_ctrl': 1,
-      \ }
-nmap ; <Plug>(gopher-popup)
+" Plug 'arp242/gopher.vim', {'for': ['go']}
+" let g:gopher_highlight = [
+"       \   'string-fmt',
+"       \   'string-spell',
+"       \   'fold-block',
+"       \   'fold-varconst',
+"       \ ]
+" let g:gopher_map = {
+"       \   '_popup': 0,
+"       \   '_imap_prefix': '<C-g>',
+"       \   '_imap_ctrl': 1,
+"       \ }
+" nmap ; <Plug>(gopher-popup)
 
 Plug 'buoto/gotests-vim', {'for': ['go']}
 
