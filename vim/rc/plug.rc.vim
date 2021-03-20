@@ -136,11 +136,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
 
 " let $NVIM_COC_LOG_LEVEL = 'debug'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-source ~/.vim/rc/plugins/coc.rc.vim
-
-  Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-  Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" source ~/.vim/rc/plugins/coc.rc.vim
+"
+"   Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+"   Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " Language {{{
@@ -174,15 +174,15 @@ Plug 'nametake/vim-goiferr-snippets', {'for': ['go']}
 " Rust {{{
 Plug 'rust-lang/rust.vim', {'for': ['rust']}
 
-Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " TypeScript {{{
-Plug 'neoclide/coc-tsserver',  {'do': 'yarn install --frozen-lockfile'}
-
-Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
-
-Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-tsserver',  {'do': 'yarn install --frozen-lockfile'}
+"
+" Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
+"
+" Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
 
@@ -229,8 +229,8 @@ Plug 'ejholmes/vim-forcedotcom', {'for': ['apex']}
 " Scala {{{
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
-nmap <Space>ws <Plug>(coc-metals-expand-decoration)
+" Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+" nmap <Space>ws <Plug>(coc-metals-expand-decoration)
 " }}}
 
 " }}}
