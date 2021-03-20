@@ -23,7 +23,12 @@ nnoremap <C-o> :<C-u>action Forward<CR>
 nnoremap <C-S-i> <C-i>
 nnoremap <C-S-o> <C-o>
 nnoremap <C-t><C-t> <C-t>
-nnoremap <C-S-]> :<C-u>action GotoImplementation<CR>
+nnoremap gd :<C-u>action GotoDeclaration<CR>
+nnoremap gr :<C-u>action FindUsages<CR>
+nnoremap gi :<C-u>action GotoImplementation<CR>
+nnoremap gt :<C-u>action GotoTypeDeclaration<CR>
+nnoremap <Space>j :<C-u>action GotoNextError<CR>
+nnoremap <Space>k :<C-u>action GotoPreviousError<CR>
 
 " Split
 nnoremap <C-t>n :<C-u>action NextTab<CR>
