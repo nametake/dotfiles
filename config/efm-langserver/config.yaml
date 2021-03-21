@@ -8,15 +8,6 @@ root-markers:
 # log-level: 1
 
 tools:
-  go-gofmtrlx: &go-gofmtrlx
-    format-command: gofmtrlx
-  go-gofumports: &go-gofumports
-    format-command: gofumports
-  go-gofumpt: &go-gofumpt
-    format-command: gofumpt
-  go-goimports: &go-goimports
-    format-command: goimports
-
   json-jq: &json-jq
     lint-command: 'jq .'
 
@@ -28,8 +19,6 @@ tools:
     lint-stdin: true
 
 languages:
-  go:
-    - <<: *go-gofmtrlx
   json:
     - <<: *json-jq
     - <<: *json-fixjson

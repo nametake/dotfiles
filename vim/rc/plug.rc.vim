@@ -157,6 +157,8 @@ source ~/.vim/rc/plugins/vim-lsp.rc.vim
 
 " Go {{{
 Plug 'mattn/vim-goimports'
+let g:goimports_cmd = 'gofumports'
+let g:goimports_simplify_cmd = 'gofumpt'
 
 " Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
 " source ~/.vim/rc/plugins/vim-go.vim
