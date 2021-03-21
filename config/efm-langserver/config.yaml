@@ -1,9 +1,21 @@
 ---
 version: 2
 
+root-markers:
+  - .git/
+
+# log-file: /Users/nametake/Downloads/output.log
+# log-level: 1
+
 tools:
-  golangci-lint: &golangci-lint
-    lint-command: 'golangci-lint run --enable-all'
+  go-gofmtrlx: &go-gofmtrlx
+    format-command: gofmtrlx
+  go-gofumports: &go-gofumports
+    format-command: gofumports
+  go-gofumpt: &go-gofumpt
+    format-command: gofumpt
+  go-goimports: &go-goimports
+    format-command: goimports
 
   json-jq: &json-jq
     lint-command: 'jq .'
@@ -17,7 +29,7 @@ tools:
 
 languages:
   go:
-    - <<: *golangci-lint
+    - <<: *go-gofmtrlx
   json:
     - <<: *json-jq
     - <<: *json-fixjson
