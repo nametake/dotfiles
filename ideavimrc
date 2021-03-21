@@ -41,4 +41,4 @@ nnoremap <C-t>h :<C-u>action PrevSplitter<CR>
 nnoremap <Space>f :<C-u>action ActivateProjectToolWindow<CR>
 nnoremap <Space>r :<C-u>action RenameElement<CR>
 
-nnoremap <M-.> :<C-u>action ShowIntentionActions<CR>
+nnoremap ; :<C-u>action ShowIntentionActions<CR>
