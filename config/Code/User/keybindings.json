@@ -1,5 +1,10 @@
 [
   {
+    "command": "editor.action.quickFix",
+    "key": ";",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
     "command": "-workbench.action.toggleEditorGroupLayout",
     "key": "alt+cmd+0"
   },
