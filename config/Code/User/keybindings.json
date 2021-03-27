@@ -2,7 +2,7 @@
   {
     "command": "editor.action.quickFix",
     "key": ";",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly && vim.mode == 'Normal'"
   },
   {
     "command": "-workbench.action.toggleEditorGroupLayout",
