@@ -14,10 +14,10 @@ DOTFILES := \
 	config/efm-langserver \
 	config/karabiner \
 	config/Code \
+	config/tmux \
 	vimrc \
 	vim \
 	config/nvim \
-	tmux.conf \
 	gitconfig \
 	gitignore \
 	git_template \
