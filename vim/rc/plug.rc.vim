@@ -133,14 +133,26 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
 " Complement {{{
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger       = "<C-k>"
+let g:UltiSnipsJumpForwardTrigger  = "<C-k>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+
 Plug 'honza/vim-snippets'
 
 Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-inoremap <expr> <C-k>   pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+inoremap <expr> <C-k>   pumvisible() ? asyncomplete#close_popup() : "\<C-k>"
+
+autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+    \ 'name': 'ultisnips',
+    \ 'allowlist': ['*'],
+    \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+    \ }))
 
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
