@@ -149,9 +149,9 @@ inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 inoremap <expr> <C-k>   pumvisible() ? asyncomplete#close_popup() : "\<C-k>"
 
 autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
-    \ 'name': 'ultisnips',
-    \ 'allowlist': ['*'],
-    \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+    \   'name': 'ultisnips',
+    \   'allowlist': ['*'],
+    \   'completor': function('asyncomplete#sources#ultisnips#completor'),
     \ }))
 
 Plug 'prabirshrestha/vim-lsp'
