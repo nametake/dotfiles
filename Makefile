@@ -141,7 +141,7 @@ npm_install: ## Install npm cli tools
 	npm install -g $(NPM_TOOLS)
 
 pip_install: ## Install pip tools
-	pip install --upgrade $(PIP_TOOLS)
+	# pip install --upgrade $(PIP_TOOLS)
 	pip3 install --upgrade $(PIP_TOOLS)
 
 gcloud: ## Install gcloud cli tools
