@@ -53,7 +53,6 @@ PKG_MANAGER_TOOLS := \
 	hub \
 	yamllint \
 	hadolint \
-	create-react-app \
 	hugo \
 
 BREW_TOOLS := \

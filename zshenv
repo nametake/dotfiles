@@ -13,6 +13,10 @@ bindkey -e
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export XDG_CONFIG_HOME=~/.config
 
+# Homebrew bin
+[ -e /opt/homebrew/bin ] && \
+  export PATH=/opt/homebrew/bin:${PATH}
+
 # local bin
 [ -e ${HOME}/.local/bin ] && \
   export PATH=${HOME}/.local/bin:${PATH}
