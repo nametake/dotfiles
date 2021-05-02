@@ -148,7 +148,7 @@ gcloud: ## Install gcloud cli tools
 	@./bin/gcloud.sh
 
 fish_plugin_update: ## Update fish plugins
-	fish -c fisher
+	fish -c 'fisher update'
 
 vim_plugin_update: ## Update vim plugins
 	vim -c PlugUpdate -c PlugUpgrade -c q -c 'set filetype=go' -c GoSetup -c q
