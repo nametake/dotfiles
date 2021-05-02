@@ -8,6 +8,10 @@ let g:lsp_settings['efm-langserver'] = {
   \  'disabled': v:false,
   \}
 
+" Vim {{{
+let g:lsp_settings_filetype_vim = ['vim-language-server', 'efm-langserver']
+" }}}
+
 " json {{{
 let g:lsp_settings_filetype_json = ['efm-langserver']
 " }}}
