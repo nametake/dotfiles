@@ -13,6 +13,11 @@ tools:
 
   json-fixjson: &json-fixjson
     format-command: 'fixjson'
+    format-stdin: true
+
+  json-jq-format: &json-jq-format
+    format-command: 'jq . --sort-keys'
+    format-stdin: true
 
   yaml-yamllint: &yaml-yamllint
     lint-command: 'yamllint -f parsable -'
@@ -22,5 +27,6 @@ languages:
   json:
     - <<: *json-jq
     - <<: *json-fixjson
+    - <<: *json-jq-format
   yaml:
     - <<: *yaml-yamllint

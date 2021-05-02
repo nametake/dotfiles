@@ -1,6 +1,6 @@
 " vim-lsp
 
-let g:lsp_settings_filetype_go = ['gopls', 'golangci-lint-langserver']
+let g:lsp_diagnostics_float_cursor = 1
 
 let g:lsp_settings = {}
 
@@ -8,6 +8,12 @@ let g:lsp_settings['efm-langserver'] = {
   \  'disabled': v:false,
   \}
 
+" json {{{
+let g:lsp_settings_filetype_json = ['efm-langserver']
+" }}}
+
+" Go {{{
+let g:lsp_settings_filetype_go = ['gopls', 'golangci-lint-langserver']
 let g:lsp_settings['golangci-lint-langserver'] = {
   \  'initialization_options': {
   \    'command': ['golangci-lint', 'run',
@@ -20,8 +26,7 @@ let g:lsp_settings['golangci-lint-langserver'] = {
   \    ],
   \  },
   \}
-
-let g:lsp_diagnostics_float_cursor = 1
+" }}}
 
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
