@@ -8,12 +8,6 @@ root-markers:
 # log-level: 1
 
 tools:
-  vim-vint: &vim-vint
-    lint-command: 'vint -'
-    lint-stdin: true
-    lint-formats:
-      - '%f:%l:%c: %m'
-
   json-jq: &json-jq
     lint-command: 'jq .'
 
@@ -29,6 +23,12 @@ tools:
     lint-command: 'yamllint -f parsable -'
     lint-stdin: true
 
+  vim-vint: &vim-vint
+    lint-command: 'vint -'
+    lint-stdin: true
+    lint-formats:
+      - '%f:%l:%c: %m'
+
 languages:
   json:
     - <<: *json-jq
@@ -36,6 +36,5 @@ languages:
     - <<: *json-jq-format
   yaml:
     - <<: *yaml-yamllint
-
   vim:
     - <<: *vim-vint
