@@ -4,8 +4,8 @@ version: 2
 root-markers:
   - .git/
 
-# log-file: /Users/nametake/Downloads/output.log
-# log-level: 1
+log-file: /Users/nametake/Downloads/output.log
+log-level: 1
 
 tools:
   json-jq: &json-jq
@@ -17,6 +17,18 @@ tools:
 
   json-jq-format: &json-jq-format
     format-command: 'jq . --sort-keys'
+    format-stdin: true
+
+  sh-shellcheck: &sh-shellcheck
+    lint-command: 'shellcheck -f gcc -x'
+    lint-source: 'shellcheck'
+    lint-formats:
+      - '%f:%l:%c: %trror: %m'
+      - '%f:%l:%c: %tarning: %m'
+      - '%f:%l:%c: %tote: %m'
+
+  sh-shfmt: &sh-shfmt
+    format-command: 'shfmt -ci -s -bn'
     format-stdin: true
 
   yaml-yamllint: &yaml-yamllint
@@ -34,6 +46,9 @@ languages:
     - <<: *json-jq
     - <<: *json-fixjson
     - <<: *json-jq-format
+  sh:
+    # - <<: *sh-shellcheck # TODO M1 support
+    - <<: *sh-shfmt
   yaml:
     - <<: *yaml-yamllint
   vim:
