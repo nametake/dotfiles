@@ -8,6 +8,11 @@ log-file: /Users/nametake/Downloads/output.log
 log-level: 1
 
 tools:
+  dockerfile-hadolint: &dockerfile-hadolint
+    lint-command: 'hadolint'
+    lint-formats:
+      - '%f:%l %m'
+
   json-jq: &json-jq
     lint-command: 'jq .'
 
@@ -42,6 +47,8 @@ tools:
       - '%f:%l:%c: %m'
 
 languages:
+  dockerfile:
+    # - <<: *docker-hadolint # TODO M1 support
   json:
     - <<: *json-jq
     - <<: *json-fixjson
