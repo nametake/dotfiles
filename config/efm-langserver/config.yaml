@@ -8,6 +8,27 @@ log-file: /Users/nametake/Downloads/output.log
 log-level: 1
 
 tools:
+  css-stylelint: &css-stylelint
+    lint-command: './node_modules/.bin/stylelint --stdin --stdin-filename ${INPUT}'
+    lint-ignore-exit-code: false
+    lint-stdin: true
+    lint-formats:
+      - '%-P%f'
+      - '%*[\ ]%l:%c%*[\ ]%*[✖⚠]%*[\ ]%m'
+      - '%-Q'
+
+  javascript-eslint: &javascript-eslint
+    lint-command: './node_modules/.bin/eslint -f visualstudio --stdin --stdin-filename ${INPUT}'
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    lint-formats:
+      - "%f(%l,%c): %tarning %m"
+      - "%f(%l,%c): %rror %m"
+
+  javascript-prettier: &javascript-prettier
+    format-command: './node_modules/.bin/prettier --stdin-filepath ${INPUT}'
+    format-stdin: true
+
   dockerfile-hadolint: &dockerfile-hadolint
     lint-command: 'hadolint'
     lint-formats:
@@ -46,6 +67,11 @@ tools:
     lint-formats:
       - '%f:%l:%c: %m'
 
+frontend: &frontend
+  - <<: *css-stylelint
+  - <<: *javascript-eslint
+  - <<: *javascript-prettier
+
 languages:
   dockerfile:
     # - <<: *docker-hadolint # TODO M1 support
@@ -56,6 +82,10 @@ languages:
   sh:
     # - <<: *sh-shellcheck # TODO M1 support
     - <<: *sh-shfmt
+  javascript: *frontend
+  javascriptreact: *frontend
+  typescript: *frontend
+  typescriptreact: *frontend
   yaml:
     - <<: *yaml-yamllint
   vim:

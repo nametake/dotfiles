@@ -36,6 +36,15 @@ let g:lsp_settings['golangci-lint-langserver'] = {
   \}
 " }}}
 
+" Frontend {{{
+let s:frontend_lsp =  ['typescript-language-server', 'efm-langserver']
+let g:lsp_settings_filetype_javascript = s:frontend_lsp
+let g:lsp_settings_filetype_javascriptreact = s:frontend_lsp
+let g:lsp_settings_filetype_typescript = s:frontend_lsp
+let g:lsp_settings_filetype_typescriptreact = s:frontend_lsp
+autocmd MyAutoCmd BufWritePre *.js,*.jsx,*.ts,*.tsx call execute('LspDocumentFormatSync --server=efm-langserver')
+" }}}
+
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
@@ -47,8 +56,8 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <silent> gi <plug>(lsp-implementation)
   nmap <silent> gt <plug>(lsp-type-definition)
   nmap <silent> <Space>r <plug>(lsp-rename)
-  nmap <silent> <Space>j <plug>(lsp-previous-diagnostic)
-  nmap <silent> <Space>k <plug>(lsp-next-diagnostic)
+  nmap <silent> <Space>k <plug>(lsp-previous-diagnostic)
+  nmap <silent> <Space>j <plug>(lsp-next-diagnostic)
   nmap <silent> K <plug>(lsp-hover)
   inoremap <silent> <expr><c-f> lsp#scroll(+4)
   inoremap <silent> <expr><c-d> lsp#scroll(-4)
