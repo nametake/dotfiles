@@ -8,6 +8,11 @@ log-file: /Users/nametake/Downloads/output.log
 log-level: 1
 
 tools:
+  apex-pmd: &apex-pmd
+    lint-command: 'pmd pmd -format textpad -rulesets apex-quickstart -d ${INPUT}'
+    lint-formats:
+      - '%f(%l, %r):  %m'
+
   css-stylelint: &css-stylelint
     lint-command: './node_modules/.bin/stylelint --stdin --stdin-filename ${INPUT}'
     lint-ignore-exit-code: false
@@ -101,6 +106,8 @@ frontend: &frontend
   - <<: *javascript-prettier
 
 languages:
+  apex:
+    - <<: *apex-pmd
   dockerfile:
     # - <<: *docker-hadolint # TODO M1 support
   json:
