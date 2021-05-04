@@ -4,8 +4,8 @@ version: 2
 root-markers:
   - .git/
 
-log-file: /Users/nametake/Downloads/output.log
-log-level: 1
+# log-file: /Users/nametake/Downloads/output.log
+# log-level: 1
 
 tools:
   apex-pmd: &apex-pmd
