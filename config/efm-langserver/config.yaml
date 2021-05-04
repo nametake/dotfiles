@@ -45,6 +45,19 @@ tools:
     format-command: 'jq . --sort-keys'
     format-stdin: true
 
+  markdown-remark-format: &markdown-remark-format
+    format-command: 'remark --no-color --silent'
+    format-stdin: true
+
+  markdown-remark-lint: &markdown-remark-lint
+    lint-command: 'remark --no-stdout --no-color --frail'
+    lint-formats:
+      - '%-P%f'
+      - '%#%l:%c %# %trror  %m'
+      - '%#%l:%c %# %tarning  %m'
+      - '%-Q'
+      - '%-G%.%#'
+
   proto-buf: &proto-buf
     lint-command: 'buf check lint --file ${INPUT}'
     lint-formats:
@@ -89,6 +102,9 @@ languages:
     - <<: *sh-shfmt
   javascript: *frontend
   javascriptreact: *frontend
+  markdown:
+    - <<: *markdown-remark-lint
+    - <<: *markdown-remark-format
   proto:
     - <<: *proto-buf
   typescript: *frontend

@@ -39,6 +39,9 @@ export CARGO_PATH=${HOME}/.cargo
 [ -e /usr/local/lib/node_modules ] && \
   export NODE_PATH=/usr/local/lib/node_modules
 
+[ -e /opt/homebrew/lib/node_modules ] && \
+  export NODE_PATH=/opt/homebrew/lib/node_modules
+
 # env tools
 export ANYENV=${HOME}/.anyenv
 [ -e ${ANYENV} ] && \
