@@ -17,6 +17,11 @@ tools:
       - '%*[\ ]%l:%c%*[\ ]%*[✖⚠]%*[\ ]%m'
       - '%-Q'
 
+  dockerfile-hadolint: &dockerfile-hadolint
+    lint-command: 'hadolint'
+    lint-formats:
+      - '%f:%l %m'
+
   javascript-eslint: &javascript-eslint
     lint-command: './node_modules/.bin/eslint -f visualstudio --stdin --stdin-filename ${INPUT}'
     lint-ignore-exit-code: true
@@ -29,11 +34,6 @@ tools:
     format-command: './node_modules/.bin/prettier --stdin-filepath ${INPUT}'
     format-stdin: true
 
-  dockerfile-hadolint: &dockerfile-hadolint
-    lint-command: 'hadolint'
-    lint-formats:
-      - '%f:%l %m'
-
   json-jq: &json-jq
     lint-command: 'jq .'
 
@@ -44,6 +44,11 @@ tools:
   json-jq-format: &json-jq-format
     format-command: 'jq . --sort-keys'
     format-stdin: true
+
+  proto-buf: &proto-buf
+    lint-command: 'buf check lint --file ${INPUT}'
+    lint-formats:
+      - '%f:%l:%c:%m'
 
   sh-shellcheck: &sh-shellcheck
     lint-command: 'shellcheck -f gcc -x'
@@ -84,6 +89,8 @@ languages:
     - <<: *sh-shfmt
   javascript: *frontend
   javascriptreact: *frontend
+  proto:
+    - <<: *proto-buf
   typescript: *frontend
   typescriptreact: *frontend
   yaml:
