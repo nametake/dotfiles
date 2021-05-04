@@ -20,6 +20,9 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 Plug 'tomasr/molokai'
 
 Plug 'simeji/winresizer'
+
+Plug 'biosugar0/vim-popyank'
+nmap <Space>y <Plug>(PopYank)
 " }}}
 
 " Text operation {{{
