@@ -58,6 +58,16 @@ tools:
       - '%-Q'
       - '%-G%.%#'
 
+  markdown-textlint: &markdown-textlint
+    lint-command: 'textlint --stdin --stdin-filename ${INPUT}'
+    lint-stdin: true
+    lint-formats:
+      - '%-P%f'
+      - '%#%l:%c %# %trror  %m'
+      - '%#%l:%c %# %tarning  %m'
+      - '%-Q'
+      - '%-G%.%#'
+
   proto-buf: &proto-buf
     lint-command: 'buf check lint --file ${INPUT}'
     lint-formats:
@@ -105,6 +115,7 @@ languages:
   markdown:
     - <<: *markdown-remark-lint
     - <<: *markdown-remark-format
+    - <<: *markdown-textlint
   proto:
     - <<: *proto-buf
   typescript: *frontend
