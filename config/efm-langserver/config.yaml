@@ -122,7 +122,7 @@ languages:
   markdown:
     - <<: *markdown-remark-lint
     - <<: *markdown-remark-format
-    - <<: *markdown-textlint
+    # - <<: *markdown-textlint
   proto:
     - <<: *proto-buf
   typescript: *frontend
