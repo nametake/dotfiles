@@ -1,5 +1,11 @@
 " vim-lsp
 
+let g:lsp_format_on_save = 1
+
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+" let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+
 let g:lsp_diagnostics_float_cursor = 1
 
 let g:lsp_settings = {}
@@ -64,7 +70,9 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <silent> ; <plug>(lsp-code-action)
 
   let g:lsp_format_sync_timeout = 1000
-  autocmd MyAutoCmd BufWritePre <buffer> call execute('LspDocumentFormatSync')
+  if g:lsp_format_on_save
+    autocmd MyAutoCmd BufWritePre <buffer> call execute('LspDocumentFormatSync')
+  endif
 
   " refer to doc to add more commands
 endfunction
