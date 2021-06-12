@@ -120,11 +120,20 @@ update: brew_update go_get rustup_update npm_install pip_install fish_plugin_upd
 link: ## Create symbolic link
 	./bin/ln_dotfiles.sh $(DOTFILES)
 
+install: zplug tmp asdf
+
 zplug: ## Install zplug
 	@./bin/zplug.sh
 
 tmp: ## Install tmux plugin manager
 	@./bin/tmp.sh
+
+asdf: ## INstall asdf
+	@git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+	@cd ~/.asdf
+	@git checkout "$(git describe --abbrev=0 --tags)"
+	@mkdir -p ~/.config/fish/completions
+	@cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 
 brew_install: ## Install brew tools
 	brew install $(PKG_MANAGER_TOOLS) $(BREW_TOOLS)

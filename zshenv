@@ -43,6 +43,10 @@ export CARGO_PATH=${HOME}/.cargo
   export NODE_PATH=/opt/homebrew/lib/node_modules
 
 # env tools
+export ASDF=${HOME}/.asdf
+[ -e ${ASDF} ] && \
+  . ${ASDF}/asdf.sh
+#
 export ANYENV=${HOME}/.anyenv
 [ -e ${ANYENV} ] && \
   export PATH=${ANYENV}/bin:${PATH} && \
