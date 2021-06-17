@@ -47,24 +47,24 @@ export ASDF=${HOME}/.asdf
 [ -e ${ASDF} ] && \
   . ${ASDF}/asdf.sh
 #
-export ANYENV=${HOME}/.anyenv
-[ -e ${ANYENV} ] && \
-  export PATH=${ANYENV}/bin:${PATH} && \
-  eval "$(anyenv init - zsh)"
-
-export PYENV_ROOT=${HOME}/.pyenv
-export RBENV_ROOT=${HOME}/.rbenv
-export NODEBREW_ROOT=${HOME}/.nodebrew
-
-[ -e ${PYENV_ROOT} ] && \
-  export PATH=${PYENV_ROOT}/bin:$PATH && \
-  eval "$(pyenv init -)"
-
-[ -e ${RBENV_ROOT} ] && \
-  export PATH=${RBENV_ROOT}/bin:$PATH
-
-[ -e ${NODEBREW_ROOT} ] && \
-  export PATH=${NODEBREW_ROOT}/current/bin:$PATH
+# export ANYENV=${HOME}/.anyenv
+# [ -e ${ANYENV} ] && \
+#   export PATH=${ANYENV}/bin:${PATH} && \
+#   eval "$(anyenv init - zsh)"
+#
+# export PYENV_ROOT=${HOME}/.pyenv
+# export RBENV_ROOT=${HOME}/.rbenv
+# export NODEBREW_ROOT=${HOME}/.nodebrew
+#
+# [ -e ${PYENV_ROOT} ] && \
+#   export PATH=${PYENV_ROOT}/bin:$PATH && \
+#   eval "$(pyenv init -)"
+#
+# [ -e ${RBENV_ROOT} ] && \
+#   export PATH=${RBENV_ROOT}/bin:$PATH
+#
+# [ -e ${NODEBREW_ROOT} ] && \
+#   export PATH=${NODEBREW_ROOT}/current/bin:$PATH
 
 # Kube
 [ -e ${HOME}/.kube ] && \
