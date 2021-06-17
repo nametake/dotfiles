@@ -68,7 +68,7 @@ export NODEBREW_ROOT=${HOME}/.nodebrew
 
 # Kube
 [ -e ${HOME}/.kube ] && \
-  export KUBECONFIG="$KUBECONFIG:`ls ${HOME}/.kube/*.yml | tr '\n' ':'`"
+  export KUBECONFIG="$KUBECONFIG:`ls ${HOME}/.kube/* | tr '\n' ':'`"
 
 # Flutter
 export FLUTTER_ROOT=${HOME}/.local/share/flutter
