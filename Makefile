@@ -21,7 +21,8 @@ DOTFILES := \
 	gitconfig \
 	gitignore \
 	git_template \
-	tern-config \
+	asdfrc \
+	tool-version \
 	eslintrc \
 	prettierrc \
 	ideavimrc \
