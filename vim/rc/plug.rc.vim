@@ -86,6 +86,11 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 " }}}
 
+
+" Shell {{{
+Plug 'thinca/vim-quickrun'
+" }}}
+
 " git {{{
 Plug 'tpope/vim-fugitive'
 command! Gac Gw|Gcommit
@@ -137,9 +142,10 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger       = "<C-k>"
-let g:UltiSnipsJumpForwardTrigger  = "<C-k>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+let g:UltiSnipsSnippetDirectories=['UltiSnips','./.vim/UltiSnips']
+let g:UltiSnipsExpandTrigger       = '<C-k>'
+let g:UltiSnipsJumpForwardTrigger  = '<C-k>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 Plug 'honza/vim-snippets'
 
@@ -151,7 +157,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 inoremap <expr> <C-k>   pumvisible() ? asyncomplete#close_popup() : "\<C-k>"
 
-autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+autocmd MyAutoCmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
     \   'name': 'ultisnips',
     \   'allowlist': ['*'],
     \   'completor': function('asyncomplete#sources#ultisnips#completor'),
