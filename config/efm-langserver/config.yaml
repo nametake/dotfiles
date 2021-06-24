@@ -109,13 +109,13 @@ languages:
   apex:
     - <<: *apex-pmd
   dockerfile:
-    # - <<: *docker-hadolint # TODO M1 support
+    - <<: *dockerfile-hadolint
   json:
     - <<: *json-jq
     - <<: *json-fixjson
     - <<: *json-jq-format
   sh:
-    # - <<: *sh-shellcheck # TODO M1 support
+    - <<: *sh-shellcheck
     - <<: *sh-shfmt
   javascript: *frontend
   javascriptreact: *frontend
