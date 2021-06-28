@@ -63,8 +63,10 @@ nnoremap <silent> <C-i> :<C-u>CtrlPBuffer<CR>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 Plug 'mileszs/ack.vim'
-nnoremap <silent> <C-s> :<C-u>Ack!<Space>
-let g:ackprg = 'ag --nogroup --nocolor --column'
+nnoremap <silent> <C-s> :Ack!<Space>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 let g:ack_autoclose = 1
 
 Plug 'easymotion/vim-easymotion'
@@ -94,6 +96,7 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 
 " git {{{
 Plug 'tpope/vim-fugitive'
+autocmd MyAutoCmd FileType fugitiveblame nmap <buffer> q gq
 command! Gac Gw|Gcommit
 
   Plug 'tpope/vim-rhubarb'
