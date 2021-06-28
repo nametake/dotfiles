@@ -1,66 +1,47 @@
 " lightline
+scriptencoding utf-8
 
 let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_expand': {
-        \   'syntastic': 'SyntasticStatuslineFlag'
-        \ },
-        \ 'component_function': {
-        \   'modified': 'LightlineModified',
-        \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
-        \   'filename': 'LightlineFilename',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
-        \ }
-        \ }
+        \  'colorscheme': 'wombat',
+        \  'mode_map': {'c': 'NORMAL'},
+        \  'active': {
+        \    'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+        \    'right': [
+        \       [ 'lineinfo' ],
+        \       [ 'percent' ],
+        \       [ 'running', 'fileformat', 'fileencoding', 'filetype' ],
+        \     ],
+        \  },
+        \  'component': {
+        \  },
+        \  'component_function': {
+        \    'mode': 'LightlineMode',
+        \    'gitbranch': 'FugitiveHead',
+        \    'readonly': 'LightlineReadonly',
+        \    'modified': 'LightlineModified',
+        \    'filename': 'LightlineFilename',
+        \    'fileformat': 'LightlineFileformat',
+        \    'filetype': 'LightlineFiletype',
+        \    'fileencoding': 'LightlineFileencoding',
+        \    'running': 'LightlineIsRunningQuickrun',
+        \  }
+        \}
 
 function! LightlineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  return &filetype =~# 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
 function! LightlineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+  return &readonly && &filetype !=# 'help' ? 'RO' : ''
 endfunction
 
 function! LightlineFilename()
-  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:p:h:t').'/'.expand('%:t') : '[No Name]') .
-        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
-endfunction
-
-function! LightlineGina() abort
-  try
-    return '' . gina#component#repo#branch()
-  catch
-  endtry
-  return ''
-endfunction
-
-function! LightlineFugitive()
-  " if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-  "   return fugitive#head()
-  " else
-  "   return ''
-  " endif
-
-  " use nerd-fonts
-  try
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head())
-      return ' ' . fugitive#head()
-    endif
-  catch
-  endtry
-  return ''
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
 endfunction
 
 function! LightlineFileformat()
@@ -72,9 +53,36 @@ function! LightlineFiletype()
 endfunction
 
 function! LightlineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+  return winwidth(0) > 70 ? (&fileencoding !=# '' ? &fileencoding : &encoding) : ''
 endfunction
 
 function! LightlineMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
+  return expand('%:t') =~# '^__Tagbar__' ? 'Tagbar':
+        \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
+        \ &filetype ==# 'unite' ? 'Unite' :
+        \ &filetype ==# 'vimfiler' ? 'VimFiler' :
+        \ &filetype ==# 'vimshell' ? 'VimShell' :
+        \ lightline#mode()
 endfunction
+
+function! LightlineIsRunningQuickrun()
+  return quickrun#is_running() ? 'Running quickrun...' : ''
+endfunction
+
+function! s:LoadingTextGenerator()
+  let txt = [
+        \  '\', '\', '\', '\',
+        \  '|', '|', '|', '|',
+        \  '/', '/', '/', '/',
+        \  '-', '-', '-', '-',
+        \]
+  let i = 0
+  function! s:text() closure
+    let i = len(txt)-1 > i ? i+1 : 0
+    echo i
+    return txt[i]
+  endfunction
+  return funcref('s:text')
+endfunction
+
+let s:LoadingText = s:LoadingTextGenerator()

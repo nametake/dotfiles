@@ -2,15 +2,14 @@
 " nametake's .vimrc
 "----------------------------------------------------------------
 
+set encoding=utf-8
+scriptencoding utf-8
+
 " Reference: https://github.com/Shougo/shougo-s-github/blob/master/vim/vimrc
 
 "----------------------------------------------------------------
 " Initialize 
 "
-
-if &compatible
-  set nocompatible
-endif
 
 function! s:source_rc(path, ...) abort "{{{
   let use_global = get(a:000, 0, !has('vim_starting'))
@@ -68,7 +67,6 @@ call s:source_rc('plug.rc.vim')
 "{{{
 
 " encode
-set encoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis,iso-2022-jp
 set fileformats=unix,dos,mac
 set ambiwidth=double

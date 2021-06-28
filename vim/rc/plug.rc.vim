@@ -89,6 +89,7 @@ let g:EasyMotion_use_smartsign_us = 1
 
 " Shell {{{
 Plug 'thinca/vim-quickrun'
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 " }}}
 
 " git {{{
