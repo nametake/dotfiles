@@ -105,7 +105,7 @@ Plug 'airblade/vim-gitgutter'
 " }}}
 
 " nerdtree {{{
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("a") + v:val) . "[^.]*$"')
