@@ -52,9 +52,10 @@ if has('nvim')
   map <C-n> <Plug>(miniyank-cycle)
 endif
 
-Plug 'thinca/vim-template'
-
 Plug 'mattn/vim-sonictemplate'
+let g:sonictemplate_vim_template_dir = [
+      \  '~/.vim/template'
+      \]
 " }}}
 
 " Search {{{
