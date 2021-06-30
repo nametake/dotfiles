@@ -1,16 +1,17 @@
 package main
 
 import (
+	"context"
 	"log"
 )
 
 func main() {
-	if err := run(); err != nil {
+	if err := run(context.Background()); err != nil {
 		log.Fatal(err)
 	}
 }
 
-func run() error {
+func run(ctx context.Context) error {
 	{{_cursor_}}
 	return nil
 }
