@@ -91,6 +91,8 @@ let g:EasyMotion_use_smartsign_us = 1
 
 
 " Shell {{{
+Plug 'thinca/vim-localrc'
+
 Plug 'thinca/vim-quickrun'
 source ~/.vim/rc/plugins/quickrun.rc.vim
 " }}}

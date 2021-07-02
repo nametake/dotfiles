@@ -1,7 +1,7 @@
 # My config
 
 ## vim
-.vimrc.local
+.local.vimrc
 .vim/
 
 ## nodejs
