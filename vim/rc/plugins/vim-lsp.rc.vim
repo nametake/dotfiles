@@ -33,7 +33,6 @@ let g:lsp_settings['golangci-lint-langserver'] = {
   \    'command': ['golangci-lint', 'run',
   \        '--out-format', 'json',
   \        '--enable-all',
-  \        '--fast',
   \        '--disable', 'lll',
   \        '--disable', 'wsl',
   \        '--disable', 'exhaustivestruct',
