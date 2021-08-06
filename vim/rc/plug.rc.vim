@@ -220,6 +220,10 @@ Plug 'rust-lang/rust.vim', {'for': ['rust']}
 " Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile'}
 " }}}
 
+" JavaScript {{{
+Plug 'pangloss/vim-javascript'
+" }}}
+
 " TypeScript {{{
 " Plug 'neoclide/coc-tsserver',  {'do': 'yarn install --frozen-lockfile'}
 "
