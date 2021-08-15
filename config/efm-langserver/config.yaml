@@ -113,7 +113,7 @@ languages:
   json:
     - <<: *json-jq
     - <<: *json-fixjson
-    - <<: *json-jq-format
+    # - <<: *json-jq-format
   sh:
     - <<: *sh-shellcheck
     - <<: *sh-shfmt
