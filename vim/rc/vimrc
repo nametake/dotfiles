@@ -269,6 +269,9 @@ nnoremap <C-o> :bnext<CR>
 nnoremap <S-o> :bprev<CR>
 nnoremap <C-d> :bd<CR>
 
+" https://stackoverflow.com/questions/676600/vim-search-and-replace-selected-text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 "}}}
 
 "----------------------------------------------------------------
