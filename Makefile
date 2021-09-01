@@ -61,26 +61,26 @@ BREW_TOOLS := \
 	golangci/tap/golangci-lint \
 
 GO_TOOLS := \
-	golang.org/x/tools/cmd/goimports \
-	mvdan.cc/gofumpt \
-	mvdan.cc/gofumpt/gofumports \
+	golang.org/x/tools/cmd/goimports@latest \
+	mvdan.cc/gofumpt@latest \
+	mvdan.cc/gofumpt/gofumports@latest \
 	golang.org/x/tools/gopls@latest \
-	github.com/sourcegraph/go-langserver \
-	github.com/mattn/efm-langserver \
-	honnef.co/go/tools/staticcheck \
-	golang.org/x/lint/golint \
-	github.com/rhysd/gofmtrlx \
-	sourcegraph.com/sqs/goreturns \
-	github.com/kisielk/errcheck \
-	github.com/cweill/gotests/gotests \
-	mvdan.cc/sh/cmd/shfmt \
-	github.com/jackc/sqlfmt/... \
-	github.com/mrtazz/checkmake \
-	github.com/k0kubun/sqldef/cmd/... \
-	github.com/golang/protobuf/protoc-gen-go \
-	github.com/nametake/protoc-gen-gohttp \
-	github.com/cespare/reflex \
-	github.com/google/wire/cmd/wire \
+	github.com/sourcegraph/go-langserver@latest \
+	github.com/mattn/efm-langserver@latest \
+	honnef.co/go/tools/staticcheck@latest \
+	golang.org/x/lint/golint@latest \
+	github.com/rhysd/gofmtrlx@latest \
+	sourcegraph.com/sqs/goreturns@latest \
+	github.com/kisielk/errcheck@latest \
+	github.com/cweill/gotests/gotests@latest \
+	mvdan.cc/sh/cmd/shfmt@latest \
+	github.com/jackc/sqlfmt/...@latest \
+	github.com/mrtazz/checkmake@latest \
+	github.com/k0kubun/sqldef/cmd/...@latest \
+	github.com/golang/protobuf/protoc-gen-go@latest \
+	github.com/nametake/protoc-gen-gohttp@latest \
+	github.com/cespare/reflex@latest \
+	github.com/google/wire/cmd/wire@latest \
 
 NPM_TOOLS := \
 	neovim \
@@ -115,7 +115,7 @@ help: # Refer: https://postd.cc/auto-documented-makefile/
 	@echo 'usage: make [target]'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-update: brew_update go_get rustup_update npm_install pip_install fish_plugin_update vim_plugin_update ## Update all tools
+update: brew_update go_install rustup_update npm_install pip_install fish_plugin_update vim_plugin_update ## Update all tools
 
 link: ## Create symbolic link
 	./bin/ln_dotfiles.sh $(DOTFILES)
@@ -143,8 +143,8 @@ brew_update: ## Update brew tools
 	brew upgrade
 	brew cleanup
 
-go_get: ## Install go cli tools
-	@./bin/go_get.sh $(GO_TOOLS)
+go_install: ## Install go cli tools
+	@./bin/go_install.sh $(GO_TOOLS)
 
 rustup_update:
 	rustup update

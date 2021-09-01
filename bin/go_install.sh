@@ -2,5 +2,5 @@
 export GO111MODULE=on
 
 for file in "$@"; do
-	go get "${file}"
+	go install "${file}"
 done
