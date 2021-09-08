@@ -9,10 +9,6 @@ endif
 augroup filetypedetect
   " jsx
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-  " typescript
-  autocmd BufNewFile,BufRead *.ts set filetype=typescript
-  " typescript.tsx
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
   " post css
   autocmd BufNewFile,BufRead *.{pcss} set filetype=scss
   " apex
