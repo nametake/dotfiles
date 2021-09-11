@@ -4,6 +4,7 @@ let g:lsp_format_on_save = 1
 
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('~/vim-lsp.log')
+" let g:lsp_show_message_log_level = 'log'
 " let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 let g:lsp_diagnostics_float_cursor = 1
@@ -29,6 +30,7 @@ let g:lsp_settings_filetype_json = ['efm-langserver']
 " Go {{{
 let g:lsp_settings_filetype_go = ['gopls', 'golangci-lint-langserver']
 let g:lsp_settings['golangci-lint-langserver'] = {
+  \  'args': ['-debug'],
   \  'initialization_options': {
   \    'command': ['golangci-lint', 'run',
   \        '--out-format', 'json',
