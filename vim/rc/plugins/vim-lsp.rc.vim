@@ -7,6 +7,10 @@ let g:lsp_format_on_save = 1
 " let g:lsp_show_message_log_level = 'log'
 " let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
+set foldmethod=expr
+  \ foldexpr=lsp#ui#vim#folding#foldexpr()
+  \ foldtext=lsp#ui#vim#folding#foldtext()
+
 let g:lsp_diagnostics_float_cursor = 1
 
 let g:lsp_settings = {}
