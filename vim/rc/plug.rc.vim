@@ -17,6 +17,10 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 " Plug 'Yggdroot/indentLine'
 " let g:indentLine_fileTypeExclude = ['markdown', 'json']
 
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
+
 Plug 'tomasr/molokai'
 
 Plug 'simeji/winresizer'
@@ -282,3 +286,7 @@ Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 " }}}
 
 call plug#end()
+
+if has('nvim')
+  source ~/.vim/rc/plugins/nvim-treesitter.rc.vim
+endif
