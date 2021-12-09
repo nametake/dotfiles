@@ -3,7 +3,7 @@ extends typescript
 snippet component-template "React component template" b
 type ${1}Props = {${2}}
 
-export function $1({${3}}: $1Props): JSX.Element {
+export const $1 = function $1({${3}}: $1Props): JSX.Element {
   return ${4:<div>template</div>};
 }${0}
 endsnippet
@@ -20,7 +20,7 @@ type ${1}Props = {
   text?: string;
 };
 
-export function $1({ text }: $1Props): JSX.Element {
+export const $1 = function $1({ text }: $1Props): JSX.Element {
   return <div>{text}</div>;
 }
 endsnippet
@@ -28,7 +28,8 @@ endsnippet
 snippet init-storybook-template "Initial storybook template" b
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 /* eslint-enable */
 
 import { ${1} } from './index';
@@ -40,7 +41,9 @@ export default {
 } as ComponentMeta<typeof $1>;
 
 /* eslint-disable react/jsx-props-no-spreading */
-const Template: ComponentStory<typeof $1> = (args) => <$1 {...args} />;
+const Template: ComponentStory<typeof $1> = function Template(args) {
+  return <$1 {...args} />;
+}
 /* eslint-enable */
 
 export const Default = Template.bind({});
