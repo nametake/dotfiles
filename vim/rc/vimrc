@@ -166,10 +166,10 @@ set smartindent
 "{{{
 
 set foldenable
-set foldmethod=syntax
+" set foldmethod=syntax " for tree-sitter
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
 set foldlevel=0
-set foldlevelstart=99
+set foldlevelstart=0
 set foldnestmax=16
 set foldcolumn=2
 
@@ -302,7 +302,6 @@ command! -bar Clear  call s:clear_messages()
 "
 "{{{
 
-set t_Co=256
 if !has('nvim')
   set term=screen-256color
 endif
@@ -313,6 +312,7 @@ syntax sync minlines=1024
 syntax on
 
 colorscheme molokai
+" colorscheme sonokai
 highlight CursorLine ctermbg=242
 
 "}}}

@@ -23,6 +23,8 @@ endif
 
 Plug 'tomasr/molokai'
 
+Plug 'sainnhe/sonokai'
+
 Plug 'simeji/winresizer'
 
 Plug 'biosugar0/vim-popyank'
