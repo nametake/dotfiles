@@ -252,8 +252,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 noremap  O o<ESC>
-nnoremap <silent> <ESC> :noh<CR>
-nnoremap <silent> <C-[> :noh<CR>
+" https://github.com/vim/vim/issues/6365#issuecomment-985236393
+nnoremap <silent> <ESC><ESC> :noh<CR>
+nnoremap <silent> <C-[><C-[> :noh<CR>
 
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
