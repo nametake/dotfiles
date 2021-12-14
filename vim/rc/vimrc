@@ -169,7 +169,7 @@ set foldenable
 " set foldmethod=syntax " for tree-sitter
 set foldopen=block,hor,mark,percent,quickfix,search,tag,undo
 set foldlevel=0
-set foldlevelstart=0
+set foldlevelstart=2
 set foldnestmax=16
 set foldcolumn=2
 
