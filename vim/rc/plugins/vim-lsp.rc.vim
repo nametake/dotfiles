@@ -40,6 +40,7 @@ let g:lsp_settings['golangci-lint-langserver'] = {
   \  'initialization_options': {
   \    'command': ['golangci-lint', 'run',
   \        '--out-format', 'json',
+  \        '--allow-parallel-runners',
   \        '--enable-all',
   \        '--disable', 'lll',
   \        '--disable', 'wsl',
