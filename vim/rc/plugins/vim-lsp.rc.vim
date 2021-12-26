@@ -19,6 +19,13 @@ let g:lsp_settings = {}
 
 let g:lsp_settings['efm-langserver'] = {
   \  'disabled': v:false,
+  \  'initialization_options': {
+  \    'documentFormatting': v:true,
+  \    'hover': v:true,
+  \    'documentSymbol': v:true,
+  \    'codeAction': v:true,
+  \    'completion': v:true,
+  \  },
   \}
 
 " Vim {{{

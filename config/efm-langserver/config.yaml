@@ -34,6 +34,12 @@ tools:
     lint-formats:
       - "%f(%l,%c): %tarning %m"
       - "%f(%l,%c): %rror %m"
+    commands:
+      - title: 'eslint fix'
+        command: ./node_modules/.bin/eslint
+        arguments:
+          - '--fix'
+          - '${INPUT}'
 
   javascript-prettier: &javascript-prettier
     format-command: './node_modules/.bin/prettier --stdin-filepath ${INPUT}'
