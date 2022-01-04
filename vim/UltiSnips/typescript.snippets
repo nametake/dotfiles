@@ -1,8 +1,16 @@
+snippet eslint-disable-next-line "eslint-disable-next-line" w
+// eslint-disable-next-line ${1:`!v getreg("*")`}
+endsnippet
+
 snippet const "Destructuring assignment" w
 const { ${2:} } = ${1:};${0:}
 endsnippet
 
-snippet "export statement" "Import external module." w
+snippet "export-statement" "Import external module." w
+import {${2:}} from '${1:}'
+endsnippet
+
+snippet "export-statement" "Export external module." w
 export {${2:}} from '${1:}'
 endsnippet
 
