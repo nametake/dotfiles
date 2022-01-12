@@ -3,7 +3,7 @@
   email = nametake.kyarabuki@gmail.com
 
 [push]
-  default = simple
+  default = current
   path = ~/.gitconfig.local
 
 [pull]
