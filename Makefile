@@ -166,7 +166,7 @@ vim_plugin_update: ## Update vim plugins
 	vim -c PlugUpdate -c PlugUpgrade -c q -c q
 
 nvim_plugin_update: ## Update neovim plugins
-	nvim -c PlugUpdate -c PlugUpgrade -c q -c q
+	nvim -c PlugUpdate -c PlugUpgrade -c q -c TSUpdate all -c q
 
 fmt_coc_settings:
 	fixjson ./vim/coc-settings.json && cat ./vim/coc-settings.json | jq '.' --sort-keys | sponge ./vim/coc-settings.json
