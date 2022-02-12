@@ -106,14 +106,11 @@ tools:
     lint-formats:
       - '%f:%l:%c: %m'
 
-frontend: &frontend
-  - <<: *css-stylelint
-  - <<: *javascript-eslint
-  - <<: *javascript-prettier
-
 languages:
   apex:
     - <<: *apex-pmd
+  css:
+    - <<: *css-stylelint
   dockerfile:
     - <<: *dockerfile-hadolint
   json:
@@ -123,16 +120,28 @@ languages:
   sh:
     - <<: *sh-shellcheck
     - <<: *sh-shfmt
-  javascript: *frontend
-  javascriptreact: *frontend
+  javascript:
+    - <<: *javascript-eslint
+    - <<: *javascript-prettier
+  javascriptreact:
+    - <<: *javascript-eslint
+    - <<: *javascript-prettier
+    - <<: *css-stylelint
   markdown:
     - <<: *markdown-remark-lint
     - <<: *markdown-remark-format
     - <<: *markdown-textlint
   proto:
     - <<: *proto-buf
-  typescript: *frontend
-  typescriptreact: *frontend
+  scss:
+    - <<: *css-stylelint
+  typescript:
+    - <<: *javascript-eslint
+    - <<: *javascript-prettier
+  typescriptreact:
+    - <<: *javascript-eslint
+    - <<: *javascript-prettier
+    - <<: *css-stylelint
   yaml:
     - <<: *yaml-yamllint
   vim:
