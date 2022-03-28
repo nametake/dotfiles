@@ -107,7 +107,7 @@ PIP_TOOLS := \
 	pip \
 	pynvim \
 	git+https://github.com/Vimjas/vint.git@master \
-	git+https://github.com/pre-commit/pre-commit.git@master \
+	git+https://github.com/pre-commit/pre-commit.git@main \
 	pathlib \
 
 .PHONY: help
