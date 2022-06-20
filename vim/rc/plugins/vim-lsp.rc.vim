@@ -50,6 +50,16 @@ let g:lsp_settings['golangci-lint-langserver'] = {
   \}
 " }}}
 
+" Scala {{{
+let g:lsp_settings['metals'] = {
+  \  'workspace_config': {
+  \    'metals': {
+  \      'bloopSbtAlreadyInstalled': v:true
+  \    },
+  \  },
+  \}
+" }}}
+
 " Frontend {{{
 let s:frontend_lsp =  ['typescript-language-server', 'efm-langserver']
 let g:lsp_settings_filetype_javascript = s:frontend_lsp
