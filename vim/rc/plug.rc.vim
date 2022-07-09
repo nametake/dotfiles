@@ -153,47 +153,18 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
 " Complement {{{
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'SirVer/ultisnips'
-let g:UltiSnipsSnippetDirectories=['UltiSnips','./.vim/UltiSnips']
-" let g:UltiSnipsExpandTrigger       = '<C-k>'
-" let g:UltiSnipsJumpForwardTrigger  = '<C-k>'
-let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-
-Plug 'honza/vim-snippets'
-
 Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-function SelectComplete()
-  return UltiSnips#ExpandSnippetOrJump()
-  " if !pumvisible()
-  "   return "\<C-k>"
-  " endif
-  " return asyncomplete#close_popup()
-endfunction
-
-function! Jump()
-  return UltiSnips#ExpandSnippetOrJump()
-endfunction
-
+inoremap <C-k> <nop>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-" inoremap <expr> <C-k>   pumvisible() ? asyncomplete#close_popup() : "\<C-k>"
-inoremap <C-k> <C-R>=SelectComplete()<CR>
-snoremap <C-k> <Esc>:call UltiSnips#ExpandSnippetOrJump()()<CR>
-
-autocmd MyAutoCmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
-    \   'name': 'ultisnips',
-    \   'allowlist': ['*'],
-    \   'completor': function('asyncomplete#sources#ultisnips#completor'),
-    \ }))
+inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+inoremap <expr> <C-k>   pumvisible() ? asyncomplete#close_popup() : "\<C-k>"
 
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'thomasfaingnaert/vim-lsp-snippets'
-Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 source ~/.vim/rc/plugins/vim-lsp.rc.vim
 
 " let $NVIM_COC_LOG_LEVEL = 'debug'
