@@ -160,7 +160,6 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " LSP
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'thomasfaingnaert/vim-lsp-snippets'
 source ~/.vim/rc/plugins/vim-lsp.rc.vim
 
 " Snippets
@@ -170,8 +169,8 @@ Plug 'rafamadriz/friendly-snippets'
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<Nop>'
-snoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<Nop>'
+inoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '\<Nop>'
+snoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '\<Nop>'
 
 " let $NVIM_COC_LOG_LEVEL = 'debug'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
