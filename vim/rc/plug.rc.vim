@@ -155,19 +155,36 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsSnippetDirectories=['UltiSnips','./.vim/UltiSnips']
-let g:UltiSnipsExpandTrigger       = '<C-k>'
-let g:UltiSnipsJumpForwardTrigger  = '<C-k>'
-let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+" let g:UltiSnipsExpandTrigger       = '<C-k>'
+" let g:UltiSnipsJumpForwardTrigger  = '<C-k>'
+" let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 Plug 'honza/vim-snippets'
 
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+function SelectComplete()
+  if UltiSnips#CanJumpForwards()
+    return UltiSnips#JumpForwards()
+  endif
+
+  if !pumvisible()
+    return "\<C-k>"
+  endif
+  if UltiSnips#CanExpandSnippet()
+    return UltiSnips#ExpandSnippet()
+  endif
+  return asyncomplete#close_popup()
+endfunction
+
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-inoremap <expr> <C-k>   pumvisible() ? asyncomplete#close_popup() : "\<C-k>"
+" inoremap <expr> <CR>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+" inoremap <expr> <C-k>   pumvisible() ? asyncomplete#close_popup() : "\<C-k>"
+inoremap <C-k> <C-R>=SelectComplete()<CR>
+" snoremap <C-k> <Esc>: callSelectComplete()<CR>
 
 autocmd MyAutoCmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
     \   'name': 'ultisnips',
@@ -177,6 +194,8 @@ autocmd MyAutoCmd User asyncomplete_setup call asyncomplete#register_source(asyn
 
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 source ~/.vim/rc/plugins/vim-lsp.rc.vim
 
 " let $NVIM_COC_LOG_LEVEL = 'debug'
