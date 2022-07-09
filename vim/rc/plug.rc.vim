@@ -170,8 +170,8 @@ Plug 'rafamadriz/friendly-snippets'
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
-snoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
+inoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<Nop>'
+snoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<Nop>'
 
 " let $NVIM_COC_LOG_LEVEL = 'debug'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
