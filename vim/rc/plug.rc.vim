@@ -66,11 +66,14 @@ let g:sonictemplate_vim_template_dir = [
 
 " Search {{{
 Plug 'ctrlpvim/ctrlp.vim'
-nmap <silent> <C-i> :CtrlPBuffer<CR>
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+Plug 'mattn/ctrlp-matchfuzzy'
+nnoremap <C-i> :<C-u>CtrlPBuffer<CR>
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 
 Plug 'mileszs/ack.vim'
-nnoremap <silent> <C-s> :Ack!<Space>
+nnoremap <C-s> :<C-u>Ack!<Space>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
