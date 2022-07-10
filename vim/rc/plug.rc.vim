@@ -66,11 +66,14 @@ let g:sonictemplate_vim_template_dir = [
 
 " Search {{{
 Plug 'ctrlpvim/ctrlp.vim'
-nnoremap <silent> <C-i> :<C-u>CtrlPBuffer<CR>
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+Plug 'mattn/ctrlp-matchfuzzy'
+nnoremap <C-j> :<C-u>CtrlPBuffer<CR>
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 
 Plug 'mileszs/ack.vim'
-nnoremap <silent> <C-s> :Ack!<Space>
+nnoremap <C-s> :<C-u>Ack!<Space>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
@@ -142,15 +145,7 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
   " let g:NERDTreeLimitedSyntax = 1
 " }}}
 
-" lint/format {{{
-" Plug 'dense-analysis/ale'
-" source ~/.vim/rc/plugins/ale.rc.vim
-
-" Plug 'sbdchd/neoformat'
-" source ~/.vim/rc/plugins/neoformat.rc.vim
-" }}}
-
-" Complement {{{
+" LSP {{{
 Plug 'jiangmiao/auto-pairs'
 
 " Auto complete
@@ -172,12 +167,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '\<Nop>'
 snoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '\<Nop>'
 
-" let $NVIM_COC_LOG_LEVEL = 'debug'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" source ~/.vim/rc/plugins/coc.rc.vim
-"
-"   Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-"   Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " Language {{{
@@ -188,35 +177,11 @@ Plug 'mattn/vim-goimports'
 " let g:goimports_simplify_cmd = 'gofumpt'
 " let g:goimports_show_loclist = 0
 
-" Plug 'fatih/vim-go', {'for': 'go', 'on': 'GoUpdateBinaries'}
-" source ~/.vim/rc/plugins/vim-go.vim
-
-" Plug 'arp242/gopher.vim', {'for': ['go']}
-" let g:gopher_highlight = [
-"       \   'string-fmt',
-"       \   'string-spell',
-"       \   'fold-block',
-"       \   'fold-varconst',
-"       \ ]
-" let g:gopher_map = {
-"       \   '_popup': 0,
-"       \   '_imap_prefix': '<C-g>',
-"       \   '_imap_ctrl': 1,
-"       \ }
-" nmap ; <Plug>(gopher-popup)
-
-Plug 'buoto/gotests-vim', {'for': ['go']}
-
-Plug 'nametake/ctrlp-goimport', {'for': ['go']}
-nmap <C-g><C-i> <Plug>(ctrlp-goimport)
-
 Plug 'nametake/vim-goiferr-snippets', {'for': ['go']}
 " }}}
 
 " Rust {{{
 Plug 'rust-lang/rust.vim', {'for': ['rust']}
-
-" Plug 'neoclide/coc-rls', {'for': ['rust'], 'do': 'yarn install --frozen-lockfile'}
 " }}}
 
 " JavaScript {{{
@@ -224,12 +189,6 @@ Plug 'pangloss/vim-javascript'
 " }}}
 
 " TypeScript {{{
-" Plug 'neoclide/coc-tsserver',  {'do': 'yarn install --frozen-lockfile'}
-"
-" Plug 'neoclide/coc-eslint',  {'do': 'yarn install --frozen-lockfile'}
-"
-" Plug 'neoclide/coc-prettier',  {'do': 'yarn install --frozen-lockfile'}
-
 " Plug 'HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}
 
 " Plug 'maxmellon/vim-jsx-pretty', {'for': ['typescript.tsx', 'typescriptreact']}
@@ -274,9 +233,6 @@ Plug 'ejholmes/vim-forcedotcom', {'for': ['apex']}
 
 " Scala {{{
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
-
-" Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
-" nmap <Space>ws <Plug>(coc-metals-expand-decoration)
 " }}}
 
 " }}}

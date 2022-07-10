@@ -246,11 +246,6 @@ nnoremap [3~ gi<Del>
 nnoremap [5~ gi<PageUp>
 nnoremap [6~ gi<PageDown>]
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 noremap  O o<ESC>
 " https://github.com/vim/vim/issues/6365#issuecomment-985236393
 nnoremap <silent> <ESC><ESC> :noh<CR>
