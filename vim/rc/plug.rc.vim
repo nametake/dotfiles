@@ -67,7 +67,7 @@ let g:sonictemplate_vim_template_dir = [
 " Search {{{
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/ctrlp-matchfuzzy'
-nnoremap <C-i> :<C-u>CtrlPBuffer<CR>
+nnoremap <C-j> :<C-u>CtrlPBuffer<CR>
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
