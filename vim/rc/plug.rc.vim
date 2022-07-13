@@ -164,8 +164,8 @@ Plug 'rafamadriz/friendly-snippets'
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '\<Nop>'
-snoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '\<Nop>'
+inoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : ""
+snoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : ""
 
 " }}}
 
