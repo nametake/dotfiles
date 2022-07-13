@@ -164,9 +164,20 @@ Plug 'rafamadriz/friendly-snippets'
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : ""
-snoremap <expr> <C-k>   vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : ""
+inoremap <expr> <CR> pumvisible()
+      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<CR>"
+inoremap <expr> <C-k> pumvisible()
+      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
+snoremap <expr> <C-k> pumvisible()
+      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
 
+nmap s <Plug>(vsnip-select-text)
+xmap s <Plug>(vsnip-select-text)
+nmap S <Plug>(vsnip-cut-text)
+xmap S <Plug>(vsnip-cut-text)
 " }}}
 
 " Language {{{
