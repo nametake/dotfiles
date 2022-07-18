@@ -1,5 +1,5 @@
 {
-  "ComponentTemplate": {
+  "component-template": {
     "prefix": [
       "component-template"
     ],
@@ -12,7 +12,7 @@
       "}${0}"
     ]
   },
-  "InitialComponentTemplate": {
+  "initial-component-template": {
     "prefix": [
       "initial-component-template"
     ],
@@ -29,7 +29,7 @@
       "}"
     ]
   },
-  "StorybookTemplate": {
+  "storybook-template": {
     "prefix": [
       "storybook-template"
     ],
@@ -39,7 +39,7 @@
       "$1.args = {$0};"
     ]
   },
-  "InitialStorybookTemplate": {
+  "initial-storybook-template": {
     "prefix": [
       "initial-storybook-template"
     ],
