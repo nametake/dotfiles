@@ -1,0 +1,10 @@
+{
+  "quickrunmap": {
+    "prefix": "quickrunmap",
+    "body": [
+      "let g:quickrun_config['${1:key}'] = {'exec': ['${2:command}']}",
+      "nnoremap <silent> <Space>${3} :QuickRun $1<CR>${0}"
+    ],
+    "description": "quickrun exec setting"
+  }
+}

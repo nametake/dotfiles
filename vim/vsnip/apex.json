@@ -1,0 +1,116 @@
+{
+  "testMethod": {
+    "prefix": "testMethod",
+    "body": [
+      "/**",
+      " * ${2}",
+      " */",
+      "@isTest",
+      "static void ${1} () {",
+      "\t${3}",
+      "}"
+    ]
+  },
+  "head": {
+    "prefix": "head",
+    "body": [
+      "/**",
+      " *\t@author `!v g:snips_author`",
+      " *\t@date `!v strftime(\"%Y-%m-%d %X\")` ",
+      " *\t@description",
+      " *\t    ${1}",
+      " *\t",
+      " *\tVersion History :   ",
+      " *\t\t",
+      " */"
+    ],
+    "description": "Class/Trigger header"
+  },
+  "dbg": {
+    "prefix": "dbg",
+    "body": "System.debug(${1});",
+    "description": "System.debug('...');"
+  },
+  "ass": {
+    "prefix": "ass",
+    "body": "System.assert(${1}, '${2}');"
+  },
+  "asse": {
+    "prefix": "asse",
+    "body": "System.assertEquals(${1}, ${2}, '${3}');"
+  },
+  "assne": {
+    "prefix": "assne",
+    "body": "System.assertNotEquals(${1}, ${2}, '${3}');"
+  },
+  "list": {
+    "prefix": "list",
+    "body": "final List<${1}> ${2} = new List<$1>();"
+  },
+  "set": {
+    "prefix": "set",
+    "body": "final Set<${1}> ${2} = new Set<$1>();"
+  },
+  "map": {
+    "prefix": "map",
+    "body": "final Map<${1}, ${2}> ${3} = new Map<$1, $2>();"
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "/**",
+      " *\t@author `!v g:snips_author`",
+      " *\t@date `!v strftime(\"%Y-%m-%d %X\")` ",
+      " *\t@description",
+      " *\t    Test methods for ${2:`!p snip.rv=snip.basename[:-4]`}",
+      " *\t",
+      " *\tVersion History :   ",
+      " *\t\t",
+      " */",
+      "@isTest(isParallel=true)",
+      "public class ${1:`!p snip.rv=snip.basename`}  {",
+      "\t/**",
+      "\t * ${4}",
+      "\t */",
+      "\t@isTest",
+      "\tstatic void test${3} () {",
+      "\t}",
+      "}"
+    ],
+    "description": "@isTest class"
+  },
+  "ver": {
+    "prefix": "ver",
+    "body": [
+      "${1:`!v strftime(\"%Y-%m-%d\")`} - ${2:feature-id} - ${3:initials}",
+      "\t${4}"
+    ],
+    "description": "@version - new change in apex file"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for(${1:ObjectType} ${2:varName} : ${3:Trigger.new}) {\n    ${4}\n}",
+    "description": "Apex For cycle"
+  },
+  "sd": {
+    "prefix": "sd",
+    "body": "System.debug(${1});${0}",
+    "description": "System.debug"
+  },
+  "sdj": {
+    "prefix": "sdj",
+    "body": "System.debug(JSON.serialize(${1}));${0}",
+    "description": "System.debug with JSON.serialize"
+  },
+  "method": {
+    "prefix": "method",
+    "body": [
+      "/**${6}",
+      " */",
+      "${1:public} ${2:static} ${3:void} ${4:methodName}(${5:args}) {",
+      "${0}",
+      "}"
+    ],
+    "description": "Class method"
+  }
+}

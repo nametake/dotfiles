@@ -1,0 +1,7 @@
+{
+  "JSON log": {
+    "prefix": "cj",
+    "body": "console.log(JSON.parse(JSON.stringify(${1})));${0}",
+    "description": "console.log(JSON.parse(JSON.stringify(obj)))"
+  }
+}

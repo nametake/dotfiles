@@ -161,6 +161,11 @@ source ~/.vim/rc/plugins/vim-lsp.rc.vim
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
+let g:vsnip_snippet_dir = '~/.vim/vsnip'
+
+let g:vsnip_filetypes = {}
+let g:vsnip_filetypes.javascriptreact = ['javascript']
+let g:vsnip_filetypes.typescriptreact = ['typescript']
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

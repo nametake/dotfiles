@@ -1,0 +1,37 @@
+{
+  "eslint-disable-next-line": {
+    "prefix": "eslint-disable-next-line",
+    "body": "// eslint-disable-next-line ${1:${CLIPBOARD}}${0}",
+    "description": "eslint-disable-next-line"
+  },
+  "const": {
+    "prefix": "const",
+    "body": "const { ${2:} } = ${1:};${0:}",
+    "description": "Destructuring assignment"
+  },
+  "export-statement": {
+    "prefix": "export-statement",
+    "body": "export {${2:}} from '${1:}'",
+    "description": "Export external module."
+  },
+  "change-event-input": {
+    "prefix": "change-event-input",
+    "body": "e: React.ChangeEvent<HTMLInputElement>",
+    "description": "HTMLInputElement change event"
+  },
+  "change-event-textarea": {
+    "prefix": "change-event-textarea",
+    "body": "e: React.ChangeEvent<HTMLTextAreaElement>",
+    "description": "HTMLTextAreaElement change event"
+  },
+  "form-event": {
+    "prefix": "form-event",
+    "body": "e: React.FormEvent<HTMLFormElement>",
+    "description": "Form event"
+  },
+  "click-event-mouse": {
+    "prefix": "click-event-mouse",
+    "body": "e: React.MouseEvent<HTMLElement, MouseEvent>",
+    "description": "Mouse click event"
+  }
+}

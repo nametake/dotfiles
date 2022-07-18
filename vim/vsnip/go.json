@@ -1,0 +1,17 @@
+{
+  "helloworld": {
+    "prefix": "helloworld",
+    "body": [
+      "package main",
+      "",
+      "import (",
+      "\t\"fmt\"",
+      ")",
+      "",
+      "func main() {",
+      "\tfmt.Println(\"Hello World\")",
+      "}"
+    ],
+    "description": "Hello World"
+  }
+}
