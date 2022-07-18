@@ -68,12 +68,5 @@
       "export const Default = Template.bind({});",
       "Default.args = {${0}};"
     ]
-  },
-  "": {
-    "prefix": [
-      ""
-    ],
-    "description": "",
-    "body": []
   }
 }
