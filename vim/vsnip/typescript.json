@@ -1,11 +1,7 @@
 {
   "eslint-disable-next-line": {
-    "prefix": [
-      "eslint-disable-next-line"
-    ],
-    "body": [
-      "// eslint-disable-next-line ${1:${CLIPBOARD}}${0}"
-    ],
+    "prefix": "eslint-disable-next-line",
+    "body": "// eslint-disable-next-line ${1:${CLIPBOARD}}${0}",
     "description": "eslint-disable-next-line"
   },
   "const": {

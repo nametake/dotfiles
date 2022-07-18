@@ -1,8 +1,6 @@
 {
   "component-template": {
-    "prefix": [
-      "component-template"
-    ],
+    "prefix": "component-template",
     "description": "React component template.",
     "body": [
       "type ${1}Props = {${2}}",
@@ -13,9 +11,7 @@
     ]
   },
   "initial-component-template": {
-    "prefix": [
-      "initial-component-template"
-    ],
+    "prefix": "initial-component-template",
     "description": "Initial react component template.",
     "body": [
       "import React from 'react';",
@@ -30,9 +26,7 @@
     ]
   },
   "storybook-template": {
-    "prefix": [
-      "storybook-template"
-    ],
+    "prefix": "storybook-template",
     "description": "Storybook template.",
     "body": [
       "export const ${1} = Template.bind({});",
@@ -40,9 +34,7 @@
     ]
   },
   "initial-storybook-template": {
-    "prefix": [
-      "initial-storybook-template"
-    ],
+    "prefix": "initial-storybook-template",
     "description": "Initial storybook template.",
     "body": [
       "/* eslint-disable import/no-extraneous-dependencies */",
