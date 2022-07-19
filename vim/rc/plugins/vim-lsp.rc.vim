@@ -76,7 +76,7 @@ let s:lsp_format_efm_only_list = [
       \ ]
 
 function! LspFormat()
-  if index(s:lsp_format_efm_only_list, &filetype) >= 0 
+  if index(s:lsp_format_efm_only_list, &filetype) >= 0
     call execute('LspDocumentFormatSync --server=efm-langserver')
   else
     call execute('LspDocumentFormatSync')
