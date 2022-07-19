@@ -66,8 +66,22 @@ let g:lsp_settings_filetype_javascript = s:frontend_lsp
 let g:lsp_settings_filetype_javascriptreact = s:frontend_lsp
 let g:lsp_settings_filetype_typescript = s:frontend_lsp
 let g:lsp_settings_filetype_typescriptreact = s:frontend_lsp
-autocmd MyAutoCmd BufWritePre *.js,*.jsx,*.ts,*.tsx call execute('LspDocumentFormatSync --server=efm-langserver')
 " }}}
+
+let s:lsp_format_efm_only_list = [
+      \   'javascript',
+      \   'javascriptreact',
+      \   'typescript',
+      \   'typescriptreact'
+      \ ]
+
+function! LspFormat()
+  if index(s:lsp_format_efm_only_list, &filetype) >= 0 
+    call execute('LspDocumentFormatSync --server=efm-langserver')
+  else
+    call execute('LspDocumentFormatSync')
+  endif
+endfunction
 
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
@@ -89,7 +103,8 @@ function! s:on_lsp_buffer_enabled() abort
 
   let g:lsp_format_sync_timeout = 1000
   if g:lsp_format_on_save
-    autocmd MyAutoCmd BufWritePre <buffer> call execute('LspDocumentFormatSync')
+    " autocmd MyAutoCmd BufWritePre <buffer> call execute('LspDocumentFormatSync')
+    autocmd MyAutoCmd BufWritePre * call LspFormat()
   endif
 
   " refer to doc to add more commands
