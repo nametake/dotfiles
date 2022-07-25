@@ -1,4 +1,14 @@
 {
+  "eslint-disable": {
+    "prefix": "eslint-disable",
+    "body": "/* eslint-disable ${1:${CLIPBOARD}} */${0}",
+    "description": "eslint-disable"
+  },
+  "eslint-enable": {
+    "prefix": "eslint-enable",
+    "body": "/* eslint-enable */${0}",
+    "description": "eslint-enable"
+  },
   "eslint-disable-next-line": {
     "prefix": "eslint-disable-next-line",
     "body": "// eslint-disable-next-line ${1:${CLIPBOARD}}${0}",
