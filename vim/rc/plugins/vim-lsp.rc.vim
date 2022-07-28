@@ -2,8 +2,8 @@
 
 let g:lsp_format_on_save = 1
 
-" let g:lsp_log_verbose = 1
-" let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
 " let g:lsp_show_message_log_level = 'log'
 " let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
@@ -66,6 +66,16 @@ let g:lsp_settings_filetype_javascript = s:frontend_lsp
 let g:lsp_settings_filetype_javascriptreact = s:frontend_lsp
 let g:lsp_settings_filetype_typescript = s:frontend_lsp
 let g:lsp_settings_filetype_typescriptreact = s:frontend_lsp
+" }}}
+
+" Gauge {{{
+if executable('gauge')
+  autocmd User lsp_setup call lsp#register_server({
+    \ 'name': 'gauge',
+    \ 'cmd': {server_info->['gauge', 'daemon', '--lsp']},
+    \ 'allowlist': ['spec', 'typescript'],
+    \ })
+endif
 " }}}
 
 let s:lsp_format_efm_only_list = [
