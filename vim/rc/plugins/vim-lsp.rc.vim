@@ -68,6 +68,7 @@ let g:lsp_settings_filetype_typescript = s:frontend_lsp
 let g:lsp_settings_filetype_typescriptreact = s:frontend_lsp
 " }}}
 
+
 let s:lsp_format_efm_only_list = [
       \   'javascript',
       \   'javascriptreact',
@@ -114,4 +115,14 @@ augroup lsp_install
   au!
   " call s:on_lsp_buffer_enabled only for languages that has the server registered.
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+
+  " Gauge {{{
+  if executable('gauge')
+    autocmd User lsp_setup call lsp#register_server({
+      \ 'name': 'gauge',
+      \ 'cmd': {server_info->['gauge', 'daemon', '--lsp']},
+      \ 'allowlist': ['spec', 'typescript'],
+      \ })
+  endif
+  " }}}
 augroup END
