@@ -105,7 +105,7 @@ function! s:on_lsp_buffer_enabled() abort
   let g:lsp_format_sync_timeout = 1000
   if g:lsp_format_on_save
     " autocmd MyAutoCmd BufWritePre <buffer> call execute('LspDocumentFormatSync')
-    autocmd MyAutoCmd BufWritePre * call LspFormat()
+    autocmd! MyAutoCmd BufWritePre * call LspFormat()
   endif
 
   " refer to doc to add more commands
