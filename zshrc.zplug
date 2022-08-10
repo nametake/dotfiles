@@ -1,8 +1,8 @@
 source ~/.zplug/init.zsh
 
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOSTART_ONCE=true
-export ZSH_TMUX_AUTOCONNECT=true
+# export ZSH_TMUX_AUTOSTART=true
+# export ZSH_TMUX_AUTOSTART_ONCE=true
+# export ZSH_TMUX_AUTOCONNECT=true
 
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
