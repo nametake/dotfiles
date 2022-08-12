@@ -68,7 +68,6 @@ let g:lsp_settings_filetype_typescript = s:frontend_lsp
 let g:lsp_settings_filetype_typescriptreact = s:frontend_lsp
 " }}}
 
-
 let s:lsp_format_efm_only_list = [
       \   'javascript',
       \   'javascriptreact',
@@ -117,7 +116,8 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 
   " Gauge {{{
-  if executable('gauge')
+  let root_dir = finddir('.git/..', expand('%:p:h').';')
+  if executable('gauge') && filereadable(root_dir.'/.gauge_root')
     autocmd User lsp_setup call lsp#register_server({
       \ 'name': 'gauge',
       \ 'cmd': {server_info->['gauge', 'daemon', '--lsp']},

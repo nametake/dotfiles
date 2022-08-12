@@ -3,6 +3,7 @@
 ## vim
 .local.vimrc
 .vim/
+.gauge_root
 
 ## nodejs
 .tern-port
