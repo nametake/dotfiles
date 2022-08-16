@@ -118,10 +118,14 @@ augroup lsp_install
   " Gauge {{{
   let root_dir = finddir('.git/..', expand('%:p:h').';')
   if executable('gauge') && filereadable(root_dir.'/.gauge_root')
+    autocmd MyAutoCmd BufNewFile,BufRead *.spec set filetype=spec
+    autocmd MyAutoCmd BufNewFile,BufRead *.spec set syntax=markdown
+    autocmd MyAutoCmd BufNewFile,BufRead *.cpt set filetype=cpt
+    autocmd MyAutoCmd BufNewFile,BufRead *.cpt set syntax=markdown
     autocmd User lsp_setup call lsp#register_server({
       \ 'name': 'gauge',
       \ 'cmd': {server_info->['gauge', 'daemon', '--lsp']},
-      \ 'allowlist': ['spec', 'typescript'],
+      \ 'allowlist': ['spec', 'cpt', 'typescript'],
       \ })
   endif
   " }}}
