@@ -48,7 +48,6 @@
   "vim.sneak": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
-  "window.zoomLevel": 0,
   "workbench.colorCustomizations": {
     "list.focusBackground": "#186fcc"
   },
