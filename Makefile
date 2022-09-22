@@ -65,7 +65,6 @@ GO_TOOLS := \
 	mvdan.cc/gofumpt@latest \
 	mvdan.cc/gofumpt/gofumports@latest \
 	golang.org/x/tools/gopls@latest \
-	github.com/sourcegraph/go-langserver@latest \
 	github.com/mattn/efm-langserver@latest \
 	honnef.co/go/tools/staticcheck@latest \
 	golang.org/x/lint/golint@latest \
