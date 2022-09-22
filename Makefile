@@ -63,10 +63,8 @@ BREW_TOOLS := \
 GO_TOOLS := \
 	golang.org/x/tools/cmd/goimports@latest \
 	mvdan.cc/gofumpt@latest \
-	mvdan.cc/gofumpt/gofumports@latest \
 	golang.org/x/tools/gopls@latest \
 	github.com/mattn/efm-langserver@latest \
-	honnef.co/go/tools/staticcheck@latest \
 	golang.org/x/lint/golint@latest \
 	github.com/rhysd/gofmtrlx@latest \
 	sourcegraph.com/sqs/goreturns@latest \
@@ -74,7 +72,6 @@ GO_TOOLS := \
 	github.com/cweill/gotests/gotests@latest \
 	mvdan.cc/sh/cmd/shfmt@latest \
 	github.com/jackc/sqlfmt/...@latest \
-	github.com/mrtazz/checkmake@latest \
 	github.com/k0kubun/sqldef/cmd/...@latest \
 	github.com/golang/protobuf/protoc-gen-go@latest \
 	github.com/nametake/protoc-gen-gohttp@latest \
