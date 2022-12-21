@@ -28,7 +28,8 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.qvacua\\.VimR$",
                                             "^com\\.jetbrains\\.intellij\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -60,7 +61,8 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.qvacua\\.VimR$",
                                             "^com\\.jetbrains\\.intellij\\.",
-                                            "^com\\.microsoft\\.VSCode$"
+                                            "^com\\.microsoft\\.VSCode$",
+                                            "^md\\.obsidian$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }

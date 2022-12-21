@@ -10,7 +10,8 @@
                 "^com\\.apple\\.Terminal$",
                 "^org\\.vim\\.",
                 "^com\\.googlecode\\.iterm2$",
-                "^com\\.qvacua\\.VimR$"
+                "^com\\.qvacua\\.VimR$",
+                "^md\\.obsidian$"
               ],
               "type": "frontmost_application_if"
             }
@@ -40,7 +41,8 @@
                 "^com\\.apple\\.Terminal$",
                 "^org\\.vim\\.",
                 "^com\\.googlecode\\.iterm2$",
-                "^com\\.qvacua\\.VimR$"
+                "^com\\.qvacua\\.VimR$",
+                "^md\\.obsidian$"
               ],
               "type": "frontmost_application_if"
             }
