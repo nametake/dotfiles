@@ -194,6 +194,7 @@ let g:goimports_show_loclist = 0
 " let g:goimports_simplify_cmd = 'gofumpt'
 
 Plug 'nametake/vim-goiferr-snippets', {'for': ['go']}
+Plug 'fatih/vim-go', {'for': ['go']}
 " }}}
 
 " Rust {{{
