@@ -195,6 +195,11 @@ let g:goimports_show_loclist = 0
 
 Plug 'nametake/vim-goiferr-snippets', {'for': ['go']}
 Plug 'fatih/vim-go', {'for': ['go']}
+let g:go_gopls_enabled = 0
+let g:go_def_mapping_enabled = 0
+let g:go_diagnostics_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
+
 " }}}
 
 " Rust {{{
