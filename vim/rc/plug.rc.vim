@@ -194,7 +194,7 @@ let g:goimports_show_loclist = 0
 " let g:goimports_simplify_cmd = 'gofumpt'
 
 Plug 'nametake/vim-goiferr-snippets', {'for': ['go']}
-Plug 'fatih/vim-go', {'for': ['go']}
+Plug 'fatih/vim-go', {'for': ['go'], 'do': ':GoUpdateBinaries'}
 let g:go_fmt_autosave = 0
 let g:go_imports_autosave = 0
 let g:go_mod_fmt_autosave = 0
