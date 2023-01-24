@@ -72,7 +72,6 @@ GO_TOOLS := \
 	github.com/cweill/gotests/gotests@latest \
 	mvdan.cc/sh/cmd/shfmt@latest \
 	github.com/jackc/sqlfmt/...@latest \
-	github.com/k0kubun/sqldef/cmd/...@latest \
 	github.com/golang/protobuf/protoc-gen-go@latest \
 	github.com/nametake/protoc-gen-gohttp@latest \
 	github.com/cespare/reflex@latest \
