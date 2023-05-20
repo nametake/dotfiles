@@ -155,6 +155,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " LSP
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+  Plug 'nametake/vim-lsp-all-update'
 source ~/.vim/rc/plugins/vim-lsp.rc.vim
 
 " Snippets
