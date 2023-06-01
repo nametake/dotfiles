@@ -97,6 +97,7 @@ NPM_TOOLS := \
 	textlint-filter-rule-comments \
 	textlint-filter-rule-whitelist \
 	diagnostic-languageserver \
+	get-graphql-schema \
 
 PIP_TOOLS := \
 	pip \
