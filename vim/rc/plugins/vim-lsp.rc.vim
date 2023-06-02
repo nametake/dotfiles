@@ -68,6 +68,10 @@ let g:lsp_settings_filetype_typescript = s:frontend_lsp
 let g:lsp_settings_filetype_typescriptreact = s:frontend_lsp
 " }}}
 
+" GraphQL {{{
+let g:lsp_settings_filetype_graphql = ['graphql-language-server']
+" }}}
+
 let s:lsp_format_efm_only_list = [
       \   'javascript',
       \   'javascriptreact',
