@@ -65,12 +65,17 @@ let g:sonictemplate_vim_template_dir = [
 " }}}
 
 " Search {{{
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mattn/ctrlp-matchfuzzy'
-nnoremap <C-j> :<C-u>CtrlPBuffer<CR>
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'mattn/ctrlp-matchfuzzy'
+" nnoremap <C-j> :<C-u>CtrlPBuffer<CR>
+" let g:ctrlp_working_path_mode = 'ra'
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+nnoremap <C-p> :<C-u>Files<CR>
+nnoremap <C-j> :<C-u>Buffers<CR>
 
 Plug 'mileszs/ack.vim'
 nnoremap <C-s> :<C-u>Ack!<Space>
@@ -120,6 +125,8 @@ Plug 'preservim/nerdtree'
 nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("a") + v:val) . "[^.]*$"')
+let g:NERDTreeMapOpenSplit='<C-x>'
+let g:NERDTreeMapOpenVSplit='<C-v>'
 
   Plug 'Xuyuanp/nerdtree-git-plugin'
   let g:NERDTreeGitStatusIndicatorMapCustom = {
