@@ -145,6 +145,13 @@ let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("
   " let g:NERDTreeLimitedSyntax = 1
 " }}}
 
+" Outline {{{
+Plug 'liuchengxu/vista.vim'
+nnoremap <silent> <Space>o :<C-u>Vista<CR>
+let g:vista_default_executive = 'vim_lsp'
+let g:vista#renderer#enable_icon = 0
+" }}}
+
 " LSP {{{
 Plug 'jiangmiao/auto-pairs'
 
