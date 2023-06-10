@@ -76,13 +76,14 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <C-j> :<C-u>Buffers<CR>
+nnoremap <C-s> :<C-u>Ag<CR>
 
-Plug 'mileszs/ack.vim'
-nnoremap <C-s> :<C-u>Ack!<Space>
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-let g:ack_autoclose = 1
+" Plug 'mileszs/ack.vim'
+" nnoremap <C-s> :<C-u>Ack!<Space>
+" if executable('ag')
+"   let g:ackprg = 'ag --vimgrep'
+" endif
+" let g:ack_autoclose = 1
 
 Plug 'easymotion/vim-easymotion'
 map  <Space>F <Plug>(easymotion-bd-f)
