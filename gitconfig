@@ -26,6 +26,8 @@
   di = diff
   p = !git push origin `git rev-parse --abbrev-ref HEAD`
   pm = "!f () { git switch $(git remote show origin | sed -n '/HEAD branch/s/.*: //p'); git pull --prune; git delete-merged-branch; git submodule update; };f"
+  open = !gh pr view --web
+  pe = !gh pr edit
 
 [core]
   editor = "vim"

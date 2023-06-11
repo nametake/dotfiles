@@ -80,7 +80,6 @@ GO_TOOLS := \
 NPM_TOOLS := \
 	neovim \
 	eslint \
-	git-open \
 	fixjson \
 	remark-cli \
 	remark-preset-lint-consistent \
