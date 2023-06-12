@@ -21,6 +21,10 @@ export XDG_CONFIG_HOME=~/.config
 [ -e ${HOME}/.local/bin ] && \
   export PATH=${HOME}/.local/bin:${PATH}
 
+export GNUBIN_PATH=/opt/homebrew/opt/make/libexec/gnubin
+[ -e ${GNUBIN_PATH} ] && \
+  export PATH=${GNUBIN_PATH}:${PATH}
+
 # programming languages
 export GOPATH=${HOME}/go
 export GO111MODULE=auto
