@@ -22,7 +22,7 @@ DOTFILES := \
 	gitignore \
 	git_template \
 	asdfrc \
-	tool-version \
+	tool-versions \
 	eslintrc \
 	prettierrc \
 	ideavimrc \
