@@ -74,6 +74,7 @@ let g:sonictemplate_vim_template_dir = [
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 nnoremap <C-p> :<C-u>Files<CR>
 nnoremap <C-j> :<C-u>Buffers<CR>
 nnoremap <C-s> :<C-u>Ag<CR>
