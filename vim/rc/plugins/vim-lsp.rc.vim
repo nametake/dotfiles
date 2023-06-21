@@ -133,4 +133,17 @@ augroup lsp_install
       \ })
   endif
   " }}}
+  " autocmd User lsp_setup call lsp#register_server({
+  "   \   'name': 'graphql-lsp',
+  "   \   'cmd': {server_info->['graphql-lsp', 'server', '--method', 'stream']},
+  "   \   'initialization_options': {
+  "   \     'graphql-config.load.legacy': v:false,
+  "   \   },
+  "   \   'allowlist': ['graphql', 'typescriptreact'],
+  "   \ })
+  " autocmd User lsp_setup call lsp#register_server({
+  "   \   'name': 'gopls',
+  "   \   'cmd': {server_info->['gopls']},
+  "   \   'allowlist': ['go'],
+  "   \ })
 augroup END
