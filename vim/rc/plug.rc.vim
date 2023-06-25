@@ -170,43 +170,43 @@ if has('nvim')
   Plug 'neovim/nvim-lspconfig'
 endif
 
-" Auto complete
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
-" LSP
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-  Plug 'nametake/vim-lsp-all-update'
-source ~/.vim/rc/plugins/vim-lsp.rc.vim
-
-" Snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'rafamadriz/friendly-snippets'
-let g:vsnip_snippet_dir = '~/.vim/vsnip'
-
-let g:vsnip_filetypes = {}
-let g:vsnip_filetypes.javascriptreact = ['javascript']
-let g:vsnip_filetypes.typescriptreact = ['typescript']
-
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <CR> pumvisible()
-      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
-      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<CR>"
-inoremap <expr> <C-k> pumvisible()
-      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
-      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
-snoremap <expr> <C-k> pumvisible()
-      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
-      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
-
-nmap s <Plug>(vsnip-select-text)
-xmap s <Plug>(vsnip-select-text)
-nmap S <Plug>(vsnip-cut-text)
-xmap S <Plug>(vsnip-cut-text)
-" }}}
+" " Auto complete
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+"
+" " LSP
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+"   Plug 'nametake/vim-lsp-all-update'
+" source ~/.vim/rc/plugins/vim-lsp.rc.vim
+"
+" " Snippets
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'rafamadriz/friendly-snippets'
+" let g:vsnip_snippet_dir = '~/.vim/vsnip'
+"
+" let g:vsnip_filetypes = {}
+" let g:vsnip_filetypes.javascriptreact = ['javascript']
+" let g:vsnip_filetypes.typescriptreact = ['typescript']
+"
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <CR> pumvisible()
+"       \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+"       \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<CR>"
+" inoremap <expr> <C-k> pumvisible()
+"       \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+"       \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
+" snoremap <expr> <C-k> pumvisible()
+"       \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+"       \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
+"
+" nmap s <Plug>(vsnip-select-text)
+" xmap s <Plug>(vsnip-select-text)
+" nmap S <Plug>(vsnip-cut-text)
+" xmap S <Plug>(vsnip-cut-text)
+" " }}}
 
 " Language {{{
 
