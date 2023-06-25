@@ -11,22 +11,28 @@ end
 require("location_handler").setup()
 
 -- LSP setting
-require("mason").setup()
-require("mason-lspconfig").setup {
-  ensure_installed = {
+local servers = {
     -- efm-langserver
     "efm",
     "lua_ls",
     "rust_analyzer",
     "gopls",
     "tsserver",
-  },
-}
+  }
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
-lspconfig.efm.setup {}
-lspconfig.gopls.setup {}
-lspconfig.tsserver.setup {}
+
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = servers,
+}
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    -- on_attach = my_custom_on_attach,
+    capabilities = capabilities,
+  }
+end
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -61,3 +67,26 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- end, opts)
   end,
 })
+
+local cmp = require'cmp'
+
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' }
+  }, {
+      { name = 'buffer' },
+    })
+}
