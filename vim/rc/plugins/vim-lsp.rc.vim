@@ -96,7 +96,7 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <silent> gS <plug>(lsp-workspace-symbol-search)
   nmap <silent> gr <plug>(lsp-references)
   nmap <silent> gi <plug>(lsp-implementation)
-  nmap <silent> gt <plug>(lsp-type-definition)
+  nmap <silent> gD <plug>(lsp-type-definition)
   nmap <silent> <Space>r <plug>(lsp-rename)
   nmap <silent> <Space>k <plug>(lsp-previous-diagnostic)
   nmap <silent> <Space>j <plug>(lsp-next-diagnostic)
