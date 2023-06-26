@@ -12,26 +12,58 @@ require("location_handler").setup()
 
 -- LSP setting
 local servers = {
-    -- efm-langserver
-    "efm",
-    "lua_ls",
-    "rust_analyzer",
-    "gopls",
-    "tsserver",
-  }
+  -- efm-langserver
+  efm = {},
+  lua_ls = {
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {'vim'},
+        },
+      },
+    },
+  },
+  rust_analyzer = {},
+  gopls = {},
+  tsserver = {},
+}
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 
+local function merge(list1, list2)
+  for key, value in pairs(list2) do
+    list1[key] = value
+  end
+
+  return list1
+end
+
+local function keys(list)
+  local keyset={}
+  local n=0
+
+  for k, _ in pairs(list) do
+    n=n+1
+    keyset[n]=k
+  end
+  return keyset
+end
+
 require("mason").setup()
 require("mason-lspconfig").setup {
-  ensure_installed = servers,
+  ensure_installed = keys(servers),
 }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  }
+
+local default_options = {
+  -- on_attach = my_custom_on_attach,
+  capabilities = capabilities,
+}
+
+for lsp, options in pairs(servers) do
+  lspconfig[lsp].setup(
+    merge(default_options, options)
+  )
 end
 
 -- Global mappings.
