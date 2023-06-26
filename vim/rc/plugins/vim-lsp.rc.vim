@@ -39,6 +39,12 @@ let g:lsp_settings_filetype_json = ['efm-langserver']
 
 " Go {{{
 let g:lsp_settings_filetype_go = ['gopls', 'golangci-lint-langserver']
+let g:lsp_settings['gopls'] = {
+  \  'initialization_options': {
+  \     'symbolScope': 'workspace',
+  \     'memoryMode': 'DegradeClosed',
+  \  },
+  \}
 let g:lsp_settings['golangci-lint-langserver'] = {
   \  'args': ['-debug'],
   \  'initialization_options': {
@@ -96,7 +102,7 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <silent> gS <plug>(lsp-workspace-symbol-search)
   nmap <silent> gr <plug>(lsp-references)
   nmap <silent> gi <plug>(lsp-implementation)
-  nmap <silent> gt <plug>(lsp-type-definition)
+  nmap <silent> gD <plug>(lsp-type-definition)
   nmap <silent> <Space>r <plug>(lsp-rename)
   nmap <silent> <Space>k <plug>(lsp-previous-diagnostic)
   nmap <silent> <Space>j <plug>(lsp-next-diagnostic)
