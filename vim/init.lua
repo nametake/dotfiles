@@ -32,11 +32,15 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 
 local function merge(list1, list2)
+  local result = {}
+  for key, value in pairs(list1) do
+    result[key] = value
+  end
   for key, value in pairs(list2) do
-    list1[key] = value
+    result[key] = value
   end
 
-  return list1
+  return result
 end
 
 local function keys(list)
