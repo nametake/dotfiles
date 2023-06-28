@@ -33,18 +33,19 @@ nmap <Space>y <Plug>(PopYank)
 
 " Text operation {{{
 Plug 'kana/vim-textobj-user'
+  Plug 'kana/vim-textobj-function'
   Plug 'kana/vim-textobj-jabraces'
   Plug 'sgur/vim-textobj-parameter'
 
 Plug 'bkad/CamelCaseMotion'
-let g:camelcasemotion_key = ','
+let g:camelcasemotion_key = '<leader>'
 
 Plug 'tpope/vim-surround'
 
 Plug 'kana/vim-operator-user'
+  Plug 'kana/vim-operator-replace'
+  map _ <Plug>(operator-replace)
 
-Plug 'kana/vim-operator-replace'
-map _ <Plug>(operator-replace)
 
 Plug 'tomtom/tcomment_vim'
 
