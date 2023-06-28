@@ -36,6 +36,9 @@ Plug 'kana/vim-textobj-user'
   Plug 'kana/vim-textobj-jabraces'
   Plug 'sgur/vim-textobj-parameter'
 
+Plug 'bkad/CamelCaseMotion'
+let g:camelcasemotion_key = ','
+
 Plug 'tpope/vim-surround'
 
 Plug 'kana/vim-operator-user'
