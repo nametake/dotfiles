@@ -105,6 +105,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local cmp = require'cmp'
+local feedkeys = require'cmp.utils.feedkeys'
+
+local t = function (str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
 cmp.setup {
   snippet = {
@@ -118,6 +123,13 @@ cmp.setup {
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-k>'] = cmp.mapping(function (fallback)
+      if vim.fn['vsnip#available'](1) == 1 then
+        feedkeys.call(t'<Plug>(vsnip-expand-or-jump)', '')
+      else
+        fallback()
+      end
+    end, { 'i', 's', 'c' })
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
