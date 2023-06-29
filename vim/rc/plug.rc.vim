@@ -47,6 +47,7 @@ Plug 'kana/vim-operator-user'
   Plug 'kana/vim-operator-replace'
   map _ <Plug>(operator-replace)
 
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'tomtom/tcomment_vim'
 
@@ -166,31 +167,16 @@ let g:vista_default_executive = 'vim_lsp'
 let g:vista#renderer#enable_icon = 0
 " }}}
 
+" Snippets {{{
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'rafamadriz/friendly-snippets'
+let g:vsnip_snippet_dir = '~/.vim/vsnip'
+" }}}
+
 " LSP {{{
-Plug 'jiangmiao/auto-pairs'
 
-if has('nvim')
-  Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
-  Plug 'williamboman/mason-lspconfig.nvim'
-  Plug 'neovim/nvim-lspconfig'
-
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'hrsh7th/cmp-cmdline'
-  Plug 'hrsh7th/nvim-cmp'
-
-  Plug 'hrsh7th/cmp-vsnip'
-  Plug 'hrsh7th/vim-vsnip'
-  Plug 'hrsh7th/vim-vsnip-integ'
-  let g:vsnip_snippet_dir = '~/.vim/vsnip'
-
-  " for Golang
-  Plug 'golang/vscode-go'
-
-  Plug 'rafamadriz/friendly-snippets'
-endif
-
+" vim-lsp {{{
 " " Auto complete
 " Plug 'prabirshrestha/asyncomplete.vim'
 " Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -202,11 +188,6 @@ endif
 " source ~/.vim/rc/plugins/vim-lsp.rc.vim
 "
 " " Snippets
-" Plug 'hrsh7th/vim-vsnip'
-" Plug 'hrsh7th/vim-vsnip-integ'
-" Plug 'rafamadriz/friendly-snippets'
-" let g:vsnip_snippet_dir = '~/.vim/vsnip'
-"
 " let g:vsnip_filetypes = {}
 " let g:vsnip_filetypes.javascriptreact = ['javascript']
 " let g:vsnip_filetypes.typescriptreact = ['typescript']
@@ -227,7 +208,28 @@ endif
 " xmap s <Plug>(vsnip-select-text)
 " nmap S <Plug>(vsnip-cut-text)
 " xmap S <Plug>(vsnip-cut-text)
-" " }}}
+" }}}
+
+" nvim-lsp-config {{{
+if has('nvim')
+  Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+  Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'neovim/nvim-lspconfig'
+
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/nvim-cmp'
+
+  Plug 'hrsh7th/cmp-vsnip'
+
+  " for Golang
+  Plug 'golang/vscode-go'
+endif
+" }}}
+
+" }}}
 
 " Language {{{
 
