@@ -92,7 +92,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, ';', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
@@ -111,6 +111,16 @@ local t = function (str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
+local function smart_confirm(fallback)
+  if vim.fn['vsnip#available'](1) == 1 then
+    feedkeys.call(t'<Plug>(vsnip-expand-or-jump)', '')
+  elseif cmp.visible() then
+    cmp.confirm({ select = true })
+  else
+    fallback()
+  end
+end
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -123,18 +133,13 @@ cmp.setup {
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-k>'] = cmp.mapping(function (fallback)
-      if vim.fn['vsnip#available'](1) == 1 then
-        feedkeys.call(t'<Plug>(vsnip-expand-or-jump)', '')
-      else
-        fallback()
-      end
-    end, { 'i', 's', 'c' })
+    ['<C-k>'] = cmp.mapping(smart_confirm),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' }
   }, {
       { name = 'buffer' },
-    })
+    }),
+  preselect = cmp.PreselectMode.None
 }
