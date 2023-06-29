@@ -39,6 +39,12 @@ let g:lsp_settings_filetype_json = ['efm-langserver']
 
 " Go {{{
 let g:lsp_settings_filetype_go = ['gopls', 'golangci-lint-langserver']
+let g:lsp_settings['gopls'] = {
+  \  'initialization_options': {
+  \     'symbolScope': 'workspace',
+  \     'memoryMode': 'DegradeClosed',
+  \  },
+  \}
 let g:lsp_settings['golangci-lint-langserver'] = {
   \  'args': ['-debug'],
   \  'initialization_options': {
