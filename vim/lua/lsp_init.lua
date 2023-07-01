@@ -1,7 +1,7 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
+
 local Plugin = {}
-
-
-require("lsp_handler").setup()
 
 -- LSP setting
 local servers = {
@@ -44,10 +44,6 @@ local function keys(list)
   end
   return keyset
 end
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require('lspconfig')
-
 
 Plugin.setup = function (opts)
   if opts == nil then
