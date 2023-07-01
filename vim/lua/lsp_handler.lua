@@ -1,4 +1,4 @@
-LspHandlerConfig = {}
+local Plugin = {}
 
 -- for tagstack at multi result
 local function decorator(original_handler)
@@ -19,7 +19,7 @@ local handlers = {
   "textDocument/implementation",
 }
 
-LspHandlerConfig.setup = function ()
+Plugin.setup = function ()
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
     vim.lsp.handlers.hover,
     {
@@ -33,4 +33,4 @@ LspHandlerConfig.setup = function ()
   end
 end
 
-return LspHandlerConfig
+return Plugin

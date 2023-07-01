@@ -1,7 +1,5 @@
--- Load .vimrc {{{
-local vimrc = vim.fn.stdpath("config") .. "/rc/vimrc"
-vim.cmd.source(vimrc)
--- }}}
+-- Load .vimrc
+require("vimrc").setup({ path = "/rc/vimrc" })
 
 -- If vim-lsp installed return lsp setting
 if (vim.fn.IsPlugged('vim-lsp') == 1) then
