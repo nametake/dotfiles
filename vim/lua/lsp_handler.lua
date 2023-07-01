@@ -13,17 +13,17 @@ local function decorator(original_handler)
 end
 
 local handlers = {
-  "textDocument/declaration",
-  "textDocument/definition",
-  "textDocument/typeDefinition",
-  "textDocument/implementation",
+  'textDocument/declaration',
+  'textDocument/definition',
+  'textDocument/typeDefinition',
+  'textDocument/implementation',
 }
 
 Plugin.setup = function ()
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover,
     {
-      border = "single",
+      border = 'single',
       width = 96,
     }
   )

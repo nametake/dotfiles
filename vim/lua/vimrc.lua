@@ -7,7 +7,7 @@ Plugin.setup = function (opts)
     return
   end
 
-  local vimrc = vim.fn.stdpath("config") .. opts.path
+  local vimrc = vim.fn.stdpath('config') .. opts.path
   vim.cmd.source(vimrc)
 end
 
