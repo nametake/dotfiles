@@ -9,6 +9,13 @@ if (vim.fn.IsPlugged('vim-lsp') == 1) then
 end
 
 require("location_handler").setup()
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {
+    border = "single",
+    width = 96,
+  }
+)
 
 -- LSP setting
 local servers = {
