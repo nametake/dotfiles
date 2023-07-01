@@ -111,11 +111,19 @@ local t = function (str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-local function smart_confirm(fallback)
+local function confirm_smart(fallback)
   if vim.fn['vsnip#available'](1) == 1 then
     feedkeys.call(t'<Plug>(vsnip-expand-or-jump)', '')
   elseif cmp.visible() then
     cmp.confirm({ select = true })
+  else
+    fallback()
+  end
+end
+
+local function jump_prev(fallback)
+  if vim.fn['vsnip#available'](0) == 1 then
+    feedkeys.call(t'<Plug>(vsnip-jump-prev)', '')
   else
     fallback()
   end
@@ -130,10 +138,11 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-k>'] = cmp.mapping(smart_confirm),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>'] = cmp.mapping(jump_prev),
+    ['<CR>'] = cmp.mapping(confirm_smart),
+    ['<C-k>'] = cmp.mapping(confirm_smart),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },

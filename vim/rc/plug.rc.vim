@@ -193,7 +193,7 @@ let g:vsnip_snippet_dir = '~/.vim/vsnip'
 " let g:vsnip_filetypes.typescriptreact = ['typescript']
 "
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "<Plug>(vsnip-jump-prev)" : "\<S-Tab>"
 " inoremap <expr> <CR> pumvisible()
 "       \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
 "       \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<CR>"
