@@ -71,9 +71,10 @@ Plugin.setup = function ()
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-e>'] = cmp.mapping.abort(),
       ['<Tab>'] = cmp.mapping.select_next_item(),
-      ['<S-Tab>'] = cmp.mapping(jump_prev),
-      ['<CR>'] = cmp.mapping(confirm_smart),
-      ['<C-k>'] = cmp.mapping(confirm_smart),
+      ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+      ['<CR>'] = cmp.mapping(confirm_smart, { 'i', 's' }),
+      ['<C-k>'] = cmp.mapping(confirm_smart, { 'i', 's' }),
+      ['<C-j>'] = cmp.mapping(jump_prev, { 'i', 's' }),
     }),
     sources = cmp.config.sources({
       { name = 'buffer' },
