@@ -152,6 +152,8 @@ cmp.setup {
     ['<C-k>'] = cmp.mapping(confirm_smart),
   }),
   sources = cmp.config.sources({
+    { name = 'buffer' },
+    { name = 'path' },
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
     { name = 'nvim_lsp_signature_help' },
@@ -160,3 +162,21 @@ cmp.setup {
     }),
   preselect = cmp.PreselectMode.None
 }
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
