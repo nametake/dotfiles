@@ -28,6 +28,12 @@ Plugin.setup = function ()
     }
   )
 
+  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+    vim.lsp.handlers.signature_help, {
+      border = 'single'
+    }
+  )
+
   for _, attribute in ipairs(handlers) do
     vim.lsp.handlers[attribute] = decorator(vim.lsp.handlers[attribute])
   end
