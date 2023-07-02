@@ -47,6 +47,7 @@ Plug 'kana/vim-operator-user'
   Plug 'kana/vim-operator-replace'
   map _ <Plug>(operator-replace)
 
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'tomtom/tcomment_vim'
 
@@ -166,45 +167,78 @@ let g:vista_default_executive = 'vim_lsp'
 let g:vista#renderer#enable_icon = 0
 " }}}
 
-" LSP {{{
-Plug 'jiangmiao/auto-pairs'
-
-" Auto complete
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
-" LSP
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-  Plug 'nametake/vim-lsp-all-update'
-source ~/.vim/rc/plugins/vim-lsp.rc.vim
-
-" Snippets
+" Snippets {{{
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
 let g:vsnip_snippet_dir = '~/.vim/vsnip'
+" }}}
 
-let g:vsnip_filetypes = {}
-let g:vsnip_filetypes.javascriptreact = ['javascript']
-let g:vsnip_filetypes.typescriptreact = ['typescript']
+" LSP {{{
 
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <CR> pumvisible()
-      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
-      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<CR>"
-inoremap <expr> <C-k> pumvisible()
-      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
-      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
-snoremap <expr> <C-k> pumvisible()
-      \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
-      \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
+" 'vim-lsp' or 'nvim-lspconfig'
+let g:lsp_client = 'nvim-lspconfig'
 
-nmap s <Plug>(vsnip-select-text)
-xmap s <Plug>(vsnip-select-text)
-nmap S <Plug>(vsnip-cut-text)
-xmap S <Plug>(vsnip-cut-text)
+" vim-lsp {{{
+
+if g:lsp_client ==# 'vim-lsp'
+  " Auto complete
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+  " LSP
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'nametake/vim-lsp-all-update'
+  source ~/.vim/rc/plugins/vim-lsp.rc.vim
+
+  " Snippets
+  let g:vsnip_filetypes = {}
+  let g:vsnip_filetypes.javascriptreact = ['javascript']
+  let g:vsnip_filetypes.typescriptreact = ['typescript']
+
+  inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  inoremap <expr> <CR> pumvisible()
+        \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+        \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<CR>"
+  inoremap <expr> <C-k> pumvisible()
+        \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+        \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
+  snoremap <expr> <C-k> pumvisible()
+        \ ? vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : asyncomplete#close_popup()
+        \ : vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : "\<C-k>"
+  inoremap <expr> <C-j> pumvisible() ? "<Plug>(vsnip-jump-prev)" : "\<C-j>"
+  snoremap <expr> <C-j> pumvisible() ? "<Plug>(vsnip-jump-prev)" : "\<C-j>"
+
+  nmap s <Plug>(vsnip-select-text)
+  xmap s <Plug>(vsnip-select-text)
+  nmap S <Plug>(vsnip-cut-text)
+  xmap S <Plug>(vsnip-cut-text)
+endif
+" }}}
+
+" nvim-lsp-config {{{
+
+if g:lsp_client ==# 'nvim-lspconfig' && has('nvim')
+  Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+  Plug 'williamboman/mason-lspconfig.nvim'
+  Plug 'neovim/nvim-lspconfig'
+
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+
+  Plug 'hrsh7th/cmp-vsnip'
+
+  " for Golang
+  Plug 'golang/vscode-go'
+endif
+" }}}
+
 " }}}
 
 " Language {{{
@@ -289,3 +323,12 @@ call plug#end()
 if has('nvim')
   source ~/.vim/rc/plugins/nvim-treesitter.rc.vim
 endif
+
+" check the specified plugin is installed
+function! IsPlugged(name)
+  if exists('g:plugs') && has_key(g:plugs, a:name) && isdirectory(g:plugs[a:name].dir)
+    return 1
+  else
+    return 0
+  endif
+endfunction
