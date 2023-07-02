@@ -8,12 +8,24 @@ end
 
 require('lsp_handler').setup()
 require('lsp_init').setup({
-  -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+  -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md --
   servers = {
     -- efm-langserver
     efm = {},
     -- Go
     gopls = {},
+    golangci_lint_ls = {
+      init_options = {
+        command = { "golangci-lint", "run", "--out-format", "json", "--enable-all" },
+      },
+    },
+    -- GraphQL
+    graphql = {},
+    -- TypeScript
+    tsserver = {},
+    -- Bash
+    bashls = {},
+    -- Lua
     lua_ls = {
       settings = {
         Lua = {
@@ -23,8 +35,10 @@ require('lsp_init').setup({
         },
       },
     },
+    -- Markdown
+    marksman = {},
+    -- Rust
     rust_analyzer = {},
-    tsserver = {},
   }
 })
 
