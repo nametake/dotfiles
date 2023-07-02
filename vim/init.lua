@@ -13,7 +13,12 @@ require('lsp_init').setup({
     -- efm-langserver
     efm = {},
     -- Go
-    gopls = {},
+    gopls = {
+      init_options = {
+        symbolScope = 'workspace',
+        memoryMode = 'DegradeClosed',
+      },
+    },
     golangci_lint_ls = {
       init_options = {
         command = { "golangci-lint", "run", "--out-format", "json", "--enable-all" },
