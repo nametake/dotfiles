@@ -6,6 +6,7 @@ if (vim.fn.IsPlugged('nvim-lspconfig') ~= 1) then
   return
 end
 
+
 require('lsp_handler').setup()
 require('lsp_init').setup({
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md --
@@ -28,6 +29,7 @@ require('lsp_init').setup({
     graphql = {},
     -- TypeScript
     tsserver = {},
+    rome = {},
     -- Bash
     bashls = {},
     -- Lua

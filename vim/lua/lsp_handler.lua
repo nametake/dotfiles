@@ -20,6 +20,12 @@ local handlers = {
 }
 
 Plugin.setup = function ()
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+      vim.lsp.buf.format { async = false }
+    end
+  })
+
   vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover,
     {
@@ -41,7 +47,6 @@ Plugin.setup = function ()
   for _, attribute in ipairs(handlers) do
     vim.lsp.handlers[attribute] = decorator(vim.lsp.handlers[attribute])
   end
-
 end
 
 return Plugin
