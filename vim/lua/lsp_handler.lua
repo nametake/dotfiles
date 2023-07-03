@@ -3,7 +3,7 @@ local Plugin = {}
 -- for tagstack at multi result
 local function decorator(original_handler)
   return function(err, result, ctx, config)
-    if vim.tbl_islist(result) then
+    if vim.tbl_islist(result) and table.getn(result) >= 2 then
       local from = { vim.fn.bufnr('%'), vim.fn.line('.'), vim.fn.col('.'), 0 }
       local items = { { tagname = vim.fn.expand('<cword>'), from = from } }
       vim.fn.settagstack(vim.fn.win_getid(), { items = items }, 't')
