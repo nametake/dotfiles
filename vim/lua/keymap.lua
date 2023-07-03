@@ -77,7 +77,7 @@ Plugin.setup = function()
       ['<C-j>'] = cmp.mapping(jump_prev, { 'i', 's' }),
     }),
     sources = cmp.config.sources({
-      { name = 'buffer' },
+      -- { name = 'buffer' },
       { name = 'path' },
       { name = 'nvim_lsp' },
       { name = 'vsnip' },
