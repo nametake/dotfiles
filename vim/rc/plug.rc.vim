@@ -23,7 +23,6 @@ endif
 
 " Plug 'tomasr/molokai'
 Plug 'tamelion/neovim-molokai'
-
 Plug 'sainnhe/sonokai'
 
 Plug 'simeji/winresizer'
