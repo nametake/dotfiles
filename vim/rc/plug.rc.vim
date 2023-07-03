@@ -177,7 +177,7 @@ let g:vsnip_snippet_dir = '~/.vim/vsnip'
 
 " LSP {{{
 
-" 'vim-lsp' or 'nvim-lspconfig'
+" let g:lsp_client = 'vim-lsp'
 let g:lsp_client = 'nvim-lspconfig'
 
 " vim-lsp {{{
