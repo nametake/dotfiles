@@ -1,6 +1,6 @@
 local Plugin = {}
 
-Plugin.setup = function (opts)
+Plugin.setup = function(opts)
   if opts == nil then
     opts = {}
   elseif type(opts) ~= 'table' then

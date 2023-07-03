@@ -3,25 +3,6 @@ local lspconfig = require('lspconfig')
 
 local Plugin = {}
 
--- LSP setting
-local servers = {
-  -- efm-langserver
-  efm = {},
-  lua_ls = {
-    settings = {
-      Lua = {
-        diagnostics = {
-          globals = {'vim'},
-        },
-      },
-    },
-  },
-  rust_analyzer = {},
-  gopls = {},
-  tsserver = {},
-}
-
-
 local function merge(list1, list2)
   local result = {}
   for key, value in pairs(list1) do
@@ -35,17 +16,17 @@ local function merge(list1, list2)
 end
 
 local function keys(list)
-  local keyset={}
-  local n=0
+  local keyset = {}
+  local n = 0
 
   for k, _ in pairs(list) do
-    n=n+1
-    keyset[n]=k
+    n = n + 1
+    keyset[n] = k
   end
   return keyset
 end
 
-Plugin.setup = function (opts)
+Plugin.setup = function(opts)
   if opts == nil then
     opts = {}
   elseif type(opts) ~= 'table' then
@@ -54,7 +35,7 @@ Plugin.setup = function (opts)
 
   require('mason').setup()
   require('mason-lspconfig').setup {
-    ensure_installed = keys(servers),
+    ensure_installed = keys(opts.servers),
   }
 
   local default_options = {

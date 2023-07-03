@@ -19,7 +19,7 @@ local handlers = {
   'textDocument/implementation',
 }
 
-Plugin.setup = function ()
+Plugin.setup = function()
   vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function()
       vim.lsp.buf.format { async = false }

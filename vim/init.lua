@@ -6,7 +6,7 @@ if (vim.fn.IsPlugged('nvim-lspconfig') ~= 1) then
   return
 end
 
-
+local util = require('lspconfig.util')
 require('lsp_handler').setup()
 require('lsp_init').setup({
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md --
@@ -26,7 +26,9 @@ require('lsp_init').setup({
       },
     },
     -- GraphQL
-    graphql = {},
+    graphql = {
+      root_dir = util.root_pattern('.git', '.graphqlrc*', '.graphql.config.*', 'graphql.config.*', '.graphqlconfig*')
+    },
     -- TypeScript
     tsserver = {},
     rome = {},
@@ -37,7 +39,7 @@ require('lsp_init').setup({
       settings = {
         Lua = {
           diagnostics = {
-            globals = {'vim'},
+            globals = { 'vim' },
           },
         },
       },

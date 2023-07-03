@@ -1,15 +1,15 @@
-local cmp = require'cmp'
-local feedkeys = require'cmp.utils.feedkeys'
+local cmp = require 'cmp'
+local feedkeys = require 'cmp.utils.feedkeys'
 
 local Plugin = {}
 
-local t = function (str)
+local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 local function confirm_smart(fallback)
   if vim.fn['vsnip#available'](1) == 1 then
-    feedkeys.call(t'<Plug>(vsnip-expand-or-jump)', '')
+    feedkeys.call(t '<Plug>(vsnip-expand-or-jump)', '')
   elseif cmp.visible() then
     cmp.confirm({ select = true })
   else
@@ -19,13 +19,13 @@ end
 
 local function jump_prev(fallback)
   if vim.fn['vsnip#available'](0) == 1 then
-    feedkeys.call(t'<Plug>(vsnip-jump-prev)', '')
+    feedkeys.call(t '<Plug>(vsnip-jump-prev)', '')
   else
     fallback()
   end
 end
 
-Plugin.setup = function ()
+Plugin.setup = function()
   -- Global mappings.
   -- See `:help vim.diagnostic.*` for documentation on any of the below functions
   vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -83,8 +83,8 @@ Plugin.setup = function ()
       { name = 'vsnip' },
       { name = 'nvim_lsp_signature_help' },
     }, {
-        { name = 'buffer' },
-      }),
+      { name = 'buffer' },
+    }),
     preselect = cmp.PreselectMode.None
   }
 
@@ -102,8 +102,8 @@ Plugin.setup = function ()
     sources = cmp.config.sources({
       { name = 'path' }
     }, {
-        { name = 'cmdline' }
-      })
+      { name = 'cmdline' }
+    })
   })
 end
 
