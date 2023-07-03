@@ -21,7 +21,8 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
+Plug 'tamelion/neovim-molokai'
 
 Plug 'sainnhe/sonokai'
 
