@@ -310,6 +310,9 @@ syntax on
 colorscheme molokai
 " colorscheme sonokai
 highlight CursorLine ctermbg=242
+if (has('termguicolors'))
+  set termguicolors
+endif
 
 "}}}
 

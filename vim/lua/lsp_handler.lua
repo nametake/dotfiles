@@ -34,9 +34,14 @@ Plugin.setup = function ()
     }
   )
 
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
+  )
+
   for _, attribute in ipairs(handlers) do
     vim.lsp.handlers[attribute] = decorator(vim.lsp.handlers[attribute])
   end
+
 end
 
 return Plugin
