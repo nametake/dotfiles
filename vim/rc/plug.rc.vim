@@ -49,9 +49,12 @@ Plug 'kana/vim-operator-user'
 
 Plug 'jiangmiao/auto-pairs'
 
-" Plug 'tomtom/tcomment_vim'
-Plug 'numToStr/Comment.nvim'
-Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+if has('nvim')
+  Plug 'numToStr/Comment.nvim'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+else
+  Plug 'tomtom/tcomment_vim'
+endif
 
 Plug 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
