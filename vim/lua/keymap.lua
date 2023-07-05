@@ -119,8 +119,20 @@ Plugin.setup = function()
       extra = false,
     },
     pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-
   })
+
+  local actions = require('telescope.actions')
+  require('telescope').setup {
+    defaults = {
+      borderchars = { "-", "|", "-", "|", "+", "+", "+", "+" },
+      mappings = {
+        i = {
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+        }
+      }
+    },
+  }
 end
 
 return Plugin

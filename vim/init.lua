@@ -52,3 +52,4 @@ require('lsp_init').setup({
 })
 
 require('keymap').setup()
+require('telescope').load_extension('fzf')

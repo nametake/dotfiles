@@ -83,12 +83,22 @@ let g:sonictemplate_vim_template_dir = [
 " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 " let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-nnoremap <C-p> :<C-u>Files<CR>
-nnoremap <C-j> :<C-u>Buffers<CR>
-nnoremap <C-s> :<C-u>Ag<CR>
+if has('nvim')
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<cr>
+  nnoremap <C-s> <cmd>lua require('telescope.builtin').grep_string()<cr>
+  nnoremap <C-j> <cmd>lua require('telescope.builtin').buffers()<cr>
+else
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+  nnoremap <C-p> :<C-u>Files<CR>
+  nnoremap <C-j> :<C-u>Buffers<CR>
+  nnoremap <C-s> :<C-u>Ag<CR>
+endif
+
 
 " Plug 'mileszs/ack.vim'
 " nnoremap <C-s> :<C-u>Ack!<Space>
