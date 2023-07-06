@@ -124,7 +124,6 @@ Plugin.setup = function()
   local actions = require('telescope.actions')
   require('telescope').setup {
     defaults = {
-      borderchars = { "-", "|", "-", "|", "+", "+", "+", "+" },
       mappings = {
         i = {
           ["<C-j>"] = actions.move_selection_next,

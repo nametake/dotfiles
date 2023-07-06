@@ -9,6 +9,8 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " View {{{
+Plug 'rbtnn/vim-ambiwidth'
+
 Plug 'itchyny/lightline.vim'
 source ~/.vim/rc/plugins/lightline.rc.vim
 
