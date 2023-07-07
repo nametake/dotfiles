@@ -126,8 +126,27 @@ Plugin.setup = function()
     defaults = {
       mappings = {
         i = {
+          ["<ESC>"] = actions.close,
+          ["<C-[>"] = actions.close,
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous,
+          ["<C-a>"] = function()
+            local row = unpack(vim.api.nvim_win_get_cursor(0))
+            vim.api.nvim_win_set_cursor(0, { row, 0 })
+          end,
+          ["<C-e>"] = function()
+            local col = string.len(vim.api.nvim_get_current_line())
+            local row = unpack(vim.api.nvim_win_get_cursor(0))
+            vim.api.nvim_win_set_cursor(0, { row, col })
+          end,
+          ["<C-f>"] = function()
+            local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+            vim.api.nvim_win_set_cursor(0, { row, col + 1 })
+          end,
+          ["<C-b>"] = function()
+            local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+            vim.api.nvim_win_set_cursor(0, { row, col - 1 })
+          end,
         }
       }
     },
