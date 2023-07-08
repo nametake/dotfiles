@@ -130,25 +130,29 @@ Plugin.setup = function()
           ["<C-[>"] = actions.close,
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous,
-          ["<C-a>"] = function()
-            local row = unpack(vim.api.nvim_win_get_cursor(0))
-            vim.api.nvim_win_set_cursor(0, { row, 0 })
+          ["<C-f>"] = function()
+            vim.api.nvim_feedkeys(t('<Right>'), 'i', false)
+          end,
+          ["<C-b>"] = function()
+            vim.api.nvim_feedkeys(t('<Left>'), 'i', false)
           end,
           ["<C-e>"] = function()
             local col = string.len(vim.api.nvim_get_current_line())
             local row = unpack(vim.api.nvim_win_get_cursor(0))
             vim.api.nvim_win_set_cursor(0, { row, col })
           end,
-          ["<C-f>"] = function()
-            local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-            vim.api.nvim_win_set_cursor(0, { row, col + 1 })
+          ["<C-a>"] = function()
+            local row = unpack(vim.api.nvim_win_get_cursor(0))
+            vim.api.nvim_win_set_cursor(0, { row, 0 })
           end,
-          ["<C-b>"] = function()
-            local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-            vim.api.nvim_win_set_cursor(0, { row, col - 1 })
+          ["<C-h>"] = function()
+            vim.api.nvim_feedkeys(t('<BS>'), 'i', false)
           end,
-        }
-      }
+          ["<C-d>"] = function()
+            vim.api.nvim_feedkeys(t('<DEL>'), 'i', false)
+          end,
+        },
+      },
     },
   }
 end
