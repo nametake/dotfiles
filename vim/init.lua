@@ -1,3 +1,5 @@
+require('global')
+
 -- Load .vimrc
 require('vimrc').setup({ path = '/rc/vimrc' })
 
@@ -6,7 +8,6 @@ if (vim.fn.IsPlugged('nvim-lspconfig') ~= 1) then
   return
 end
 
-require('global')
 
 local util = require('lspconfig.util')
 require('lsp_handler').setup()
