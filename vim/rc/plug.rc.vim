@@ -50,6 +50,7 @@ Plug 'kana/vim-operator-user'
   map _ <Plug>(operator-replace)
 
 Plug 'LunarWatcher/auto-pairs'
+let g:AutoPairsPrefix = '<M-p>'
 
 if has('nvim')
   Plug 'numToStr/Comment.nvim'

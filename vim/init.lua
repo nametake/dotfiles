@@ -48,6 +48,8 @@ require('lsp_init').setup({
     marksman = {},
     -- Rust
     rust_analyzer = {},
+    -- Vim
+    vimls = {},
   }
 })
 
