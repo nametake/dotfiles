@@ -6,6 +6,8 @@ if (vim.fn.IsPlugged('nvim-lspconfig') ~= 1) then
   return
 end
 
+require('global')
+
 local util = require('lspconfig.util')
 require('lsp_handler').setup()
 require('lsp_init').setup({

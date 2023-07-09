@@ -3,10 +3,6 @@ local feedkeys = require 'cmp.utils.feedkeys'
 
 local Plugin = {}
 
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
 local function confirm_smart(fallback)
   if vim.fn['vsnip#available'](1) == 1 then
     feedkeys.call(t '<Plug>(vsnip-expand-or-jump)', '')
@@ -138,23 +134,18 @@ Plugin.setup = function()
           end,
           ["<C-e>"] = function()
             local col = string.len(vim.api.nvim_get_current_line())
-            local row = unpack(vim.api.nvim_win_get_cursor(0))
+            local row = table.unpack(vim.api.nvim_win_get_cursor(0))
             vim.api.nvim_win_set_cursor(0, { row, col })
           end,
           ["<C-a>"] = function()
-            local row = unpack(vim.api.nvim_win_get_cursor(0))
+            local row = table.unpack(vim.api.nvim_win_get_cursor(0))
             vim.api.nvim_win_set_cursor(0, { row, 0 })
           end,
           ["<C-h>"] = function()
-            vim.api.nvim_feedkeys(t('<BS><BS>'), 'i', false)
+            vim.api.nvim_feedkeys(t('<BS>'), 'i', false)
           end,
           ["<C-d>"] = function()
             vim.api.nvim_feedkeys(t('<DEL>'), 'i', false)
-          end,
-          ["K"] = function()
-            local col = string.len(vim.api.nvim_get_current_line())
-            local row = unpack(vim.api.nvim_win_get_cursor(0))
-            vim.api.nvim_feedkeys(t(string.rep('<DEL>', col - row)), 'i', false)
           end,
         },
       },
