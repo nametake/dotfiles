@@ -146,10 +146,15 @@ Plugin.setup = function()
             vim.api.nvim_win_set_cursor(0, { row, 0 })
           end,
           ["<C-h>"] = function()
-            vim.api.nvim_feedkeys(t('<BS>'), 'i', false)
+            vim.api.nvim_feedkeys(t('<BS><BS>'), 'i', false)
           end,
           ["<C-d>"] = function()
             vim.api.nvim_feedkeys(t('<DEL>'), 'i', false)
+          end,
+          ["K"] = function()
+            local col = string.len(vim.api.nvim_get_current_line())
+            local row = unpack(vim.api.nvim_win_get_cursor(0))
+            vim.api.nvim_feedkeys(t(string.rep('<DEL>', col - row)), 'i', false)
           end,
         },
       },
