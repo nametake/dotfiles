@@ -57,5 +57,6 @@ require('plugins.lsp.init').setup({
 })
 
 require('plugins.lsp.keymap').setup()
+require('plugins.nvim-treesitter').setup()
 require('plugins.telescope').setup()
 require('plugins.comment').setup()
