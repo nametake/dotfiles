@@ -8,10 +8,10 @@ if (vim.fn.IsPlugged('nvim-lspconfig') ~= 1) then
   return
 end
 
-require('lsp_handler').setup()
+require('lsp.handler').setup()
 
 local util = require('lspconfig.util')
-require('lsp_init').setup({
+require('plugins.lsp.init').setup({
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md --
   servers = {
     -- efm-langserver
@@ -56,6 +56,6 @@ require('lsp_init').setup({
   }
 })
 
-require('lsp_config').setup()
-require('telescope_config').setup()
-require('comment_config').setup()
+require('plugins.lsp.keymap').setup()
+require('plugins.telescope').setup()
+require('plugins.comment').setup()
