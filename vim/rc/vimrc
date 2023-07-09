@@ -298,10 +298,6 @@ command! -bar Clear  call s:clear_messages()
 "
 "{{{
 
-if !has('nvim')
-  set term=screen-256color
-endif
-
 " set regexpengine=1
 set synmaxcol=256
 syntax sync minlines=1024

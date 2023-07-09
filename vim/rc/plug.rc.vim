@@ -49,7 +49,7 @@ Plug 'kana/vim-operator-user'
   Plug 'kana/vim-operator-replace'
   map _ <Plug>(operator-replace)
 
-Plug 'jiangmiao/auto-pairs'
+Plug 'LunarWatcher/auto-pairs'
 
 if has('nvim')
   Plug 'numToStr/Comment.nvim'
@@ -300,8 +300,20 @@ Plug 'pangloss/vim-javascript'
 " autocmd MyAutoCmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " }}}
 
-" HTML,XML {{{
-Plug 'alvan/vim-closetag', {'for': ['html', 'xml', 'typescript.tsx', 'typescriptreact']}
+" HTML,XML,JSX {{{
+
+if has('nvim')
+  Plug 'windwp/nvim-ts-autotag'
+else
+  Plug 'alvan/vim-closetag'
+  let g:closetag_regions = {
+      \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+      \ 'javascript.jsx': 'jsxRegion',
+      \ 'typescriptreact': 'jsxRegion,tsxRegion',
+      \ 'javascriptreact': 'jsxRegion',
+      \ }
+endif
+
 " }}}
 
 " Markdown {{{
