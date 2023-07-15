@@ -51,6 +51,8 @@ require('plugins.lsp.init').setup({
     marksman = {},
     -- Rust
     rust_analyzer = {},
+    -- Protocol Buffers
+    bufls = {},
     -- Vim
     vimls = {},
   }
