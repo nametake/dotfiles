@@ -197,6 +197,9 @@ let g:vsnip_snippet_dir = '~/.vim/vsnip'
 
 " LSP {{{
 
+" Plug 'github/copilot.vim'
+" inoremap <C-m> <Plug>(copilot-suggest)
+
 " let g:lsp_client = 'vim-lsp'
 let g:lsp_client = 'nvim-lspconfig'
 
@@ -258,6 +261,9 @@ if g:lsp_client ==# 'nvim-lspconfig' && has('nvim')
 
   " for Golang
   Plug 'golang/vscode-go'
+
+  Plug 'zbirenbaum/copilot.lua'
+  Plug 'zbirenbaum/copilot-cmp'
 endif
 " }}}
 

@@ -48,6 +48,12 @@ Plugin.setup = function(opts)
       merge(default_options, options)
     )
   end
+
+  require("copilot").setup({
+    suggestion = { enabled = false },
+    panel = { enabled = false },
+  })
+  require("copilot_cmp").setup()
 end
 
 return Plugin
