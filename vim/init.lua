@@ -32,6 +32,8 @@ require('plugins.lsp.init').setup({
     graphql = {
       root_dir = util.root_pattern('.git', '.graphqlrc*', '.graphql.config.*', 'graphql.config.*', '.graphqlconfig*')
     },
+    -- Kotlin
+    kotlin_language_server = {},
     -- TypeScript
     tsserver = {},
     rome = {},
