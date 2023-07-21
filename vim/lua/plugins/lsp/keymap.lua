@@ -4,17 +4,17 @@ local feedkeys = require 'cmp.utils.feedkeys'
 local Plugin = {}
 
 local function confirm_smart(fallback)
-  if vim.fn['vsnip#available'](1) == 1 then
-    feedkeys.call(t '<Plug>(vsnip-expand-or-jump)', '')
-  elseif cmp.visible() then
+  if cmp.visible() then
     cmp.confirm({ select = true })
+  elseif vim.fn['vsnip#jumpable'](1) == 1 then
+    feedkeys.call(t '<Plug>(vsnip-jump-next)', '')
   else
     fallback()
   end
 end
 
 local function jump_prev(fallback)
-  if vim.fn['vsnip#available'](0) == 1 then
+  if vim.fn['vsnip#jumpable'](-1) == 1 then
     feedkeys.call(t '<Plug>(vsnip-jump-prev)', '')
   else
     fallback()
