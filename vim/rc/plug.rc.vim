@@ -356,6 +356,10 @@ Plug 'ejholmes/vim-forcedotcom', {'for': ['apex']}
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 " }}}
 
+" Kotlin {{{
+Plug 'udalov/kotlin-vim'
+" }}}
+
 " }}}
 
 call plug#end()
