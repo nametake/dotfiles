@@ -55,6 +55,8 @@ require('plugins.lsp.init').setup({
     rust_analyzer = {},
     -- Protocol Buffers
     bufls = {},
+    -- Swift
+    sourcekit = {},
     -- YAML
     yamlls = {},
     -- Vim
