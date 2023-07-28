@@ -1,4 +1,5 @@
 local actions = require('telescope.actions')
+local lga_actions = require("telescope-live-grep-args.actions")
 
 local Plugin = {}
 
@@ -35,6 +36,17 @@ Plugin.setup = function()
         },
       },
     },
+    extensions = {
+      live_grep_args = {
+        auto_quoting = true,
+        mappings = {
+          i = {
+            ["<C-s>"] = lga_actions.quote_prompt(),
+            ["<C-f>"] = lga_actions.quote_prompt({ postfix = ' -g *.' }),
+          },
+        },
+      }
+    }
   }
   require('telescope').load_extension('fzf')
 end
