@@ -10,6 +10,8 @@ end
 
 require('lsp.handler').setup()
 
+require('plugins.init').setup()
+
 local util = require('lspconfig.util')
 require('plugins.lsp.init').setup({
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md --
@@ -55,8 +57,6 @@ require('plugins.lsp.init').setup({
     rust_analyzer = {},
     -- Protocol Buffers
     bufls = {},
-    -- Swift
-    sourcekit = {},
     -- YAML
     yamlls = {},
     -- Vim
