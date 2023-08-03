@@ -118,23 +118,23 @@ endif
 " endif
 " let g:ack_autoclose = 1
 
-Plug 'easymotion/vim-easymotion'
-map  <Space>F <Plug>(easymotion-bd-f)
-nmap <Space>F <Plug>(easymotion-overwin-f)
-
-nmap s <Plug>(easymotion-overwin-f2)
-
-map <Space>L <Plug>(easymotion-bd-jk)
-nmap <Space>L <Plug>(easymotion-overwin-line)
-
-map  <Space>w <Plug>(easymotion-bd-w)
-nmap <Space>w <Plug>(easymotion-overwin-w)
-
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_use_smartsign_us = 1
+" Plug 'easymotion/vim-easymotion'
+" map  <Space>F <Plug>(easymotion-bd-f)
+" nmap <Space>F <Plug>(easymotion-overwin-f)
+"
+" nmap s <Plug>(easymotion-overwin-f2)
+"
+" map <Space>L <Plug>(easymotion-bd-jk)
+" nmap <Space>L <Plug>(easymotion-overwin-line)
+"
+" map  <Space>w <Plug>(easymotion-bd-w)
+" nmap <Space>w <Plug>(easymotion-overwin-w)
+"
+" map  / <Plug>(easymotion-sn)
+" omap / <Plug>(easymotion-tn)
+"
+" let g:EasyMotion_smartcase = 1
+" let g:EasyMotion_use_smartsign_us = 1
 " }}}
 
 " Shell {{{
