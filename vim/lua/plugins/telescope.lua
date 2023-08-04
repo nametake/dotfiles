@@ -41,8 +41,7 @@ Plugin.setup = function()
         auto_quoting = true,
         mappings = {
           i = {
-            ["<C-s>"] = lga_actions.quote_prompt(),
-            ["<C-f>"] = lga_actions.quote_prompt({ postfix = ' -g *.' }),
+            ["<C-r>"] = lga_actions.quote_prompt({ postfix = ' -g *.' }),
           },
         },
       }
