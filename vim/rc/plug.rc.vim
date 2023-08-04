@@ -33,6 +33,8 @@ Plug 'simeji/winresizer'
 
 Plug 'biosugar0/vim-popyank'
 nmap <Space>y <Plug>(PopYank)
+
+Plug 'machakann/vim-highlightedyank'
 " }}}
 
 " Text operation {{{

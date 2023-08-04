@@ -1,4 +1,4 @@
-set clipboard=unnamed
+set clipboard=unnamed,ideaput
 set surround
 set ignorecase
 set smartcase
@@ -43,3 +43,14 @@ nnoremap <Space>f :<C-u>action ActivateProjectToolWindow<CR>
 nnoremap <Space>r :<C-u>action RenameElement<CR>
 
 nnoremap ; :<C-u>action ShowIntentionActions<CR>
+
+" Plugin -- https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins --
+Plug 'preservim/nerdtree'
+nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeMapOpenSplit='<C-x>'
+let g:NERDTreeMapOpenVSplit='<C-v>'
+
+Plug 'tpope/vim-surround'
+
+Plug 'machakann/vim-highlightedyank'
