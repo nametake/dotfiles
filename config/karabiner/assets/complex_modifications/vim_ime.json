@@ -10,6 +10,8 @@
                 "^com\\.apple\\.Terminal$",
                 "^org\\.vim\\.",
                 "^com\\.googlecode\\.iterm2$",
+                "^com\\.jetbrains\\.intellij\\.",
+                "^com\\.google\\.android\\.studio$",
                 "^com\\.qvacua\\.VimR$",
                 "^md\\.obsidian$"
               ],
@@ -41,6 +43,8 @@
                 "^com\\.apple\\.Terminal$",
                 "^org\\.vim\\.",
                 "^com\\.googlecode\\.iterm2$",
+                "^com\\.jetbrains\\.intellij\\.",
+                "^com\\.google\\.android\\.studio$",
                 "^com\\.qvacua\\.VimR$",
                 "^md\\.obsidian$"
               ],
