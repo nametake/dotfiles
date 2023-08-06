@@ -1,4 +1,4 @@
-set clipboard=unnamed,ideaput
+set clipboard=unnamed
 set surround
 set ignorecase
 set smartcase
