@@ -29,6 +29,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.qvacua\\.VimR$",
                                             "^com\\.jetbrains\\.intellij\\.",
+                                            "^com\\.google\\.android\\.studio\\.",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^md\\.obsidian$"
                                         ],
@@ -62,6 +63,7 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.qvacua\\.VimR$",
                                             "^com\\.jetbrains\\.intellij\\.",
+                                            "^com\\.google\\.android\\.studio\\.",
                                             "^com\\.microsoft\\.VSCode$",
                                             "^md\\.obsidian$"
                                         ],
