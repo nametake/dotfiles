@@ -39,6 +39,7 @@ require('plugins.lsp.init').setup({
     -- TypeScript
     tsserver = {},
     rome = {},
+    tailwindcss = {},
     -- Bash
     bashls = {},
     -- Lua
