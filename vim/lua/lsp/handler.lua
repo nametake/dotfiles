@@ -17,6 +17,7 @@ local handlers = {
   'textDocument/definition',
   'textDocument/typeDefinition',
   'textDocument/implementation',
+  'textDocument/references',
 }
 
 Plugin.setup = function()

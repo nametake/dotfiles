@@ -46,7 +46,7 @@ Plugin.setup = function()
       vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, opts)
       vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, opts)
       vim.keymap.set({ 'n', 'v' }, ';', vim.lsp.buf.code_action, opts)
-      vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+      -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts) -- for telescope
       -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
       -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
       -- vim.keymap.set('n', '<space>wl', function()
