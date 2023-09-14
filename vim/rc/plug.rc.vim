@@ -104,6 +104,7 @@ if has('nvim')
   nnoremap <C-s> <cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>
   nnoremap <C-j> <cmd>lua require('telescope.builtin').buffers()<cr>
   nnoremap gr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+  nnoremap <Space>l <cmd>lua require('telescope.builtin').diagnostics()<cr>
 else
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
