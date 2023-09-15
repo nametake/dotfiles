@@ -53,3 +53,6 @@ let g:NERDTreeMapOpenVSplit='<C-v>'
 Plug 'tpope/vim-surround'
 
 Plug 'machakann/vim-highlightedyank'
+
+Plug 'vim-commentary'
+nmap <C--><C--> <Plug>CommentaryLine
