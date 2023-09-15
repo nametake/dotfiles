@@ -6,43 +6,42 @@ set incsearch
 set hlsearch
 
 " Run/Debug
-nnoremap <Space>r :<C-u>action Run<CR>
-nnoremap <Space>d :<C-u>action Debug<CR>
-nnoremap <Space>t :<C-u>action RunClass<CR>
+nmap <Space>r <Action>(Run)
+nmap <Space>d <Action>(Debug)
+nmap <Space>t <Action>(RunClass)
 
 " Show info
-nnoremap <Space>e :<C-u>action ShowErrorDescription<CR>
+nmap <Space>e <Action>(ShowErrorDescription)
 
 " Search
-nnoremap <C-p> :<C-u>action GotoFile<CR>
-nnoremap <C-s> :<C-u>action FindInPath<CR>
+nmap <C-p> <Action>(GotoFile)
+nmap <C-s> <Action>(FindInPath)
 
 " Code jump
-nnoremap <C-i> :<C-u>action Back<CR>
-nnoremap <C-o> :<C-u>action Forward<CR>
+nmap <C-i> <Action>(Back)
+nmap <C-o> <Action>(Forward)
 nnoremap <C-S-i> <C-i>
 nnoremap <C-S-o> <C-o>
-nnoremap <C-t><C-t> <C-t>
-nnoremap gd :<C-u>action GotoDeclaration<CR>
-nnoremap gr :<C-u>action FindUsages<CR>
-nnoremap gi :<C-u>action GotoImplementation<CR>
-nnoremap gT :<C-u>action GotoTypeDeclaration<CR>
-nnoremap <Space>j :<C-u>action GotoNextError<CR>
-nnoremap <Space>k :<C-u>action GotoPreviousError<CR>
-nnoremap <C-t><C-t> :<C-u>action Back<CR>
+nmap gd <Action>(GotoDeclaration)
+nmap gr <Action>(FindUsages)
+nmap gi <Action>(GotoImplementation)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap <Space>j <Action>(GotoNextError)
+nmap <Space>k <Action>(GotoPreviousError)
+nmap <C-t><C-t> <Action>(Back)
 
 " Split
-nnoremap <C-t>n :<C-u>action NextTab<CR>
-nnoremap <C-t>p :<C-u>action PreviousTab<CR>
-nnoremap <C-t>s :<C-u>action MoveTabDown<CR>
-nnoremap <C-t>v :<C-u>action MoveTabRight<CR>
-nnoremap <C-t>l :<C-u>action NextSplitter<CR>
-nnoremap <C-t>h :<C-u>action PrevSplitter<CR>
+nmap <C-t>n <Action>(NextTab)
+nmap <C-t>p <Action>(PreviousTab)
+nmap <C-t>s <Action>(MoveTabDown)
+nmap <C-t>v <Action>(MoveTabRight)
+nmap <C-t>l <Action>(NextSplitter)
+nmap <C-t>h <Action>(PrevSplitter)
 
-nnoremap <Space>f :<C-u>action ActivateProjectToolWindow<CR>
-nnoremap <Space>r :<C-u>action RenameElement<CR>
+nmap <Space>f <Action>(ActivateProjectToolWindow)
+nmap <Space>r <Action>(RenameElement)
 
-nnoremap ; :<C-u>action ShowIntentionActions<CR>
+nmap ; <Action>(ShowIntentionActions)
 
 " Plugin -- https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins --
 Plug 'preservim/nerdtree'
