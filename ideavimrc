@@ -5,6 +5,8 @@ set smartcase
 set incsearch
 set hlsearch
 
+nmap <C-[> <ESC>
+
 " Run/Debug
 nmap <Space>r <Action>(Run)
 nmap <Space>d <Action>(Debug)
@@ -26,9 +28,12 @@ nmap gd <Action>(GotoDeclaration)
 nmap gr <Action>(FindUsages)
 nmap gi <Action>(GotoImplementation)
 nmap gD <Action>(GotoTypeDeclaration)
+nmap <C-t><C-t> <Action>(Back)
+
+" Error
 nmap <Space>j <Action>(GotoNextError)
 nmap <Space>k <Action>(GotoPreviousError)
-nmap <C-t><C-t> <Action>(Back)
+nmap <Space>l <Action>(ActivateProblemsViewToolWindow)
 
 " Split
 nmap <C-t>n <Action>(NextTab)
