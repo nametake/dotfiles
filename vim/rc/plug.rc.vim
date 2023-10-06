@@ -35,6 +35,9 @@ Plug 'biosugar0/vim-popyank'
 nmap <Space>y <Plug>(PopYank)
 
 Plug 'machakann/vim-highlightedyank'
+
+Plug 'previm/previm'
+let g:previm_open_cmd = 'open -a Google\ Chrome.app'
 " }}}
 
 " Text operation {{{
