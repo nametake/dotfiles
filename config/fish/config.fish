@@ -9,6 +9,8 @@ set -g __fish_git_prompt_char_cleanstate "#"
 set -U GHQ_SELECTOR peco
 
 alias g='git'
+alias rg='rg --hidden'
+alias ag='ag --hidden'
 
 if type -q hub
   alias git=hub
