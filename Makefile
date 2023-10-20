@@ -23,6 +23,7 @@ DOTFILES := \
 	git_template \
 	asdfrc \
 	tool-versions \
+	ripgreprc \
 	eslintrc \
 	prettierrc \
 	ideavimrc \

@@ -70,6 +70,10 @@ export ASDF=${HOME}/.asdf
 # [ -e ${NODEBREW_ROOT} ] && \
 #   export PATH=${NODEBREW_ROOT}/current/bin:$PATH
 
+# ripgrep
+[ -e ${HOME}/.ripgreprc ] && \
+  export RIPGREP_CONFIG_PATH=${HOME}/.ripgreprc
+
 # Kube
 [ -e ${HOME}/.kube ] && \
   export KUBECONFIG="$KUBECONFIG:`ls ${HOME}/.kube/* | tr '\n' ':'`"
