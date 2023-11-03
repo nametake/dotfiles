@@ -38,7 +38,7 @@ require('plugins.lsp.init').setup({
     kotlin_language_server = {},
     -- TypeScript
     tsserver = {},
-    rome = {},
+    biome = {},
     tailwindcss = {},
     -- Bash
     bashls = {},
