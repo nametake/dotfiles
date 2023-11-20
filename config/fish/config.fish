@@ -31,3 +31,7 @@ function fish_user_key_bindings
 end
 
 # set -g __done_tmux_pane_format '\[Pane #{window_index}]'
+
+if test -f $HOME/.local.fish
+  source $HOME/.local.fish
+end
