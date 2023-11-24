@@ -27,7 +27,7 @@ require('plugins.lsp.init').setup({
     },
     golangci_lint_ls = {
       init_options = {
-        command = { "golangci-lint", "run", "--out-format", "json", "--enable-all" },
+        command = { "golangci-lint", "run", "--out-format", "json" },
       },
     },
     -- GraphQL
