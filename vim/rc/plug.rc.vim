@@ -153,8 +153,9 @@ source ~/.vim/rc/plugins/quickrun.rc.vim
 
 " git {{{
 Plug 'tpope/vim-fugitive'
+autocmd MyAutoCmd FileType fugitive nmap <buffer> q gq
 autocmd MyAutoCmd FileType fugitiveblame nmap <buffer> q gq
-command! Gac Gw|Gcommit
+nnoremap <silent> gg :<C-u>Git<CR>
 
   Plug 'tpope/vim-rhubarb'
 
