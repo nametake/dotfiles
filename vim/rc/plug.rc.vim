@@ -156,7 +156,7 @@ Plug 'tpope/vim-fugitive'
 
 autocmd MyAutoCmd FileType fugitive nmap <buffer> q gq
 autocmd MyAutoCmd FileType fugitiveblame nmap <buffer> q gq
-nnoremap <silent> gg :<C-u>below Git<CR>
+nnoremap <silent> g, :<C-u>below Git<CR>
 
   Plug 'tpope/vim-rhubarb'
 
