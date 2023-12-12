@@ -36,6 +36,11 @@ Plugin.setup = function()
         },
       },
     },
+    pickers = {
+      git_files = {
+        push_tagstack_on_edit = true,
+      },
+    },
     extensions = {
       live_grep_args = {
         auto_quoting = true,
@@ -44,8 +49,9 @@ Plugin.setup = function()
             ["<C-r>"] = lga_actions.quote_prompt({ postfix = ' -g *.' }),
           },
         },
-      }
-    }
+        push_tagstack_on_edit = true,
+      },
+    },
   }
   require('telescope').load_extension('fzf')
 end
