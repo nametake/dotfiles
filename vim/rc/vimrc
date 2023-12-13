@@ -269,6 +269,7 @@ nnoremap <C-d> :bd<CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 autocmd MyAutoCmd FileType help nmap <silent><buffer> q :q<CR>
+autocmd MyAutoCmd FileType git nmap <silent><buffer> q :q<CR>
 
 "}}}
 
