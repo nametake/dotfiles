@@ -40,6 +40,12 @@ Plugin.setup = function()
       git_files = {
         push_tagstack_on_edit = true,
       },
+      buffers = {
+        push_tagstack_on_edit = true,
+      },
+      diagnostics = {
+        push_tagstack_on_edit = true,
+      },
     },
     extensions = {
       live_grep_args = {
