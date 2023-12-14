@@ -129,10 +129,10 @@ endif
 " let g:ack_autoclose = 1
 
 Plug 'easymotion/vim-easymotion'
-map  f <Plug>(easymotion-fl)
-nmap F <Plug>(easymotion-Fl)
+map f <Plug>(easymotion-fl)
+map F <Plug>(easymotion-Fl)
 
-nmap s <Plug>(easymotion-s2)
+map s <Plug>(easymotion-s2)
 
 map / <Plug>(easymotion-sn)
 map ? <Plug>(easymotion-sn)
