@@ -64,11 +64,9 @@ BREW_TOOLS := \
 GO_TOOLS := \
 	golang.org/x/tools/cmd/goimports@latest \
 	mvdan.cc/gofumpt@latest \
-	golang.org/x/tools/gopls@latest \
 	github.com/mattn/efm-langserver@latest \
 	golang.org/x/lint/golint@latest \
 	github.com/rhysd/gofmtrlx@latest \
-	sourcegraph.com/sqs/goreturns@latest \
 	github.com/kisielk/errcheck@latest \
 	github.com/cweill/gotests/gotests@latest \
 	mvdan.cc/sh/cmd/shfmt@latest \
