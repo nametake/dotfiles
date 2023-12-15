@@ -166,6 +166,9 @@ autocmd MyAutoCmd FileType fugitiveblame nmap <buffer> q gq
 nnoremap <silent> g, :<C-u>below Git<CR>
 
   Plug 'tpope/vim-rhubarb'
+  Plug 'rbong/vim-flog'
+  nnoremap <silent> gt :<C-u>Flog<CR>
+  autocmd MyAutoCmd FileType floggraph nmap <buffer> q gq
 
 Plug 'airblade/vim-gitgutter'
 " }}}
