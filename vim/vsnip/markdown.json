@@ -1,7 +1,12 @@
 {
-  "textlint-disable": {
-    "prefix": "textlint-disable",
+  "textlint-disable:ja-no-weak-phrase": {
+    "prefix": "textlint-disable:ja-no-weak-phrase",
     "body": "<!-- textlint-disable ${1:ja-technical-writing/ja-no-weak-phrase} -->${0:}",
+    "description": "Disable textlint"
+  },
+  "textlint-disable:no-exclamation-question-mark": {
+    "prefix": "textlint-disable:no-exclamation-question-mark",
+    "body": "<!-- textlint-disable ${1:ja-technical-writing/no-exclamation-question-mark} -->${0:}",
     "description": "Disable textlint"
   },
   "textlint-enable": {
