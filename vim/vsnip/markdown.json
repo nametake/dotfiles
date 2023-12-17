@@ -1,0 +1,12 @@
+{
+  "textlint-disable": {
+    "prefix": "textlint-disable",
+    "body": "<!-- textlint-disable ${1:ja-technical-writing/ja-no-weak-phrase} -->${0:}",
+    "description": "Disable textlint"
+  },
+  "textlint-enable": {
+    "prefix": "textlint-enable",
+    "body": "<!-- textlint-enable -->${0:}",
+    "description": "Enable textlint"
+  }
+}
