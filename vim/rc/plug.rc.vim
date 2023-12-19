@@ -129,13 +129,17 @@ endif
 " let g:ack_autoclose = 1
 
 Plug 'easymotion/vim-easymotion'
-map f <Plug>(easymotion-fl)
-map F <Plug>(easymotion-Fl)
+nmap f <Plug>(easymotion-fl)
+vmap f <Plug>(easymotion-fl)
+nmap F <Plug>(easymotion-Fl)
+vmap F <Plug>(easymotion-Fl)
 
-map s <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-s2)
 
-map / <Plug>(easymotion-sn)
-map ? <Plug>(easymotion-sn)
+nmap / <Plug>(easymotion-sn)
+vmap / <Plug>(easymotion-sn)
+nmap ? <Plug>(easymotion-sn)
+vmap ? <Plug>(easymotion-sn)
 
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
