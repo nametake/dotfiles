@@ -4,10 +4,13 @@ local feedkeys = require 'cmp.utils.feedkeys'
 local Plugin = {}
 
 local function confirm_smart(fallback)
-  if cmp.visible() then
-    cmp.confirm({ select = true })
-  elseif vim.fn['vsnip#jumpable'](1) == 1 then
+  if vim.fn['vsnip#jumpable'](1) == 1 then
+    if cmp.get_selected_entry() then
+      cmp.confirm({ select = true })
+    end
     feedkeys.call(t '<Plug>(vsnip-jump-next)', '')
+  elseif cmp.get_selected_entry() then
+    cmp.confirm({ select = true })
   else
     fallback()
   end
