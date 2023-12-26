@@ -210,10 +210,8 @@ let g:NERDTreeMapOpenVSplit='<C-v>'
 " }}}
 
 " Outline {{{
-Plug 'liuchengxu/vista.vim'
-nnoremap <silent> <Space>o :<C-u>Vista<CR>
-let g:vista_default_executive = 'vim_lsp'
-let g:vista#renderer#enable_icon = 0
+Plug 'simrat39/symbols-outline.nvim'
+nnoremap <silent> <Space>o :<C-u>SymbolsOutlineOpen<CR>
 " }}}
 
 " Snippets {{{
