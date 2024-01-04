@@ -79,9 +79,16 @@ Plug 'tpope/vim-abolish'
 
 if has('nvim')
   Plug 'bfredl/nvim-miniyank'
-  map p <Plug>(miniyank-autoput)
-  map P <Plug>(miniyank-autoPut)
-  map <C-n> <Plug>(miniyank-cycle)
+  nmap p <Plug>(miniyank-autoput)
+  nmap P <Plug>(miniyank-autoPut)
+  nmap <C-n> <Plug>(miniyank-cycle)
+  vmap p <Plug>(miniyank-autoput)
+  vmap P <Plug>(miniyank-autoPut)
+  vmap <C-n> <Plug>(miniyank-cycle)
+  " for snippet jump
+  smap p p
+  smap P P
+  smap <C-n> <Nop>
 endif
 
 Plug 'mattn/vim-sonictemplate'
