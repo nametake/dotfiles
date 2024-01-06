@@ -79,12 +79,9 @@ Plug 'tpope/vim-abolish'
 
 if has('nvim')
   Plug 'bfredl/nvim-miniyank'
-  nmap p <Plug>(miniyank-autoput)
-  nmap P <Plug>(miniyank-autoPut)
-  nmap <C-n> <Plug>(miniyank-cycle)
-  vmap p <Plug>(miniyank-autoput)
-  vmap P <Plug>(miniyank-autoPut)
-  vmap <C-n> <Plug>(miniyank-cycle)
+  map p <Plug>(miniyank-autoput)
+  map P <Plug>(miniyank-autoPut)
+  map <C-n> <Plug>(miniyank-cycle)
   " for snippet jump
   smap p p
   smap P P
@@ -147,6 +144,10 @@ nmap / <Plug>(easymotion-sn)
 vmap / <Plug>(easymotion-sn)
 nmap ? <Plug>(easymotion-sn)
 vmap ? <Plug>(easymotion-sn)
+
+" for snippet jump
+smap f f
+smap F F
 
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
