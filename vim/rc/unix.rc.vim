@@ -3,7 +3,7 @@
 "
 
 " Use sh.  It is faster
-set shell=sh
+" set shell=sh
 
 " Set path.
 let $PATH = expand('~/bin').':/usr/local/bin/:'.$PATH

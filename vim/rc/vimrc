@@ -8,7 +8,7 @@ scriptencoding utf-8
 " Reference: https://github.com/Shougo/shougo-s-github/blob/master/vim/vimrc
 
 "----------------------------------------------------------------
-" Initialize 
+" Initialize
 "
 
 function! s:source_rc(path, ...) abort "{{{
@@ -313,6 +313,22 @@ highlight CursorLine ctermbg=242
 if (has('termguicolors'))
   set termguicolors
 endif
+
+"}}}
+
+"----------------------------------------------------------------
+" Shell
+"
+"{{{
+
+if executable('fish')
+  set shell=fish
+endif
+autocmd TermOpen * startinsert
+autocmd TermClose * :q
+tnoremap <Esc> <C-\><C-n>
+nnoremap <Space>t :belowright split <bar> resize 32 <bar> term<cr>
+tnoremap <C-t> <C-c>exit<cr>
 
 "}}}
 
