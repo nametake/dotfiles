@@ -325,11 +325,11 @@ if executable('fish')
 endif
 if has('nvim')
   autocmd TermOpen * startinsert
-  autocmd TermClose * :q
+  autocmd TermClose * startinsert | call feedkeys("<cr>")
 endif
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Space>t :belowright split <bar> resize 32 <bar> term<cr>
-tnoremap <C-t> <C-c>exit<cr>
+tnoremap <C-t> <C-d>exit<cr>
 
 "}}}
 
