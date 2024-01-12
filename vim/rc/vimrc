@@ -1,7 +1,6 @@
 "----------------------------------------------------------------
 " nametake's .vimrc
 "----------------------------------------------------------------
-
 set encoding=utf-8
 scriptencoding utf-8
 
@@ -324,8 +323,10 @@ endif
 if executable('fish')
   set shell=fish
 endif
-autocmd TermOpen * startinsert
-autocmd TermClose * :q
+if has('nvim')
+  autocmd TermOpen * startinsert
+  autocmd TermClose * :q
+endif
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Space>t :belowright split <bar> resize 32 <bar> term<cr>
 tnoremap <C-t> <C-c>exit<cr>
