@@ -115,6 +115,8 @@ if has('nvim')
   nnoremap gd <cmd>lua require('telescope.builtin').lsp_definitions({ jump_type='never' })<cr>
   nnoremap gD <cmd>lua require('telescope.builtin').lsp_type_definitions({ jump_type='never' })<cr>
   nnoremap gi <cmd>lua require('telescope.builtin').lsp_implementations({ jump_type='never' })<cr>
+  nnoremap gu <cmd>lua require('telescope.builtin').lsp_outgoing_calls({ jump_type='never' })<cr>
+  nnoremap gl <cmd>lua require('telescope.builtin').lsp_incoming_calls({ jump_type='never' })<cr>
 else
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
