@@ -24,7 +24,7 @@
   ch = checkout
   sw = switch
   re = restore
-  di = diff
+  di = diff --ignore-all-space --ignore-blank-lines
   p = !git push origin `git rev-parse --abbrev-ref HEAD`
   pm = "!f () { git switch $(git remote show origin | sed -n '/HEAD branch/s/.*: //p'); git pull --prune; git delete-merged-branch; git submodule update; };f"
   open = !gh repo view --web
