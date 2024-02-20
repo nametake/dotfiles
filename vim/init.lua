@@ -20,9 +20,13 @@ require('plugins.lsp.init').setup({
     efm = {},
     -- Go
     gopls = {
+      gofumpt = true,
       init_options = {
         symbolScope = 'workspace',
         memoryMode = 'DegradeClosed',
+      },
+      env = {
+        GOEXPERIMENT = "rangefunc",
       },
     },
     golangci_lint_ls = {

@@ -24,10 +24,24 @@ local function jump_prev(fallback)
   end
 end
 
+function show_diagnostics_or_hover()
+  local line = vim.api.nvim_win_get_cursor(0)[1] - 1 -- 現在の行番号
+  local col = vim.api.nvim_win_get_cursor(0)[2]      -- 現在のカラム番号
+  local diagnostics = vim.diagnostic.get(0, { lnum = line })
+
+  print(#diagnostics > 0)
+
+  if #diagnostics > 0 then
+    vim.diagnostic.open_float()
+  else
+    vim.lsp.buf.hover()
+  end
+end
+
 Plugin.setup = function()
   -- Global mappings.
   -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+  -- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
   vim.keymap.set('n', '<space>k', vim.diagnostic.goto_prev)
   vim.keymap.set('n', '<space>j', vim.diagnostic.goto_next)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
@@ -42,7 +56,7 @@ Plugin.setup = function()
       -- Buffer local mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
       local opts = { buffer = ev.buf }
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      vim.keymap.set('n', 'K', show_diagnostics_or_hover, opts)
       vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, opts)
       vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, opts)
       vim.keymap.set({ 'n', 'v' }, ';', vim.lsp.buf.code_action, opts)

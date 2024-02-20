@@ -308,8 +308,8 @@ endif
 " Language {{{
 
 " Go {{{
-Plug 'mattn/vim-goimports'
-let g:goimports_show_loclist = 0
+" Plug 'mattn/vim-goimports'
+" let g:goimports_show_loclist = 0
 " let g:goimports_cmd = 'gofumports'
 " let g:goimports_simplify_cmd = 'gofumpt'
 
