@@ -107,7 +107,7 @@ help: # Refer: https://postd.cc/auto-documented-makefile/
 	@echo 'usage: make [target]'
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-update: brew_update go_install rustup_update npm_install pip_install fish_plugin_update nvim_plugin_update ## Update all tools
+update: brew_update go_install rustup_update npm_install fish_plugin_update nvim_plugin_update ## Update all tools
 
 link: ## Create symbolic link
 	./bin/ln_dotfiles.sh $(DOTFILES)
