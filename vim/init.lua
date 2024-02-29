@@ -22,7 +22,6 @@ require('plugins.lsp.init').setup({
     gopls = {
       init_options = {
         symbolScope = 'workspace',
-        memoryMode = 'DegradeClosed',
       },
       staticcheck = true,
       gofumpt = true,
