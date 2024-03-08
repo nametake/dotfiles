@@ -78,6 +78,14 @@ Plugin.setup = function(opts)
     panel = { enabled = false },
   })
   require("copilot_cmp").setup()
+
+  -- https://www.reddit.com/r/neovim/comments/u5i16v/how_to_disable_diagnostics_for_env_file/
+  vim.cmd([[
+    augroup _env
+    autocmd!
+    autocmd BufEnter .env lua vim.diagnostic.disable(0)
+    augroup end
+  ]])
 end
 
 return Plugin
