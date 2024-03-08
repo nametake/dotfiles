@@ -21,9 +21,42 @@ export XDG_CONFIG_HOME=~/.config
 [ -e ${HOME}/.local/bin ] && \
   export PATH=${HOME}/.local/bin:${PATH}
 
+# GNUBIN
 export GNUBIN_PATH=/opt/homebrew/opt/make/libexec/gnubin
 [ -e ${GNUBIN_PATH} ] && \
   export PATH=${GNUBIN_PATH}:${PATH}
+
+export COREUTILS=/opt/homebrew/opt/coreutils/libexec/gnubin
+[ -e ${COREUTILS} ] && \
+  export PATH=${COREUTILS}:${PATH}
+
+export GNU_INDENT=/opt/homebrew/opt/gnu-indent/libexec/gnubin
+[ -e ${GNU_INDENT} ] && \
+  export PATH=${GNU_INDENT}:${PATH}
+
+export GNU_TAR=/opt/homebrew/opt/gnu-tar/libexec/gnubin
+[ -e ${GNU_TAR} ] && \
+  export PATH=${GNU_TAR}:${PATH}
+
+export GREP=/opt/homebrew/opt/grep/libexec/gnubin
+[ -e ${GREP} ] && \
+  export PATH=${GREP}:${PATH}
+
+export GNU_SED=/opt/homebrew/opt/gnu-sed/libexec/gnubin
+[ -e ${GNU_SED} ] && \
+  export PATH=${GNU_SED}:${PATH}
+
+export GAWK=/opt/homebrew/opt/gawk/libexec/gnubin
+[ -e ${GAWK} ] && \
+  export PATH=${GAWK}:${PATH}
+
+export FINDUTILS=/opt/homebrew/opt/findutils/libexec/gnubin
+[ -e ${FINDUTILS} ] && \
+  export PATH=${FINDUTILS}:${PATH}
+
+export GNU_WHICH=/opt/homebrew/opt/gnu-which/libexec/gnubin
+[ -e ${GNU_WHICH} ] && \
+  export PATH=${GNU_WHICH}:${PATH}
 
 # programming languages
 export GOPATH=${HOME}/go
