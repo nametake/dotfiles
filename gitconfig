@@ -18,7 +18,7 @@
 
 [alias]
   tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %Creset%cd%Creset' --abbrev-commit --date=format-local:'%Y/%m/%d %H:%M'
-  delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|main|develop|master'|xargs git branch -d; };f"
+  delete-merged-branch = "!f () { git checkout $1; git branch --merged|grep -Ev '\\*|main|develop|master'|xargs git branch -d; };f"
   ac = !git add -A && git commit
   b = branch
   ch = checkout
