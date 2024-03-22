@@ -21,6 +21,8 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.tex set filetype=tex
   " markdown
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  " bruno
+  autocmd BufNewFile,BufRead *.bru set filetype=bruno
   " json
   " autocmd BufNewFile,BufRead .{*rc,tern-config} set filetype=json
   " autocmd BufNewFile,BufRead {*rc,tern-config} set filetype=json
