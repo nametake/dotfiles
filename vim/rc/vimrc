@@ -345,3 +345,24 @@ else
 endif
 
 "}}}
+
+
+"----------------------------------------------------------------
+" Tag stack
+"
+"{{{
+" Clear all tagstacks
+function! ClearTagstackWithoutMoving()
+  let l:view = winsaveview()
+  let l:tagstack = gettagstack()
+  if len(l:tagstack['items']) > 0
+    let l:tagstack['items'] = []
+    let l:tagstack['length'] = 0
+    let l:tagstack['curidx'] = 0
+    call settagstack(win_getid(), l:tagstack)
+  endif
+
+  call winrestview(l:view)
+endfunction
+nnoremap <Space>ct :call ClearTagstackWithoutMoving()<CR>
+"}}}
