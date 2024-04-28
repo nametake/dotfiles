@@ -267,6 +267,7 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 let g:fern#renderer = 'nerdfont'
 Plug 'nametake/fern-comparator-extension.vim'
 let g:fern#comparator = 'extension'
+let g:fern_comparator_extension#disable_compare_extension = 1
 let g:fern_comparator_extension#enable_go_test_grouping = 1
 " }}}
 
