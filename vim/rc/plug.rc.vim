@@ -258,10 +258,13 @@ augroup fern-custom
   autocmd FileType fern call s:init_fern()
 augroup END
 
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-mapping-git.vim'
 
 Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/fern-git-status.vim'
+let g:fern#renderer = 'nerdfont'
 " }}}
 
 " Outline {{{
