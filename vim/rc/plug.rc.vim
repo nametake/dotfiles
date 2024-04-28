@@ -193,7 +193,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeSortOrder = ['\/$'] + map(range(0, 25), '"\\." . nr2char(char2nr("a") + v:val) . "[^.]*$"')
+let g:NERDTreeSortOrder = ['[[extension]]']
 let g:NERDTreeMapOpenSplit='<C-x>'
 let g:NERDTreeMapOpenVSplit='<C-v>'
 
@@ -221,9 +221,55 @@ let g:NERDTreeMapOpenVSplit='<C-v>'
   " let g:NERDTreeLimitedSyntax = 1
 " }}}
 
+" fern {{{
+" Plug 'lambdalisue/fern.vim'
+" nnoremap <silent> <Space>f :<C-u>Fern . -reveal=% -drawer -width=40 -toggle<CR>
+"
+" function! s:init_fern() abort
+"   set nonumber
+"   " Define
+"   nmap <Plug>(fern-action--close-drawer) :<C-u>FernDo close -drawer -stay<CR>
+"   nmap <buffer><silent> <Plug>(fern-action--open-and-close)
+"         \ <Plug>(fern-action-open)
+"         \ <Plug>(fern-action--close-drawer)
+"
+"   nmap <buffer><expr>
+"         \ <Plug>(fern-action--expand-or-collapse)
+"         \ fern#smart#leaf(
+"         \   "\<Plug>(fern-action--open-and-close)",
+"         \   "\<Plug>(fern-action-expand)",
+"         \   "\<Plug>(fern-action-collapse)",
+"         \ )
+"
+"   " Map
+"   nmap <buffer> o <Plug>(fern-action-expand)
+"   nmap <buffer> x <Plug>(fern-action-collapse)
+"   nmap <buffer> <C-v> <Plug>(fern-action-open:vsplit)<Plug>(fern-action--close-drawer)
+"   nmap <buffer> <C-x> <Plug>(fern-action-open:split)<Plug>(fern-action--close-drawer)
+"   nmap <buffer> I <Plug>(fern-action-hidden)
+"   nmap <buffer> r <Plug>(fern-action-reload)
+"   nmap <buffer> q :<C-u>quit<CR>
+"   nmap <buffer><nowait> <CR> <Plug>(fern-action--expand-or-collapse)
+" endfunction
+"
+" augroup fern-custom
+"   autocmd! *
+"   autocmd FileType fern call s:init_fern()
+" augroup END
+"
+" Plug 'lambdalisue/fern-git-status.vim'
+" Plug 'lambdalisue/fern-mapping-git.vim'
+"
+" Plug 'lambdalisue/nerdfont.vim'
+" Plug 'lambdalisue/glyph-palette.vim'
+" Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+" let g:fern#renderer = 'nerdfont'
+" }}}
+
 " Outline {{{
 Plug 'simrat39/symbols-outline.nvim'
 nnoremap <silent> <Space>o :<C-u>SymbolsOutlineOpen<CR>
+
 " }}}
 
 " Snippets {{{
