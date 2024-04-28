@@ -248,6 +248,7 @@ function! s:init_fern() abort
   nmap <buffer> <C-x> <Plug>(fern-action-open:split)<Plug>(fern-action--close-drawer)
   nmap <buffer> I <Plug>(fern-action-hidden)
   nmap <buffer> r <Plug>(fern-action-reload)
+  nmap <buffer> D <Plug>(fern-action-remove)
   nmap <buffer> q :<C-u>quit<CR>
   nmap <buffer><nowait> <CR> <Plug>(fern-action--expand-or-collapse)
 endfunction
@@ -264,6 +265,9 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 let g:fern#renderer = 'nerdfont'
+Plug 'nametake/fern-comparator-extension.vim'
+let g:fern#comparator = 'extension'
+let g:fern_comparator_extension#enable_go_test_grouping = 1
 " }}}
 
 " Outline {{{
