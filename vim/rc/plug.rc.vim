@@ -251,6 +251,8 @@ function! s:init_fern() abort
   nmap <buffer> D <Plug>(fern-action-remove)
   nmap <buffer> q :<C-u>quit<CR>
   nmap <buffer><nowait> <CR> <Plug>(fern-action--expand-or-collapse)
+
+  silent! nunmap <buffer><silent> z
 endfunction
 
 augroup fern-custom
