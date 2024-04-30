@@ -12,7 +12,6 @@ require('lsp.handler').setup()
 
 require('plugins.init').setup()
 
-local util = require('lspconfig.util')
 require('plugins.lsp.init').setup({
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md --
   servers = {
@@ -35,9 +34,7 @@ require('plugins.lsp.init').setup({
       },
     },
     -- GraphQL
-    graphql = {
-      root_dir = util.root_pattern('.git', '.graphqlrc*', '.graphql.config.*', 'graphql.config.*', '.graphqlconfig*')
-    },
+    graphql = {},
     -- Kotlin
     kotlin_language_server = {},
     -- TypeScript
