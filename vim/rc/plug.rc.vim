@@ -223,7 +223,19 @@ Plug 'airblade/vim-gitgutter'
 
 " fern {{{
 Plug 'lambdalisue/fern.vim'
-nnoremap <silent> <Space>f :<C-u>Fern . -reveal=% -drawer -width=40 -toggle<CR>
+
+function! SetTagStack() abort
+  let l:old_location = [bufnr('%'), line('.'), col('.'), 0]
+  let l:tagname = expand('<cword>')
+  let l:winid = win_getid()
+  echomsg l:tagname
+
+  call settagstack(l:winid, {'items': [{'from': l:old_location, 'tagname': l:tagname}]}, 'a')
+endfunction
+
+nmap <Plug>(set-tag-stack) :<C-u>call SetTagStack()<CR>
+nmap <Plug>(fern-action-open) :<C-u>Fern . -reveal=% -drawer -width=40 -toggle<CR>
+nnoremap <silent> <Space>f <Plug>(set-tag-stack)<Plug>(fern-action-open)
 
 function! s:init_fern() abort
   set nonumber
