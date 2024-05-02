@@ -52,7 +52,7 @@ Plugin.setup = function()
         auto_quoting = true,
         mappings = {
           i = {
-            ["<C-r>"] = lga_actions.quote_prompt({ postfix = ' -g *.' }),
+            ["<C-r>"] = lga_actions.quote_prompt({ postfix = ' -g ' }),
           },
         },
         push_tagstack_on_edit = true,
