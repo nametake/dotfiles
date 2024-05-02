@@ -26,3 +26,16 @@ function! ClearTagStack() abort
 endfunction
 
 nmap <silent> <Plug>(tag-stack-clear) :<C-u>call ClearTagStack()<CR>
+
+function! CacheTagStackPosition() abort
+  let s:old_location = [bufnr('%'), line('.'), col('.'), 0]
+  let s:tagname = expand('<cword>')
+  let s:winid = win_getid()
+endfunction
+
+function! SetTagStackFromCache() abort
+  call settagstack(s:winid, {'items': [{'from': s:old_location, 'tagname': s:tagname}]}, 'a')
+endfunction
+
+nmap <silent> <Plug>(cache-tag-stack-position) :<C-u>call CacheTagStackPosition()<CR>
+nmap <silent> <Plug>(set-tag-stack-from-cache) :<C-u>call SetTagStackFromCache()<CR>

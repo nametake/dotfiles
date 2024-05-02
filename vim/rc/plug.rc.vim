@@ -223,21 +223,8 @@ Plug 'airblade/vim-gitgutter'
 
 " fern {{{
 Plug 'lambdalisue/fern.vim'
-
-function! SaveLocation() abort
-  let s:old_location = [bufnr('%'), line('.'), col('.'), 0]
-  let s:tagname = expand('<cword>')
-  let s:winid = win_getid()
-endfunction
-
-function! SetTagStack() abort
-  call settagstack(s:winid, {'items': [{'from': s:old_location, 'tagname': s:tagname}]}, 'a')
-endfunction
-
-nmap <Plug>(save-tag-stack) :<C-u>call SaveLocation()<CR>
-nmap <Plug>(set-tag-stack) :<C-u>call SetTagStack()<CR>
 nmap <Plug>(fern-action-open) :<C-u>Fern . -reveal=% -drawer -width=40 -toggle<CR>
-nnoremap <silent> <Space>f <Plug>(save-tag-stack)<Plug>(fern-action-open)
+nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position)<Plug>(fern-action-open)
 
 function! s:init_fern() abort
   set nonumber
@@ -264,7 +251,7 @@ function! s:init_fern() abort
   nmap <buffer> r <Plug>(fern-action-reload)
   nmap <buffer> D <Plug>(fern-action-remove)
   nmap <buffer> q :<C-u>quit<CR>
-  nmap <buffer><nowait> <CR> <Plug>(set-tag-stack)<Plug>(fern-action--expand-or-collapse)
+  nmap <buffer><nowait> <CR> <Plug>(set-tag-stack-from-cache)<Plug>(fern-action--expand-or-collapse)
 
   silent! nunmap <buffer><silent> z
 endfunction
