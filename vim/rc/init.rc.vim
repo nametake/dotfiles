@@ -12,3 +12,17 @@ function! IsMac() abort
         \     || (!executable('xdg-open') && system('uname') =~? '^darwin'))
 endfunction
 
+function! ClearTagStack() abort
+  let l:view = winsaveview()
+  let l:tagstack = gettagstack()
+  if len(l:tagstack['items']) > 0
+    let l:tagstack['items'] = []
+    let l:tagstack['length'] = 0
+    let l:tagstack['curidx'] = 0
+    call settagstack(win_getid(), l:tagstack)
+  endif
+
+  call winrestview(l:view)
+endfunction
+
+nmap <silent> <Plug>(tag-stack-clear) :<C-u>call ClearTagStack()<CR>
