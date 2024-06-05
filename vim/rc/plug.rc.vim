@@ -250,7 +250,7 @@ function! s:init_fern() abort
   nmap <buffer> I <Plug>(fern-action-hidden)
   nmap <buffer> r <Plug>(fern-action-reload)
   nmap <buffer> D <Plug>(fern-action-remove)
-  nmap <buffer> q :<C-u>quit<CR>
+  nmap <silent><buffer> q :<C-u>bd<CR>
   nmap <buffer><nowait> <CR> <Plug>(set-tag-stack-from-cache)<Plug>(fern-action--expand-or-collapse)
 
   silent! nunmap <buffer><silent> z
