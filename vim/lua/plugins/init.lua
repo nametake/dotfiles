@@ -37,6 +37,7 @@ Plugin.setup = function()
       Fragment = { icon = "", hl = "@constant" },
     },
   })
+  require('nvim-ts-autotag').setup()
 end
 
 return Plugin

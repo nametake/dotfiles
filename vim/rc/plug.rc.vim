@@ -60,6 +60,7 @@ Plug 'kana/vim-operator-user'
 
 if has('nvim')
   Plug 'windwp/nvim-autopairs'
+  Plug 'windwp/nvim-ts-autotag'
 else
   Plug 'LunarWatcher/auto-pairs'
   let g:AutoPairsPrefix = '<M-p>'
