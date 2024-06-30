@@ -345,6 +345,8 @@ if g:lsp_client ==# 'nvim-lspconfig' && has('nvim')
   Plug 'hrsh7th/nvim-cmp'
   inoremap <C-x><C-o> <Cmd>lua require('cmp').complete()<CR>
 
+  Plug 'lukas-reineke/lsp-format.nvim'
+
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'

@@ -38,9 +38,12 @@ Plugin.setup = function(opts)
     ensure_installed = keys(opts.servers),
   }
 
+  require("lsp-format").setup()
+
   local default_options = {
     -- on_attach = my_custom_on_attach,
     capabilities = capabilities,
+    on_attach = require("lsp-format").on_attach,
   }
 
   for lsp, options in pairs(opts.servers) do

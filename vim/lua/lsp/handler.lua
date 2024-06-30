@@ -21,11 +21,12 @@ local handlers = {
 }
 
 Plugin.setup = function()
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-      vim.lsp.buf.format { async = false }
-    end
-  })
+  -- Change to use https://github.com/lukas-reineke/lsp-format.nvim
+  -- vim.api.nvim_create_autocmd("BufWritePre", {
+  --   callback = function()
+  --     vim.lsp.buf.format { async = false }
+  --   end
+  -- })
 
   vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover,
