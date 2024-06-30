@@ -358,7 +358,7 @@ if g:lsp_client ==# 'nvim-lspconfig' && has('nvim')
   Plug 'golang/vscode-go'
 
   Plug 'zbirenbaum/copilot.lua'
-  Plug 'zbirenbaum/copilot-cmp'
+    Plug 'zbirenbaum/copilot-cmp'
 endif
 " }}}
 
