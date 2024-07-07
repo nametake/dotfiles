@@ -223,7 +223,7 @@ Plug 'airblade/vim-gitgutter'
 " }}}
 
 " fern {{{
-Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/vim-fern'
 nmap <Plug>(fern-action-open) :<C-u>Fern . -reveal=% -drawer -width=40 -toggle<CR>
 nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position)<Plug>(fern-action-open)
 
@@ -262,14 +262,14 @@ augroup fern-custom
   autocmd FileType fern call s:init_fern()
 augroup END
 
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/fern-mapping-git.vim'
+Plug 'lambdalisue/vim-fern-git-status'
+Plug 'lambdalisue/vim-fern-mapping-git'
 
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/vim-nerdfont'
+Plug 'lambdalisue/vim-fern-renderer-nerdfont'
+Plug 'lambdalisue/vim-glyph-palette'
 let g:fern#renderer = 'nerdfont'
-Plug 'nametake/fern-comparator-extension.vim'
+Plug 'nametake/vim-fern-comparator-extension'
 let g:fern#comparator = 'extension'
 let g:fern_comparator_extension#disable_compare_extension = 1
 let g:fern_comparator_extension#enable_go_test_grouping = 1
