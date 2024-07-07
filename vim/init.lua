@@ -15,8 +15,9 @@ require('plugins.init').setup()
 require('plugins.lsp.init').setup({
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md --
   servers = {
-    -- efm-langserver
+    -- All files
     efm = {},
+    typos_lsp = {},
     -- Go
     gopls = {
       init_options = {
