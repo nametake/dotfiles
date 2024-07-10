@@ -40,6 +40,8 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'previm/previm'
 let g:previm_open_cmd = 'open -a Google\ Chrome.app'
+
+Plug 'schickling/vim-bufonly'
 " }}}
 
 " Text operation {{{
