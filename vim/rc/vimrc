@@ -94,7 +94,8 @@ set laststatus=2
 set cmdheight=1
 set showmatch
 set list
-set listchars=tab:»-,trail:･,extends:»,precedes:«,nbsp:%,eol:↲
+" set listchars=tab:»-,trail:･,extends:»,precedes:«,nbsp:%,eol:↲
+set listchars=tab:»-,trail:･,extends:»,precedes:«,nbsp:%
 set matchtime=3
 set matchpairs& matchpairs+=<:>
 set wrap
