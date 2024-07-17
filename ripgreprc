@@ -1,2 +1,4 @@
 --hidden
 --ignore-files
+--glob
+!*_gen.go
