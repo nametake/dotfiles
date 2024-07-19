@@ -118,7 +118,7 @@ languages:
     - <<: *json-fixjson
     # - <<: *json-jq-format
   sh:
-    - <<: *sh-shellcheck
+    # - <<: *sh-shellcheck
     - <<: *sh-shfmt
   javascript:
     - <<: *javascript-eslint
