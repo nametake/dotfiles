@@ -193,8 +193,11 @@ Plug 'airblade/vim-gitgutter'
 " }}}
 
 " nerdtree {{{
+nmap <silent> <Plug>(nerdtree-cr) :<C-u>call nerdtree#ui_glue#invokeKeyMap("\<CR\>")<CR>
+autocmd MyAutoCmd FileType nerdtree map <buffer> <CR> <Plug>(set-tag-stack-from-cache)<Plug>(nerdtree-cr)
+
 Plug 'preservim/nerdtree'
-nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
+nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position):<C-u>NERDTreeFind<CR>
 let g:NERDTreeQuitOnOpen=1
 " let g:NERDTreeSortOrder = ['[[extension]]']
 let g:NERDTreeMapOpenSplit='<C-x>'
