@@ -93,7 +93,7 @@ NPM_TOOLS := \
 	textlint \
 	textlint-rule-preset-ja-technical-writing \
 	textlint-filter-rule-comments \
-	textlint-filter-rule-whitelist \
+	textlint-filter-rule-allowlist \
 	diagnostic-languageserver \
 
 PIP_TOOLS := \
@@ -120,7 +120,7 @@ zplug: ## Install zplug
 tmp: ## Install tmux plugin manager
 	@./bin/tmp.sh
 
-asdf: ## INstall asdf
+asdf: ## Install asdf
 	@git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 	@cd ~/.asdf
 	@git checkout "$(git describe --abbrev=0 --tags)"
