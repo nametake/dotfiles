@@ -193,88 +193,90 @@ Plug 'airblade/vim-gitgutter'
 " }}}
 
 " nerdtree {{{
-" Plug 'preservim/nerdtree'
-" nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
-" let g:NERDTreeQuitOnOpen=1
+Plug 'preservim/nerdtree'
+nnoremap <silent> <Space>f :<C-u>NERDTreeFind<CR>
+let g:NERDTreeQuitOnOpen=1
 " let g:NERDTreeSortOrder = ['[[extension]]']
-" let g:NERDTreeMapOpenSplit='<C-x>'
-" let g:NERDTreeMapOpenVSplit='<C-v>'
-"
-"   Plug 'Xuyuanp/nerdtree-git-plugin'
-"   let g:NERDTreeGitStatusIndicatorMapCustom = {
-"         \   'Modified'  : '*',
-"         \   'Staged'    : '+',
-"         \   'Untracked' : '-',
-"         \   'Renamed'   : '>',
-"         \   'Unmerged'  : '=',
-"         \   'Deleted'   : '!',
-"         \   'Dirty'     : 'x',
-"         \   'Clean'     : ':',
-"         \   'Ignored'   : 'I',
-"         \   'Unknown'   : '?'
-"         \ }
-"
-"
-"   Plug 'EvanDotPro/nerdtree-chmod'
-"
-"   " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"   " let g:NERDTreeFileExtensionHighlightFullName = 1
-"   " let g:NERDTreeExactMatchHighlightFullName = 1
-"   " let g:NERDTreePatternMatchHighlightFullName = 1
-"   " let g:NERDTreeLimitedSyntax = 1
+let g:NERDTreeMapOpenSplit='<C-x>'
+let g:NERDTreeMapOpenVSplit='<C-v>'
+
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  let g:NERDTreeGitStatusIndicatorMapCustom = {
+        \   'Modified'  : '*',
+        \   'Staged'    : '+',
+        \   'Untracked' : '-',
+        \   'Renamed'   : '>',
+        \   'Unmerged'  : '=',
+        \   'Deleted'   : '!',
+        \   'Dirty'     : 'x',
+        \   'Clean'     : ':',
+        \   'Ignored'   : 'I',
+        \   'Unknown'   : '?'
+        \ }
+
+
+  Plug 'EvanDotPro/nerdtree-chmod'
+  Plug 'ryanoasis/vim-devicons'
+  let g:webdevicons_enable_nerdtree = 1
+
+  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  " let g:NERDTreeFileExtensionHighlightFullName = 1
+  " let g:NERDTreeExactMatchHighlightFullName = 1
+  " let g:NERDTreePatternMatchHighlightFullName = 1
+  " let g:NERDTreeLimitedSyntax = 1
 " }}}
 
 " fern {{{
-Plug 'lambdalisue/vim-fern'
-nmap <Plug>(fern-action-open) :<C-u>Fern . -reveal=% -drawer -width=40 -toggle<CR>
-nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position)<Plug>(fern-action-open)
-
-function! s:init_fern() abort
-  set nonumber
-  " Define
-  nmap <Plug>(fern-action--close-drawer) :<C-u>FernDo close -drawer -stay<CR>
-  nmap <buffer><silent> <Plug>(fern-action--open-and-close)
-        \ <Plug>(fern-action-open)
-        \ <Plug>(fern-action--close-drawer)
-
-  nmap <buffer><expr>
-        \ <Plug>(fern-action--expand-or-collapse)
-        \ fern#smart#leaf(
-        \   "\<Plug>(fern-action--open-and-close)",
-        \   "\<Plug>(fern-action-expand)",
-        \   "\<Plug>(fern-action-collapse)",
-        \ )
-
-  " Map
-  nmap <buffer> o <Plug>(fern-action-expand)
-  nmap <buffer> x <Plug>(fern-action-collapse)
-  nmap <buffer> <C-v> <Plug>(fern-action-open:vsplit)<Plug>(fern-action--close-drawer)
-  nmap <buffer> <C-x> <Plug>(fern-action-open:split)<Plug>(fern-action--close-drawer)
-  nmap <buffer> I <Plug>(fern-action-hidden)
-  nmap <buffer> r <Plug>(fern-action-reload)
-  nmap <buffer> D <Plug>(fern-action-remove)
-  nmap <silent><buffer> q :<C-u>bd<CR>
-  nmap <buffer><nowait> <CR> <Plug>(set-tag-stack-from-cache)<Plug>(fern-action--expand-or-collapse)
-
-  silent! nunmap <buffer><silent> z
-endfunction
-
-augroup fern-custom
-  autocmd! *
-  autocmd FileType fern call s:init_fern()
-augroup END
-
-Plug 'lambdalisue/vim-fern-git-status'
-Plug 'lambdalisue/vim-fern-mapping-git'
-
-Plug 'lambdalisue/vim-nerdfont'
-Plug 'lambdalisue/vim-fern-renderer-nerdfont'
-Plug 'lambdalisue/vim-glyph-palette'
-let g:fern#renderer = 'nerdfont'
-Plug 'nametake/vim-fern-comparator-extension'
-let g:fern#comparator = 'extension'
-let g:fern_comparator_extension#disable_compare_extension = 1
-let g:fern_comparator_extension#enable_go_test_grouping = 1
+" Plug 'lambdalisue/vim-fern'
+" nmap <Plug>(fern-action-open) :<C-u>Fern . -reveal=% -drawer -width=40 -toggle<CR>
+" nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position)<Plug>(fern-action-open)
+"
+" function! s:init_fern() abort
+"   set nonumber
+"   " Define
+"   nmap <Plug>(fern-action--close-drawer) :<C-u>FernDo close -drawer -stay<CR>
+"   nmap <buffer><silent> <Plug>(fern-action--open-and-close)
+"         \ <Plug>(fern-action-open)
+"         \ <Plug>(fern-action--close-drawer)
+"
+"   nmap <buffer><expr>
+"         \ <Plug>(fern-action--expand-or-collapse)
+"         \ fern#smart#leaf(
+"         \   "\<Plug>(fern-action--open-and-close)",
+"         \   "\<Plug>(fern-action-expand)",
+"         \   "\<Plug>(fern-action-collapse)",
+"         \ )
+"
+"   " Map
+"   nmap <buffer> o <Plug>(fern-action-expand)
+"   nmap <buffer> x <Plug>(fern-action-collapse)
+"   nmap <buffer> <C-v> <Plug>(fern-action-open:vsplit)<Plug>(fern-action--close-drawer)
+"   nmap <buffer> <C-x> <Plug>(fern-action-open:split)<Plug>(fern-action--close-drawer)
+"   nmap <buffer> I <Plug>(fern-action-hidden)
+"   nmap <buffer> r <Plug>(fern-action-reload)
+"   nmap <buffer> D <Plug>(fern-action-remove)
+"   nmap <silent><buffer> q :<C-u>bd<CR>
+"   nmap <buffer><nowait> <CR> <Plug>(set-tag-stack-from-cache)<Plug>(fern-action--expand-or-collapse)
+"
+"   silent! nunmap <buffer><silent> z
+" endfunction
+"
+" augroup fern-custom
+"   autocmd! *
+"   autocmd FileType fern call s:init_fern()
+" augroup END
+"
+" Plug 'lambdalisue/vim-fern-git-status'
+" Plug 'lambdalisue/vim-fern-mapping-git'
+"
+" Plug 'lambdalisue/vim-nerdfont'
+" Plug 'lambdalisue/vim-fern-renderer-nerdfont'
+" Plug 'lambdalisue/vim-glyph-palette'
+" let g:fern#renderer = 'nerdfont'
+" Plug 'nametake/vim-fern-comparator-extension'
+" let g:fern#comparator = 'extension'
+" let g:fern_comparator_extension#disable_compare_extension = 1
+" let g:fern_comparator_extension#enable_go_test_grouping = 1
 " }}}
 
 " Outline {{{
