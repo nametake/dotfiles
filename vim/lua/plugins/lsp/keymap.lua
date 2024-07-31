@@ -36,6 +36,17 @@ function show_diagnostics_or_hover()
   end
 end
 
+local function show_signature_or_hover()
+  local params = vim.lsp.util.make_position_params()
+  vim.lsp.buf_request(0, 'textDocument/signatureHelp', params, function(err, result, ctx, config)
+    if err == nil and result ~= nil and not vim.tbl_isempty(result.signatures) then
+      vim.lsp.handlers['textDocument/signatureHelp'](err, result, ctx, config)
+    else
+      vim.lsp.buf.hover()
+    end
+  end)
+end
+
 Plugin.setup = function()
   -- Global mappings.
   -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -54,7 +65,8 @@ Plugin.setup = function()
       -- Buffer local mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
       local opts = { buffer = ev.buf }
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      vim.keymap.set('n', 'K', show_signature_or_hover, opts)
       vim.keymap.set('n', 'L', vim.diagnostic.open_float, opts)
       vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, opts)
       vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, opts)
@@ -89,11 +101,11 @@ Plugin.setup = function()
     }),
     sources = cmp.config.sources({
       -- { name = 'buffer' },
-      { name = "copilot",                 group_index = 2 },
+      { name = "copilot", group_index = 2 },
       { name = 'path' },
       { name = 'nvim_lsp' },
       { name = 'vsnip' },
-      { name = 'nvim_lsp_signature_help', group_index = 0 },
+      -- { name = 'nvim_lsp_signature_help', group_index = 0 },
     }, {
       { name = 'buffer' },
     }),

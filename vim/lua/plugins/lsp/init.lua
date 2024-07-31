@@ -40,8 +40,13 @@ Plugin.setup = function(opts)
 
   require("lsp-format").setup()
   require "lsp_signature".setup({
-    max_width = 120,
+    doc_lines = 0,
+    max_width = 96,
+    max_height = 120,
     hint_enable = false,
+    handler_opts = {
+      border = "single",
+    },
   })
 
   local default_options = {
