@@ -89,11 +89,11 @@ Plugin.setup = function()
     }),
     sources = cmp.config.sources({
       -- { name = 'buffer' },
-      { name = "copilot",                group_index = 2 },
+      { name = "copilot",                 group_index = 2 },
       { name = 'path' },
       { name = 'nvim_lsp' },
       { name = 'vsnip' },
-      { name = 'nvim_lsp_signature_help' },
+      { name = 'nvim_lsp_signature_help', group_index = 0 },
     }, {
       { name = 'buffer' },
     }),
