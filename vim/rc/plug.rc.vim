@@ -361,6 +361,7 @@ if g:lsp_client ==# 'nvim-lspconfig' && has('nvim')
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
   Plug 'hrsh7th/cmp-vsnip'
+  Plug 'ray-x/lsp_signature.nvim'
 
   " for Golang
   Plug 'golang/vscode-go'
