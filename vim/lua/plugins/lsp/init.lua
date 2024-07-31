@@ -39,7 +39,10 @@ Plugin.setup = function(opts)
   }
 
   require("lsp-format").setup()
-  require "lsp_signature".setup()
+  require "lsp_signature".setup({
+    max_width = 120,
+    hint_enable = false,
+  })
 
   local default_options = {
     -- on_attach = my_custom_on_attach,
