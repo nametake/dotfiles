@@ -24,9 +24,9 @@ local function jump_prev(fallback)
   end
 end
 
-function show_diagnostics_or_hover()
-  local line = vim.api.nvim_win_get_cursor(0)[1] - 1 -- 現在の行番号
-  local col = vim.api.nvim_win_get_cursor(0)[2]      -- 現在のカラム番号
+local function show_diagnostics_or_hover()
+  local line = vim.api.nvim_win_get_cursor(0)[1] - 1
+  local col = vim.api.nvim_win_get_cursor(0)[2]
   local diagnostics = vim.diagnostic.get(0, { lnum = line })
 
   if #diagnostics > 0 then
@@ -65,9 +65,9 @@ Plugin.setup = function()
       -- Buffer local mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
       local opts = { buffer = ev.buf }
-      -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-      vim.keymap.set('n', 'K', show_signature_or_hover, opts)
-      vim.keymap.set('n', 'L', vim.diagnostic.open_float, opts)
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      -- vim.keymap.set('n', 'L', vim.diagnostic.open_float, opts)
+      vim.keymap.set('n', 'L', vim.lsp.buf.signature_help, opts)
       vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, opts)
       vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, opts)
       vim.keymap.set({ 'n', 'v' }, ';', vim.lsp.buf.code_action, opts)
