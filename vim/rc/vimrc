@@ -352,5 +352,5 @@ endif
 " Tag stack
 "
 "{{{
-nnoremap <Space>ct <Plug>(tag-stack-clear)
+" nnoremap <Space>ct <Plug>(tag-stack-clear)
 "}}}

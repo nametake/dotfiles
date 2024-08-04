@@ -42,6 +42,7 @@ Plug 'previm/previm'
 let g:previm_open_cmd = 'open -a Google\ Chrome.app'
 
 Plug 'schickling/vim-bufonly'
+nnoremap <silent> <Space>ct :<C-u>call feedkeys("\<Plug>(tag-stack-clear)") \| BOnly<CR>
 " }}}
 
 " Text operation {{{
