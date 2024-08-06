@@ -25,6 +25,9 @@ require('plugins.lsp.init').setup({
       },
       staticcheck = true,
       gofumpt = true,
+      analyses = {
+        unusedparams = false,
+      },
       env = {
         GOEXPERIMENT = "rangefunc",
       },
