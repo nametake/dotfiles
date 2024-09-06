@@ -42,7 +42,9 @@ require('plugins.lsp.init').setup({
     -- Kotlin
     kotlin_language_server = {},
     -- TypeScript
-    tsserver = {},
+    -- https://github.com/neovim/nvim-lspconfig/pull/3232
+    -- tsserver = {},
+    vtsls = {},
     biome = {},
     tailwindcss = {},
     -- Bash
