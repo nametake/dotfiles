@@ -17,20 +17,24 @@ require('plugins.lsp.init').setup({
   servers = {
     -- All files
     efm = {},
-    typos_lsp = {},
+    typos_lsp = {
+      init_options = {
+        diagnosticSeverity = "Hint"
+      }
+    },
     -- Go
     gopls = {
-      init_options = {
-        symbolScope = 'workspace',
-      },
-      staticcheck = true,
-      gofumpt = true,
-      analyses = {
-        unusedparams = false,
-      },
-      env = {
-        GOEXPERIMENT = "rangefunc",
-      },
+      -- init_options = {
+      --   symbolScope = 'workspace',
+      -- },
+      -- staticcheck = true,
+      -- gofumpt = true,
+      -- analyses = {
+      --   unusedparams = false,
+      -- },
+      -- env = {
+      --   GOEXPERIMENT = "rangefunc",
+      -- },
     },
     golangci_lint_ls = {
       init_options = {
