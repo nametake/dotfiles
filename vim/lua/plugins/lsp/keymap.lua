@@ -24,28 +24,28 @@ local function jump_prev(fallback)
   end
 end
 
-local function show_diagnostics_or_hover()
-  local line = vim.api.nvim_win_get_cursor(0)[1] - 1
-  local col = vim.api.nvim_win_get_cursor(0)[2]
-  local diagnostics = vim.diagnostic.get(0, { lnum = line })
-
-  if #diagnostics > 0 then
-    vim.diagnostic.open_float()
-  else
-    vim.lsp.buf.hover()
-  end
-end
-
-local function show_signature_or_hover()
-  local params = vim.lsp.util.make_position_params()
-  vim.lsp.buf_request(0, 'textDocument/signatureHelp', params, function(err, result, ctx, config)
-    if err == nil and result ~= nil and not vim.tbl_isempty(result.signatures) then
-      vim.lsp.handlers['textDocument/signatureHelp'](err, result, ctx, config)
-    else
-      vim.lsp.buf.hover()
-    end
-  end)
-end
+-- local function show_diagnostics_or_hover()
+--   local line = vim.api.nvim_win_get_cursor(0)[1] - 1
+--   local col = vim.api.nvim_win_get_cursor(0)[2]
+--   local diagnostics = vim.diagnostic.get(0, { lnum = line })
+--
+--   if #diagnostics > 0 then
+--     vim.diagnostic.open_float()
+--   else
+--     vim.lsp.buf.hover()
+--   end
+-- end
+--
+-- local function show_signature_or_hover()
+--   local params = vim.lsp.util.make_position_params()
+--   vim.lsp.buf_request(0, 'textDocument/signatureHelp', params, function(err, result, ctx, config)
+--     if err == nil and result ~= nil and not vim.tbl_isempty(result.signatures) then
+--       vim.lsp.handlers['textDocument/signatureHelp'](err, result, ctx, config)
+--     else
+--       vim.lsp.buf.hover()
+--     end
+--   end)
+-- end
 
 Plugin.setup = function()
   -- Global mappings.
@@ -109,7 +109,10 @@ Plugin.setup = function()
     }, {
       { name = 'buffer' },
     }),
-    preselect = cmp.PreselectMode.None
+    preselect = cmp.PreselectMode.None,
+    experimental = {
+      ghost_text = true,
+    },
   }
 
   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
