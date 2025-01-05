@@ -86,6 +86,9 @@ Plugin.setup = function(opts)
   })
 
   require("copilot").setup({
+    filetypes = {
+      ['*'] = true,
+    },
     suggestion = { enabled = false },
     panel = { enabled = false },
   })
