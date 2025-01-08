@@ -2,6 +2,9 @@
   name = nametake
   email = nametake.kyarabuki@gmail.com
 
+[commit]
+  verbose = true
+
 [push]
   default = current
   path = ~/.gitconfig.local
