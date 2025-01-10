@@ -37,6 +37,9 @@ Plugin.setup = function()
           end,
         },
       },
+      file_ignore_patterns = {
+        "_gen%.go$",
+      },
     },
     pickers = {
       git_files = {
