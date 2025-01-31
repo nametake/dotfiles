@@ -1,5 +1,11 @@
 local cmp = require 'cmp'
 local feedkeys = require 'cmp.utils.feedkeys'
+local chat = require 'CopilotChat'
+
+local function show_copilot_chat_action_prompt()
+  local actions = require('CopilotChat.actions')
+  require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
+end
 
 local Plugin = {}
 
@@ -54,6 +60,11 @@ Plugin.setup = function()
   vim.keymap.set('n', '<space>k', vim.diagnostic.goto_prev)
   vim.keymap.set('n', '<space>j', vim.diagnostic.goto_next)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+  vim.keymap.set('n', '<space>cc', chat.open, { noremap = true, silent = true })
+  vim.keymap.set('v', '<space>cc', chat.open, { noremap = true, silent = true })
+  vim.keymap.set('n', '<space>cp', show_copilot_chat_action_prompt, { noremap = true, silent = true })
+  vim.keymap.set('v', '<space>cp', show_copilot_chat_action_prompt, { noremap = true, silent = true })
 
   -- Use LspAttach autocommand to only map the following keys
   -- after the language server attaches to the current buffer
