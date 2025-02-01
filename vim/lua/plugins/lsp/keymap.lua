@@ -54,6 +54,7 @@ Plugin.setup = function()
   vim.keymap.set('n', '<space>k', vim.diagnostic.goto_prev)
   vim.keymap.set('n', '<space>j', vim.diagnostic.goto_next)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+  vim.keymap.set('n', '<space>cd', ':lua vim.diagnostic.reset(nil, 0)<CR>', { noremap = true, silent = true })
 
   -- Use LspAttach autocommand to only map the following keys
   -- after the language server attaches to the current buffer
