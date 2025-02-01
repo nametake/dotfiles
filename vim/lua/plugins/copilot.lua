@@ -1,7 +1,15 @@
 local Plugin = {}
 
+local chat = require 'CopilotChat'
+
+local function show_copilot_chat_action_prompt()
+  local actions = require('CopilotChat.actions')
+  require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
+end
+
+
 Plugin.setup = function()
-  require("CopilotChat").setup {
+  chat.setup {
     prompts = {
       Explain = {
         prompt = "/COPILOT_EXPLAIN 選択したコードを日本語で説明してください。",
@@ -26,6 +34,11 @@ Plugin.setup = function()
       },
     },
   }
+
+  vim.keymap.set('n', '<space>cc', chat.open, { noremap = true, silent = true })
+  vim.keymap.set('v', '<space>cc', chat.open, { noremap = true, silent = true })
+  vim.keymap.set('n', '<space>cp', show_copilot_chat_action_prompt, { noremap = true, silent = true })
+  vim.keymap.set('v', '<space>cp', show_copilot_chat_action_prompt, { noremap = true, silent = true })
 end
 
 return Plugin
