@@ -35,10 +35,10 @@ Plugin.setup = function()
     },
   }
 
-  vim.keymap.set('n', '<C-m>', chat.open, { noremap = true, silent = true })
-  vim.keymap.set('v', '<C-m>', chat.open, { noremap = true, silent = true })
-  vim.keymap.set('n', '<C-c>', show_copilot_chat_action_prompt, { noremap = true, silent = true })
-  vim.keymap.set('v', '<C-c>', show_copilot_chat_action_prompt, { noremap = true, silent = true })
+  vim.keymap.set('n', '<C-n>', chat.open, { noremap = true, silent = true })
+  vim.keymap.set('v', '<C-n>', chat.open, { noremap = true, silent = true })
+  vim.keymap.set('n', '<C-m>', show_copilot_chat_action_prompt, { noremap = true, silent = true })
+  vim.keymap.set('v', '<C-m>', show_copilot_chat_action_prompt, { noremap = true, silent = true })
 end
 
 return Plugin
