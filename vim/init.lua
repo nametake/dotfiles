@@ -1,9 +1,7 @@
 require('global')
 
--- .vimrcを読み込む
 require('vimrc').setup({ path = '/rc/vimrc' })
 
--- vim-lspがインストールされている場合、lsp設定を返す
 if (vim.fn.IsPlugged('nvim-lspconfig') ~= 1) then
   return
 end
@@ -15,7 +13,7 @@ require('plugins.init').setup()
 require('plugins.lsp.init').setup({
   -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md --
   servers = {
-    -- 全てのファイル
+    -- All filetypes
     efm = {},
     typos_lsp = {
       init_options = {
