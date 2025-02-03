@@ -148,10 +148,10 @@ vmap F <Plug>(easymotion-Fl)
 
 nmap s <Plug>(easymotion-s2)
 
-" nmap / <Plug>(easymotion-sn)
-" vmap / <Plug>(easymotion-sn)
-" nmap ? <Plug>(easymotion-sn)
-" vmap ? <Plug>(easymotion-sn)
+nmap / <Plug>(easymotion-sn)
+vmap / <Plug>(easymotion-sn)
+nmap ? <Plug>(easymotion-sn)
+vmap ? <Plug>(easymotion-sn)
 smap f f
 smap F F
 
