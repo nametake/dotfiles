@@ -44,6 +44,7 @@ Plugin.setup = function()
     pickers = {
       git_files = {
         push_tagstack_on_edit = true,
+        use_git_root = false,
       },
       buffers = {
         push_tagstack_on_edit = true,
