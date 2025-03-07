@@ -37,14 +37,14 @@ Plugin.setup = function()
           end,
         },
       },
-      file_ignore_patterns = {
-        "_gen%.go$",
-      },
     },
     pickers = {
       git_files = {
         push_tagstack_on_edit = true,
         use_git_root = false,
+        file_ignore_patterns = {
+          "_gen%.go$",
+        },
       },
       buffers = {
         push_tagstack_on_edit = true,
