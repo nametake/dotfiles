@@ -35,6 +35,16 @@ Plugin.setup = function()
           ["<C-d>"] = function()
             vim.api.nvim_feedkeys(t('<DEL>'), 'i', false)
           end,
+          ["<C-y>"] = function()
+            local entry = require("telescope.actions.state").get_selected_entry()
+            local cb_opts = vim.opt.clipboard:get()
+            local relative_path = vim.fn.fnamemodify(entry.path, ":.")
+            if vim.tbl_contains(cb_opts, "unnamed") then vim.fn.setreg("*", relative_path) end
+            if vim.tbl_contains(cb_opts, "unnamedplus") then
+              vim.fn.setreg("+", relative_path)
+            end
+            vim.fn.setreg("", relative_path)
+          end,
         },
       },
     },
