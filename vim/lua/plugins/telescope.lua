@@ -44,6 +44,7 @@ Plugin.setup = function()
               vim.fn.setreg("+", relative_path)
             end
             vim.fn.setreg("", relative_path)
+            vim.api.nvim_feedkeys(t('<ESC>'), 'i', false)
           end,
         },
       },
