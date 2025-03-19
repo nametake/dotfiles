@@ -4,7 +4,7 @@ local lga_actions = require("telescope-live-grep-args.actions")
 local Plugin = {}
 
 Plugin.setup = function()
-  require('telescope').setup {
+  require('telescope').setup({ ---@diagnostic disable-line: redundant-parameter
     defaults = {
       mappings = {
         i = {
@@ -74,7 +74,7 @@ Plugin.setup = function()
         push_tagstack_on_edit = true,
       },
     },
-  }
+  })
   require('telescope').load_extension('fzf')
 end
 

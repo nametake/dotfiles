@@ -94,10 +94,10 @@ if has('nvim')
   smap <C-n> <Nop>
 endif
 
-Plug 'mattn/vim-sonictemplate'
-let g:sonictemplate_vim_template_dir = [
-      \  '~/.vim/template'
-      \]
+" Plug 'mattn/vim-sonictemplate'
+" let g:sonictemplate_vim_template_dir = [
+"       \  '~/.vim/template'
+"       \]
 " }}}
 
 " Search {{{
