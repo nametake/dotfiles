@@ -9,7 +9,8 @@ local function show_copilot_chat_action_prompt()
 end
 
 Plugin.setup = function()
-  chat.setup {
+  chat.setup({
+    model = 'claude-3.7-sonnet',
     prompts = {
       Explain = {
         prompt = "/COPILOT_EXPLAIN 選択したコードを日本語で説明してください。",
@@ -33,7 +34,7 @@ Plugin.setup = function()
         prompt = "/COPILOT_TESTS 選択したコードの詳細な単体テスト関数を日本語で作成してください。",
       },
     },
-  }
+  })
 
   vim.keymap.set('n', '<C-n>', chat.open, { noremap = true, silent = true })
   vim.keymap.set('v', '<C-n>', chat.open, { noremap = true, silent = true })
