@@ -112,6 +112,7 @@ if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  Plug 'nvim-telescope/telescope-ui-select.nvim'
   Plug 'nvim-telescope/telescope-live-grep-args.nvim'
   nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<cr>
   nnoremap <C-s> <cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>
