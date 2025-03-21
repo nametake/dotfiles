@@ -1,4 +1,5 @@
 local actions = require('telescope.actions')
+local action_state = require("telescope.actions.state")
 local lga_actions = require("telescope-live-grep-args.actions")
 
 local Plugin = {}
@@ -48,6 +49,18 @@ Plugin.setup = function()
             vim.fn.setreg("", relative_path)
             vim.api.nvim_feedkeys(t('<ESC>'), 'i', false)
           end,
+          ["<C-o>"] = function(prompt_bufnr)
+            local picker = action_state.get_current_picker(prompt_bufnr)
+            local multi_selection = picker:get_multi_selection()
+            actions.close(prompt_bufnr)
+
+            local files = vim.tbl_map(function(entry)
+              return string.format("file:%s", entry.value)
+            end, multi_selection)
+            require("CopilotChat").open({
+              context = files
+            })
+          end
         },
       },
     },
