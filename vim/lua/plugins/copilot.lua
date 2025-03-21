@@ -1,6 +1,6 @@
 local Plugin = {}
 
-local chat = require 'CopilotChat'
+local chat = require('CopilotChat')
 
 local function show_copilot_chat_action_prompt()
   -- local actions = require('CopilotChat.actions')

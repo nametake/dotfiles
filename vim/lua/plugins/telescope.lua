@@ -4,7 +4,8 @@ local lga_actions = require("telescope-live-grep-args.actions")
 local Plugin = {}
 
 Plugin.setup = function()
-  require('telescope').setup({ ---@diagnostic disable-line: redundant-parameter
+  ---@diagnostic disable-next-line: redundant-parameter
+  require('telescope').setup({
     defaults = {
       mappings = {
         i = {
