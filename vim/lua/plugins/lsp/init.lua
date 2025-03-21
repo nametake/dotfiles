@@ -1,5 +1,5 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local Plugin = {}
 
@@ -34,9 +34,10 @@ Plugin.setup = function(opts)
   end
 
   require('mason').setup()
-  require('mason-lspconfig').setup {
+  require('mason-lspconfig').setup({
+    automatic_installation = true,
     ensure_installed = keys(opts.servers),
-  }
+  })
 
   require("lsp-format").setup()
   require "lsp_signature".setup({
@@ -100,7 +101,7 @@ Plugin.setup = function(opts)
     autocmd!
     autocmd BufEnter .env lua vim.diagnostic.disable(0)
     augroup end
-  ]])
+    ]])
 end
 
 return Plugin
