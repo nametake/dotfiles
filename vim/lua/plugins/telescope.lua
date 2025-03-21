@@ -12,6 +12,7 @@ Plugin.setup = function()
         i = {
           ["<ESC>"] = actions.close,
           ["<C-[>"] = actions.close,
+          ["<C-s>"] = actions.delete_buffer,
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous,
           ["<C-p>"] = actions.cycle_history_prev,
