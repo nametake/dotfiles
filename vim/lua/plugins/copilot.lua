@@ -8,7 +8,6 @@ local function show_copilot_chat_action_prompt()
   -- chat.select_prompt()
 end
 
-
 Plugin.setup = function()
   chat.setup {
     prompts = {

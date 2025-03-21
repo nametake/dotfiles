@@ -15,6 +15,7 @@ Plugin.setup = function()
           ["<C-k>"] = actions.move_selection_previous,
           ["<C-p>"] = actions.cycle_history_prev,
           ["<C-n>"] = actions.cycle_history_next,
+          ["<C-i>"] = actions.toggle_selection,
           ["<C-f>"] = function()
             vim.api.nvim_feedkeys(t('<Right>'), 'i', false)
           end,
