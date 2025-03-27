@@ -40,6 +40,12 @@ Plugin.setup = function()
   vim.keymap.set('v', '<C-n>', chat.open, { noremap = true, silent = true })
   vim.keymap.set('n', '<C-m>', show_copilot_chat_action_prompt, { noremap = true, silent = true })
   vim.keymap.set('v', '<C-m>', show_copilot_chat_action_prompt, { noremap = true, silent = true })
+  vim.api.nvim_create_autocmd('BufEnter', {
+    pattern = 'copilot-*',
+    callback = function()
+      vim.opt_local.conceallevel = 0
+    end
+  })
 end
 
 return Plugin
