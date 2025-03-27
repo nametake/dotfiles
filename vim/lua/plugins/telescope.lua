@@ -50,9 +50,22 @@ Plugin.setup = function()
             vim.fn.setreg("", relative_path)
             vim.api.nvim_feedkeys(t('<ESC>'), 'i', false)
           end,
-          ["<C-o>"] = function(prompt_bufnr)
+          ["<C-n>"] = function(prompt_bufnr)
             local picker = action_state.get_current_picker(prompt_bufnr)
             local multi_selection = picker:get_multi_selection()
+            local current_entry = action_state.get_selected_entry()
+            if current_entry then
+              local already_included = false
+              for _, entry in ipairs(multi_selection) do
+                if entry == current_entry then
+                  already_included = true
+                  break
+                end
+              end
+              if not already_included then
+                table.insert(multi_selection, current_entry)
+              end
+            end
             actions.close(prompt_bufnr)
 
             local files = vim.tbl_map(function(entry)
