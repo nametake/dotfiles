@@ -17,7 +17,7 @@ Plugin.setup = function()
           ["<C-k>"] = actions.move_selection_previous,
           ["<C-p>"] = actions.cycle_history_prev,
           ["<C-n>"] = actions.cycle_history_next,
-          ["<C-i>"] = actions.toggle_selection,
+          ["<C-i>"] = actions.toggle_selection + actions.move_selection_better,
           ["<C-f>"] = function()
             vim.api.nvim_feedkeys(t('<Right>'), 'i', false)
           end,
@@ -50,7 +50,7 @@ Plugin.setup = function()
             vim.fn.setreg("", relative_path)
             vim.api.nvim_feedkeys(t('<ESC>'), 'i', false)
           end,
-          ["<C-n>"] = function(prompt_bufnr)
+          ["<C-u>"] = function(prompt_bufnr)
             local picker = action_state.get_current_picker(prompt_bufnr)
             local multi_selection = picker:get_multi_selection()
             local current_entry = action_state.get_selected_entry()
@@ -66,10 +66,9 @@ Plugin.setup = function()
                 table.insert(multi_selection, current_entry)
               end
             end
-            actions.close(prompt_bufnr)
 
             local files = vim.tbl_map(function(entry)
-              return string.format("file:%s", entry.value)
+              return string.format("file:`%s`", entry.value)
             end, multi_selection)
             require("CopilotChat").open({
               context = files
