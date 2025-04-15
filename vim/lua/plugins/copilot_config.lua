@@ -1,11 +1,18 @@
 local Plugin = {}
 
 local chat = require('CopilotChat')
+local select = require("CopilotChat.select")
 
 local function show_copilot_chat_action_prompt()
   local actions = require('CopilotChat.actions')
   require('CopilotChat.integrations.telescope').pick(actions.prompt_actions())
   -- chat.select_prompt()
+end
+
+local function open_with_buffer_selection()
+  chat.open({
+    selection = select.buffer,
+  })
 end
 
 Plugin.setup = function()
@@ -34,9 +41,12 @@ Plugin.setup = function()
         prompt = "/COPILOT_TESTS 選択したコードの詳細な単体テスト関数を日本語で作成してください。",
       },
     },
+    selection = function(source)
+      return select.visual(source) or select.buffer(source)
+    end
   })
 
-  vim.keymap.set('n', '<C-u>', chat.open, { noremap = true, silent = true })
+  vim.keymap.set('n', '<C-u>', open_with_buffer_selection, { noremap = true, silent = true })
   vim.keymap.set('v', '<C-u>', chat.open, { noremap = true, silent = true })
   vim.keymap.set('n', '<C-m>', show_copilot_chat_action_prompt, { noremap = true, silent = true })
   vim.keymap.set('v', '<C-m>', show_copilot_chat_action_prompt, { noremap = true, silent = true })
