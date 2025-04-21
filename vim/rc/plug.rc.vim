@@ -284,8 +284,8 @@ let g:NERDTreeWinSize=48
 " }}}
 
 " Outline {{{
-Plug 'simrat39/symbols-outline.nvim'
-nnoremap <silent> <Space>o :<C-u>SymbolsOutlineOpen<CR>
+" Plug 'simrat39/symbols-outline.nvim'
+" nnoremap <silent> <Space>o :<C-u>SymbolsOutlineOpen<CR>
 
 " }}}
 
