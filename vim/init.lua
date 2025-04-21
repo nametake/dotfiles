@@ -1,6 +1,7 @@
 require('global')
 
 require('vimrc').setup({ path = '/rc/vimrc' })
+require('keymap').setup()
 
 if (vim.fn.IsPlugged('nvim-lspconfig') ~= 1) then
   return
