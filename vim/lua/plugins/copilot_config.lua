@@ -17,7 +17,7 @@ end
 
 Plugin.setup = function()
   chat.setup({
-    model = 'claude-3.7-sonnet',
+    model = 'claude-sonnet-4',
     prompts = {
       Explain = {
         prompt = "/COPILOT_EXPLAIN 選択したコードを日本語で説明してください。",
