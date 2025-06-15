@@ -9,7 +9,8 @@ Plugin.setup = function()
     provider = 'copilot',
     model = 'claude-sonnet-4',
     mappings = {
-      ask = '<space>u',
+      ask = '<C-u>',
+      edit = "<Space><C-u>",
     }
   })
   vim.keymap.set('n', '<C-u>', api.ask, { noremap = true, silent = true })
