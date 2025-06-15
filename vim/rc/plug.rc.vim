@@ -369,7 +369,9 @@ if g:lsp_client ==# 'nvim-lspconfig' && has('nvim')
   Plug 'zbirenbaum/copilot.lua'
     Plug 'zbirenbaum/copilot-cmp'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'CopilotC-Nvim/CopilotChat.nvim'
+  " Plug 'CopilotC-Nvim/CopilotChat.nvim'
+
+  Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 endif
 " }}}
 
