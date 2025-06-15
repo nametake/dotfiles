@@ -6,7 +6,11 @@ Plugin.setup = function()
   ---@diagnostic disable-next-line:redundant-parameter
   require('avante').setup({
     provider = 'copilot',
-    model = 'claude-sonnet-4',
+    providers = {
+      copilot = {
+        model = 'claude-sonnet-4',
+      },
+    },
     mappings = {
       ask = '<C-u>',
       edit = "<Space><C-u>",
