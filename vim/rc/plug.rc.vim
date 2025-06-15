@@ -199,10 +199,13 @@ Plug 'airblade/vim-gitgutter'
 
 " Filer {{{
 
-" nerdtree {{{
 if has('nvim')
+  " neo-tree.nvim {{{
   Plug 'nvim-neo-tree/neo-tree.nvim'
+    nnoremap <Space>f <Cmd>Neotree<CR>
+  " }}}
 else
+" nerdtree {{{
   Plug 'preservim/nerdtree'
   nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position):<C-u>NERDTreeFind<CR>
   nmap <silent> <Plug>(nerdtree-cr) :<C-u>call nerdtree#ui_glue#invokeKeyMap("\<CR\>")<CR>
@@ -238,8 +241,8 @@ else
     " let g:NERDTreeExactMatchHighlightFullName = 1
     " let g:NERDTreePatternMatchHighlightFullName = 1
     " let g:NERDTreeLimitedSyntax = 1
-end
 " }}}
+end
 
 " }}}
 
