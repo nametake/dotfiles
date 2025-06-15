@@ -59,6 +59,22 @@ Plugin.setup = function()
       vim.opt_local.foldmethod = "manual"
     end,
   })
+
+  -- https://github.com/yetone/avante.nvim/issues/2144
+  -- Close all floating windows
+  local function close_floating_windows()
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+      local success, config = pcall(vim.api.nvim_win_get_config, win)
+      if success and config.relative ~= '' then
+        pcall(vim.api.nvim_win_close, win, true)
+      end
+    end
+  end
+
+  -- Create user command
+  vim.api.nvim_create_user_command('CloseFloatingWindows', close_floating_windows, {
+    desc = 'Close all floating windows'
+  })
 end
 
 return Plugin
