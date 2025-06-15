@@ -17,6 +17,11 @@ Plugin.setup = function()
         },
       },
     },
+    windows = {
+      sidebar_header = {
+        rounded = false,
+      },
+    },
   })
   vim.keymap.set('n', '<C-u>', api.ask, { noremap = true, silent = true })
   vim.keymap.set('v', '<C-u>', api.ask, { noremap = true, silent = true })
