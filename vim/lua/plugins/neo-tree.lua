@@ -1,6 +1,7 @@
 local Plugin = {}
 
 Plugin.setup = function()
+  --- @diagnostic disable-next-line:redundant-parameter
   require("neo-tree").setup({
     use_default_mappings = false,
     window = {
@@ -97,7 +98,7 @@ Plugin.setup = function()
           local content = node.path
           -- relative
           -- local content = node.path:gsub(state.path, ""):sub(2)
-          print ("Copied to clipboard: " .. content)
+          print("Copied to clipboard: " .. content)
           vim.fn.setreg('"', content)
           vim.fn.setreg("1", content)
           vim.fn.setreg("+", content)
