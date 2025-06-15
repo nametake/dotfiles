@@ -21,6 +21,26 @@ Plugin.setup = function()
         },
       },
     },
+    disabled_tools = {
+      -- "rag_search",
+      "python",
+      -- "git_diff",
+      -- "git_commit",
+      -- "list_files",
+      -- "search_files",
+      -- "search_keyword",
+      -- "read_file_toplevel_symbols",
+      -- "read_file",
+      -- "create_file",
+      -- "rename_file",
+      -- "delete_file",
+      -- "create_dir",
+      -- "rename_dir",
+      -- "delete_dir",
+      "bash",
+      -- "web_search",
+      -- "fetch",
+    },
     windows = {
       sidebar_header = {
         rounded = false,
@@ -31,6 +51,7 @@ Plugin.setup = function()
   vim.keymap.set('v', '<C-u>', api.ask, { noremap = true, silent = true })
 
   vim.keymap.set('n', '<C-l>', ':AvanteClear<CR>', { noremap = true, silent = true })
+  vim.keymap.set('i', '<C-l>', '<Esc>:AvanteClear<CR>', { noremap = true, silent = true })
 
   vim.api.nvim_create_autocmd("FileType", {
     pattern = "Avante",
