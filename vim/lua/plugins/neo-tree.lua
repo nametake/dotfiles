@@ -84,6 +84,7 @@ Plugin.setup = function()
         -- nodes
         ["l"] = "open",
         ["x"] = "close_node",
+        ["h"] = "close_node",
         ["X"] = "close_all_subnodes",
 
         -- files
@@ -109,6 +110,10 @@ Plugin.setup = function()
       },
     },
     filesystem = {
+      follow_current_file = {
+        enabled = true,
+        -- leave_dirs_open = false,
+      },
       window = {
         mappings = {
           -- ["<bs>"] = "navigate_up",
