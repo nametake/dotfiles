@@ -12,7 +12,7 @@ Plugin.setup = function()
       edit = "<Space><C-u>",
       sidebar = {
         close_from_input = {
-          normal = "<C-c>",
+          normal = { "<C-c>", "q" },
           insert = "<C-c>",
         },
       },
