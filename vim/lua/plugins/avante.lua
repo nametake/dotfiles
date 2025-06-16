@@ -60,6 +60,8 @@ Plugin.setup = function()
   vim.keymap.set('n', '<C-u>', api.ask, { noremap = true, silent = true })
   vim.keymap.set('v', '<C-u>', api.ask, { noremap = true, silent = true })
 
+  vim.keymap.set('n', '<Space>s', api.stop, { noremap = true, silent = true })
+
   vim.keymap.set('n', '<C-l>', ':AvanteClear<CR>', { noremap = true, silent = true })
   vim.keymap.set('i', '<C-l>', '<Esc>:AvanteClear<CR>', { noremap = true, silent = true })
 
