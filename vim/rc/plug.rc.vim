@@ -340,6 +340,7 @@ if has('nvim')
 
   " Plug 'CopilotC-Nvim/CopilotChat.nvim'
   Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+  Plug 'ravitemer/mcphub.nvim', { 'do': 'npm install -g mcp-hub@latest' }
 end
 " }}}
 

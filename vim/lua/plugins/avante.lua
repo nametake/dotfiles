@@ -46,6 +46,16 @@ Plugin.setup = function()
         rounded = false,
       },
     },
+    system_prompt = function()
+      local hub = require("mcphub").get_hub_instance()
+      return hub and hub:get_active_servers_prompt() or ""
+    end,
+    -- Using function prevents requiring mcphub before it's loaded
+    custom_tools = function()
+      return {
+        require("mcphub.extensions.avante").mcp_tool(),
+      }
+    end,
   })
   vim.keymap.set('n', '<C-u>', api.ask, { noremap = true, silent = true })
   vim.keymap.set('v', '<C-u>', api.ask, { noremap = true, silent = true })
@@ -78,6 +88,16 @@ Plugin.setup = function()
 
   -- https://github.com/yetone/avante.nvim/issues/2046#issuecomment-2905410720
   vim.g.root_spec = { { ".git" }, "lsp", "cwd" }
+
+
+  -- MUPHub
+  require("mcphub").setup({
+    extensions = {
+      avante = {
+        make_slash_commands = true, -- make /slash commands from MCP server prompts
+      }
+    }
+  })
 end
 
 return Plugin
