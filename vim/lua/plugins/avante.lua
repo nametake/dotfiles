@@ -75,6 +75,9 @@ Plugin.setup = function()
   vim.api.nvim_create_user_command('CloseFloatingWindows', close_floating_windows, {
     desc = 'Close all floating windows'
   })
+
+  -- https://github.com/yetone/avante.nvim/issues/2046#issuecomment-2905410720
+  vim.g.root_spec = { { ".git" }, "lsp", "cwd" }
 end
 
 return Plugin
