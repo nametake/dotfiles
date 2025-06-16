@@ -21,8 +21,6 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 
 if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  set foldmethod=expr
-  set foldexpr=nvim_treesitter#foldexpr()
 
   Plug 'nvim-treesitter/nvim-treesitter-context'
 
