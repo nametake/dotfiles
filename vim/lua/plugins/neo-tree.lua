@@ -4,6 +4,22 @@ Plugin.setup = function()
   --- @diagnostic disable-next-line:redundant-parameter
   require("neo-tree").setup({
     use_default_mappings = false,
+    default_component_configs = {
+      name = {
+        use_git_status_colors = true,
+        highlight = "NeoTreeFileName",
+      },
+    },
+    renderers = {
+      file = {
+        { "name",      use_git_status_colors = true },
+        { "git_status" },
+      },
+      directory = {
+        { "name",      use_git_status_colors = true },
+        { "git_status" },
+      },
+    },
     window = {
       width = 48,
       mappings = {
