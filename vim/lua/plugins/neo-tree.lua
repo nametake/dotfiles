@@ -5,6 +5,7 @@ Plugin.setup = function()
   require("neo-tree").setup({
     use_default_mappings = false,
     window = {
+      width = 48,
       mappings = {
         -- ["<space>"] = {
         --   "toggle_node",
