@@ -4,6 +4,7 @@ Plugin.setup = function()
   --- @diagnostic disable-next-line:redundant-parameter
   require("neo-tree").setup({
     use_default_mappings = false,
+    use_popups_for_input = false,
     default_component_configs = {
       name = {
         use_git_status_colors = true,
