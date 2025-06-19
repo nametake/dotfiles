@@ -35,7 +35,7 @@
   prs = !gh pr view --web
   pre = !gh pr edit
   w = worktree
-  wa = "!f() { local branch_name=\"$1\"; if ! git show-ref --verify --quiet \"refs/heads/${branch_name}\"; then git branch \"${branch_name}\"; fi; git worktree add \"$(git rev-parse --show-toplevel)/.worktree/${branch_name}\" \"${branch_name}\"; }; f"
+  wa = "!f() { local repo_name=$(basename "$(git rev-parse --show-toplevel)"); local worktree_path="../worktree/${repo_name}/$1"; local branch_name="$1"; if ! git show-ref --verify --quiet "refs/heads/${branch_name}"; then git branch "${branch_name}"; fi; git worktree add "${worktree_path}" "${branch_name}"; }; f"
   wl = worktree list
   wr = worktree remove
 
