@@ -27,7 +27,7 @@ if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'MunifTanjim/nui.nvim'
   Plug 'nvim-tree/nvim-web-devicons'
-  Plug 'MeanderingProgrammer/render-markdown.nvim'
+  " Plug 'MeanderingProgrammer/render-markdown.nvim'
 endif
 
 " Plug 'tomasr/molokai'
