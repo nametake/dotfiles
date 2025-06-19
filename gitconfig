@@ -34,6 +34,7 @@
   prc = !gh pr create --web
   prs = !gh pr view --web
   pre = !gh pr edit
+  wt = worktree
 
 [core]
   editor = "vim"
