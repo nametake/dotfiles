@@ -34,7 +34,10 @@
   prc = !gh pr create --web
   prs = !gh pr view --web
   pre = !gh pr edit
-  wt = worktree
+  w = worktree
+  wa = "!f() { local branch_name=\"$1\"; if ! git show-ref --verify --quiet \"refs/heads/${branch_name}\"; then git branch \"${branch_name}\"; fi; git worktree add \"$(git rev-parse --show-toplevel)/.worktree/${branch_name}\" \"${branch_name}\"; }; f"
+  wl = worktree list
+  wr = worktree remove
 
 [core]
   editor = "vim"
