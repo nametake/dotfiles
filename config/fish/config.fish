@@ -48,6 +48,5 @@ if test -f $HOME/.local.fish
   source $HOME/.local.fish
 end
 
-# ~/.config/fish/conf.d/git_worktree_completions.fish
-complete -c git -n '__fish_seen_subcommand_from wa' -a '(git for-each-ref --format="%(refname:short)" refs/heads/)'
-complete -c git -n '__fish_seen_subcommand_from wr' -a '(git worktree list --porcelain | grep "^worktree " | awk \'{print $2}\' | sed "s|.*/||")'
+# complete
+complete -f -c git -n '__fish_seen_subcommand_from wa' -a "(git for-each-ref --format='%(refname:short)' refs/heads/)"
