@@ -49,3 +49,7 @@ Temporary Items
 
 # Local markdown file
 *.local.md
+
+# Local HTML file
+*.local.htm
+*.local.html
