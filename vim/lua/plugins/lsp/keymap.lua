@@ -1,7 +1,12 @@
+local Plugin = {}
+
+if not pcall(require, 'cmp') then
+  Plugin.setup = function() end
+  return Plugin
+end
+
 local cmp = require 'cmp'
 local feedkeys = require 'cmp.utils.feedkeys'
-
-local Plugin = {}
 
 local function confirm_smart(fallback)
   if vim.fn['vsnip#jumpable'](1) == 1 then

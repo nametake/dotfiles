@@ -1,5 +1,10 @@
 local Plugin = {}
 
+if not pcall(require, 'Comment') then
+  Plugin.setup = function() end
+  return Plugin
+end
+
 Plugin.setup = function()
   require('Comment').setup({
     toggler = {

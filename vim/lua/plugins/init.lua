@@ -1,6 +1,12 @@
 local Plugin = {}
 
 Plugin.setup = function()
+  local ok, nvim_autopairs = pcall(require, "nvim-autopairs")
+  if ok then
+    nvim_autopairs.setup()
+  end
+
+
   require("nvim-autopairs").setup()
   -- https://github.com/phaazon/hop.nvim/issues/46
   -- require("hop").setup()

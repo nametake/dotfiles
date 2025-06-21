@@ -1,8 +1,13 @@
+local Plugin = {}
+
+if not pcall(require, 'telescope') then
+  Plugin.setup = function() end
+  return Plugin
+end
+
 local actions = require('telescope.actions')
 local action_state = require("telescope.actions.state")
 local lga_actions = require("telescope-live-grep-args.actions")
-
-local Plugin = {}
 
 Plugin.setup = function()
   ---@diagnostic disable-next-line: redundant-parameter

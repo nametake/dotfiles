@@ -1,5 +1,10 @@
 local Plugin = {}
 
+if not pcall(require, 'avante') then
+  Plugin.setup = function() end
+  return Plugin
+end
+
 local api = require('avante.api')
 
 Plugin.setup = function()

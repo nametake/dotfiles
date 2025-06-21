@@ -1,5 +1,10 @@
 local Plugin = {}
 
+if not pcall(require, 'nvim-treesitter') then
+  Plugin.setup = function() end
+  return Plugin
+end
+
 Plugin.setup = function()
   ---@diagnostic disable-next-line: missing-fields
   require 'nvim-treesitter.configs'.setup({

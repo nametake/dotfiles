@@ -1,6 +1,11 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 local Plugin = {}
+
+if not pcall(require, 'lspconfig') then
+  Plugin.setup = function() end
+  return Plugin
+end
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local function merge(list1, list2)
   local result = {}

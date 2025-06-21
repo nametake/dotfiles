@@ -1,5 +1,10 @@
 local Plugin = {}
 
+if not pcall(require, 'neo-tree') then
+  Plugin.setup = function() end
+  return Plugin
+end
+
 Plugin.setup = function()
   --- @diagnostic disable-next-line:redundant-parameter
   require("neo-tree").setup({

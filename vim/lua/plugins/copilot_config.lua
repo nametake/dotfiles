@@ -1,5 +1,10 @@
 local Plugin = {}
 
+if not pcall(require, 'CopilotChat') then
+  Plugin.setup = function() end
+  return Plugin
+end
+
 local chat = require('CopilotChat')
 local select = require("CopilotChat.select")
 
