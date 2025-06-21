@@ -21,10 +21,13 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 
 if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  set foldmethod=expr
-  set foldexpr=nvim_treesitter#foldexpr()
 
   Plug 'nvim-treesitter/nvim-treesitter-context'
+
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'MunifTanjim/nui.nvim'
+  Plug 'nvim-tree/nvim-web-devicons'
+  " Plug 'MeanderingProgrammer/render-markdown.nvim'
 endif
 
 " Plug 'tomasr/molokai'
@@ -192,95 +195,53 @@ nnoremap <silent> g, :<C-u>below Git<CR>
 Plug 'airblade/vim-gitgutter'
 " }}}
 
+" Filer {{{
+
+if has('nvim')
+  " neo-tree.nvim {{{
+  Plug 'nvim-neo-tree/neo-tree.nvim'
+    nnoremap <Space>f <Cmd>Neotree<CR>
+  " }}}
+else
 " nerdtree {{{
-Plug 'preservim/nerdtree'
-nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position):<C-u>NERDTreeFind<CR>
-nmap <silent> <Plug>(nerdtree-cr) :<C-u>call nerdtree#ui_glue#invokeKeyMap("\<CR\>")<CR>
-autocmd MyAutoCmd FileType nerdtree map <buffer> <CR> <Plug>(set-tag-stack-from-cache)<Plug>(nerdtree-cr)
+  Plug 'preservim/nerdtree'
+  nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position):<C-u>NERDTreeFind<CR>
+  nmap <silent> <Plug>(nerdtree-cr) :<C-u>call nerdtree#ui_glue#invokeKeyMap("\<CR\>")<CR>
+  autocmd MyAutoCmd FileType nerdtree map <buffer> <CR> <Plug>(set-tag-stack-from-cache)<Plug>(nerdtree-cr)
 
-let g:NERDTreeQuitOnOpen=1
-" let g:NERDTreeSortOrder = ['[[extension]]']
-let g:NERDTreeMapOpenSplit='<C-x>'
-let g:NERDTreeMapOpenVSplit='<C-v>'
-let g:NERDTreeWinSize=48
+  let g:NERDTreeQuitOnOpen=1
+  " let g:NERDTreeSortOrder = ['[[extension]]']
+  let g:NERDTreeMapOpenSplit='<C-x>'
+  let g:NERDTreeMapOpenVSplit='<C-v>'
+  let g:NERDTreeWinSize=48
 
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  let g:NERDTreeGitStatusIndicatorMapCustom = {
-        \   'Modified'  : '*',
-        \   'Staged'    : '+',
-        \   'Untracked' : '-',
-        \   'Renamed'   : '>',
-        \   'Unmerged'  : '=',
-        \   'Deleted'   : '!',
-        \   'Dirty'     : 'x',
-        \   'Clean'     : ':',
-        \   'Ignored'   : 'I',
-        \   'Unknown'   : '?'
-        \ }
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    let g:NERDTreeGitStatusIndicatorMapCustom = {
+          \   'Modified'  : '*',
+          \   'Staged'    : '+',
+          \   'Untracked' : '-',
+          \   'Renamed'   : '>',
+          \   'Unmerged'  : '=',
+          \   'Deleted'   : '!',
+          \   'Dirty'     : 'x',
+          \   'Clean'     : ':',
+          \   'Ignored'   : 'I',
+          \   'Unknown'   : '?'
+          \ }
 
 
-  Plug 'EvanDotPro/nerdtree-chmod'
-  Plug 'ryanoasis/vim-devicons'
-  let g:webdevicons_enable_nerdtree = 1
+    Plug 'EvanDotPro/nerdtree-chmod'
+    Plug 'ryanoasis/vim-devicons'
+    let g:webdevicons_enable_nerdtree = 1
 
-  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  " let g:NERDTreeFileExtensionHighlightFullName = 1
-  " let g:NERDTreeExactMatchHighlightFullName = 1
-  " let g:NERDTreePatternMatchHighlightFullName = 1
-  " let g:NERDTreeLimitedSyntax = 1
+    " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " let g:NERDTreeFileExtensionHighlightFullName = 1
+    " let g:NERDTreeExactMatchHighlightFullName = 1
+    " let g:NERDTreePatternMatchHighlightFullName = 1
+    " let g:NERDTreeLimitedSyntax = 1
 " }}}
+end
 
-" fern {{{
-" Plug 'lambdalisue/vim-fern'
-" nmap <Plug>(fern-action-open) :<C-u>Fern . -reveal=% -drawer -width=40 -toggle<CR>
-" nnoremap <silent> <Space>f <Plug>(cache-tag-stack-position)<Plug>(fern-action-open)
-"
-" function! s:init_fern() abort
-"   set nonumber
-"   " Define
-"   nmap <Plug>(fern-action--close-drawer) :<C-u>FernDo close -drawer -stay<CR>
-"   nmap <buffer><silent> <Plug>(fern-action--open-and-close)
-"         \ <Plug>(fern-action-open)
-"         \ <Plug>(fern-action--close-drawer)
-"
-"   nmap <buffer><expr>
-"         \ <Plug>(fern-action--expand-or-collapse)
-"         \ fern#smart#leaf(
-"         \   "\<Plug>(fern-action--open-and-close)",
-"         \   "\<Plug>(fern-action-expand)",
-"         \   "\<Plug>(fern-action-collapse)",
-"         \ )
-"
-"   " Map
-"   nmap <buffer> o <Plug>(fern-action-expand)
-"   nmap <buffer> x <Plug>(fern-action-collapse)
-"   nmap <buffer> <C-v> <Plug>(fern-action-open:vsplit)<Plug>(fern-action--close-drawer)
-"   nmap <buffer> <C-x> <Plug>(fern-action-open:split)<Plug>(fern-action--close-drawer)
-"   nmap <buffer> I <Plug>(fern-action-hidden)
-"   nmap <buffer> r <Plug>(fern-action-reload)
-"   nmap <buffer> D <Plug>(fern-action-remove)
-"   nmap <silent><buffer> q :<C-u>bd<CR>
-"   nmap <buffer><nowait> <CR> <Plug>(set-tag-stack-from-cache)<Plug>(fern-action--expand-or-collapse)
-"
-"   silent! nunmap <buffer><silent> z
-" endfunction
-"
-" augroup fern-custom
-"   autocmd! *
-"   autocmd FileType fern call s:init_fern()
-" augroup END
-"
-" Plug 'lambdalisue/vim-fern-git-status'
-" Plug 'lambdalisue/vim-fern-mapping-git'
-"
-" Plug 'lambdalisue/vim-nerdfont'
-" Plug 'lambdalisue/vim-fern-renderer-nerdfont'
-" Plug 'lambdalisue/vim-glyph-palette'
-" let g:fern#renderer = 'nerdfont'
-" Plug 'nametake/vim-fern-comparator-extension'
-" let g:fern#comparator = 'extension'
-" let g:fern_comparator_extension#disable_compare_extension = 1
-" let g:fern_comparator_extension#enable_go_test_grouping = 1
 " }}}
 
 " Outline {{{
@@ -365,14 +326,20 @@ if g:lsp_client ==# 'nvim-lspconfig' && has('nvim')
 
   " for Golang
   Plug 'golang/vscode-go'
-
-  Plug 'zbirenbaum/copilot.lua'
-    Plug 'zbirenbaum/copilot-cmp'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'CopilotC-Nvim/CopilotChat.nvim'
 endif
 " }}}
 
+" }}}
+
+" AI {{{
+if has('nvim')
+  Plug 'zbirenbaum/copilot.lua'
+    Plug 'zbirenbaum/copilot-cmp'
+
+  " Plug 'CopilotC-Nvim/CopilotChat.nvim'
+  Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+  Plug 'ravitemer/mcphub.nvim', { 'do': 'npm install -g mcp-hub@latest' }
+end
 " }}}
 
 " Language {{{

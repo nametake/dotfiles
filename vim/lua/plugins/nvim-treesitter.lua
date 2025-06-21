@@ -44,6 +44,9 @@ Plugin.setup = function()
   })
 
   require('nvim-ts-autotag').setup()
+
+  vim.wo.foldmethod = 'expr'
+  vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 end
 
 return Plugin

@@ -1,4 +1,3 @@
-local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local Plugin = {}
@@ -57,9 +56,10 @@ Plugin.setup = function(opts)
   }
 
   for lsp, options in pairs(opts.servers) do
-    lspconfig[lsp].setup(
-      merge(default_options, options)
-    )
+    -- lspconfig[lsp].setup(
+    --   merge(default_options, options)
+    -- )
+    vim.lsp.config(lsp, merge(default_options, options))
   end
 
   -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports

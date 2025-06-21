@@ -47,3 +47,6 @@ end
 if test -f $HOME/.local.fish
   source $HOME/.local.fish
 end
+
+# complete
+complete -f -c git -n '__fish_seen_subcommand_from wa' -a "(git for-each-ref --format='%(refname:short)' refs/heads/)"

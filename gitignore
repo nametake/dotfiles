@@ -43,3 +43,13 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# git worktree
+.worktree
+
+# Local markdown file
+*.local.md
+
+# Local HTML file
+*.local.htm
+*.local.html
