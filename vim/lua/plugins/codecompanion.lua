@@ -66,7 +66,7 @@ Plugin.setup = function()
   -- Configure keymaps to match Avante's keybindings
   vim.keymap.set({ "n", "v" }, "<C-u>", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
   vim.keymap.set({ "n", "v" }, "<Space><C-u>", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
-  vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+  -- vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
   vim.keymap.set("n", "<Space>s", "<cmd>CodeCompanionChat Stop<cr>", { noremap = true, silent = true })
   vim.keymap.set("n", "<C-l>", "<cmd>CodeCompanionChat Clear<cr>", { noremap = true, silent = true })
   vim.keymap.set("i", "<C-l>", "<Esc><cmd>CodeCompanionChat Clear<cr>", { noremap = true, silent = true })
