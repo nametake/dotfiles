@@ -12,8 +12,8 @@ Plugin.setup = function()
   npairs.setup()
   npairs.add_rules({
     Rule("<", ">"),
-    Rule("「", "」"):with_cr(cond.none()),
-    Rule("『", "』"):with_cr(cond.none()),
+    Rule("「", "」"),
+    Rule("『", "』"),
   })
 
 
