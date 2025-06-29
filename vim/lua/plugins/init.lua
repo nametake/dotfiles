@@ -6,8 +6,17 @@ Plugin.setup = function()
     nvim_autopairs.setup()
   end
 
+  local npairs = require('nvim-autopairs') -- nvim-autopairsをロードします
+  local Rule = require('nvim-autopairs.rule')
+  local cond = require('nvim-autopairs.conds')
+  npairs.setup()
+  npairs.add_rules({
+    Rule("<", ">"),
+    Rule("「", "」"):with_cr(cond.none()),
+    Rule("『", "』"):with_cr(cond.none()),
+  })
 
-  require("nvim-autopairs").setup()
+
   -- https://github.com/phaazon/hop.nvim/issues/46
   -- require("hop").setup()
   -- require("symbols-outline").setup({
