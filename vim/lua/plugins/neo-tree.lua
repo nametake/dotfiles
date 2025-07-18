@@ -119,9 +119,17 @@ Plugin.setup = function()
         -- https://github.com/nvim-neo-tree/neo-tree.nvim/issues/597
         ["mp"] = function(state)
           local node = state.tree:get_node()
+          -- relative path
+          local content = node.path:gsub(state.path, ""):sub(2)
+          print("Copied to clipboard: " .. content)
+          vim.fn.setreg('"', content)
+          vim.fn.setreg("1", content)
+          vim.fn.setreg("+", content)
+        end,
+        ["mP"] = function(state)
+          local node = state.tree:get_node()
+          -- absolute path
           local content = node.path
-          -- relative
-          -- local content = node.path:gsub(state.path, ""):sub(2)
           print("Copied to clipboard: " .. content)
           vim.fn.setreg('"', content)
           vim.fn.setreg("1", content)
