@@ -81,8 +81,8 @@ export CARGO_PATH=${HOME}/.cargo
 
 # env tools
 export ASDF=${HOME}/.asdf
-[ -e ${ASDF} ] && \
-  . ${ASDF}/asdf.sh
+[ -f "${ASDF}/asdf.sh" ] && \
+  . "${ASDF}/asdf.sh"
 #
 # export ANYENV=${HOME}/.anyenv
 # [ -e ${ANYENV} ] && \
