@@ -337,10 +337,10 @@ if has('nvim')
     Plug 'zbirenbaum/copilot-cmp'
 
   " Plug 'CopilotC-Nvim/CopilotChat.nvim'
-  Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
-  Plug 'olimorris/codecompanion.nvim'
+  " Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+  " Plug 'olimorris/codecompanion.nvim'
   " Plug 'coder/claudecode.nvim'
-  Plug 'ravitemer/mcphub.nvim', { 'do': 'npm install -g mcp-hub@latest' }
+  " Plug 'ravitemer/mcphub.nvim', { 'do': 'npm install -g mcp-hub@latest' }
 end
 " }}}
 

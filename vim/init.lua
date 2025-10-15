@@ -84,7 +84,7 @@ require('plugins.neo-tree').setup()
 require('plugins.comment').setup()
 -- require('plugins.copilot_config').setup()
 -- require('plugins.avante').setup()
-require('plugins.codecompanion').setup()
+-- require('plugins.codecompanion').setup()
 -- require('claudecode').setup()
 --
 local local_config = vim.fn.stdpath("config") .. "/local.lua"
