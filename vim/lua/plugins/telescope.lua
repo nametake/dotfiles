@@ -92,7 +92,9 @@ Plugin.setup = function()
       buffers = {
         push_tagstack_on_edit = true,
         mappings = {
-          ["<C-s>"] = actions.delete_buffer,
+          i = {
+            ["<C-s>"] = actions.delete_buffer,
+          },
         }
       },
       diagnostics = {
