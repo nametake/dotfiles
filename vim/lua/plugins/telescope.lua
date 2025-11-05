@@ -17,7 +17,6 @@ Plugin.setup = function()
         i = {
           ["<ESC>"] = actions.close,
           ["<C-[>"] = actions.close,
-          ["<C-s>"] = actions.delete_buffer,
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous,
           ["<C-p>"] = actions.cycle_history_prev,
@@ -92,6 +91,9 @@ Plugin.setup = function()
       },
       buffers = {
         push_tagstack_on_edit = true,
+        mappings = {
+          ["<C-s>"] = actions.delete_buffer,
+        }
       },
       diagnostics = {
         push_tagstack_on_edit = true,
