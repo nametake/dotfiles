@@ -81,9 +81,9 @@ export CARGO_PATH=${HOME}/.cargo
 
 # env tools
 export ASDF=${HOME}/.asdf
-[ -f "${ASDF}/asdf.sh" ] && \
-  . "${ASDF}/asdf.sh"
-#
+[ -e ${ASDF} ] && \
+  export PATH="${ASDF}/shims:${PATH}"
+
 # export ANYENV=${HOME}/.anyenv
 # [ -e ${ANYENV} ] && \
 #   export PATH=${ANYENV}/bin:${PATH} && \
