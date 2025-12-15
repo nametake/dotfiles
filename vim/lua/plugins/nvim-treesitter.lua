@@ -9,7 +9,7 @@ Plugin.setup = function()
   ---@diagnostic disable-next-line: missing-fields
   require 'nvim-treesitter.configs'.setup({
     ensure_installed = "all",
-    ignore_install = { "phpdoc" },
+    ignore_install = { "phpdoc", "ipkg", "ocamllex", "latex", "scfg", "mlir", "teal", "swift", "unison", "verilog" },
     highlight = {
       enable = true, -- false will disable the whole extension
       -- disable = { "html" },
