@@ -20,7 +20,7 @@ source ~/.vim/rc/plugins/lightline.rc.vim
 " let g:indentLine_fileTypeExclude = ['markdown', 'json']
 
 if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', branch: 'master'}
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
 
   Plug 'nvim-treesitter/nvim-treesitter-context'
 
