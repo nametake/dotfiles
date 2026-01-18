@@ -47,6 +47,9 @@ Temporary Items
 # git worktree
 .worktree
 
+# Local directory
+.local/
+
 # Local markdown file
 *.local.md
 
