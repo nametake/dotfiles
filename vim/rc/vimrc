@@ -273,6 +273,7 @@ autocmd MyAutoCmd FileType help nmap <silent><buffer> q :q<CR>
 autocmd MyAutoCmd FileType git nmap <silent><buffer> q :q<CR>
 
 nnoremap <silent> <Space>p :let @+ = expand('%') . ':' . line('.')<CR>
+xnoremap <silent> <Space>p :<C-u>let @+ = expand('%') . ':' . line("'<") . '-' . line("'>")<CR>
 "}}}
 
 "----------------------------------------------------------------
