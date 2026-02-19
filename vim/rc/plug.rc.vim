@@ -435,6 +435,11 @@ Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'udalov/kotlin-vim'
 " }}}
 
+" Flutter {{{
+Plug 'stevearc/dressing.nvim' " optional for vim.ui.select
+Plug 'nvim-flutter/flutter-tools.nvim'
+" }}}
+
 " }}}
 
 call plug#end()
