@@ -2,113 +2,183 @@
 version: 2
 
 root-markers:
+  - RCS/
+  - SCCS/
+  - CVS/
   - .git/
+  - .svn/
+  - .hg/
+  - .bzr/
+  - _darcs/
+  - .git
 
 # log-file: /Users/nametake/Downloads/output.log
 # log-level: 1
 
 tools:
-  apex-pmd: &apex-pmd
-    lint-command: 'pmd pmd -format textpad -rulesets apex-quickstart -d ${INPUT}'
-    lint-formats:
-      - '%f(%l, %r):  %m'
-
   css-stylelint: &css-stylelint
-    lint-command: './node_modules/.bin/stylelint --stdin --stdin-filename ${INPUT}'
+    prefix: stylelint
+    lint-command: "npx --no-install stylelint --formatter unix --stdin --stdin-filename ${INPUT}"
     lint-ignore-exit-code: false
     lint-stdin: true
     lint-formats:
-      - '%-P%f'
-      - '%*[\ ]%l:%c%*[\ ]%*[✖⚠]%*[\ ]%m'
-      - '%-Q'
+      - "%f:%l:%c: %m [%t%*[a-z]]"
+    root-markers:
+      - package.json
+      - stylelint.config.js
+      - .stylelintrc.js
+      - stylelint.config.mjs
+      - .stylelintrc.mjs
+      - stylelint.config.cjs
+      - .stylelintrc.cjs
+      - .stylelintrc.json
+      - .stylelintrc.yml
+      - .stylelintrc.yaml
+      - .stylelintrc
+    commands:
+      - title: "stylelint fix"
+        command: npx
+        arguments:
+          - "--no-install"
+          - "stylelint"
+          - "--fix"
+          - "${INPUT}"
 
   dockerfile-hadolint: &dockerfile-hadolint
-    lint-command: 'hadolint'
+    lint-command: "hadolint"
     lint-formats:
-      - '%f:%l %m'
+      - "%f:%l %m"
 
   javascript-eslint: &javascript-eslint
-    lint-command: './node_modules/.bin/eslint -f visualstudio --stdin --stdin-filename ${INPUT}'
+    prefix: eslint
+    lint-command: "npx --no-install eslint -f unix --stdin --stdin-filename ${INPUT}"
     lint-ignore-exit-code: true
     lint-stdin: true
-    lint-formats:
-      - "%f(%l,%c): %tarning %m"
-      - "%f(%l,%c): %rror %m"
+    root-markers:
+      - package.json
+      - .eslintrc.js
+      - .eslintrc.yaml
+      - .eslintrc.yml
+      - .eslintrc.json
     commands:
-      - title: 'eslint fix'
-        command: ./node_modules/.bin/eslint
+      - title: "eslint fix"
+        command: npx
         arguments:
-          - '--fix'
-          - '${INPUT}'
+          - "--no-install"
+          - "eslint"
+          - "--fix"
+          - "${INPUT}"
 
   javascript-prettier: &javascript-prettier
-    format-command: './node_modules/.bin/prettier --stdin-filepath ${INPUT}'
+    prefix: prettier
+    format-command: "prettier --stdin --stdin-filepath ${INPUT}"
     format-stdin: true
+    require-marker: true
+    root-markers:
+      - .prettierrc
+      - .prettierrc.js
+      - .prettierrc.mjs
+      - .prettierrc.cjs
+      - .prettierrc.json
+      - .prettierrc.json5
+      - .prettierrc.toml
+      - .prettierrc.yml
+      - .prettierrc.yaml
+      - prettier.config.js
+      - prettier.config.cjs
+      - prettier.config.mjs
+    commands:
+      - title: "prettier format"
+        command: npx
+        arguments:
+          - "--no-install"
+          - "prettier"
+          - "--fix"
+          - "--write"
+          - "${INPUT}"
 
   json-jq: &json-jq
-    lint-command: 'jq .'
+    lint-command: "jq ."
 
   json-fixjson: &json-fixjson
-    format-command: 'fixjson'
+    format-command: "fixjson"
     format-stdin: true
 
   json-jq-format: &json-jq-format
-    format-command: 'jq . --sort-keys'
+    format-command: "jq ."
     format-stdin: true
 
   markdown-remark-format: &markdown-remark-format
-    format-command: 'remark --no-color --silent'
+    format-command: "remark --no-color --silent"
     format-stdin: true
 
   markdown-remark-lint: &markdown-remark-lint
-    lint-command: 'remark --no-stdout --no-color --frail'
+    lint-command: "remark --no-stdout --no-color --frail"
     lint-formats:
-      - '%-P%f'
-      - '%#%l:%c %# %trror  %m'
-      - '%#%l:%c %# %tarning  %m'
-      - '%-Q'
-      - '%-G%.%#'
+      - "%-P%f"
+      - "%#%l:%c %# %trror  %m"
+      - "%#%l:%c %# %tarning  %m"
+      - "%-Q"
+      - "%-G%.%#"
 
   markdown-textlint: &markdown-textlint
-    lint-command: 'textlint --stdin --stdin-filename ${INPUT}'
+    prefix: textlint
+    lint-command: "npx --no-install textlint -f unix --no-color --stdin --stdin-filename ${INPUT}"
     lint-stdin: true
     lint-formats:
-      - '%-P%f'
-      - '%#%l:%c %# %trror  %m'
-      - '%#%l:%c %# %tarning  %m'
-      - '%-Q'
-      - '%-G%.%#'
+      - "%f:%l:%c: %m [%trror/%r]"
+      - "%f:%l:%c: 【%r】 %m"
+      - "%E%f:%l:%c: %m"
+      - "%Z%m [%trror/%r]"
+      - "%C%m"
+    root-markers:
+      - package.json
+      - .textlintrc
+      - .textlintrc.js
+      - .textlintrc.json
+      - .textlintrc.yml
+      - .textlintrc.yaml
+    commands:
+      - title: "textlint fix"
+        command: npx
+        arguments:
+          - "--no-install"
+          - "textlint"
+          - "--fix"
+          - "${INPUT}"
 
   proto-buf: &proto-buf
-    lint-command: 'buf check lint --file ${INPUT}'
+    lint-command: "buf check lint --file ${INPUT}"
     lint-formats:
-      - '%f:%l:%c:%m'
+      - "%f:%l:%c:%m"
 
   sh-shellcheck: &sh-shellcheck
-    lint-command: 'shellcheck -f gcc -x'
-    lint-source: 'shellcheck'
+    prefix: shellcheck
+    lint-command: "shellcheck -f gcc -x -"
+    lint-stdin: true
     lint-formats:
-      - '%f:%l:%c: %trror: %m'
-      - '%f:%l:%c: %tarning: %m'
-      - '%f:%l:%c: %tote: %m'
+      - "%f:%l:%c: %t%*[^:]: %m [SC%n]"
 
   sh-shfmt: &sh-shfmt
-    format-command: 'shfmt -ci -s -bn'
+    format-command: "shfmt -ln bash -i 2 -bn -ci -sr -kp"
     format-stdin: true
 
   yaml-yamllint: &yaml-yamllint
-    lint-command: 'yamllint -f parsable -'
-    lint-stdin: true
+    prefix: yamllint
+    lint-command: "yamllint --strict --format parsable ${INPUT}"
+    lint-stdin: false
+    lint-formats:
+      - "%f:%l:%c: [%t%*[a-z]] %m"
+    env:
+      - "PYTHONIOENCODING=UTF-8"
 
   vim-vint: &vim-vint
-    lint-command: 'vint -'
+    lint-command: "vint -"
     lint-stdin: true
     lint-formats:
-      - '%f:%l:%c: %m'
+      - "%f:%l:%c: %m"
 
 languages:
-  apex:
-    - <<: *apex-pmd
   css:
     - <<: *css-stylelint
   dockerfile:
