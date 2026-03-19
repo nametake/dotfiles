@@ -61,6 +61,7 @@ export GNU_WHICH=/opt/homebrew/opt/gnu-which/libexec/gnubin
 # programming languages
 export GOPATH=${HOME}/go
 export GO111MODULE=auto
+export GOFLAGS="-trimpath"
 export TEXBIN_PATH=/usr/texbin
 export CARGO_PATH=${HOME}/.cargo
 
