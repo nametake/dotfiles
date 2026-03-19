@@ -39,6 +39,12 @@
   wl = worktree list
   wr = worktree remove
 
+  common-root = "!sh -c 'dirname \"$(git rev-parse --path-format=absolute --git-common-dir)\"'"
+  repo-id = "!sh -c 'ghq_root=\"$(ghq root)\" || exit 1; repo_root=\"$(git common-root)\" || exit 1; case \"$repo_root\" in \"$ghq_root\"/*) printf \"%s\\n\" \"${repo_root#\"$ghq_root\"/}\" ;; *) echo \"repository is not under ghq root: $repo_root\" >&2; exit 1 ;; esac'"
+  worktree-base = "!sh -c 'ghq_root=\"$(ghq root)\" || exit 1; repo_id=\"$(git repo-id)\" || exit 1; printf \"%s\\n\" \"$ghq_root/.worktree/$repo_id\"'"
+  worktree-path = "!sh -c 'branch=\"${1:?usage: git worktree-path <branch>}\"; base=\"$(git worktree-base)\" || exit 1; printf \"%s\\n\" \"$base/$branch\"' -"
+  wa = "!sh -c 'branch=\"${1:?usage: git wa <branch>}\"; path=\"$(git worktree-path \"$1\")\" || exit 1; git show-ref --verify --quiet \"refs/heads/$branch\" || git branch \"$branch\"; mkdir -p \"$(dirname \"$path\")\" || exit 1; git worktree add \"$path\" \"$branch\"' -"
+
 [core]
   editor = "vim"
   excludesfile = ~/.gitignore
