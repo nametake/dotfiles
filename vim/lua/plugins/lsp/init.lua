@@ -43,14 +43,6 @@ Plugin.setup = function(opts)
     ensure_installed = keys(opts.servers),
   })
 
-  require("lsp-format").setup()
-  vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(args)
-      local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-      require("lsp-format").on_attach(client, args.buf)
-    end,
-  })
-
   require "lsp_signature".setup({
     doc_lines = 0,
     max_width = 96,
