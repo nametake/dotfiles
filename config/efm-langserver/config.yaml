@@ -21,6 +21,7 @@ tools:
     lint-command: "npx --no-install stylelint --formatter unix --stdin --stdin-filename ${INPUT}"
     lint-ignore-exit-code: false
     lint-stdin: true
+    lint-after-open: true
     lint-formats:
       - "%f:%l:%c: %m [%t%*[a-z]]"
     root-markers:
