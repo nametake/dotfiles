@@ -12,7 +12,7 @@ root-markers:
   - _darcs/
   - .git
 
-# log-file: /Users/nametake/Downloads/output.log
+# log-file: /tmp/efm-langserver.log
 # log-level: 1
 
 tools:
