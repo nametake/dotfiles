@@ -109,19 +109,6 @@ tools:
     format-command: "jq ."
     format-stdin: true
 
-  markdown-remark-format: &markdown-remark-format
-    format-command: "remark --no-color --silent"
-    format-stdin: true
-
-  markdown-remark-lint: &markdown-remark-lint
-    lint-command: "remark --no-stdout --no-color --frail"
-    lint-formats:
-      - "%-P%f"
-      - "%#%l:%c %# %trror  %m"
-      - "%#%l:%c %# %tarning  %m"
-      - "%-Q"
-      - "%-G%.%#"
-
   markdown-textlint: &markdown-textlint
     prefix: textlint
     lint-command: "npx --no-install textlint -f unix --no-color --stdin --stdin-filename ${INPUT}"
@@ -200,8 +187,6 @@ languages:
     - <<: *javascript-prettier
     - <<: *css-stylelint
   markdown:
-    - <<: *markdown-remark-lint
-    - <<: *markdown-remark-format
     - <<: *markdown-textlint
   proto:
     - <<: *proto-buf
