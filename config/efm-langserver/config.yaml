@@ -47,6 +47,7 @@ tools:
   dockerfile-hadolint: &dockerfile-hadolint
     prefix: hadolint
     lint-command: "hadolint"
+    lint-after-open: true
     lint-formats:
       - "%f:%l %m"
 
