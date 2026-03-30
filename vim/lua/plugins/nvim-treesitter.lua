@@ -82,6 +82,15 @@ Plugin.setup = function()
   })
 
   require('nvim-ts-autotag').setup()
+
+  -- 'nvim-treesitter/nvim-treesitter-textobjects'
+  vim.g.no_plugin_maps = true
+
+  -- andymass/vim-matchup
+  vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
+  vim.g.matchup_treesitter_enable_quotes = true
+  vim.g.matchup_treesitter_disable_virtual_text = true
+  vim.g.matchup_treesitter_include_match_words = true
 end
 
 return Plugin
