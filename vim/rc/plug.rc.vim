@@ -75,7 +75,7 @@ endif
 
 if has('nvim')
   Plug 'numToStr/Comment.nvim'
-  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+  " Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 else
   Plug 'tomtom/tcomment_vim'
 endif
