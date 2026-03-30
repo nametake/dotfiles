@@ -7,13 +7,13 @@ Plugin.setup = function()
   end
 
   local npairs = require('nvim-autopairs') -- nvim-autopairsをロードします
-  local Rule = require('nvim-autopairs.rule')
-  local cond = require('nvim-autopairs.conds')
+  -- local Rule = require('nvim-autopairs.rule')
+  -- local cond = require('nvim-autopairs.conds')
   npairs.setup()
   npairs.add_rules({
-    Rule("<", ">"),
-    Rule("「", "」"),
-    Rule("『", "』"),
+    -- Rule("<", ">"),
+    -- Rule("「", "」"),
+    -- Rule("『", "』"),
   })
 
 
