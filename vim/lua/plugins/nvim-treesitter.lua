@@ -5,7 +5,7 @@ if not pcall(require, 'nvim-treesitter') then
   return Plugin
 end
 
-Plugin.setup = function()
+Plugin.setup_master_ver = function()
   ---@diagnostic disable-next-line: missing-fields
   require 'nvim-treesitter.configs'.setup({
     ensure_installed = "all",
@@ -52,6 +52,17 @@ Plugin.setup = function()
 
   vim.wo.foldmethod = 'expr'
   vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+end
+
+Plugin.setup = function()
+  require("nvim-treesitter").setup()
+
+  vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),
+    callback = function()
+      pcall(vim.treesitter.start)
+    end,
+  })
 end
 
 return Plugin
