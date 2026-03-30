@@ -57,6 +57,8 @@ end
 Plugin.setup = function()
   require("nvim-treesitter").setup()
 
+  -- print(require('nvim-treesitter.config').get_install_dir())
+
   vim.api.nvim_create_autocmd("FileType", {
     group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),
     callback = function()
