@@ -83,7 +83,7 @@ Plugin.setup = function()
 
   require('nvim-ts-autotag').setup()
 
-  -- 'nvim-treesitter/nvim-treesitter-textobjects'
+  -- nvim-treesitter/nvim-treesitter-textobjects
   vim.g.no_plugin_maps = true
 
   -- andymass/vim-matchup
