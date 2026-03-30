@@ -1,9 +1,8 @@
 local Plugin = {}
 
--- for tagstack at multi result
 local function decorator(original_handler)
   return function(err, result, ctx, config)
-    if vim.tbl_islist(result) and table.getn(result) >= 2 then
+    if vim.islist(result) and #result >= 2 then
       local from = { vim.fn.bufnr('%'), vim.fn.line('.'), vim.fn.col('.'), 0 }
       local items = { { tagname = vim.fn.expand('<cword>'), from = from } }
       vim.fn.settagstack(vim.fn.win_getid(), { items = items }, 't')
@@ -21,34 +20,40 @@ local handlers = {
 }
 
 Plugin.setup = function()
-  -- Change to use https://github.com/lukas-reineke/lsp-format.nvim
-  -- vim.api.nvim_create_autocmd("BufWritePre", {
-  --   callback = function()
-  --     vim.lsp.buf.format { async = false }
-  --   end
-  -- })
-
-  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover,
-    {
+  vim.diagnostic.config({
+    virtual_text = false,
+    float = {
       border = 'single',
       width = 96,
-    }
-  )
+    },
+  })
 
-  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-    vim.lsp.handlers.signature_help, {
-      border = 'single'
-    }
-  )
-
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
-  )
-
-  for _, attribute in ipairs(handlers) do
-    vim.lsp.handlers[attribute] = decorator(vim.lsp.handlers[attribute])
+  for _, method in ipairs(handlers) do
+    local handler = vim.lsp.handlers[method]
+    if handler then
+      vim.lsp.handlers[method] = decorator(handler)
+    end
   end
+end
+
+Plugin.hover = function()
+  vim.lsp.buf.hover({
+    border = 'single',
+    width = 96,
+  })
+end
+
+Plugin.signature_help = function()
+  vim.lsp.buf.signature_help({
+    border = 'single',
+  })
+end
+
+Plugin.diagnostic_float = function()
+  vim.diagnostic.open_float(nil, {
+    border = 'single',
+    width = 96,
+  })
 end
 
 return Plugin
