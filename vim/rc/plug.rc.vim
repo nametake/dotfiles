@@ -336,7 +336,9 @@ endif
 " AI {{{
 if has('nvim')
   Plug 'zbirenbaum/copilot.lua'
-    Plug 'zbirenbaum/copilot-cmp'
+    " Plug 'zbirenbaum/copilot-cmp'
+    " https://github.com/zbirenbaum/copilot-cmp/pull/130
+    Plug 'jvune0/copilot-cmp'
 
   " Plug 'CopilotC-Nvim/CopilotChat.nvim'
   " Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
