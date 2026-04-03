@@ -39,7 +39,17 @@ require('plugins.lsp.init').setup({
       -- cmd = { "golangci-lint-langserver", "-debug" },
       init_options = {
         -- command = { "golangci-lint", "run", "--allow-parallel-runners", "--out-format", "json" },
-        command = { "golangci-lint", "run", "--output.json.path", "stdout", "--show-stats=false", "--allow-parallel-runners", "--issues-exit-code=1" },
+        command = {
+          "go",
+          "run",
+          "github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.10.1",
+          "run",
+          "--output.json.path",
+          "stdout",
+          "--show-stats=false",
+          "--allow-parallel-runners",
+          "--issues-exit-code=1",
+        }
       },
     },
     -- GraphQL
