@@ -106,6 +106,7 @@ tools:
     prefix: textlint
     lint-command: "npx --no-install textlint -f unix --no-color --stdin --stdin-filename ${INPUT}"
     lint-stdin: true
+    lint-after-open: true
     lint-formats:
       - "%f:%l:%c: %m [%trror/%r]"
       - "%f:%l:%c: 【%r】 %m"
