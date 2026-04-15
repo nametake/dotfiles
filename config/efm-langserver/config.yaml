@@ -13,13 +13,13 @@ root-markers:
   - .git
 
 # log-file: /tmp/efm-langserver.log
-# log-level: 1
+# log-level: 3
 
 tools:
   css-stylelint: &css-stylelint
     prefix: stylelint
     lint-command: "npx --no-install stylelint --formatter unix --stdin --stdin-filename ${INPUT}"
-    lint-ignore-exit-code: false
+    lint-ignore-exit-code: true
     lint-stdin: true
     lint-after-open: true
     lint-formats:
@@ -108,15 +108,14 @@ tools:
     lint-stdin: true
     lint-after-open: true
     lint-formats:
-      - "%f:%l:%c: %m [%trror/%r]"
-      - "%f:%l:%c: 【%r】 %m"
-      - "%E%f:%l:%c: %m"
-      - "%Z%m [%trror/%r]"
+      - "%f:%l:%c: %m"
+      - "%Z[%trror/%r]"
       - "%C%m"
     root-markers:
       - package.json
       - .textlintrc
       - .textlintrc.js
+      - .textlintrc.cjs
       - .textlintrc.json
       - .textlintrc.yml
       - .textlintrc.yaml
