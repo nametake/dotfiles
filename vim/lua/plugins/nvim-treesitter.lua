@@ -68,6 +68,17 @@ Plugin.setup = function()
     end,
   })
 
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'TSUpdate',
+    callback = function()
+      require('nvim-treesitter.parsers').bruno = {
+        install_info = {
+          url = 'https://github.com/Scalamando/tree-sitter-bruno',
+        },
+      }
+    end
+  })
+
   require 'treesitter-context'.setup({
     enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
     max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
