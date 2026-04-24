@@ -17,10 +17,6 @@ export XDG_CONFIG_HOME=~/.config
 [ -e /opt/homebrew/bin ] && \
   export PATH=/opt/homebrew/bin:${PATH}
 
-# local bin
-[ -e ${HOME}/.local/bin ] && \
-  export PATH=${HOME}/.local/bin:${PATH}
-
 # GNUBIN
 export GNUBIN_PATH=/opt/homebrew/opt/make/libexec/gnubin
 [ -e ${GNUBIN_PATH} ] && \
@@ -129,6 +125,10 @@ export GOAPP=${GOOGLE_CLOUD_SDK}/platform/google_appengine
 
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
+# local bin
+[ -e ${HOME}/.local/bin ] && \
+  export PATH=${HOME}/.local/bin:${PATH}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
