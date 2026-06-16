@@ -132,7 +132,7 @@ brew_install: ## Install brew tools
 
 brew_update: ## Update brew tools
 	brew update
-	brew upgrade
+	brew upgrade -y
 	brew cleanup
 
 go_install: ## Install go cli tools
