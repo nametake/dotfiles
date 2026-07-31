@@ -187,6 +187,20 @@ Plug 'tpope/vim-fugitive'
 
 autocmd MyAutoCmd FileType fugitive nmap <buffer> q gq
 autocmd MyAutoCmd FileType fugitiveblame nmap <buffer> q gq
+" On <CR> over an untracked directory, reveal it in neo-tree keeping the
+" current root (editing the directory makes neo-tree hijack the buffer and
+" set the directory as root)
+function! s:FugitiveStatusCR() abort
+  let l:path = fnamemodify(fugitive#PorcelainCfile(), ':p')
+  if !isdirectory(l:path)
+    call feedkeys("\<Plug>fugitive:\<CR>")
+  elseif exists(':Neotree') == 2
+    " :Neotree reveal_file= rejects directories, so call the Lua API directly
+    call luaeval('require("neo-tree.command").execute({reveal_file = _A, action = "focus"})',
+          \ substitute(l:path, '/$', '', ''))
+  endif
+endfunction
+autocmd MyAutoCmd FileType fugitive nnoremap <buffer> <silent> <CR> :<C-u>call <SID>FugitiveStatusCR()<CR>
 nnoremap <silent> g, :<C-u>below Git<CR>
 
   Plug 'tpope/vim-rhubarb'
