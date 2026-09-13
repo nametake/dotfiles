@@ -126,6 +126,11 @@ export GOAPP=${GOOGLE_CLOUD_SDK}/platform/google_appengine
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 
+# Docker
+export DOCKER_BIN=${HOME}/.docker/bin
+[ -e ${DOCKER_BIN} ] && \
+  export PATH=${DOCKER_BIN}:$PATH
+
 # local bin
 [ -e ${HOME}/.local/bin ] && \
   export PATH=${HOME}/.local/bin:${PATH}
