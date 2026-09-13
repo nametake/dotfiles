@@ -27,4 +27,8 @@ export NODEBREW_ROOT=${HOME}/.nodebrew
 [ -e ${NODEBREW_ROOT} ] && \
   export PATH=${NODEBREW_ROOT}/current/bin:$PATH
 
+# docker
+[ -e ${HOME}/.docker/bin ] && \
+  export PATH=${HOME}/.docker/bin:${PATH}
+
 export PATH="$HOME/.cargo/bin:$PATH"
