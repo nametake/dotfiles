@@ -123,6 +123,7 @@ if has('nvim')
   nnoremap <C-s> <cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>
   nnoremap <C-j> <cmd>lua require('telescope.builtin').buffers()<cr>
   nnoremap <Space>l <cmd>lua require('telescope.builtin').diagnostics()<cr>
+  nnoremap <C-g> <cmd>lua require('telescope.builtin').git_status()<cr>
   nnoremap gr <cmd>lua require('telescope.builtin').lsp_references({ jump_type='never' })<cr>
   nnoremap gd <cmd>lua require('telescope.builtin').lsp_definitions({ jump_type='never' })<cr>
   nnoremap gD <cmd>lua require('telescope.builtin').lsp_type_definitions({ jump_type='never' })<cr>
