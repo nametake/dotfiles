@@ -22,7 +22,8 @@
 
 [alias]
   tree = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %Creset%cd%Creset' --abbrev-commit --date=format-local:'%Y/%m/%d %H:%M'
-  delete-merged-branch = "!f () { git checkout $1; git branch --merged|grep -Ev '\\*|main|develop|master'|xargs git branch -d; };f"
+  default-branch = "!f () { git symbolic-ref --quiet refs/remotes/origin/HEAD >/dev/null || git remote set-head origin -a >/dev/null || return 1; d=$(git symbolic-ref --short refs/remotes/origin/HEAD) || return 1; echo \"${d#origin/}\"; };f"
+  delete-merged-branch = "!f () { default=$(git default-branch) || return 1; git for-each-ref refs/heads --merged \"origin/$default\" --format='%(if)%(worktreepath)%(then)%(else)%(refname:short)%(end)' | grep -vxE \"main|master|develop|$default\" | xargs -r git branch -d; };f"
   ac = !git add -A && git commit
   b = branch
   ch = checkout
@@ -30,7 +31,7 @@
   re = restore
   di = diff --ignore-all-space --ignore-blank-lines
   p = !git push -u origin `git rev-parse --abbrev-ref HEAD`
-  pm = "!f () { git switch $(git remote show origin | sed -n '/HEAD branch/s/.*: //p'); git pull --prune; git delete-merged-branch; git submodule update; };f"
+  pm = "!f () { default=$(git default-branch) || return 1; git switch \"$default\"; git pull --prune; git delete-merged-branch; git submodule update; };f"
   open = !gh repo view --web
   prc = !gh pr create --web
   prs = !gh pr view --web
