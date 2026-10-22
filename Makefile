@@ -6,6 +6,7 @@ DOTFILES := \
 	bash_profile \
 	bashrc \
 	zshenv \
+	zprofile \
 	zshrc \
 	zshrc.zplug \
 	config/fish/config.fish \

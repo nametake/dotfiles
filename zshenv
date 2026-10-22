@@ -10,12 +10,24 @@ export SAVEHIST=1000000
 export EDITOR=vim
 bindkey -e
 
+# keep only the first occurrence of each directory in PATH
+typeset -U path
+
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export XDG_CONFIG_HOME=~/.config
 
 # Homebrew bin
 [ -e /opt/homebrew/bin ] && \
   export PATH=/opt/homebrew/bin:${PATH}
+
+# Homebrew keg-only
+export CURL_PATH=/opt/homebrew/opt/curl/bin
+[ -e ${CURL_PATH} ] && \
+  export PATH=${CURL_PATH}:${PATH}
+
+export GNU_GETOPT_PATH=/opt/homebrew/opt/gnu-getopt/bin
+[ -e ${GNU_GETOPT_PATH} ] && \
+  export PATH=${GNU_GETOPT_PATH}:${PATH}
 
 # GNUBIN
 export GNUBIN_PATH=/opt/homebrew/opt/make/libexec/gnubin
@@ -134,3 +146,7 @@ export DOCKER_BIN=${HOME}/.docker/bin
 # local bin
 [ -e ${HOME}/.local/bin ] && \
   export PATH=${HOME}/.local/bin:${PATH}
+
+# path_helper in /etc/zprofile reorders PATH after this file is loaded.
+# zprofile restores the order built here from this array.
+zshenv_path=(${path})
