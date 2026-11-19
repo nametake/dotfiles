@@ -6,6 +6,12 @@
     "preset-ja-technical-writing": {
       "sentence-length": {
         "max": 160
+      },
+      "no-mix-dearu-desumasu": {
+        "preferInHeader": "",
+        "preferInBody": "である",
+        "preferInList": "である",
+        "strict": false
       }
     }
   }
